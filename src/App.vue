@@ -22,9 +22,9 @@ export default {
 </script>
 
 <style>
-#app{
+/*#app{
   position: relative;
-}
+}*/
 
 
 </style>

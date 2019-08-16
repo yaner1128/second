@@ -1,9 +1,7 @@
 <template>
-	<div>
+	<div class="outbanner">
 		<div class='allimg' >
-			<img src="../../../static/images/about.jpg" class='bannerimg'>	
-			
-					
+			<!-- <img src="../../../static/images/about.jpg" class='bannerimg'>			 -->
 		</div>
 		<div class="bannerbottom">
 			<transition name="fade">
@@ -47,15 +45,21 @@ export default {
 	clear: both;
 	display: block;
 }
+.outbanner{
+	position: relative;
+}
 .allimg{
 	position: relative;
 
-	z-index: -3;
-	/*background-image: url(../../../static/images/banner.jpg);*/
-	
+	z-index:-0.5;
+	background-image: url(../../../static/images/about.jpg);
+	background-repeat:no-repeat; 
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;	
     /*background-position: center;*/
+	width: 100%;
     
-	height: 100%;
+	height: 400px;
 }
 .bannerimg{
 	background-repeat:no-repeat; 
@@ -68,18 +72,20 @@ export default {
 
 }
 .bannerbottom{
-	position: relative;
-	
+	position: absolute;
+	height: 90%;
+	width: 100%;
+	top:0;
 	
 }
 .bannercode{
 	position: absolute;
-	z-index: 1;
-	/*top:60%;*/
+	z-index: 0;
+	width: 50%;
+	margin:0 auto;
+	bottom:20%;
 	left:35%;
-	margin-top: 350px;
-	/*float: left;*/
-	/*margin:0 auto;*/
+
 	color:#fff;
     font-size:30px;
 }
