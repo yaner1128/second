@@ -7,14 +7,17 @@ body{
 	color: #4a4a4a;
 	font-family:PingFangSC-Light; 
 }
+.container{
+	width:88%;
+	margin:0 auto;
+}
 ul{
 	list-style: none;
 }
-/*全局*/
-.container{
-	width: 1200px;
-	margin: 0 auto;
-}
+
 a{
-	text-decoration: none;
+	text-decoration:none;
+}
+#app{
+	background-color: #fff;
 }

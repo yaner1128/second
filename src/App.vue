@@ -1,13 +1,16 @@
 <template>
-  <div id="app">
+  <div id="app">   
     <!-- 导航区域 -->
-    <Header/>
+    <div class="head">
+      <Header />
+    </div>
     
     <router-view/>
   </div>
 </template>
 
 <script>
+
 import Header from '@/components/Common/Header.vue'
 
 export default {
@@ -19,5 +22,6 @@ export default {
 </script>
 
 <style scoped>
+
 
 </style>

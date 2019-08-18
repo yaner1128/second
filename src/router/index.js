@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+
 //导入路由模块
 import Home from '@/components/Home/Home.vue'
 import About from '@/components/About/About.vue'
@@ -13,6 +14,7 @@ import Contact from '@/components/Contact/Contact.vue'
 Vue.use(Router)
 
 export default new Router({
+<<<<<<< HEAD
 	//路由匹配规则
 	linkActiveClass:'is-active',
 	mode:'history',//改成history模式
@@ -36,7 +38,7 @@ export default new Router({
       		name: 'Server',
       		component: Server
     	},
-		{
+		  {
      	 	path: '/demo',
       		name: 'Demo',
       		component: Demo

@@ -1,75 +1,17 @@
 <template>
-	<div class="outbody">
-		<div class="homecontainer">
-			<!-- 文字组件一 -->
-<!-- 			<div class="fristtext">
-				<my-FristText/>
-			</div> -->
-			<!-- 动画组件一 -->
-<!-- 			<div class="turnImg">
-				<ul>
-					<li v-for='(item,index) in fristImgs' :key='item.id'>
-						<my-FristAnimation/>
-					</li>
-				</ul>
-			</div>
- -->
-
- 			
-			<!-- 动画组件二 -->
-<!-- 			<div>
-				<ul>
-					<li><my-SecondAnimation/></li>
-				</ul>
-			</div> -->
-
-			<!-- 动画组件三 -->
-<!-- 			<div>
-				<ul>
-					<li>
-						<my-ThirdAnimation/>
-					</li>
-				</ul>
-			</div> -->
-			<!-- 动画组件五 -->
-<!-- 			<div>
-				<ul>
-					<li>
-						<my-FiveAnimation/>
-					</li>
-				</ul>
-			</div> -->
-			
-			<!-- 新闻组件一 -->
-<!-- 			<div>
-				<ul>
-					<li>
-						<my-FristNew/>
-					</li>
-				</ul>
-			</div> -->
-			
-			<!-- 按钮组价 -->
-<!-- 			<div>
-				<ul>
-					<li>
-						<my-FristButton/>
-					</li>
-				</ul>
-			</div> -->
-			<div class="pp"></div>
-			<!-- 分页组件 -->
-			<div>
-				<my-Paging/>
-			</div>
-			<div class="tt"></div>
-		</div>
-	</div>	
+	<div>
+	  	<my-Slideshow />
+	  	<!-- <my-Banner /> -->
+	  <div style="height:1000px;background-color:pink;width:88%;margin:0 auto"></div>
+			<my-FourthAnimation />
+		
+	</div>
 </template>
 
 <script>
 
 export default {
+<<<<<<< HEAD
   name: 'Home',
   data() {
     return {
@@ -81,10 +23,19 @@ export default {
     	]
     }
   },
+
+  name: 'Home',
+  
+  data() {
+    return {
+      show:true
+    };
+  },
 };
 </script>
 
 <style lang="css" scoped>
+
 .pp{
 	width: 100%;
 	height: 300px;
@@ -95,12 +46,6 @@ export default {
 	height: 500px;
 	background-color: blue;
 }
-
-
-
-
-
-
 .outbody{
 	background-color: lightgray;
 }

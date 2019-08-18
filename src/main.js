@@ -15,6 +15,14 @@ Vue.use(ElementUI);
 import '../static/global/global.css'
 // 引入icon图标
 import './fonts.css'
+import '../static/global/animate.css'
+
+// vue-awesome-swiper导入
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+// require styles
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
+
 
 //引入文字组件一
 import FristText from '@/components/Common/FristText.vue'
@@ -29,8 +37,9 @@ Vue.component('my-SecondAnimation',SecondAnimation);
 //引入动画组件三
 import ThirdAnimation from '@/components/Common/ThirdAnimation.vue' 
 Vue.component('my-ThirdAnimation',ThirdAnimation);
-
-
+// 动画组件四
+import FourthAnimation from '@/components/FourthAnimation/FourthAnimation'
+Vue.component('my-FourthAnimation',FourthAnimation);
 //引入动画组件五
 import FiveAnimation from '@/components/Common/FiveAnimation.vue' 
 Vue.component('my-FiveAnimation',FiveAnimation);
@@ -46,6 +55,20 @@ Vue.component('my-FristButton',FristButton);
 //分页组件Paging
 import Paging from '@/components/Common/Paging.vue' 
 Vue.component('my-Paging',Paging);
+
+
+
+// // 导入自己写的全局的样式
+// import'../static/global/global.css'
+
+// import '../static/global/icon.css'
+
+// 导入全局组件
+import Banner from '@/components/Banner/Banner'
+Vue.component('my-Banner',Banner);
+
+import Slideshow from '@/components/Slideshow/Slideshow'
+Vue.component('my-Slideshow',Slideshow);
 
 
 
