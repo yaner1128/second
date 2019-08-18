@@ -14,7 +14,6 @@ import Contact from '@/components/Contact/Contact.vue'
 Vue.use(Router)
 
 export default new Router({
-<<<<<<< HEAD
 	//路由匹配规则
 	linkActiveClass:'is-active',
 	mode:'history',//改成history模式

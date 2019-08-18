@@ -4,7 +4,7 @@
         <div class="header">
             <!--导航栏logo -->
             <div class="nav-left">
-                < img src="../../../static/images/logo_ecodenet.png" height="44" width="189" alt="">
+                <img src="../../../static/images/logo_ecodenet.png" height="44" width="189" alt="">
             </div>
                 <!-- 导航栏右侧标题 -->
             <div class="nav-right">

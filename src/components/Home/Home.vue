@@ -11,7 +11,6 @@
 <script>
 
 export default {
-<<<<<<< HEAD
   name: 'Home',
   data() {
     return {

@@ -17,11 +17,11 @@ import '../static/global/global.css'
 import './fonts.css'
 import '../static/global/animate.css'
 
-// vue-awesome-swiper导入
-import VueAwesomeSwiper from 'vue-awesome-swiper'
-// require styles
-import 'swiper/dist/css/swiper.css'
-Vue.use(VueAwesomeSwiper, /* { default global options } */)
+// // vue-awesome-swiper导入
+// import VueAwesomeSwiper from 'vue-awesome-swiper'
+// // require styles
+// import 'swiper/dist/css/swiper.css'
+// Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 
 //引入文字组件一
@@ -38,7 +38,7 @@ Vue.component('my-SecondAnimation',SecondAnimation);
 import ThirdAnimation from '@/components/Common/ThirdAnimation.vue' 
 Vue.component('my-ThirdAnimation',ThirdAnimation);
 // 动画组件四
-import FourthAnimation from '@/components/FourthAnimation/FourthAnimation'
+import FourthAnimation from '@/components/Common/FourthAnimation.vue'
 Vue.component('my-FourthAnimation',FourthAnimation);
 //引入动画组件五
 import FiveAnimation from '@/components/Common/FiveAnimation.vue' 
@@ -64,10 +64,10 @@ Vue.component('my-Paging',Paging);
 // import '../static/global/icon.css'
 
 // 导入全局组件
-import Banner from '@/components/Banner/Banner'
+import Banner from '@/components/Common/Banner.vue'
 Vue.component('my-Banner',Banner);
 
-import Slideshow from '@/components/Slideshow/Slideshow'
+import Slideshow from '@/components/Common/Slideshow.vue'
 Vue.component('my-Slideshow',Slideshow);
 
 
