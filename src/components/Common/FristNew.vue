@@ -2,14 +2,14 @@
 	<div class="FristNews">
 		<!-- 左边日期 -->
 		<div class="Fdata">
-			<p class="Fmoths">二月</p>
-			<p class="Fdays">23</p>
+			<p class="Fmoths">{{firstNews.month}}</p>
+			<p class="Fdays">{{firstNews.day}}</p>
 		</div>
 		<!-- 右边新闻 -->
 		<div class="Fnews">
-            <h4 class="Newstitle">想在北京网站开发是真实的吗？</h4>
+            <h4 class="Newstitle">{{firstNews.newtitle}}</h4>
             <p class="Newstext">
-            	在进行北京网站开发过程当中不仅要使得整个网站以及界面的功能实现能力强，相关使用者操作起来也需要便利。除此之外，美化网页的视....
+            	{{firstNews.newtext}}
             </p>
 		</div>
 	</div>
@@ -19,7 +19,7 @@
 export default {
 
   name: 'FristNew',
-
+  props:["firstNews"],
   data() {
     return {
 

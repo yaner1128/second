@@ -1,18 +1,23 @@
 <template>
-	<div class="Fcontainer">
-	    <div class="front">
-	    	<img src="../../assets/turn1.png" alt="">
-	    </div>
-	    <div class="clearfix"></div>
-	    <div class="text">网站/商城系统定制开发</div>
-	</div>
+    <div class="container">
+      <div class="Fcontainer">
+        <div  v-for='fristImg in fristImgs' class="oneself">
+            <div class="front">
+                <img :src="fristImg.imgSrc" alt="">
+            </div>
+            <div class="clearfix"></div>
+            <div class="text" :style="{color:fristImg.textcolor}">{{fristImg.text}}</div>
+        </div>       
+      </div>  
+    </div>
+	
 </template>
 
 <script>
 export default {
 
   name: 'FristAnimation',
-
+    props:["fristImgs"],
   data() {
     return {
     	
@@ -27,9 +32,13 @@ export default {
 }
 .Fcontainer {
     position: relative;
-    width: 220px;
+    width: 100%;
     height: 320px;
-    text-align: center;
+    /*text-align: center;*/
+}
+.oneself{
+    display: inline-block;
+    margin:0  3.23%;
 }
 .Fcontainer img{
     width: 220px;
@@ -45,7 +54,7 @@ export default {
 .front {
     transform: rotateY(0deg);
 }
-.Fcontainer:hover .front {
+.Fcontainer .oneself:hover .front {
     transform: rotateY(180deg);
 }
 
@@ -55,8 +64,9 @@ export default {
 .Fcontainer .text{
 	width: 100%;
 	height: 30px;
-	position: absolute;
-	bottom:0px;
-	left: 0;
+    text-align: center;
+	/*position: absolute;*/
+	/*bottom:0px;
+	left: 0;*/
 }
 </style>

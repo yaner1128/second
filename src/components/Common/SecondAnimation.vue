@@ -1,12 +1,13 @@
 <template>
-  <div class="root">
+  <div class="container">
+    <div class="root">
 <!--     <ul class="functionNav">
       <li v-for="(item, index) in functionList" :key="index"> -->
         <ul class="functionSubNav">
           <li
-            v-for="(subItem, index) in functionList"
+            v-for="subItem in functionList"
             :class="[(currentFlag === subItem.flag) ? 'functionSubNav-image-opacity' :'functionSubNav-image']"
-            :key="index"
+           
             @mouseover="Senter(subItem.flag)"
             @mouseout="Sleave(subItem.flag)"
           >
@@ -15,67 +16,39 @@
             </a>
 
             <div class="Secondtitle">
-            	{{subItem.desc}}
+              {{subItem.desc}}
             </div>
 
             <div class="ps">
-            	<p class='iconfont searchIcon'>
-            		<span class="quan" @mouseenter='Cchange' @mouseleave='Cexchange'>&#xe62d;</span>
-            	</p>
-           		<p class="secondDesc">{{subItem.desc}}</p>
+              <p class='iconfont searchIcon'>
+                <span class="quan" @mouseenter='Cchange' @mouseleave='Cexchange'>&#xe62d;</span>
+              </p>
+              <p class="secondDesc">{{subItem.desc}}</p>
             </div>
             <i class="mask">
-            	<p class='iconfont searchIcon'>
-            		<span class="quan" @mouseenter='Cchange' @mouseleave='Cexchange'>&#xe62d;</span>
-            	</p>
+              <p class='iconfont searchIcon'>
+                <span class="quan" @mouseenter='Cchange' @mouseleave='Cexchange'>&#xe62d;</span>
+              </p>
             </i>
           </li>
         </ul>
 <!--       </li>
     </ul> -->
   </div>
+  </div>
+  
 </template>
 
 <script>
 export default {
 
   name: 'SecondAnimation',
+  props:['functionList'],
   data() {
     return {
       currentFlag: 0,
-      functionList: 
-        [
-          {
-            desc: "数学竞赛网",
-            flag: 1,
-            imageUrl: require("../../assets/index (6).png")
-          },
-          // {
-          //   desc: "生物工程",
-          //   flag: 2,
-          //   imageUrl: require("../../assets/index (7).png")
-          // },
-          // {
-          //   desc: "上海超辉",
-          //   flag: 3,
-          //   imageUrl: require("../../assets/index (8).png")
-          // },
-          // {
-          //   desc: "军民追溯网",
-          //   flag: 4,
-          //   imageUrl: require("../../assets/index (9).png")
-          // },
-          // {
-          //   desc: "北京赛德美",
-          //   flag: 5,
-          //   imageUrl: require("../../assets/index (10).png")
-          // },
-          // {
-          //   desc: "听心悦",
-          //   flag: 6,
-          //   imageUrl: require("../../assets/index (11).png")
-          // }
-        ]
+      
+        
       
     };
   },
@@ -120,7 +93,7 @@ export default {
 .root {
 /*  background-color: red;*/
   width:100%;
-  height: 262px;
+  height: 530px;
  /* display: flex;
   justify-content: center;
   align-items: center;*/

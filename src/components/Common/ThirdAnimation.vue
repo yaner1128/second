@@ -1,18 +1,19 @@
 <template>
-	<div class="thirdcontainer">
+	
+		<div class="thirdcontainer">
 	    <div class="prve">
 	    	<img src="../../assets/prve.png" alt="">
 			<div class="icontext">
 				<div class="icons">
-					<span class="iconfont">&#xe697;</span>
-					<span class="iconfont">&#xe600;</span>
-					<span class="iconfont">&#xe603;</span>
+					<span class="iconfont" v-html="thirdAnimation.icon1"></span>
+					<span class="iconfont" v-html="thirdAnimation.icon2"></span>
+					<span class="iconfont" v-html="thirdAnimation.icon3"></span>
 				</div>
 				<div class="texts">
-					<p>触及视觉灵魂的设计趋势</p>
-					<p>精心布局的用户体验</p>
-					<p>毫无顾忌地通过任何终端</p>
-					<p>呈现在客户的眼前</p>
+					<p>{{thirdAnimation.p1}}</p>
+					<p>{{thirdAnimation.p2}}</p>
+					<p>{{thirdAnimation.p3}}</p>
+					<p>{{thirdAnimation.p4}}</p>
 				</div>
 			</div>
 	    </div>
@@ -20,26 +21,28 @@
 	    	<img src="../../assets/next.png" alt="">
 			<div class="Nicontext">
 				<div class="Nicons">
-					<span class="iconfont">&#xe697;</span>
-					<span class="iconfont">&#xe600;</span>
-					<span class="iconfont">&#xe603;</span>
+					<span class="iconfont" v-html="thirdAnimation.icon1"></span>
+					<span class="iconfont" v-html="thirdAnimation.icon2"></span>
+					<span class="iconfont" v-html="thirdAnimation.icon3"></span>
 				</div>
 				<div class="Ntexts">
-					<p>触及视觉灵魂的设计趋势</p>
-					<p>精心布局的用户体验</p>
-					<p>毫无顾忌地通过任何终端</p>
-					<p>呈现在客户的眼前</p>
+					<p>{{thirdAnimation.p1}}</p>
+					<p>{{thirdAnimation.p2}}</p>
+					<p>{{thirdAnimation.p3}}</p>
+					<p>{{thirdAnimation.p4}}</p>
 				</div>
 			</div>
 	    </div>
 	</div>
+
+	
 </template>
 
 <script>
 export default {
 
   name: 'ThirdAnimation',
-
+  props:['thirdAnimation'],
   data() {
     return {
 

@@ -31,5 +31,6 @@ export default {
     border: 1px solid #e35b5b;
     transition: all 0.4s ease;
     color: #e35b5b;
+    float: left;
 }
 </style>
