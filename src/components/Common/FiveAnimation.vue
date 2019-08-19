@@ -8,11 +8,11 @@
 	            <div class="circleProgress leftcircle" :class='{lstart:isstart}'></div>
 	        </div>
 	 	</div>
-	 	<div class="FiveTitle" :class="{Fivecolors:isstart}">高端企业制造研发</div>
+	 	<div class="FiveTitle" :class="{Fivecolors:isstart}">{{item.title}}</div>
 	 	<br>
 	 	<div :class='{FiveText:isstart}' v-show='isstart'>
-	 		<p>企业高端网站设计</p>
-	 		<p>彰显品牌形象</p>
+	 		<p>{{item.pone}}</p>
+	 		<p>{{item.ptwo}}</p>
 	 	</div>
 	</div>
 </template>
@@ -27,6 +27,7 @@ export default {
     	isstart:false
     };
   },
+  props:['item'],
   methods:{
   	startRotate(){
   		// console.log("hhhh");
@@ -95,7 +96,7 @@ export default {
 
 }
 .rstart{
-	    -webkit-animation: circleProgressLoad_right 5s linear infinite;
+	    -webkit-animation: circleProgressLoad_right 2s linear infinite;
 }
 .leftcircle{
     border-bottom:20px solid rgb(47,208,181);
@@ -104,7 +105,7 @@ export default {
 
 }
 .lstart{
-	    -webkit-animation: circleProgressLoad_left 5s linear infinite;
+	    -webkit-animation: circleProgressLoad_left 2s linear infinite;
 }
 @-webkit-keyframes circleProgressLoad_right{
  	0%{

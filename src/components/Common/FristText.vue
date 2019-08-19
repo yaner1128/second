@@ -2,8 +2,8 @@
 	<div class="outerlayer" ref='homePage'>
 		<div class="textcontainer">
 			<div>
-				<h1 class="title">我们可以做得更好</h1>
-				<h6 class="linetitle">我们为您提供更具有优势的企业网络服务平台</h6>
+				<h1 class="title">{{title}}</h1>
+				<h6 class="linetitle">{{text}}</h6>
 			</div>
 		</div>
 	</div>
@@ -16,8 +16,10 @@ export default {
     data(){
       	return {
         	clientHeight:'',
+
       	}
     },
+    props:['title','text'],
     // mounted(){
 	   //  // 获取浏览器可视区域高度
 	   //  this.clientHeight = `${document.documentElement.clientHeight}`        

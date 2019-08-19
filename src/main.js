@@ -23,6 +23,9 @@ import '../static/global/animate.css'
 // import 'swiper/dist/css/swiper.css'
 // Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
+import Footer from '@/components/Common/Footer.vue'
+Vue.component('Footer',Footer);
+
 
 //引入文字组件一
 import FristText from '@/components/Common/FristText.vue'
