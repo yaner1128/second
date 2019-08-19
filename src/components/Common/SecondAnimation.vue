@@ -1,11 +1,10 @@
 <template>
-  <div class="container">
     <div class="root">
 <!--     <ul class="functionNav">
       <li v-for="(item, index) in functionList" :key="index"> -->
         <ul class="functionSubNav">
           <li
-            v-for="subItem in functionList"
+           
             :class="[(currentFlag === subItem.flag) ? 'functionSubNav-image-opacity' :'functionSubNav-image']"
            
             @mouseover="Senter(subItem.flag)"
@@ -35,7 +34,6 @@
 <!--       </li>
     </ul> -->
   </div>
-  </div>
   
 </template>
 
@@ -43,7 +41,7 @@
 export default {
 
   name: 'SecondAnimation',
-  props:['functionList'],
+  props:['subItem'],
   data() {
     return {
       currentFlag: 0,
@@ -93,7 +91,7 @@ export default {
 .root {
 /*  background-color: red;*/
   width:100%;
-  height: 530px;
+  height: 200px;
  /* display: flex;
   justify-content: center;
   align-items: center;*/

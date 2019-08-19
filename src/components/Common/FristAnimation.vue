@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    
       <div class="Fcontainer">
-        <div  v-for='fristImg in fristImgs' class="oneself">
+        <div class="oneself">
             <div class="front">
                 <img :src="fristImg.imgSrc" alt="">
             </div>
@@ -9,15 +9,14 @@
             <div class="text" :style="{color:fristImg.textcolor}">{{fristImg.text}}</div>
         </div>       
       </div>  
-    </div>
-	
+   	
 </template>
 
 <script>
 export default {
 
   name: 'FristAnimation',
-    props:["fristImgs"],
+    props:["fristImg"],
   data() {
     return {
     	
@@ -36,10 +35,7 @@ export default {
     height: 320px;
     /*text-align: center;*/
 }
-.oneself{
-    display: inline-block;
-    margin:0  3.23%;
-}
+
 .Fcontainer img{
     width: 220px;
     height: 280px;

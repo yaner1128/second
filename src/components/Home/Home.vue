@@ -38,16 +38,32 @@
     <my-FristText  :title='titleone' :text='textone'/>
 	
   <!-- 动画组件一 -->
+  <div class="container">
     <div class="fristAniouter">
-      <my-FristAnimation :fristImgs='fristImgs'/>
+      <ul>
+        <li  v-for='fristImg in fristImgs' class="firstAniLi">
+          <my-FristAnimation :fristImg='fristImg'/>
+        </li>
+      </ul>
+      
     </div>
+  </div>
+    
   <!-- 文字组件一 -->
   <my-FristText :title='titletwo' :text='texttwo'/>
   
   <!-- 动画组件二 -->
-  <div class="secAni">
-    <my-SecondAnimation :functionList='functionList'/>
+  <div class="container">
+    <div class="secAni">
+      <ul>
+        <li v-for="subItem in functionList" class="secAniLi">
+           <my-SecondAnimation :subItem='subItem'/>
+        </li>
+      </ul>
+     
+    </div>
   </div>
+ 
   
 
   <!-- 背景图固定，文字滑动 -->
@@ -78,7 +94,7 @@
   <!-- 新闻组件一 -->
   <div class="container">
     <ul>
-      <li v-for='firstNews in firstNew'>
+      <li v-for='firstNews in firstNew' class="firstNewLi">
          <my-FristNew :firstNews='firstNews'/>
       </li>
     </ul>
@@ -285,8 +301,12 @@ export default {
 .fristAniouter{
   margin-top: 2%;
 }
-.secAni{
-
+.firstAniLi{
+   display: inline-block;
+    margin:0  3.23%;
+}
+.secAniLi{
+   display: inline-block;
 }
 .imgfixed{
   width: 100%;
@@ -327,6 +347,10 @@ export default {
   /*width:80%;*/
   width:inherit;
   margin:0 4%;
+}
+.firstNewLi{
+  display: inline-block;
+  margin: 1% 0.5%;
 }
 </style>
 
