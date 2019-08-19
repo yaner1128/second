@@ -20,10 +20,18 @@
 		<div class="twotext">
 			<my-FristText :title='titletwo' :text='texttwo'/>
 		</div>
+		
+		<!--动画组件六 -->
+		<div>
+			<ul>
+				<li>
+					<my-SixAnimation/>
+				</li>
+			</ul>
+		</div>
 
 
-
-<div class="tt"></div>
+		<div class="tt"></div>
 		<!-- 文字组件一 -->
 		<div class="twotext">
 			<my-FristText :title='titlethree' :text='textthree'/>

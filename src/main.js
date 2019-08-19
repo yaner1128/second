@@ -47,10 +47,18 @@ Vue.component('my-FourthAnimation',FourthAnimation);
 import FiveAnimation from '@/components/Common/FiveAnimation.vue' 
 Vue.component('my-FiveAnimation',FiveAnimation);
 
+// 引入动画组件六
+import SixAnimation from '@/components/Common/SixAnimation.vue' 
+Vue.component('my-SixAnimation',SixAnimation);
+
 
 //引入新闻组件一
 import FristNew from '@/components/Common/FristNew.vue' 
 Vue.component('my-FristNew',FristNew);
+// 新闻组二
+import SecondNew from '@/components/Common/SecondNew.vue' 
+Vue.component('my-SecondNew',SecondNew);
+
 
 //按钮组件FristButton
 import FristButton from '@/components/Common/FristButton.vue' 
