@@ -23,6 +23,9 @@ import '../static/global/animate.css'
 // import 'swiper/dist/css/swiper.css'
 // Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
+import Footer from '@/components/Common/Footer.vue'
+Vue.component('Footer',Footer);
+
 
 //引入文字组件一
 import FristText from '@/components/Common/FristText.vue'
@@ -47,12 +50,15 @@ Vue.component('my-FiveAnimation',FiveAnimation);
 import SixAnimation from '@/components/Common/SixAnimation.vue' 
 Vue.component('my-SixAnimation',SixAnimation);
 
+
 //引入新闻组件一
 import FristNew from '@/components/Common/FristNew.vue' 
 Vue.component('my-FristNew',FristNew);
+
 // 引入新闻组件二
 import SecondNew from '@/components/Common/SecondNew.vue' 
 Vue.component('my-SecondNew',SecondNew);
+
 
 //按钮组件FristButton
 import FristButton from '@/components/Common/FristButton.vue' 

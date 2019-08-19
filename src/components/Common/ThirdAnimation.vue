@@ -1,5 +1,4 @@
 <template>
-	
 		<div class="thirdcontainer">
 	    <div class="prve">
 	    	<img src="../../assets/prve.png" alt="">

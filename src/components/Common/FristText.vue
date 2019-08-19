@@ -16,10 +16,9 @@ export default {
     data(){
       	return {
         	clientHeight:'',
-            // ftitle:this.title,
-            // ftext:this.text
       	}
     },
+    props:['title','text'],
     // mounted(){
 	   //  // 获取浏览器可视区域高度
 	   //  this.clientHeight = `${document.documentElement.clientHeight}`        
