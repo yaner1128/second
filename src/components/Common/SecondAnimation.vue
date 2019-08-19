@@ -3,8 +3,7 @@
 <!--     <ul class="functionNav">
       <li v-for="(item, index) in functionList" :key="index"> -->
         <ul class="functionSubNav">
-          <li
-           
+          <li          
             :class="[(currentFlag === subItem.flag) ? 'functionSubNav-image-opacity' :'functionSubNav-image']"
            
             @mouseover="Senter(subItem.flag)"

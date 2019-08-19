@@ -1,21 +1,206 @@
 <template>
 	<div>
-		联系我们
+		<!-- 图片组件 -->
+		<my-Banner />
+		<!-- 文字组件一 -->
+		<my-FristText  :title='titleone' :text='textone'/>
+		<!-- 联系方式 -->
+		<div class="container contactway">
+			<ul>
+				<li class="wayLi" v-for="(item,index) in contactItem" :key='item.id'>
+					<div class="iconfont icons" v-html='item.icon'></div>
+					<div class="textway">{{item.text}}</div>
+				</li>
+			</ul>
+		</div>
+
+		<!-- 详细联系和地图 -->
+		<div class="container detailmap">
+			<div class="detail">
+				<h3>株洲简码网络科技有限公司</h3>
+				<strong>全国服务热线：</strong><span>13048837699</span>
+				<p>有一个品牌项目想和我们谈谈吗?让我们了解您的项目需求，这是一个良好的开始， 我们将会尽快与你取得联系。欢迎您给我们写信或是打电话，让我们听到你的声音!</p>
+				<ul>
+					<li><img src="../../../static/images/contact_05.png"><br><strong>公司手机站</strong></li>
+					<li><img src="../../../static/images/contact_08.png"><br><strong>公司公众号</strong></li>
+				</ul>
+				<p class="add">
+					地址：湖南省株洲市石峰区南方军民融合大厦<br>
+					电话 ：13048837699<br>
+					邮箱： 273101660@qq.com
+				</p>
+			</div>
+			<div class="mapouter">
+				<baidu-map  class="bm-view" style="width: 50%;" ak="frIK1cWlgoaUS5Qf0QDvKB6iujyjzxv8" :center="center" :zoom="zoom" :scroll-wheel-zoom="true"
+                @click="getClickInfo" @moving="syncCenterAndZoom" @moveend="syncCenterAndZoom" @zoomend="syncCenterAndZoom">
+                <bm-view style="width: 100%; height:425px;"></bm-view>
+                <bm-marker :position="{lng: center.lng, lat: center.lat}" :dragging="true" animation="BMAP_ANIMATION_BOUNCE">
+                </bm-marker>
+                   <bm-control :offset="{width: '10px', height: '10px'}">
+                    <bm-auto-complete v-model="keyword" :sugStyle="{zIndex: 999999}">
+                        <input type="text" placeholder="请输入搜索关键字" class="serachinput">
+                    </bm-auto-complete>
+                </bm-control>    
+                <bm-local-search :keyword="keyword" :auto-viewport="true" style="width:0px;height:0px;overflow: hidden;"></bm-local-search>
+        		</baidu-map>
+			</div>
+		</div>
+
+	<!-- 脚部组件 -->
+	<Footer />
 	</div>
 </template>
 
 <script>
+ import {BaiduMap, BmControl, BmView, BmAutoComplete, BmLocalSearch, BmMarker} from 'vue-baidu-map'
 export default {
 
   name: 'About',
 
   data() {
     return {
-
+      titleone:'联系我们',textone:'我们信仰并一直坚持，为客户打造真正有价值的互联网平台',
+      contactItem:[
+	      {id:1,icon:'&#xe640;',text:'湖南省株洲市石峰区南方军民融合大厦'},
+	      {id:2,icon:'&#xe680;',text:'13048837699'},
+	      {id:3,icon:'&#xe614;',text:'273101660@qq.com'}
+      ],
+       showMapComponent: this.value,
+        keyword: '',
+        mapStyle: {
+          width: '90%',
+          height: this.mapHeight + 'px'
+        },
+        center: {lng:113.128155, lat: 27.913076},
+        zoom: 15
+      
     };
   },
+   components: {
+      BaiduMap,
+      BmControl,
+      BmView,
+      BmAutoComplete,
+      BmLocalSearch,
+      BmMarker
+    },
+    watch: {
+      value: function (currentValue) {
+        this.showMapComponent = currentValue
+        if (currentValue) {
+          this.keyword = ''
+        }
+      }
+    },
+    methods: {
+      /***
+       * 地图点击事件。
+       */
+      getClickInfo (e) {
+        this.center.lng = e.point.lng
+        this.center.lat = e.point.lat
+      },
+      syncCenterAndZoom (e) {
+        const {lng, lat} = e.target.getCenter()
+        this.center.lng = lng
+        this.center.lat = lat
+        this.zoom = e.target.getZoom()
+      }
+    }
 };
 </script>
 
 <style lang="css" scoped>
+ .serachinput {
+        width: 300px;
+        box-sizing: border-box;
+        padding: 9px;
+        border: 1px solid #dddee1;
+        line-height: 20px;
+        font-size: 16px;
+        height: 38px;
+        color: #333;
+        position: relative;
+        border-radius: 4px;
+        -webkit-box-shadow: #666 0px 0px 10px;
+        -moz-box-shadow: #666 0px 0px 10px;
+        box-shadow: #666 0px 0px 10px;
+    }
+.contactway{
+	height: 260px;
+}
+.wayLi{
+	display: inline-block;
+	margin:3%  4%;
+	width:25%;
+}
+.icons{
+	border:3px solid rgb(227,91,91);
+	border-radius: 13px;
+	width:100px;
+	height: 100px;
+	font-size: 40px;
+	text-align: center;
+	line-height: 100px;
+	color: rgb(227,91,91);
+	margin:10% 32%;
+}
+.icons:hover{
+	color:  #fff;
+	background-color:rgb(227,91,91);
+}
+.textway{
+	font-weight: 550;
+	font-size:15px;
+	width:100%;
+	text-align:center;
+}
+.detail{
+	width:47%;
+}
+.detail h3{
+	font-size: 27px;
+	font-weight: 500;
+	margin:3% 0;
+}
+.detail strong{
+	font-size: 16px;
+	
+}
+.detail span{
+	font-size: 16px;
+	font-weight: 550;
+	color: rgb(227,91,91);
+	
+
+}
+.detail p{
+	margin:3% 0;
+	color: #969292;
+}
+.detail ul>li{
+	display:inline-block;
+	margin:2% 3%;
+}
+.detail .add{
+	font-size:17px;
+	color: #000;
+	margin:10% 0;
+}
+.detailmap{
+	position: relative;
+	margin-top: 5%;
+	margin-bottom: 7%;
+}
+.bm-view{
+	position: absolute;
+	float: right;
+	top:0;
+	right: 0;
+}
+
+.mapouter{
+	/*display: inline-block;*/
+	
+}
 </style>

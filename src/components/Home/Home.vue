@@ -92,7 +92,7 @@
   <!-- 文字组件一 -->
   <my-FristText :title='titlefour' :text='textfour'/>
   <!-- 新闻组件一 -->
-  <div class="container">
+  <div class="container firstNews">
     <ul>
       <li v-for='firstNews in firstNew' class="firstNewLi">
          <my-FristNew :firstNews='firstNews'/>
@@ -100,7 +100,8 @@
     </ul>
    
   </div>
-  
+  <!-- 脚部 -->
+  <Footer />
 </div>
 </template>
 
@@ -165,7 +166,7 @@ export default {
         ],
         firstNew:[
         {id:1,month:'二月',day:'23',newtitle:'想在北京网站开发是真实的吗？',newtext:'在进行北京网站开发过程当中不仅要使得整个网站以及界面的功能实现能力强，相关使用者操作起来也需要便利。除此之外，美化网页的视lalalalallalalllabal'},
-        {id:2,month:'二月',day:'28',newtitle:'想在北京网站开发是真实的吗？',newtext:'在进行北京网站开发过程当中不仅要使得整个网站以及界面的功能实现能力强，相关使用者操作起来也需要便利。除此之外，美化网页的视lalalalallalalllabal'},
+        {id:2,month:'二月',day:'28',newtitle:'想在北京网站开发是真实的吗？',newtext:'在进行北京网站开发过程当中不仅要使得整个网站以及界面的功能实现能力强，相关使用者操作起来也需要便利。除此之外，美化网页的视lalalalallalalllaballllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll'},
         {id:3,month:'四月',day:'03',newtitle:'想在北京网站开发是真实的吗？',newtext:'在进行北京网站开发过程当中不仅要使得整个网站以及界面的功能实现能力强，相关使用者操作起来也需要便利。化网页的视lalalalallalalllabal'},
         {id:4,month:'五月',day:'13',newtitle:'想在北京网站开发是真实的吗？',newtext:'在进行北京网站开发过程当中不仅要使得整个网站以及界面的功能实现能力强，相关使用者操作起来也需要便利。'},
 
@@ -219,6 +220,10 @@ export default {
   font-size: 15px;
   margin-left: 12.5%;
   margin-top: 5%;
+}
+.left button:hover{
+  background-color:rgb(210,80,80);
+  color: #FFF ;
 }
 .left{
 	float: left;
@@ -342,6 +347,10 @@ export default {
   font-size:24px;
   margin:0 3%; 
 }
+.imgcode button:hover{
+  background-color:#FFF;
+  color: rgb(227,91,91) ;
+}
 .thirdAniLi{
   display: inline-block;
   /*width:80%;*/
@@ -351,6 +360,9 @@ export default {
 .firstNewLi{
   display: inline-block;
   margin: 1% 0.5%;
+}
+.firstNews{
+  margin-bottom: 7%;
 }
 </style>
 

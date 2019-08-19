@@ -30,10 +30,16 @@ export default {
 
 <style lang="css" scoped>
 .FristNews{
-	border: 1px solid #000;
+	
 	width: 550px;
 	height: 90px;
 	padding: 10px;
+}
+.FristNews:hover{
+	box-shadow: 3px 3px 10px  10px rgba(180,180,180,0.5);
+}
+.FristNews:hover .Newstitle{
+	color: rgb(227,91,91);
 }
 .FristNews .Fdata{
 	float: left;
@@ -64,15 +70,20 @@ export default {
 .Fnews .Newstitle{
 	font-size: 16px;
     font-weight: bold;
-    padding: 10px 0;
+   
+    padding:10px 0;
 }
 .Fnews .Newstext{
 	font-size: 14px;
-    line-height: 22px;
-    overflow: hidden;
+	/*height: 45px;*/
+    /*line-height: 22px;*/
 	/*不允许换行*/
 	/*white-space: nowrap;*/
 	/*超出部分变成省略号*/
 	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
 }
 </style>

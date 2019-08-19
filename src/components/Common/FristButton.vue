@@ -1,6 +1,6 @@
 <template>
 	<div class="Fristbutton">
-		全部
+		{{firstBtns.text}}
 	</div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
 
   name: 'FristButton',
-
+  props:['firstBtns'],
   data() {
     return {
 
@@ -27,7 +27,7 @@ export default {
     font-size: 16px;
     border-radius: 50px;
     text-align: center;
-    margin-right: 50px;
+    
     border: 1px solid #e35b5b;
     transition: all 0.4s ease;
     color: #e35b5b;

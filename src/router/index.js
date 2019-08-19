@@ -7,6 +7,7 @@ import Home from '@/components/Home/Home.vue'
 import About from '@/components/About/About.vue'
 import Server from '@/components/Server/Server.vue'
 import Demo from '@/components/Demo/Demo.vue'
+import DemoDetail from '@/components/Demo/DemoDetail.vue'
 import News from '@/components/News/News.vue'
 import Contact from '@/components/Contact/Contact.vue'
 
@@ -32,7 +33,7 @@ export default new Router({
       		name: 'About',
       		component: About
     	},
-		{
+		  {
      	 	path: '/server',
       		name: 'Server',
       		component: Server
@@ -41,16 +42,21 @@ export default new Router({
      	 	path: '/demo',
       		name: 'Demo',
       		component: Demo
-      	},
-      	{
+      },
+      {
+          path: '/demo/demodetail',
+          name: 'DemoDetail',
+          component: DemoDetail
+      },
+      {
      	 	path: '/news',
       		name: 'News',
       		component: News
-      	},
-      	{
+      },
+      {
      	 	path: '/contact',
       		name: 'Contact',
       		component: Contact
-      	}
+      }
   	]
 })
