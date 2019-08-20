@@ -37,9 +37,7 @@
 		<!-- 脚部组件 -->
 		<div>
 			<Footer />
-		</div>
-
-	
+		</div>	
 	</div>
 </template>
 <script>

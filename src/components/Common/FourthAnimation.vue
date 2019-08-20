@@ -39,7 +39,7 @@ export default {
 	    		txt1:'人才观',
 	    		txt2:`崇尚知识 ，以人为本； 
 	    			企业靠员工发展，员工靠企业立业； 
-	    			先有满意的员工 , 后 有满意的消费者。`,
+	    			先有满意的员工 , 后有满意的消费者。 &nbsp; `,
 	    		imgSrc:require('../../../static/images/about (1).jpg')
 	    	},
 	    	{
@@ -191,7 +191,10 @@ export default {
 }
 .fourcode p{
 	font-size:18px; 
-	padding-top: 20px;
-	
+	/*padding-top: 20px;*/
+	padding: 20px 30px 0;
+	display:-webkit-box;
+	--webkit-box-orient: vertical;
+	-webkit-line-clamp:5;	
 }
 </style>

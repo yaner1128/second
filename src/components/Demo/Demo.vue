@@ -5,8 +5,8 @@
 	<!-- 按钮组件 -->
 	<div class="container oneBtn">
 		<ul>
-			<li v-for="firstBtns in firstBtn" class="oneBtnLi">
-				<my-FristButton :firstBtns='firstBtns'/>
+			<li v-for="(firstBtns,index) in firstBtn" class="oneBtnLi"  @click='addBgc(index)'>
+				<my-FristButton :firstBtns='firstBtns' :class="{active:index==current}"/>
 			</li>
 		</ul>
 		
@@ -41,6 +41,7 @@ export default {
 
   data() {
     return {
+      current:0,
     	firstBtn:[
     	{id:1,text:'全部'},
     	{id:2,text:'网站建设'},
@@ -92,6 +93,12 @@ export default {
         name:"DemoDetail"
        
     })
+    },
+    addBgc(index){
+      this.current=index;
+      console.log(index);
+      console.log(this);
+      
     }
   }
 };
@@ -106,6 +113,10 @@ export default {
 	height: 70px;
 	margin:0 1.5%;
 	display: inline-block;
+}
+.oneBtnLi .active{
+  background-color: rgb(227,91,91);
+  color: #fff;
 }
 .secAniLi{
    display: inline-block;

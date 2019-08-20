@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<ul class="outerNew">
-			<li class="secondli"  v-for="(item,index) in newItems" :key="item.id">
+			<li class="secondli">
 				<div class="newimg clearfix">
 					<img :src="item.imgSrc">
 				</div>
@@ -10,7 +10,7 @@
 					<p>{{item.txt2}}</p>
 				</div>
 				<div class="newsmore">
-					<span class="iconfont detail">查看详情&#xe684;</span>
+					<span class="iconfont detail" @click='viewDetails'>查看详情&#xe684;</span>
 					<span class="iconfont browse">&#xe64a;{{item.date}}&nbsp;&nbsp;&nbsp;&#xe666;{{item.num}}</span>
 				</div>
 			</li>
@@ -25,38 +25,17 @@ export default {
 
   data() {
     return {
-    	 newItems:[
-	    	{
-	    		id:1,
-	    		txt1:'新闻标题',
-	    		txt2:'新闻内容好多好多好多好多好多好多好多好多很多很多很好的多好多好多好好多好多好多好多很好的何德何能字新闻内容好多好多好多好多好多好多好多好多很多很多很好的多好多好多好好多好多好多好多很好的何德何能字新闻内容好多好多好多好多好多好多好多好多很多很多很好的多好多好多好好多好多好多好多很好的何德何能字新闻内容好多好多好多好多好多好',
-	    		date:'2019-01-10',
-	    		num:'170',
-	    		imgSrc:require('../../../static/images/case_list1.png')
-	    	},
-	    	{
-	    		id:2,
-	    		txt1:'新闻标题',
-	    		txt2:'新闻内容好多好多好多好多好多好多好多好多很多很多很好的多好多好多好好多好多好多好多很好的何德何能字新闻内容好多好多好多好多好多好多好多好多很多很多很好的多好多好多好好多好多好多好多很好的何德何能字新闻内容好多好多好多好多好多好多好多好多很多很多很好的多好多好多好好多好多好多好多很好的何德何能字新闻内容好多好多好多好多好多好.',
-	    		date:'2019-01-10',
-	    		num:'170',
-	    		imgSrc:require('../../../static/images/case_list1.png')
-	    		
-
-	    	},
-	    	{
-	    		id:3,
-	    		txt1:'新闻标题',
-	    		txt2:'新闻内容好多好多好多好多好多好多好多好多很多很多很好的多好多好多好好多好多好多好多很好的何德何能字新闻内容好多好多好多好多好多好多好多好多很多很多很好的多好多好多好好多好多好多好多很好的何德何能字新闻内容好多好多好多好多好多好多好多好多很多很多很好的多好多好多好好多好多好多好多很好的何德何能字新闻内容好多好多好多好多好多好.',
-	    		date:'2019-01-10',
-	    		num:'170',
-	    		imgSrc:require('../../../static/images/case_list1.png')
-	    		
-
-	    	}
-	    ]
+    	 
     };
   },
+  methods:{
+  	viewDetails(){
+  		this.$router.push({
+          name:'detail',
+        })
+  	}
+  },
+  props:['item'],
 };
 </script>
 
@@ -80,7 +59,7 @@ export default {
  box-shadow:3px 3px 10px  10px rgba(180,180,180,0.5);
 }
 .secondli:hover h2{
-	color: pink;
+	color: orangered;
 }
 .newimg{
 	float: left;
@@ -98,6 +77,9 @@ export default {
 }
 .newcontent h2{
 	margin-bottom:1%;
+	color: #333;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .newcontent p{

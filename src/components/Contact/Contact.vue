@@ -33,21 +33,21 @@
 			<div class="mapouter">
 				<baidu-map  class="bm-view" style="width: 50%;" ak="frIK1cWlgoaUS5Qf0QDvKB6iujyjzxv8" :center="center" :zoom="zoom" :scroll-wheel-zoom="true"
                 @click="getClickInfo" @moving="syncCenterAndZoom" @moveend="syncCenterAndZoom" @zoomend="syncCenterAndZoom">
-                <bm-view style="width: 100%; height:425px;"></bm-view>
-                <bm-marker :position="{lng: center.lng, lat: center.lat}" :dragging="true" animation="BMAP_ANIMATION_BOUNCE">
-                </bm-marker>
-                   <bm-control :offset="{width: '10px', height: '10px'}">
-                    <bm-auto-complete v-model="keyword" :sugStyle="{zIndex: 999999}">
-                        <input type="text" placeholder="请输入搜索关键字" class="serachinput">
-                    </bm-auto-complete>
-                </bm-control>    
-                <bm-local-search :keyword="keyword" :auto-viewport="true" style="width:0px;height:0px;overflow: hidden;"></bm-local-search>
+	                <bm-view style="width: 100%; height:425px;"></bm-view>
+	                <bm-marker :position="{lng: center.lng, lat: center.lat}" :dragging="true" animation="BMAP_ANIMATION_BOUNCE">
+	                </bm-marker>
+	                <bm-control :offset="{width: '10px', height: '10px'}">
+	                    <bm-auto-complete v-model="keyword" :sugStyle="{zIndex: 999999}">
+	                        <input type="text" placeholder="请输入搜索关键字" class="serachinput">
+	                    </bm-auto-complete>
+	                </bm-control>    
+	                <bm-local-search :keyword="keyword" :auto-viewport="true" style="width:0px;height:0px;overflow: hidden;"></bm-local-search>
         		</baidu-map>
 			</div>
 		</div>
 
-	<!-- 脚部组件 -->
-	<Footer />
+		<!-- 脚部组件 -->
+		<Footer />
 	</div>
 </template>
 

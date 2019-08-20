@@ -11,6 +11,8 @@ import DemoDetail from '@/components/Demo/DemoDetail.vue'
 import News from '@/components/News/News.vue'
 import Contact from '@/components/Contact/Contact.vue'
 
+import Detail from '@/components/Common/Detail.vue'
+
 
 Vue.use(Router)
 
@@ -28,16 +30,15 @@ export default new Router({
       		name: 'Home',
       		component: Home,
           meta: {
-                show: false       //设置导航隐藏显示
+                show: false       //设置导航隐藏
             }
     	},
     	{
      	 	path: '/about',
       		name: 'About',
-      		component: About
-          ,
+      		component: About,
           meta: {
-                show: true       //设置导航隐藏显示
+                show: true       //设置导航显示
             }
     	},
 		  {
@@ -46,7 +47,7 @@ export default new Router({
       		component: Server
           ,
           meta: {
-                show: true       //设置导航隐藏显示
+                show: true       //设置导航显示
             }
     	},
 		  {
@@ -55,7 +56,7 @@ export default new Router({
       		component: Demo
           ,
           meta: {
-                show: true       //设置导航隐藏显示
+                show: true       //设置导航显示
             }
       },
       {
@@ -64,7 +65,7 @@ export default new Router({
           component: DemoDetail
           ,
           meta: {
-                show: true       //设置导航隐藏显示
+                show: true       //设置导航显示
             }
       },
       {
@@ -73,18 +74,34 @@ export default new Router({
       		component: News
           ,
           meta: {
-                show: true       //设置导航隐藏显示
+                show: true       //设置导航显示
             }
       },
       {
      	 	path: '/contact',
       		name: 'Contact',
-      		component: Contact
-          ,
+      		component: Contact,
           meta: {
                 // title: "Contact",    //要现实的title
                 show: true       //设置导航隐藏显示
             }
-      }
-  	]
+
+      	},
+        // 新闻详情
+        {
+        path: '/news/detail',
+          name: 'detail',
+          component: Detail
+           ,
+          meta: {
+                show: true       //设置导航显示
+            }
+        },
+
+  	],
+    scrollBehavior (to, from, savedPosition) {
+    // return 期望滚动到哪个的位置
+    return { x: 0, y: 0 }
+  }
+
 })
