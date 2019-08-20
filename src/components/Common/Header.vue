@@ -1,47 +1,57 @@
 <template>
- <el-container> 
+  <el-container @mousewheel='enter'>
     <el-header height = '0px' >
-        <div class="header" :class='{bgs:nobgc}'>
-
-            <!--导航栏logo -->
-            <div class="nav-left">
-                <img src="../../../src/assets/logo.png" height="44" width="189" alt="">
-            </div>
-                <!-- 导航栏右侧标题 -->
-            <div class="nav-right" v-if='isshow'  ><!-- v-show="this.$route.meta.show" -->
-                <ul>
-                   <li v-for='(list,index) in Headerlist' :key='list.id' @click='bgcAdd(index)' :class="{ active:index==current}" >
-                     <!-- a标签不进行跳转，应该使用router-link --> 
-                     <router-link :to='{name:list.name}' exact>{{list.title}}</router-link>
-                    </li>
-                </ul>
-            </div>
-            <!-- 小图标 -->
-            <div v-if='!isshow' class="small">
-              <span class="iconfont" @click='open'>&#xe64a;</span>
-            </div>
-            <!-- 小图标展开的 -->
-            <div class="bigPage" v-if='isopen'>
-              <span class="tuichu" @click='close'>X</span>
-              <ul>
-                <li v-for='(list,index) in Headerlist' @click='close(index)' >
-                  <router-link :to='{name:list.name}' class='lis'>{{list.title}}</router-link>
-                </li>
-              </ul>
-            </div>
+      <div class="header" :class='{bgs:nobgc}'>
+        <!--导航栏logo -->
+        <div class="nav-left">
+          <img src="../../../src/assets/logo.png" height="44" width="189" alt="">
         </div>
-      </el-header>
-    </el-container>
+        <div v-if="isindex">
+              <!-- 是首页 -->
+          <div class="nav-right" v-if='isshow'>
+            <ul>
+              <li v-for='(list,index) in Headerlist' :key='list.id' @click='bgcAdd(index)' :class="{ active:index==current}" >
+                <router-link :to='{name:list.name}'>{{list.title}}</router-link>
+              </li>
+            </ul>
+          </div>
+             <!-- 小图标 -->
+          <div v-else class="small">
+            <span class="iconfont" @click='open'>&#xe63b;</span>
+          </div>
+                    <!-- 小图标展开的 -->
+          <div class="bigPage" v-if='isopen'>
+            <span class="tuichu" @click='close'>X</span>
+            <ul>
+              <li v-for='(list,index) in Headerlist' @click='close(index)' >
+                <router-link :to='{name:list.name}' class='lis'>{{list.title}}</router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div v-else>
+          <div class="nav-right">
+            <ul>
+              <li v-for='(list,index) in Headerlist' :key='list.id' @click='bgcAdd(index)' :class="{ active:index==current}" >
+                <router-link :to='{name:list.name}'>{{list.title}}</router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </el-header>
+  </el-container>
 </template>
 
 <script>
 export default {
-
   name: 'Header',
-
   data() {
     return {
       isshow:false,
+      ishome:true,
+      scroll:0,
       isopen:false,
       nobgc:true,
       isclose:false,
@@ -57,43 +67,64 @@ export default {
     };
   },
 
-
   mounted () {
     window.addEventListener('scroll', this.handleScroll, true);  // 监听（绑定）滚轮 滚动事件
   },
   methods:{
     handleScroll(){
       // 页面滚动距顶部距离
-    var scrollTop=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop
-    var scroll=scrollTop-this.i;
-    this.i = scrollTop;
-    if(scroll>=0){      
-      this.isshow=true;
-      this.nobgc=false;
-       
-    }else if(scrollTop==0){  
-      this.isshow=false;
-      this.nobgc=true;
-      }
-    },
-  
-
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      this.scroll = scrollTop - this.i;
+        this.i = scrollTop;
+        if(this.isindex==true){
+          if(this.scroll>=0){
+              this.isshow=true;
+              this.nobgc=false
+            }else if(scrollTop==0){
+              this.isshow=false;
+              this.nobgc=true;
+            }
+        }       
+   },
     bgcAdd(index){
       this.current=index;
     },
     enter(){
-      console.log(this.isshow);
       this.isshow=true;
-      console.log(this.isshow);
     },
     open(){
       this.isopen=true;
     },
-    close(){
-      this.isopen=false;
+    close(val){
+      if (val!=0){
+          this.nobgc=false
+      }
+      else{
+        this.nobgc=true
+      }
+        this.current=val;
+        this.isopen=false;
     }
   },
-  
+  computed:{
+    isindex(){
+      console.log(this.$store.state.isindex);
+      this.ishome=this.$store.state.isindex;
+      if (this.ishome && this.scroll==0) {
+          this.nobgc=true;
+      }
+      else{
+        this.nobgc=false;
+      }
+       for(let i=0;i<5;i++){
+        if(this.Headerlist[i].name==this.$store.state.isname){
+            console.log(this.Headerlist[i].id);
+            this.current=this.Headerlist[i].id-1;
+        }
+      }
+      return this.$store.state.isindex
+    }
+  }
 };
 </script>
 
@@ -151,6 +182,8 @@ export default {
 .nav-right  ul li{
  float: left;
  width: 12%;
+/* margin: 0 5px;*/
+ /*padding: 0 5px;*/
  height:100%;
  text-align: center;
 }
@@ -162,9 +195,12 @@ color: rgba(218,218,218,.92);
   float: left;
   z-index: 100;
 }
-
+/*.nav-right ul li a:hover{
+   background-color: orangered;
+   color: #fff;
+}*/
 .small span{
-  font-size: 50px;
+  font-size: 40px;
   float: right;
   color:rgb(227,91,91);
   padding-right: 6%;
