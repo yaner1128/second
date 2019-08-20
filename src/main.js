@@ -11,11 +11,20 @@ import 'element-ui/lib/theme-chalk/index.css';
 //调用插件
 Vue.use(ElementUI);
 
+
+// import Vuex from 'vuex'
+
+
+// Vue.use(Vuex);
+
 //引入全局的css
 import '../static/global/global.css'
 // 引入icon图标
 import './fonts.css'
 import '../static/global/animate.css'
+
+
+import store from '../src/store/index.js'
 
 
 // // vue-awesome-swiper导入
@@ -83,8 +92,21 @@ import Slideshow from '@/components/Common/Slideshow.vue'
 Vue.component('my-Slideshow',Slideshow);
 
 
-
 Vue.config.productionTip = false
+
+router.beforeEach((to, from, next) => {
+  console.log(to.name);
+  store.commit('isname',to.name);
+
+    if(to.name=="Home") {
+        store.commit('isHome',true)
+    }else{
+      store.commit('isHome',false)
+    }
+
+
+    next();
+})
 
 /* eslint-disable no-new */
 new Vue({
@@ -97,10 +119,3 @@ new Vue({
 })
 
 
-router.beforeEach((to, from, next) => {
-
-    if(to.meta.title) {
-        document.title = to.meta.title
-    }
-    next();
-})

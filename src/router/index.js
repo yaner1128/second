@@ -14,7 +14,8 @@ import Contact from '@/components/Contact/Contact.vue'
 import Detail from '@/components/Common/Detail.vue'
 
 
-Vue.use(Router)
+Vue.use(Router);
+
 
 export default new Router({
 	//路由匹配规则
@@ -28,74 +29,47 @@ export default new Router({
     	{
      	 	path: '/home',
       		name: 'Home',
-      		component: Home,
-          meta: {
-                show: false       //设置导航隐藏
-            }
+      		component: Home
+
     	},
     	{
      	 	path: '/about',
       		name: 'About',
-      		component: About,
-          meta: {
-                show: true       //设置导航显示
-            }
+      		component: About
     	},
 		  {
      	 	path: '/server',
       		name: 'Server',
       		component: Server
-          ,
-          meta: {
-                show: true       //设置导航显示
-            }
     	},
 		  {
      	 	path: '/demo',
       		name: 'Demo',
       		component: Demo
-          ,
-          meta: {
-                show: true       //设置导航显示
-            }
+          
       },
       {
           path: '/demo/demodetail',
           name: 'DemoDetail',
           component: DemoDetail
-          ,
-          meta: {
-                show: true       //设置导航显示
-            }
+         
       },
       {
      	 	path: '/news',
       		name: 'News',
       		component: News
-          ,
-          meta: {
-                show: true       //设置导航显示
-            }
+        
       },
       {
      	 	path: '/contact',
       		name: 'Contact',
       		component: Contact,
-          meta: {
-                // title: "Contact",    //要现实的title
-                show: true       //设置导航隐藏显示
-            }
-
       	},
         // 新闻详情
         {
         path: '/news/detail',
-          name: 'detail',
+          name: 'detail',     
           component: Detail
-           ,
-          meta: {
-                show: true       //设置导航显示
-            }
         },
 
   	],
@@ -105,3 +79,5 @@ export default new Router({
   }
 
 })
+
+
