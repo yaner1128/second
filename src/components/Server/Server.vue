@@ -62,10 +62,10 @@ export default {
     	textone:'我们为您提供更具有优势的企业网络服务平台',
 
     	FiveList:[
-    		{id:1,title:'高端企业制造研发',pone:'企业高端定制网站设计',ptwo:'彰显品牌形象'},
-    		{id:2,title:'APP项目定制开发',pone:'基于 iOS / Android 应用开发',ptwo:'掌控智能终端时代'},
-    		{id:3,title:'交互H5设计开发',pone:'QUERY动态特效QUERY动态特效',ptwo:'兼容手机、IPAD等触屏设备'},
-    		{id:4,title:'小程序/公众号/Wap设计开发',pone:'定制手机网站 / 微网站制作',ptwo:'布局移动互联网'},
+    		{id:1,icon:'&#xe67e;',title:'高端企业制造研发',pone:'企业高端定制网站设计',ptwo:'彰显品牌形象'},
+    		{id:2,icon:'&#xe652;',title:'APP项目定制开发',pone:'基于 iOS / Android 应用开发',ptwo:'掌控智能终端时代'},
+    		{id:3,icon:'&#xe654;',title:'交互H5设计开发',pone:'QUERY动态特效QUERY动态特效',ptwo:'兼容手机、IPAD等触屏设备'},
+    		{id:4,icon:'&#xe6f9;',title:'小程序/公众号/Wap设计开发',pone:'定制手机网站 / 微网站制作',ptwo:'布局移动互联网'},
     	],
 
     	titletwo:'创意与创新的桥梁',

@@ -13,7 +13,8 @@ import Contact from '@/components/Contact/Contact.vue'
 import Detail from '@/components/Common/Detail.vue'
 
 
-Vue.use(Router)
+Vue.use(Router);
+
 
 export default new Router({
 	//路由匹配规则
@@ -22,43 +23,69 @@ export default new Router({
   	routes: [
   		{
   			path:'/',
-  			redirect:'/home'
+  			redirect:'/home',
+        meta:{
+          show:false
+        }
   		},
     	{
      	 	path: '/home',
       		name: 'Home',
-      		component: Home
+      		component: Home,
+          meta:{
+          show:false
+        }
     	},
     	{
      	 	path: '/about',
       		name: 'About',
-      		component: About
+      		component: About,
+          meta:{
+          show:true
+        }
     	},
 		{
      	 	path: '/server',
       		name: 'Server',
-      		component: Server
+      		component: Server,
+          meta:{
+          show:true
+        }
     	},
 		  {
      	 	path: '/demo',
       		name: 'Demo',
-      		component: Demo
+      		component: Demo,
+          meta:{
+          show:true
+        }
       	},
       	{
      	 	path: '/news',
       		name: 'News',
-      		component: News
+      		component: News,
+          meta:{
+          show:true
+        }
       	},
       	{
      	 	path: '/contact',
       		name: 'Contact',
-      		component: Contact
+      		component: Contact,
+          meta:{
+          show:true
+        }
       	},
         // 新闻详情
         {
         path: '/news/detail',
           name: 'detail',
-          component: Detail
+          component: Detail,
+          meta:{
+          show:true
+        }
         },
   	]
 })
+
+

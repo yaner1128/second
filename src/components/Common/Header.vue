@@ -1,60 +1,69 @@
 <template>
- <el-container  @mousewheel='enter'>
+  <el-container @mousewheel='enter'>
     <el-header height = '0px' >
-        <div class="header" :class='{bgs:nobgc}'>
-            <!--导航栏logo -->
-            <div class="nav-left">
-                <img src="../../../src/assets/logo.png" height="44" width="189" alt="">
-            </div>
-                <!-- 导航栏右侧标题 -->
-            <div class="nav-right" v-if='isshow'>
-                <ul>
-                   <li v-for='(list,index) in Headerlist' :key='list.id' @click='bgcAdd(index)' :class="{ active:index==current}" >
-                     <!-- a标签不进行跳转，应该使用router-link --> 
-                     <router-link :to='{name:list.name}' >{{list.title}}</router-link>
-                    </li>
-                </ul>
-            </div>
-            <!-- 小图标 -->
-            <div v-if='!isshow' class="small">
-              <span class="iconfont" @click='open'>&#xe64a;</span>
-            </div>
-            <!-- 小图标展开的 -->
-            <div class="bigPage" v-if='isopen'>
-              <span class="tuichu" @click='close'>X</span>
-              <ul>
-                <li v-for='(list,index) in Headerlist' @click='close(index)' >
-                  <router-link :to='{name:list.name}' class='lis'>{{list.title}}</router-link>
-                </li>
-              </ul>
-            </div>
+      <div class="header" :class='{bgs:nobgc}'>
+        <!--导航栏logo -->
+        <div class="nav-left">
+          <img src="../../../src/assets/logo.png" height="44" width="189" alt="">
         </div>
-      </el-header>
-    </el-container>
+        <div v-if="isindex">
+              <!-- 是首页 -->
+          <div class="nav-right" v-if='isshow'>
+            <ul>
+              <li v-for='(list,index) in Headerlist' :key='list.id' @click='bgcAdd(index)' :class="{ active:index==current}" >
+                <router-link :to='{name:list.name}'>{{list.title}}</router-link>
+              </li>
+            </ul>
+          </div>
+             <!-- 小图标 -->
+          <div v-else class="small">
+            <span class="iconfont" @click='open'>&#xe63b;</span>
+          </div>
+                    <!-- 小图标展开的 -->
+          <div class="bigPage" v-if='isopen'>
+            <span class="tuichu" @click='close'>X</span>
+            <ul>
+              <li v-for='(list,index) in Headerlist' @click='close(index)' >
+                <router-link :to='{name:list.name}' class='lis'>{{list.title}}</router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div v-else>
+          <div class="nav-right">
+            <ul>
+              <li v-for='(list,index) in Headerlist' :key='list.id' @click='bgcAdd(index)' :class="{ active:index==current}" >
+                <router-link :to='{name:list.name}'>{{list.title}}</router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </el-header>
+  </el-container>
 </template>
 
 <script>
 export default {
-
   name: 'Header',
-
   data() {
     return {
       isshow:false,
+      ishome:true,
+      scroll:0,
       isopen:false,
       nobgc:true,
       isclose:false,
       current:0,
       Headerlist:[
-        {id:'1',name:'Home',title:'首页'},
-        {id:'2',name:'About',title:'关于我们'},
-        {id:'3',name:'Server',title:'服务项目'},
-        {id:'4',name:'Demo',title:'案例展示'},
-        {id:'5',name:'News',title:'新闻动态'},
-        {id:'6',name:'Contact',title:'联系我们'}
+        {id:1,name:'Home',title:'首页'},
+        {id:2,name:'About',title:'关于我们'},
+        {id:3,name:'Server',title:'服务项目'},
+        {id:4,name:'Demo',title:'案例展示'},
+        {id:5,name:'News',title:'新闻动态'},
+        {id:6,name:'Contact',title:'联系我们'}
       ],
-      heng:0,
-      hengTop:0,
     };
   },
 
@@ -65,34 +74,57 @@ export default {
     handleScroll(){
       // 页面滚动距顶部距离
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-      var scroll = scrollTop - this.i;
+      this.scroll = scrollTop - this.i;
         this.i = scrollTop;
-        this.heng=scroll;
-        this.hengTop=scrollTop;
-        console.log(this.heng);
-              if(scroll>=0){
-                  this.isshow=true;
-                  this.nobgc=false;
-              }else if(scrollTop==0){
-                this.isshow=false;
-                this.nobgc=true;
-              }
+        if(this.isindex==true){
+          if(this.scroll>=0){
+              this.isshow=true;
+              this.nobgc=false
+            }else if(scrollTop==0){
+              this.isshow=false;
+              this.nobgc=true;
+            }
+        }       
    },
     bgcAdd(index){
       this.current=index;
     },
     enter(){
-      console.log(this.isshow);
       this.isshow=true;
-      console.log(this.isshow);
     },
     open(){
       this.isopen=true;
     },
-    close(){
-      this.isopen=false;
+    close(val){
+      if (val!=0){
+          this.nobgc=false
+      }
+      else{
+        this.nobgc=true
+      }
+        this.current=val;
+        this.isopen=false;
     }
   },
+  computed:{
+    isindex(){
+      console.log(this.$store.state.isindex);
+      this.ishome=this.$store.state.isindex;
+      if (this.ishome && this.scroll==0) {
+          this.nobgc=true;
+      }
+      else{
+        this.nobgc=false;
+      }
+       for(let i=0;i<5;i++){
+        if(this.Headerlist[i].name==this.$store.state.isname){
+            console.log(this.Headerlist[i].id);
+            this.current=this.Headerlist[i].id-1;
+        }
+      }
+      return this.$store.state.isindex
+    }
+  }
 };
 </script>
 
@@ -168,7 +200,7 @@ color: rgba(218,218,218,.92);
    color: #fff;
 }*/
 .small span{
-  font-size: 50px;
+  font-size: 40px;
   float: right;
   color:rgb(227,91,91);
   padding-right: 6%;

@@ -8,6 +8,7 @@
 	            <div class="circleProgress leftcircle" :class='{lstart:isstart}'></div>
 	        </div>
 	 	</div>
+    <span class="iconfont icons" v-html='item.icon'></span>
 	 	<div class="FiveTitle" :class="{Fivecolors:isstart}">{{item.title}}</div>
 	 	<br>
 	 	<div :class='{FiveText:isstart}' v-show='isstart'>
@@ -46,6 +47,14 @@ export default {
 	width: 220px;
 	height: 300px;
 	text-align: center;
+  position: relative;
+}
+.icons{
+        position: absolute;
+    top: 70px;
+    left: 66px;
+    font-size: 90px;
+    color: rgb(47,208,181);
 }
 .FiveTitle{
 	font-size: 18px;
@@ -65,7 +74,7 @@ export default {
     height: 200px;
     margin: 5px auto;
     position: relative;
-    background: url(../../assets/1111.jpg) no-repeat;
+/*    background: url(../../assets/1111.jpg) no-repeat;*/
 }
 .wrapper{
     width: 100px;
