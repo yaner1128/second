@@ -32,40 +32,40 @@ export default {
 	    	},
 	    	{
 	    		id:2,
-	    		txt1:'人性化',
-	    		txt2:'通过色彩处理、主图创意、布局创新、版块合理规划等方式,使网站平台更利于客户浏览.',
-	    		imgSrc:require('../../../static/images/service_(1).png')
+	    		txt1:'交互性',
+	    		txt2:'建立异步沟通系统（帮助中心、留言板、问题解答…）方便客户与网站之间',
+	    		imgSrc:require('../../../static/images/service_(2).png')
 	    		
 
 	    	},
 	    	{
 	    		id:3,
-	    		txt1:'人性化',
-	    		txt2:'通过色彩处理、主图创意、布局创新、版块合理规划等方式,使网站平台更利于客户浏览.',
-	    		imgSrc:require('../../../static/images/service_(1).png')
+	    		txt1:'逻辑性',
+	    		txt2:'整体网站策划流程符合客户心理，且在充分分析客户行业特征的基础上，建立网站内部功能',
+	    		imgSrc:require('../../../static/images/service_(3).png')
 	    		
 
 	    	},
 	    	{
 	    		id:4,
-	    		txt1:'人性化',
-	    		txt2:'通过色彩处理、主图创意、布局创新、版块合理规划等方式,使网站平台更利于客户浏览.',
-	    		imgSrc:require('../../../static/images/service_(1).png')
+	    		txt1:'营销性',
+	    		txt2:'整合用户体验式浏览以及营销推广功能，从客户访问到咨询产生形成高转化率',
+	    		imgSrc:require('../../../static/images/service_(4).png')
 	    		
 
 	    	},
 	    	{
 	    		id:5,
-	    		txt1:'人性化',
-	    		txt2:'通过色彩处理、主图创意、布局创新、版块合理规划等方式,使网站平台更利于客户浏览.',
-	    		imgSrc:require('../../../static/images/service_(1).png')
+	    		txt1:'控制性',
+	    		txt2:'网站各栏目及分类清晰，便于统计客户访问页面深度、停留时间、产品或服务关注度、点击...',
+	    		imgSrc:require('../../../static/images/service_(5).png')
 	    		
 	    	},
 	    	{
 	    		id:6,
-	    		txt1:'人性化',
-	    		txt2:'通过色彩处理、主图创意、布局创新、版块合理规划等方式,使网站平台更利于客户浏览.',
-	    		imgSrc:require('../../../static/images/service_(1).png')
+	    		txt1:'界面友好性',
+	    		txt2:'心理学表明，适合的界面对于客户点击欲望的提升和印象指数的提升效果明显，网站界面是...',
+	    		imgSrc:require('../../../static/images/service_(6).png')
 	    		
 
 	    	}
@@ -82,6 +82,8 @@ export default {
 	clear: both;
 	display: block;
 }
+
+
 	.outer-six{
 		width: 100%;
 	}
@@ -115,7 +117,7 @@ export default {
 
 	}
 	.content .text{
-		background-color: #808080;
+		background-color: #666;
 		color: #fff;
 		padding: 15px;
 		width: 90.5%;
@@ -130,6 +132,9 @@ export default {
 	.text p{
 		width: 100%;
 		text-align:center;
-		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
 	}
 </style>

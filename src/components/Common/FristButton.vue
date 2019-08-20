@@ -1,6 +1,6 @@
 <template>
 	<div class="Fristbutton">
-		全部
+		{{firstBtns.text}}
 	</div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
 
     };
   },
+  props:["firstBtns"]
 };
 </script>
 
@@ -27,10 +28,9 @@ export default {
     font-size: 16px;
     border-radius: 50px;
     text-align: center;
-    margin-right: 50px;
-    border: 1px solid #e35b5b;
+    border: 1px solid rgb(277,91,91);
     transition: all 0.4s ease;
-    color: #e35b5b;
+    color: rgb(277,91,91);
     float: left;
 }
 </style>

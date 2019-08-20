@@ -54,10 +54,10 @@ Vue.component('my-SixAnimation',SixAnimation);
 //引入新闻组件一
 import FristNew from '@/components/Common/FristNew.vue' 
 Vue.component('my-FristNew',FristNew);
-
 // 引入新闻组件二
 import SecondNew from '@/components/Common/SecondNew.vue' 
 Vue.component('my-SecondNew',SecondNew);
+
 
 
 //按钮组件FristButton

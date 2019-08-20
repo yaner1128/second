@@ -10,6 +10,8 @@ import Demo from '@/components/Demo/Demo.vue'
 import News from '@/components/News/News.vue'
 import Contact from '@/components/Contact/Contact.vue'
 
+import Detail from '@/components/Common/Detail.vue'
+
 
 Vue.use(Router)
 
@@ -51,6 +53,12 @@ export default new Router({
      	 	path: '/contact',
       		name: 'Contact',
       		component: Contact
-      	}
+      	},
+        // 新闻详情
+        {
+        path: '/news/detail',
+          name: 'detail',
+          component: Detail
+        },
   	]
 })

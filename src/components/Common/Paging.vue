@@ -92,6 +92,9 @@ export default {
 };
 </script>
 <style lang="css" scoped>
+#onepage{
+  background-color: rgb(227,91,91);
+}
 .pagingBody{
 	width: 100%;
 	height: 30px;	

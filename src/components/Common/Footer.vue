@@ -5,8 +5,11 @@
 			<div class="topContainer">
 				<h2>立即开始您的互联网营销之旅</h2>
 				<div class="footContact">
-					<input class="telInput" type="text" name="" placeholder="输入手机号码，立即免费通话" >
-					<span class="iconfont">&#xe680;</span>
+					<input class="telInput" type="text" placeholder="您的称呼">
+					<span class="iconfont icon1">&#xe60c;</span>
+					<input class="telInput tel" type="text" name="" placeholder="输入手机号码，立即免费通话" >
+					<span class="iconfont icon2">&#xe680;</span>
+					<br>
 					<input class="telbtn" type="submit" name="" value="免费通话">
 				</div>
 				<h4>可获得免费提供建站方案或免费网站诊断服务</h4>
@@ -77,48 +80,61 @@ export default {
 	width: 100%;
 	background: url(../../assets/95e6d590-4d56-4e29-ae22-4114ad323b9d.jpg) no-repeat;
 	background-size:100%;
-	height: 200px;
+	height: 250px;
 	padding: 50px 0;
 	text-align: center;
 }
 .footTop .topContainer{
-	width: 470px;
+	width: 380px;
 	margin:0 auto;
-	padding-top: 30px;
+	padding-top: 10px;
 	position: relative;
 }
 .footContact{
-	width: 450px;
-	height: 40px;
+	width: 360px;
+	height: 140px;
 	margin:20px 0;
-	background-color: #e61d13;
+/*	background-color: #e61d13;*/
 	padding: 10px 10px;
 }
-.footContact>span{
+.footContact>.icon1{
+	position: absolute;
+	font-size: 28px;
+	top: 72px;
+	left: 20px;
+	color: orangered;
+}
+.footContact>.icon2{
 	/*float: left;*/
 	position: absolute;
 	font-size: 28px;
-	top: 92px;
-	left: 24px;
+	top: 122px;
+	left: 22px;
 	color: orangered;
 }
 .footContact .telInput{
 	height: 40px;
-	width: 310px;
+	width: 300px;
 	border: none;
 	border-radius: 8px;
-	padding: 0 10px 0 30px;
+	padding: 0 10px 0 40px;
 }
-.telbtn{
-	width: 70px;
+.tel{
+	margin: 10px 0;
+}
+.footContact .telbtn{
+	width: 350px;
 	height: 40px;
 	border: none;
 	border-radius: 8px;
 	background-color: #fff;
-	margin-left: 5px;
-	color: #e61d13;
+	/*margin-left: 5px;*/
+	color:orangered;
 	font-size: 14px;
 	font-weight: bold;
+	position: absolute;
+	top: 167px;
+    left: 11.5px;
 }
 
 

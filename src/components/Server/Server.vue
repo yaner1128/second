@@ -10,7 +10,7 @@
 		<!-- 动画组件五 -->
 		<div class="FiveAni">
 			<ul>
-				<li v-for='item in FiveList' :key='id'>
+				<li v-for='item in FiveList'>
 					<my-FiveAnimation :item='item' />
 				</li>
 			</ul>
@@ -30,8 +30,6 @@
 			</ul>
 		</div>
 
-
-		<div class="tt"></div>
 		<!-- 文字组件一 -->
 		<div class="twotext">
 			<my-FristText :title='titlethree' :text='textthree'/>
@@ -44,6 +42,11 @@
 					<my-ThirdAnimation :thirdAnimation='thirdAnimation'/>
 				</li>
 			</ul>
+		</div>
+
+		<!-- 脚部组件 -->
+		<div>
+			<Footer />
 		</div>
 	</div>
 </template>
@@ -83,11 +86,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.tt{
-	height: 500px;
-	width: 100%;
-	background-color: pink;
-}
 
 .FiveAni{
 	width: 100%;
