@@ -224,13 +224,13 @@ export default {
 .left button:hover{
   background-color:rgb(210,80,80);
   color: #FFF ;
-}
+} 
 .left{
 	float: left;
 
   width:400px;
   height:500px;
-	animation: bounceInLeft 2s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+	animation: bounceInLeft 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
 }
 @keyframes bounceInLeft {
   0% {
@@ -264,7 +264,7 @@ export default {
   }
   60% {
     opacity: 1;
-    transform: translate3d(1300px, 0, 0);
+    transform: translate3d(1500px, 0, 0);
   }
   75% {
     transform: translate3d(800px, 0, 0);
@@ -285,14 +285,14 @@ export default {
 	bottom:0%;
 	right: 66%;
 	width: 26%;
-	animation: bounceInRight 0.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+	animation: bounceInRight 0.8s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
 }
 .bimg{
 	position: absolute;
 	bottom:0%;
 	right: 36%;
 	width: 58%;
-	animation: bounceInRight 1.2s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+	animation: bounceInRight 1.8s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
 
 }
 .cimg{
@@ -300,7 +300,7 @@ export default {
 	bottom:0%;
 	right: 0%;
 	width: 72%;
-	animation: bounceInRight 2s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+	animation: bounceInRight 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
 
 }
 .fristAniouter{

@@ -8,8 +8,7 @@
 				<!-- 大标题 -->
 			<div class="title">
 				<h1>2018”湖湘杯”网络安全技能大赛</h1>
-				<span class="iconfont nextdemo" title="简码网络公司">></span>
-				<span class="iconfont alldemo">&#xe684;</span>
+				
 				
 			</div>
 			<div class="interactive">
@@ -44,26 +43,43 @@
 			
 			<!-- 了解更多，预约 -->
 			<div class="learnmore">
-				<div class="moretitle">
-					<span>网站类型：品牌型网站</span>
-					<span>所属行业： 政务及事业单位</span>
-					<button>我要报价</button>
-					<button>了解产品</button>
-					<button>直接浏览网站</button>
+				<div class="demos">
+					<span class="iconfont nextdemo" title="简码网络公司">></span>
+					<span class="iconfont alldemo">&#xe684;</span>
 				</div>
-				<div class="consult">
-					<ul class="consulting">
-						<li>
-							<div class="iconfont">&#xe60d;</div>
-							<span>预约专家<!-- 在线咨询 免费电话 --></span>
-						</li>
-					</ul>
+				<div class="moredetail">
+					<div class="moretitle">
+						<span>网站类型：品牌型网站</span><br><br>
+						<span>所属行业： 政务及事业单位</span><br>
+						<button>我要报价</button>
+						<button>了解产品</button><br>
+						<button class="surfing">直接浏览网站</button>
+					</div>
+					<div class="consult">
+						<ul class="consulting">
+							<li>
+								<div class="iconfont">&#xe60d;</div>
+								<span>预约专家</span>
+							</li>
+							<li>
+								<div class="iconfont icontwo">&#xe75f;</div>
+								<span>在线咨询</span>
+							</li>
+							<li>
+								<div class="iconfont iconthree">&#xe680;</div>
+								<span>免费电话</span>
+							</li>
+						</ul>
+					</div>
+					<div class="share">
+						分享到 :<i class="iconfont">&#xe604;&#xe652;&#xe6f5;</i>
+					</div>
 				</div>
-				<div class="share">
-					分享到 :<i class="iconfont">&#xe604;&#xe652;&#xe6f5;</i>
-				</div>
+				
 			</div>
 		</div>
+		 <!-- 脚部 -->
+  <Footer />
 	</div>
 	
 </template>
@@ -82,7 +98,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
+.container{
+	margin-bottom: 5%;
+}
 
 .detailleft{
 	display:inline-block;
@@ -92,7 +110,9 @@ export default {
 	display: inline-block;
 	font-size: 35px;
 }
-.title span{
+
+
+.demos span{
 	float: right;
 	font-size: 28px;
 	width:38px;
@@ -105,12 +125,12 @@ export default {
 	margin-top: 5px;
 	margin-left: 10px;
 }
-.title .nextdemo:hover{
+.demos .nextdemo:hover{
 	color: rgb(227,91,91);
 	border-color: rgb(227,91,91);
 	cursor: pointer;
 }
-.title .alldemo:hover{
+.demos .alldemo:hover{
 	color: rgb(227,91,91);
 	border-color: rgb(227,91,91);
 	cursor: pointer;
@@ -144,6 +164,85 @@ export default {
 }
 .learnmore{
 	width:28%;
+	height: 400px;
 	float: right;
+
+}
+.learnmore .moredetail{
+	margin-top: 150px;
+	border: 1.5px solid rgb(227,91,91);
+	border-radius: 10px;
+}
+.learnmore .moredetail .moretitle{
+	padding: 15px;
+
+}
+.learnmore .moredetail .moretitle span{
+	font-size: 18px;
+}
+.learnmore .moredetail .moretitle button{
+  width: 130px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color:rgb(227,91,91) ;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 15px;
+  margin-top: 10%;
+  margin-left:2% ;
+  margin-right: 2%;
+}
+.moretitle button:hover{
+  background-color:rgb(210,80,80);
+  color: #FFF ;
+}
+.learnmore .moredetail .moretitle .surfing{
+	width:92%;
+	font-weight: 550;
+	background-color: #FFF;
+  	color: rgb(227,91,91);
+  	border: 2px solid rgb(227,91,91);
+}
+.consult .consulting li {
+	display: inline-block;
+	padding:15px;
+}
+.consult .consulting li span{
+	font-size: 16px;
+	margin-left: 3px;
+}
+.consult .consulting li .iconfont{
+	/*border:1px solid #6C8EAC;*/
+	width:70px;
+	height: 70px;
+	line-height: 70px;
+	background-color: #6C8EAC;
+	border-radius: 35px;
+	color:#fff;
+	font-size: 38px;
+	text-align: center;
+	cursor: pointer;
+	border:2px solid #fff;
+}
+.consult .consulting li .iconfont:hover{
+	border:2px solid #DECDCD ;
+}
+.consult .consulting li .icontwo{
+	background-color:#CBCF7C ;
+	
+}
+.consult .consulting li .iconthree{
+	background-color: #67CE9B;
+	
+}
+.share{
+	padding:15px;
+	font-size: 17px;
+}
+.share .iconfont{
+	font-size: 20px;
 }
 </style>

@@ -11,7 +11,7 @@
             	<p class="textp2"><span class="myAnimate bounceInDown delay0s">{{item.txt}}</span></p>
             	<p class="textp" v-html="item.txt2"></p>
             	<img src="../../../static/images/mouse.png" style="width:41px;position:absolute;left:48%;top:55%">
-       		 </div>
+      </div>
 		</div>
 		
     </div>
@@ -87,7 +87,7 @@ export default {
 .el-carousel-item img{
 	position: absolute;
 	top:0;
-
+  
 	background-repeat:no-repeat; 
 	background-size:100% 100%;
 	-moz-background-size:100% 100%;	
@@ -117,6 +117,7 @@ export default {
 	position: absolute;
 	top:38%;
 	left:44%;
+  float: left;
     text-align: center;
     font-weight: 700;
     font-size:38px;
@@ -124,11 +125,61 @@ export default {
 }
 .italictext .textp{
 	position: absolute;
+  float: left;
 	top:46%;
 	left:39.5%;
     text-align: center;
 	font-size:16px ;
 
+}
+.italictext .textp,.textp2{
+ /* float: left;*/
+
+  /*width:400px;
+  height:500px;*/
+  animation: bounceInBelow 2.4s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+}
+@keyframes bounceInBelow {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0,25px , 0);
+  }
+  75% {
+    transform: translate3d(0,10px , 0);
+  }
+  90% {
+    transform: translate3d(0,5px , 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+.italictext img{
+  float: left;
+  animation: bounceIn 4s 4  cubic-bezier(0.215, 0.355, 0.610, 1.000);
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,390px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0,350px , 0);
+  }
+  75% {
+    transform: translate3d(0,55% , 0);
+  }
+  90% {
+    transform: translate3d(0,350px , 0);
+  }
+  100% {
+    transform: translate3d(0,55% , 0);
+  }
 }
 .myAnimate{
 	animation-duration: 2s;
