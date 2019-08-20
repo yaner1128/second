@@ -1,7 +1,7 @@
 <template>
- <el-container>
+ <el-container v-show="this.$route.meta.show">
     <el-header height = '0px' >
-        <div class="header">
+        <div class="header" >
             <!--导航栏logo -->
             <div class="nav-left">
                 <img src="../../../static/images/logo_ecodenet.png" height="44" width="189" alt="">
@@ -11,7 +11,7 @@
                 <ul>
                    <li v-for='(list,index) in Headerlist' :key='list.id'>
                      <!-- a标签不进行跳转，应该使用router-link --> 
-                     <router-link :to='{name:list.name}'>{{list.title}}</router-link>
+                     <router-link :to='{name:list.name}' exact>{{list.title}}</router-link>
                     </li>
                 </ul>
             </div>
@@ -36,8 +36,32 @@ export default {
         {id:'5',name:'News',title:'新闻动态'},
         {id:'6',name:'Contact',title:'联系我们'}
       ],
+      scrolls:true
     };
   },
+    mounted () {
+    window.addEventListener('scroll', this.handleScroll, true);  // 监听（绑定）滚轮 滚动事件
+  },
+  methods:{
+    handleScroll(){
+      // 页面滚动距顶部距离
+    var scrollTop=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop
+    var scroll=scrollTop-this.i;
+    this.i = scrollTop;
+    if(scroll>=0){      
+     console.log(this.$route.meta.show); 
+       this.$route.meta.show=true;
+       
+    }else if(scrollTop==0){
+      
+      this.$route.meta.show=false;
+     // console.log(222); 
+
+
+      }
+    }
+  },
+  
 };
 </script>
 

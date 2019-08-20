@@ -160,7 +160,7 @@ export default {
 }
 .italictext img{
   float: left;
-  animation: bounceIn 4s 4  cubic-bezier(0.215, 0.355, 0.610, 1.000);
+  animation: bounceIn 3s 2  cubic-bezier(0.215, 0.355, 0.610, 1.000);
 }
 @keyframes bounceIn {
   0% {

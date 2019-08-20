@@ -16,12 +16,7 @@ import '../static/global/global.css'
 // 引入icon图标
 import './fonts.css'
 import '../static/global/animate.css'
-// 引用百度地图API
-// import BaiduMap from 'vue-baidu-map'
-// Vue.use(BaiduMap, {
-  /* Visit http://lbsyun.baidu.com/apiconsole/key for details about app key. */
-  // ak: 'frIK1cWlgoaUS5Qf0QDvKB6iujyjzxv8'
-// })
+
 
 // // vue-awesome-swiper导入
 // import VueAwesomeSwiper from 'vue-awesome-swiper'
@@ -99,4 +94,13 @@ new Vue({
   	App
   },
   template: '<App/>'
+})
+
+
+router.beforeEach((to, from, next) => {
+
+    if(to.meta.title) {
+        document.title = to.meta.title
+    }
+    next();
 })
