@@ -41,7 +41,7 @@ export default {
    -moz-box-shadow: 1px 1px 2px #e6e6e6;
    box-shadow: 1px 1px 2px #e6e6e6;
    cursor: default;
-   background: #fff url(../../assets/1.jpg) no-repeat center center;
+   background: #fff url(../../assets/about_td.png) no-repeat center center;
 }
 .view .mask,.view .content {
    width: 300px;

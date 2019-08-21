@@ -30,7 +30,7 @@ export default {
 
 <style lang="css" scoped>
 .FristNews{
-	
+	cursor: pointer;
 	width: 550px;
 	height: 90px;
 	padding: 10px;
@@ -39,7 +39,7 @@ export default {
 	box-shadow: 3px 3px 10px  10px rgba(180,180,180,0.5);
 }
 .FristNews:hover .Newstitle{
-	color: rgb(227,91,91);
+	color: rgb(60,111,160);
 }
 .FristNews .Fdata{
 	float: left;
@@ -56,9 +56,10 @@ export default {
 	font-size: 16px;
 	margin-top: 10px;
 }
-.Fdays{
+.FristNews .Fdata .Fdays{
 	margin-top: 5px;
 	font-size: 36px;
+	color: rgb(60,111,160);
 }
 
 .FristNews .Fnews{

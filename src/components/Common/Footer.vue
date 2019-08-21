@@ -102,7 +102,7 @@ export default {
 	font-size: 28px;
 	top: 72px;
 	left: 20px;
-	color: orangered;
+	color: rgb(60,111,160);
 }
 .footContact>.icon2{
 	/*float: left;*/
@@ -110,7 +110,7 @@ export default {
 	font-size: 28px;
 	top: 122px;
 	left: 22px;
-	color: orangered;
+	color: rgb(60,111,160);
 }
 .footContact .telInput{
 	height: 40px;
@@ -129,7 +129,7 @@ export default {
 	border-radius: 8px;
 	background-color: #fff;
 	/*margin-left: 5px;*/
-	color:orangered;
+	color:rgb(60,111,160);
 	font-size: 14px;
 	font-weight: bold;
 	position: absolute;

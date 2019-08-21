@@ -16,6 +16,7 @@
             </ul>
           </div>
              <!-- 小图标 -->
+
           <div v-else class="small" v-show='isnone'>
             <span class="iconfont" @click='open' >&#xe63b;</span>
           </div>
@@ -126,7 +127,6 @@ export default {
         this.isopen=false;
         this.isnone=true;
         this.issmall=false;
-
         event.stopPropagation();
     }
   },
@@ -159,7 +159,9 @@ export default {
 <style lang="css" scoped>
 .active{
   /*background-color: orangered;*/
- border-bottom: 2px solid #28cc9E;
+
+ border-bottom: 2px solid #89B3FC;
+
   /*color: #fff;*/
 }
 .el-header{
@@ -171,7 +173,7 @@ export default {
 .header{
   float: left;
   z-index: 100;
-  background-color: rgba(49,49,49,.55);
+  background-color: rgba(60,60,60,.35);
 
  font-size: 14px;
  font-weight: bold;
@@ -237,8 +239,8 @@ color: rgba(218,218,218,.92);
 .small span{
   font-size: 40px;
   float: right;
-  color:rgb(227,91,91);
-      padding-right: 75px;
+  padding-right: 75px;
+  color:rgb(80,131,180);
   cursor: pointer;
 }
 .bigPage{
@@ -255,13 +257,13 @@ color: rgba(218,218,218,.92);
   margin: 25px 0;
 }
 .bigPage ul li .lis{
-  color: rgb(227,91,91);
   width: 100%;
+  color: rgb(80,131,180);
 }
 .tuichu{
     position: absolute;
     font-size: 50px;
-    color: rgb(227,91,91);
+    color: rgb(80,131,180);
     top: 0;
     right: 75px;
     cursor: pointer;

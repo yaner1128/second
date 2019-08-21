@@ -78,7 +78,6 @@ export default {
 
 <style lang="css" scoped>
 .container{
-	/*position: relative;*/
 	perspective: 1000;
 	transform-style: preserve-3d;
 	height: 305px;
@@ -87,30 +86,31 @@ export default {
 .outer{
 	width:100%;
 	height: 100%;
-/*	background-color: red;*/
-
 }
 .lii{
 	width: 265px;
 	height: 100%;
 	display: inline-block;
-	padding: 0 15px;
-/*	background-color: green;*/
+	margin: 0 15px;
+	border-radius: 20px;
+	overflow: hidden;
+}
+.four .fourimg img{
+	-webkit-transition: all 0.4s ease-in-out 0.2s;
+   -moz-transition: all 0.4s ease-in-out 0.2s;
+   -o-transition: all 0.4s ease-in-out 0.2s;
+   -ms-transition: all 0.4s ease-in-out 0.2s;
+   transition: all 0.4s ease-in-out 0.2s;
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=100);
+   opacity: 1;
+}
 
-}
-.four{
-	transition:all 1s;
-    transform-style: preserve-3d;
-	position: relative;
-	/*margin-right: 20px;*/
-	
-	/*display:inline-block;*/
-	
-}
 .fourimg img{
 	width: 265px;
 	height: 305px;
-	
+	border-radius: 20px;
+	overflow: hidden;
 }
 .fourimg img{
 	backface-visibility: hidden;
@@ -118,18 +118,22 @@ export default {
 	transition: all 1s;
 	transform-style: preserve-3d;
 }
+.four:hover img{
+	 -webkit-transform: scale(0);
+   -moz-transform: scale(0);
+   -o-transform: scale(0);
+   -ms-transform: scale(0);
+   transform: scale(0);
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transition-delay: 0s;
+   -moz-transition-delay: 0s;
+   -o-transition-delay: 0s;
+   -ms-transition-delay: 0s;
+   transition-delay: 0s;
+}
 
-.four:hover .fourimg img{
-	/*transform: scale(1,-1);*/
-	transform:rotate3d(1,1,0,180deg);
-}
-.four:hover .fourcode{
-	/*transform:rotate3d(1,1,0,90deg);*/
-	/*transform: rotateY(-180deg);*/
-}
-.fourimg img{
-	z-index: 4;
-}
 .fourcode{
 	width: 265px;
 	height:305px;
@@ -137,44 +141,72 @@ export default {
 	color: #fff;
 	padding:0px;
 }
-.fourcode .text{
-	/*-webkit-background-clip: text;*/
-    /*display: none;*/
-	/*opacity: 0;      事先规定文字的状态是不显示的*/
-    /*animation: fade-in 1s ease 0s 1;*/
+.four .fourcode{
+	background-color: #697C8F;
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transform: scale(0) rotate(-180deg);
+   -moz-transform: scale(0) rotate(-180deg);
+   -o-transform: scale(0) rotate(-180deg);
+   -ms-transform: scale(0) rotate(-180deg);
+   transform: scale(0) rotate(-180deg);
+   -webkit-transition: all 0.4s ease-in;
+   -moz-transition: all 0.4s ease-in;
+   -o-transition: all 0.4s ease-in;
+   -ms-transition: all 0.4s ease-in;
+   transition: all 0.4s ease-in;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
 }
-/*.active{
-	-webkit-background-clip: text;
-	-webkit-animation: shinetext 1s 0s ease-in-out;
-    -webkit-animation-fill-mode: forwards;
-	color: #fff;
-}*/
-
-/*@-webkit-keyframes shinetext{
-	 0% {
-        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
-        color: #fff;
-        -webkit-background-clip: text;
-    }
-     35% {
-        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
-        color:  #fff;
-        -webkit-background-clip: text;
-    }
-	 77% {
-        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0) 100%);
-        color:  #fff;
-        -webkit-background-clip: text;
-    }
-	 100% {
-        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0) 100%);
-        color:  #fff;
-        -webkit-background-clip: text;
-    }
-
-
-
-}*/
+.four:hover .fourcode{
+	-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=100);
+   opacity: 1;
+   -webkit-transform: scale(1) rotate(0deg);
+   -moz-transform: scale(1) rotate(0deg);
+   -o-transform: scale(1) rotate(0deg);
+   -ms-transform: scale(1) rotate(0deg);
+   transform: scale(1) rotate(0deg);
+   -webkit-transition-delay: 0.2s;
+   -moz-transition-delay: 0.2s;
+   -o-transition-delay: 0.2s;
+   -ms-transition-delay: 0.2s;
+   transition-delay: 0.2s;
+}
+.four .fourcode .iconfont{
+	-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   background: transparent;
+/*   margin: 20px 40px 0px 40px;*/
+   -webkit-transition: all 0.5s ease-in-out;
+   -moz-transition: all 0.5s ease-in-out;
+   -o-transition: all 0.5s ease-in-out;
+   -ms-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+}
+.four .fourcode span,.fourcode p{
+	-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transition: all 0.5s ease-in-out;
+   -moz-transition: all 0.5s ease-in-out;
+   -o-transition: all 0.5s ease-in-out;
+   -ms-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+}
+.four:hover .iconfont,.four:hover span,.four:hover p{
+	-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=100);
+   opacity: 1;
+   -webkit-transition-delay: 0.5s;
+   -moz-transition-delay: 0.5s;
+   -o-transition-delay: 0.5s;
+   -ms-transition-delay: 0.5s;
+   transition-delay: 0.5s;
+}
 .iconfont,span{
 	display: block;
 	
@@ -184,6 +216,7 @@ export default {
 	width: inherit;
 	text-align: center;
 }
+
 .fourcode span{
 	font-size: 25px;
 	width: inherit;
