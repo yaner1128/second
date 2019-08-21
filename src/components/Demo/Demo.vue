@@ -12,11 +12,11 @@
 		
 	</div>
 	<!-- 动画组件二 -->
-	<div class="container">
+	<div class="containers">
 		<div class="secAni">
 	      <ul>
 	        <li v-for="subItem in functionList" class="secAniLi" @click='detailHandler'>
-	           <my-SecondAnimation :subItem='subItem'/>
+	           <my-lastAnimation :subItem='subItem' />
 	        </li>
 	      </ul>
 		</div>
@@ -124,5 +124,15 @@ export default {
 .paging{
 	margin-top: 4%;
 	margin-bottom: 8%;
+}
+.containers{
+  width: 100%;
+}
+.secAni{
+  width: 88%;
+  margin: 0 auto;
+}
+.secAni ul li{
+  padding: 0 27px;
 }
 </style>

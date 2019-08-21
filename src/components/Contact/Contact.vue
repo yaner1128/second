@@ -19,16 +19,16 @@
 			<div class="detail">
 				<h3>株洲简码网络科技有限公司</h3>
 				<strong>全国服务热线：</strong><span>13048837699</span>
-				<p>有一个品牌项目想和我们谈谈吗?让我们了解您的项目需求，这是一个良好的开始， 我们将会尽快与你取得联系。欢迎您给我们写信或是打电话，让我们听到你的声音!</p>
+				<p class='ppone'>有一个品牌项目想和我们谈谈吗?让我们了解您的项目需求，这是一个良好的开始， 我们将会尽快与你取得联系。欢迎您给我们写信或是打电话，让我们听到你的声音!</p>
 				<ul>
 					<li><img src="../../../static/images/contact_05.png"><br><strong>公司手机站</strong></li>
 					<li><img src="../../../static/images/contact_08.png"><br><strong>公司公众号</strong></li>
 				</ul>
-				<p class="add">
-					地址：湖南省株洲市石峰区南方军民融合大厦<br>
-					电话 ：13048837699<br>
-					邮箱： 273101660@qq.com
-				</p>
+				<div class="add">
+					<p>地址：湖南省株洲市石峰区南方军民融合大厦</p>
+					<p>电话 ：13048837699</p>
+					<p>邮箱： 273101660@qq.com</p>
+				</div>
 			</div>
 			<div class="mapouter">
 				<baidu-map  class="bm-view" style="width: 50%;" ak="frIK1cWlgoaUS5Qf0QDvKB6iujyjzxv8" :center="center" :zoom="zoom" :scroll-wheel-zoom="true"
@@ -135,25 +135,26 @@ export default {
 	width:25%;
 }
 .icons{
-	border:3px solid rgb(227,91,91);
+	border:3px solid rgb(31,49,93);
 	border-radius: 13px;
 	width:100px;
 	height: 100px;
 	font-size: 40px;
 	text-align: center;
 	line-height: 100px;
-	color: rgb(227,91,91);
+	color: rgb(31,49,93);
 	margin:10% 32%;
 }
 .icons:hover{
 	color:  #fff;
-	background-color:rgb(227,91,91);
+	background-color:rgb(31,49,93);
 }
 .textway{
 	font-weight: 550;
 	font-size:15px;
 	width:100%;
 	text-align:center;
+	color:rgb(60,111,160);
 }
 .detail{
 	width:47%;
@@ -162,6 +163,7 @@ export default {
 	font-size: 27px;
 	font-weight: 500;
 	margin:3% 0;
+	font-weight: bold;
 }
 .detail strong{
 	font-size: 16px;
@@ -174,7 +176,7 @@ export default {
 	
 
 }
-.detail p{
+.detail>.ppone{
 	margin:3% 0;
 	color: #969292;
 }
@@ -183,9 +185,13 @@ export default {
 	margin:2% 3%;
 }
 .detail .add{
-	font-size:17px;
-	color: #000;
-	margin:10% 0;
+	font-size:14px;
+	color: rgb(74,74,74);
+	margin-top:5%;
+}
+.detail .add>p{
+	/*display: inline-block;*/
+	margin-bottom: 10px;
 }
 .detailmap{
 	position: relative;

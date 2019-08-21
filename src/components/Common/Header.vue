@@ -16,15 +16,15 @@
             </ul>
           </div>
              <!-- 小图标 -->
-          <div v-else class="small">
-            <span class="iconfont" @click='open'>&#xe63b;</span>
+          <div v-else class="small" v-show='isnone'>
+            <span class="iconfont" @click='open' >&#xe63b;</span>
           </div>
                     <!-- 小图标展开的 -->
           <div class="bigPage" v-if='isopen'>
-            <span class="tuichu" @click='close'>X</span>
+            <span class="iconfont tuichu" @click='close()' v-show='issmall'>&#xe616;</span>
             <ul>
               <li v-for='(list,index) in Headerlist' @click='close(index)' >
-                <router-link :to='{name:list.name}' class='lis'>{{list.title}}</router-link>
+                <router-link :to='{name:list.name}' class='lis' >{{list.title}}</router-link>
               </li>
             </ul>
           </div>
@@ -49,6 +49,8 @@ export default {
   name: 'Header',
   data() {
     return {
+      isnone:true,
+      issmall:false,
       isshow:false,
       ishome:true,
       scroll:0,
@@ -76,39 +78,61 @@ export default {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       this.scroll = scrollTop - this.i;
         this.i = scrollTop;
+        console.log(this.isindex);//为true是首页
         if(this.isindex==true){
-          if(this.scroll>=0){
-              this.isshow=true;
-              this.nobgc=false
-            }else if(scrollTop==0){
-              this.isshow=false;
-              this.nobgc=true;
-            }
-        }       
+            console.log("是首页");
+            if(this.scroll>=0){
+                this.isshow=true;
+                this.nobgc=false
+              }else if(scrollTop==0){
+                this.isshow=false;
+                this.nobgc=true;
+              }else{
+                this.isshow=true;
+                this.nobgc=false;
+              }
+        }else{
+          console.log("不是");
+          this.nobgc=false;
+        }     
+
+        event.stopPropagation(); 
    },
     bgcAdd(index){
       this.current=index;
+      event.stopPropagation();
     },
     enter(){
       this.isshow=true;
+      event.stopPropagation();
     },
     open(){
       this.isopen=true;
+      this.isnone=false;
+      this.issmall=true;
+
+      event.stopPropagation();
     },
     close(val){
-      if (val!=0){
-          this.nobgc=false
+      console.log(val);
+      if (val==0){
+          this.nobgc=true;
+          this.isshow=false;
       }
       else{
-        this.nobgc=true
+        this.nobgc=false;
       }
-        this.current=val;
+        // this.current=val;
         this.isopen=false;
+        this.isnone=true;
+        this.issmall=false;
+
+        event.stopPropagation();
     }
   },
   computed:{
     isindex(){
-      console.log(this.$store.state.isindex);
+      // console.log(this.$store.state.isindex);
       this.ishome=this.$store.state.isindex;
       if (this.ishome && this.scroll==0) {
           this.nobgc=true;
@@ -118,7 +142,11 @@ export default {
       }
        for(let i=0;i<5;i++){
         if(this.Headerlist[i].name==this.$store.state.isname){
-            console.log(this.Headerlist[i].id);
+            console.log(this.$store.state.isname);
+            if(this.$store.state.isname=="Home"){
+              this.nobgc=true;
+              this.isshow=false;
+            }
             this.current=this.Headerlist[i].id-1;
         }
       }
@@ -131,7 +159,7 @@ export default {
 <style lang="css" scoped>
 .active{
   /*background-color: orangered;*/
- border-bottom: 2px solid orangered;
+ border-bottom: 2px solid #28cc9E;
   /*color: #fff;*/
 }
 .el-header{
@@ -199,11 +227,18 @@ color: rgba(218,218,218,.92);
    background-color: orangered;
    color: #fff;
 }*/
+.small{
+      width: 45px;
+    height: 60px;
+    float: right;
+    right: 65px;
+    top: 0;
+}
 .small span{
   font-size: 40px;
   float: right;
   color:rgb(227,91,91);
-  padding-right: 6%;
+      padding-right: 75px;
   cursor: pointer;
 }
 .bigPage{
@@ -221,14 +256,15 @@ color: rgba(218,218,218,.92);
 }
 .bigPage ul li .lis{
   color: rgb(227,91,91);
+  width: 100%;
 }
 .tuichu{
-  position: absolute;
-  font-size: 30px;
-  color: rgb(227,91,91);
-  top: 0;
-  right: 40px;
-  cursor: pointer;
+    position: absolute;
+    font-size: 50px;
+    color: rgb(227,91,91);
+    top: 0;
+    right: 75px;
+    cursor: pointer;
 }
 
 /*@media screen and (max-width: 300px) {

@@ -34,20 +34,22 @@
 
 		</div>
 	</div>
-  <!-- 文字组件一 -->
-    <my-FristText  :title='titleone' :text='textone'/>
-	
-  <!-- 动画组件一 -->
-  <div class="container">
+  
+<div class="oneAni">
+    <!-- 文字组件一 -->
+      <my-FristText  :title='titleone' :text='textone'/>
+    
+    <!-- 动画组件一 -->
+    <div class="container">
     <div class="fristAniouter">
       <ul>
         <li  v-for='fristImg in fristImgs' class="firstAniLi">
           <my-FristAnimation :fristImg='fristImg'/>
         </li>
       </ul>
-      
     </div>
   </div>
+</div>
     
   <!-- 文字组件一 -->
   <my-FristText :title='titletwo' :text='texttwo'/>
@@ -79,7 +81,9 @@
     </div>
   </div>
 <!-- 文字组件一 -->
-  <my-FristText :title='titlethree' :text='textthree'/>
+  <div class="textbgs">
+    <my-FristText :title='titlethree' :text='textthree'/>
+  </div>
 <!-- 动画组件三 -->
 <div class="container">
   <ul>
@@ -117,7 +121,7 @@ export default {
     	
       isActive:false,
       fristImgs:[
-    		{id:1,imgSrc:require('../../assets/turn1.png'),text:'网站/商城系统定制开发',textcolor:'rgb(227,91,91)'},
+    		{id:1,imgSrc:require('../../assets/turn1.png'),text:'网站/商城系统定制开发',textcolor:'#95ADBE'},
     		{id:2,imgSrc:require('../../assets/turn2.png'),text:'交互H5设计开发',textcolor:'rgb(227,91,227)'},
     		{id:3,imgSrc:require('../../assets/turn3.png'),text:'小程序/公众号/Wap设计开发',textcolor:'rgb(74,177,254)'},
     		{id:4,imgSrc:require('../../assets/turn4.png'),text:'APP项目定制开发',textcolor:'rgb(249,158,33)'},
@@ -303,6 +307,24 @@ export default {
 	animation: bounceInRight 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
 
 }
+.textbgs{
+  /*width: 100%;
+    height: auto;
+    margin-top: 50px;
+    background:url(../../assets/bg01.jpg) no-repeat;
+    background-size: 100%;
+    filter:(2px);*/
+}
+
+/*第一个背景*/
+/*.oneAni{
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    background:url(../../assets/bg02.jpg) no-repeat;
+    background-size: 100%;
+    filter:(2px);
+}*/
 .fristAniouter{
   margin-top: 2%;
 }
@@ -315,7 +337,7 @@ export default {
 }
 .imgfixed{
   width: 100%;
-  height: 500px;
+  height: 400px;
   margin-top: 4%;
   background:url("../../../static/images/5b46b68b4b320.jpg") no-repeat fixed ;
   background-size:100% 100%;
@@ -323,16 +345,17 @@ export default {
 }
 .imgcode{
   width:100%;
-  height: 500px;
+  height: 400px;
   background-color: rgba(44,44,44,.3);
   text-align: center;
 }
 .imgcode span{
+  display:inline-block;
   text-align: center;
-  height: 200px;
-  line-height: 190px;
+  /*height: 200px;*/
+  line-height: 140px;
   color: #fff;
-  font-size: 39px;
+  font-size: 32px;
 }
 
 .imgcode button{

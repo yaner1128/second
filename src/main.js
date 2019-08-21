@@ -91,11 +91,15 @@ Vue.component('my-Banner',Banner);
 import Slideshow from '@/components/Common/Slideshow.vue'
 Vue.component('my-Slideshow',Slideshow);
 
+import lastAnimation from '@/components/Common/lastAnimation.vue'
+Vue.component('my-lastAnimation',lastAnimation);
+
+
 
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {
-  console.log(to.name);
+  // console.log(to.name);
   store.commit('isname',to.name);
 
     if(to.name=="Home") {

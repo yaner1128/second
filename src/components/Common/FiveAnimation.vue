@@ -54,20 +54,20 @@ export default {
     top: 70px;
     left: 66px;
     font-size: 90px;
-    color: rgb(47,208,181);
+    color: rgb(71,92,141);
 }
 .FiveTitle{
 	font-size: 18px;
 }
 .Fivecolors{
-	color:  rgb(47,208,181);
+	color:  rgb(71,92,141);
 }
 .FiveBgc{
 
 }
 .FiveText{
 	font-size: 14px;
-	color: rgb(47,208,181);
+	color:rgb(71,92,141);
 }
 .circleProgress_wrapper{
     width: 200px;
@@ -99,8 +99,8 @@ export default {
     -webkit-transform: rotate(360deg);
 }
 .rightcircle{
-    border-top:20px solid rgb(47,208,181);
-    border-right:20px solid rgb(47,208,181);
+    border-top:20px solid rgb(71,92,141);
+    border-right:20px solid rgb(71,92,141);
     right:0;
 
 }
@@ -108,8 +108,8 @@ export default {
 	    -webkit-animation: circleProgressLoad_right 2s linear infinite;
 }
 .leftcircle{
-    border-bottom:20px solid rgb(47,208,181);
-    border-left:20px solid rgb(47,208,181);
+    border-bottom:20px solid rgb(71,92,141);
+    border-left:20px solid rgb(71,92,141);
     left:0;
 
 }
