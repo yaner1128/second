@@ -9,11 +9,13 @@
     
   <!-- 关于我们 -->
 	<div class="aboutour clearfix container">
-		<div class="left clearfix" @mouseenter='enterHandler' @mouseleave='leaveHandler' :class='{fadeIn:isActive}'>
+		<div class="left clearfix"  @mouseenter='enterHandler' @mouseleave='leaveHandler' :class='{fadeIn:isActive}'>
 			<div class="title">
 				<span >ABOUT</span><br>
 			 关于我们
 			</div>
+      <div class="toolone"></div>
+      <div class="tooltwo"></div>
 			<div class="aboutdetail">
 				<p>株洲简码网络科技有限公司是一家专注于互联网开发的高新技术公司。公司拥有一支国内高端的开发技术团队。
 					以消费者需求为设计出发点，以客户利益至上为目的，一直致力于网站开发、微信开发、美工UI设计、云服务等应用。只做最赏心悦目的产品。
@@ -70,11 +72,15 @@
   <div class="imgfixed">
     <div class="imgcode">
         <span class="spanone">
-        我们是设计师、工程师、梦想缔造者<br>也是您的互联网服务保障 
-      </span>
+          我们是设计师、工程师、梦想缔造者
+          <p>也是您的互联网服务保障</p> 
+        </span>
         <br>
-      <button class="btnOne">了解更多</button>
-      <button class="btnTwo">资询我们</button>
+        <div class="btns">
+          <button class="btnOne">了解更多</button>
+          <button class="btnTwo">资询我们</button>
+        </div>
+      
 
     </div>
   </div>
@@ -173,8 +179,34 @@ export default {
         ]
     };
   },
+   mounted () {
+    window.addEventListener('scroll', this.handleScroll, true);  // 监听（绑定）滚轮 滚动事件
+  },
   methods:{
-  	
+  	 handleScroll(){
+      // 页面滚动距顶部距离
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      this.scroll = scrollTop - this.i;
+        this.i = scrollTop;
+        var la=document.getElementsByClassName('left')[0];
+        var ra=document.getElementsByClassName('right')[0];
+        var so=document.getElementsByClassName('spanone')[0];
+        var bts=document.getElementsByClassName('btns')[0];
+         if(scrollTop>=600&&scrollTop<=1250){
+                la.setAttribute('id','leftani');
+                ra.setAttribute('id','rightani');
+         }else{
+          la.removeAttribute('id','leftani');
+          ra.removeAttribute('id','rightani');
+         }
+          if(scrollTop>=2200&&scrollTop<=2900){
+                so.setAttribute('id','down');
+                bts.setAttribute('id','upward');
+         }else{
+          so.removeAttribute('id','down');
+          bts.removeAttribute('id','upward');
+         }
+   },
 	enterHandler(){
       this.isActive = ! this.isActive;
     },
@@ -182,6 +214,11 @@ export default {
       this.isActive = ! this.isActive;
     }
 	
+  },
+  computed:{
+
+        
+
   }
 };
 </script>
@@ -192,16 +229,46 @@ export default {
 	clear: both;
 	display: block;
 }
+.left{
+  position: relative;
+}
+.toolone,.tooltwo{
+  width:40px;
+  height: 40px;
+  display: inline-block;
+  
+  position: absolute;
+  border-style: solid;
+}
+.toolone{
+  top:20%;
+  left:0;
+  border-top:3px solid  rgb(60,111,160);
+  border-left:3px solid  rgb(60,111,160);
+  border-right-style: none;
+  border-bottom-style: none;
 
+}
+.tooltwo{
+  top:40%;
+  left:80%;
+  border-bottom:3px solid rgb(60,111,160);
+  border-right:3px solid  rgb(60,111,160);
+  border-left-style: none;
+  border-top-style: none;
+
+}
 .left .title{
   font-size: 34px;
   font-weight: 550;
   margin-top: 24%;
+  padding:4%;
+  margin-left: 20%;
 }
 .left .title span{
   font-size: 54px;
   font-weight: 750;
-  color: rgb(227,91,91);
+  color: rgb(60,111,160);
 }
 .left .aboutdetail{
   padding: 27px 0;
@@ -214,18 +281,24 @@ export default {
   border: none;
   outline: none;
   cursor: pointer;
-  background-color:rgb(227,91,91) ;
+  background-color:rgb(60,111,160);
   color: #FFF;
   font-weight: 500;
   font-size: 15px;
   margin-left: 12.5%;
-  margin-top: 5%;
+  margin-top: 1%;
 }
 .left button:hover{
-  background-color:rgb(210,80,80);
+  background-color:rgb(50,100,150);
   color: #FFF ;
 } 
 .left{
+  float: left;
+
+  width:400px;
+  height:500px;
+}
+#leftani{
 	float: left;
 
   width:400px;
@@ -281,13 +354,31 @@ export default {
 	height: 500px;
 }
 .aimg{
+  position: absolute;
+  bottom:0%;
+  right: 66%;
+  width: 26%;
+}
+.bimg{
+  position: absolute;
+  bottom:0%;
+  right: 36%;
+  width: 58%;
+}
+ .cimg{
+  position: absolute;
+  bottom:0%;
+  right: 0%;
+  width: 72%;
+}
+#rightani .aimg{
 	position: absolute;
 	bottom:0%;
 	right: 66%;
 	width: 26%;
 	animation: bounceInRight 0.8s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
 }
-.bimg{
+#rightani .bimg{
 	position: absolute;
 	bottom:0%;
 	right: 36%;
@@ -295,7 +386,7 @@ export default {
 	animation: bounceInRight 1.8s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
 
 }
-.cimg{
+#rightani .cimg{
 	position: absolute;
 	bottom:0%;
 	right: 0%;
@@ -315,7 +406,7 @@ export default {
 }
 .imgfixed{
   width: 100%;
-  height: 500px;
+  height: 400px;
   margin-top: 4%;
   background:url("../../../static/images/5b46b68b4b320.jpg") no-repeat fixed ;
   background-size:100% 100%;
@@ -323,33 +414,77 @@ export default {
 }
 .imgcode{
   width:100%;
-  height: 500px;
+  height: 400px;
   background-color: rgba(44,44,44,.3);
   text-align: center;
 }
 .imgcode span{
+  display:inline-block;
   text-align: center;
-  height: 200px;
-  line-height: 190px;
+  /*height: 200px;*/
+  line-height: 100px;
   color: #fff;
-  font-size: 39px;
+  font-size: 32px;
 }
-
+.imgcode #down{
+  animation: bounceInBelow 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+}
+@keyframes bounceInBelow {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0,25px , 0);
+  }
+  75% {
+    transform: translate3d(0,10px , 0);
+  }
+  90% {
+    transform: translate3d(0,5px , 0);
+  }
+  100% {
+    transform: none;
+  }
+}
 .imgcode button{
-  width: 260px;
-  height: 80px;
+  width: 220px;
+  height: 70px;
   border-radius: 14px;
   border: none;
   outline: none;
   cursor: pointer;
-  background-color:rgb(227,91,91) ;
+  background-color:rgb(60,111,160);
   color: #FFF;
   font-size:24px;
-  margin:0 3%; 
+  margin:5% 3%; 
+}
+.imgcode #upward{
+  animation: bounceInUp 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+}
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0,1000px , 0);
+  }
+  75% {
+    transform: translate3d(0,700px , 0);
+  }
+  90% {
+    transform: translate3d(0,500px , 0);
+  }
+  100% {
+    transform: none;
+  }
 }
 .imgcode button:hover{
   background-color:#FFF;
-  color: rgb(227,91,91) ;
+  color: rgb(60,111,160) ;
 }
 .thirdAniLi{
   display: inline-block;

@@ -59,7 +59,7 @@ export default {
  box-shadow:3px 3px 10px  10px rgba(180,180,180,0.5);
 }
 .secondli:hover h2{
-	color: orangered;
+	color: rgb(227,91,91);
 }
 .newimg{
 	float: left;

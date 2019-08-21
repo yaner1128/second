@@ -12,7 +12,7 @@
 				<div class="interactive">
 					<span>
 						<i class="iconfont">&#xe666;</i> 2704&nbsp;&nbsp;
-						<i class="iconfont">&#xe60c;</i> 4
+						<i class="iconfont">&#xe755;</i> 4
 
 					</span>
 				</div>
@@ -42,8 +42,8 @@
 			<!-- 了解更多，预约 -->
 			<div class="learnmore">
 				<div class="demos">
-					<span class="iconfont nextdemo" title="简码网络公司">></span>
-					<span class="iconfont alldemo">&#xe684;</span>
+					<span class="iconfont nextdemo" title="简码网络公司">&#xe641;</span>
+					<span class="iconfont alldemo">&#xe77d;</span>
 				</div>
 				<div class="moredetail">
 					<div class="moretitle">
@@ -56,21 +56,21 @@
 					<div class="consult">
 						<ul class="consulting">
 							<li>
-								<div class="iconfont">&#xe60d;</div>
+								<div class="iconfont">&#xe606;</div>
 								<span>预约专家</span>
 							</li>
 							<li>
-								<div class="iconfont icontwo">&#xe75f;</div>
+								<div class="iconfont icontwo">&#xe858;</div>
 								<span>在线咨询</span>
 							</li>
 							<li>
-								<div class="iconfont iconthree">&#xe680;</div>
+								<div class="iconfont iconthree">&#xe7ce;</div>
 								<span>免费电话</span>
 							</li>
 						</ul>
 					</div>
 					<div class="share">
-						分享到 :<i class="iconfont">&#xe604;&#xe652;&#xe6f5;</i>
+						分享到 :<i class="iconfont">&#xe669;&#xe668;&#xe615;&#xe601;</i>
 					</div>
 				</div>
 				
@@ -123,14 +123,17 @@ export default {
 	margin-top: 5px;
 	margin-left: 10px;
 }
+
+
 .demos .nextdemo:hover{
-	color: rgb(227,91,91);
-	border-color: rgb(227,91,91);
+
+	color: rgb(60,111,160);
+	border-color: rgb(60,111,160);
 	cursor: pointer;
 }
 .demos .alldemo:hover{
-	color: rgb(227,91,91);
-	border-color: rgb(227,91,91);
+	color: rgb(60,111,160);
+	border-color: rgb(60,111,160);
 	cursor: pointer;
 
 }
@@ -149,7 +152,7 @@ export default {
 	text-align: center;
 	font-weight: 550;
 	font-size:22px;
-	color: rgb(227,91,91);
+	color: rgb(60,111,160);
 	margin-bottom: 3%;
 }
 .detailcontent .sparagraph{
@@ -168,7 +171,7 @@ export default {
 }
 .learnmore .moredetail{
 	margin-top: 150px;
-	border: 1.5px solid rgb(227,91,91);
+	border: 1.5px solidrgb(60,111,160);
 	border-radius: 10px;
 }
 .learnmore .moredetail .moretitle{
@@ -185,7 +188,7 @@ export default {
   border: none;
   outline: none;
   cursor: pointer;
-  background-color:rgb(227,91,91) ;
+  background-color:rgb(60,111,160);
   color: #FFF;
   font-weight: 500;
   font-size: 15px;
@@ -194,15 +197,15 @@ export default {
   margin-right: 2%;
 }
 .moretitle button:hover{
-  background-color:rgb(210,80,80);
+  background-color:rgb(50,99,145);
   color: #FFF ;
 }
 .learnmore .moredetail .moretitle .surfing{
 	width:92%;
 	font-weight: 550;
 	background-color: #FFF;
-  	color: rgb(227,91,91);
-  	border: 2px solid rgb(227,91,91);
+  	color: rgb(60,111,160);
+  	border: 2px solid rgb(60,111,160);
 }
 .consult .consulting li {
 	display: inline-block;

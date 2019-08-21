@@ -29,9 +29,9 @@ export default {
     border-radius: 50px;
     text-align: center;
 
-    border: 1px solid rgb(277,91,91);
+    border: 1px solid rgb(60,111,160);
     transition: all 0.4s ease;
-    color: rgb(277,91,91);
+    color: rgb(60,111,160);
     float: left;
 }
 </style>

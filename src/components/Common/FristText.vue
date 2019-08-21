@@ -59,11 +59,23 @@ export default {
 	width: 88%;
 	height: 100%;
 	margin: 0 auto;
+
+}
+.textcontainer h1,h6{
+    display: inline-block;
+}
+.textcontainer h1{
+    border-right: 3px solid  rgb(57,78,121);
+}
+.textcontainer h6{
+    font-weight: 500;
 }
 .textcontainer .title{
-	padding:30px 5px 20px 5px;
+
+	margin:50px 10px 40px 5px;
+    padding-right: 20px;
 }
-.textcontainer .title:before {
+/*.textcontainer .title:before {
     content: '';
     position: absolute;
     width: 70px;
@@ -73,7 +85,7 @@ export default {
     right: 0;
     margin: 0 auto;
     bottom:70px;
-   }
+   }*/
  .textcontainer .linetitle{
   	font-size: 18px;
     color: #727272;

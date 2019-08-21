@@ -17,11 +17,11 @@
           </div>
              <!-- 小图标 -->
           <div v-else class="small">
-            <span class="iconfont" @click='open'>&#xe63b;</span>
+            <span class="iconfont" @click='open' v-show='isnone'>&#xe63b;</span>
           </div>
                     <!-- 小图标展开的 -->
           <div class="bigPage" v-if='isopen'>
-            <span class="tuichu" @click='close'>X</span>
+            <span class="iconfont tuichu" @click='close' v-show='issmall'>&#xe616;</span>
             <ul>
               <li v-for='(list,index) in Headerlist' @click='close(index)' >
                 <router-link :to='{name:list.name}' class='lis'>{{list.title}}</router-link>
@@ -49,6 +49,8 @@ export default {
   name: 'Header',
   data() {
     return {
+      isnone:true,
+      issmall:false,
       isshow:false,
       ishome:true,
       scroll:0,
@@ -94,16 +96,20 @@ export default {
     },
     open(){
       this.isopen=true;
+      this.isnone=false;
+      this.issmall=true;
     },
     close(val){
       if (val!=0){
-          this.nobgc=false
+          this.nobgc=true;
       }
       else{
         this.nobgc=true
       }
         this.current=val;
         this.isopen=false;
+        this.isnone=true;
+        this.issmall=false;
     }
   },
   computed:{
@@ -131,7 +137,7 @@ export default {
 <style lang="css" scoped>
 .active{
   /*background-color: orangered;*/
- border-bottom: 2px solid orangered;
+ border-bottom: 2px solid #89B3FC;
   /*color: #fff;*/
 }
 .el-header{
@@ -143,7 +149,7 @@ export default {
 .header{
   float: left;
   z-index: 100;
-  background-color: rgba(49,49,49,.55);
+  background-color: rgba(60,60,60,.35);
 
  font-size: 14px;
  font-weight: bold;
@@ -202,7 +208,7 @@ color: rgba(218,218,218,.92);
 .small span{
   font-size: 40px;
   float: right;
-  color:rgb(227,91,91);
+  color:rgb(80,131,180);
   padding-right: 6%;
   cursor: pointer;
 }
@@ -220,15 +226,15 @@ color: rgba(218,218,218,.92);
   margin: 25px 0;
 }
 .bigPage ul li .lis{
-  color: rgb(227,91,91);
+  color: rgb(80,131,180);
 }
 .tuichu{
-  position: absolute;
-  font-size: 30px;
-  color: rgb(227,91,91);
-  top: 0;
-  right: 40px;
-  cursor: pointer;
+    position: absolute;
+    font-size: 50px;
+    color: rgb(80,131,180);
+    top: 0;
+    right: 75px;
+    cursor: pointer;
 }
 
 /*@media screen and (max-width: 300px) {
