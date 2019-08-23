@@ -3,13 +3,13 @@
 	<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
 	<el-carousel indicator-position="none">
 		
-    <el-carousel-item v-for="(item,index) in lunboImgs" :key="item.id">
+    <el-carousel-item  v-for="(Item,index) in SlideShow" :key="Item.id">
     <div class="carousel-explain">
-      <img :src="item.imgSrc" alt="">
+      <img :src="Item.img" alt="">
 		<div class="">
 			<div class="italictext">
-            	<p class="textp2"><span class="myAnimate bounceInDown delay0s">{{item.txt}}</span></p>
-            	<p class="textp" v-html="item.txt2"></p>
+            	<p class="textp2"><span class="myAnimate bounceInDown delay0s">{{Item.title}}</span></p>
+            	<p class="textp"><!--  v-html="item.txt2" --></p>
             	<img src="../../../static/images/mouse.png" style="width:41px;position:absolute;left:48%;top:55%">
       </div>
 		</div>
@@ -30,6 +30,7 @@ export default {
 
   data() {
     return {
+      SlideShow:{},
     	lunboImgs:[
         {
           id:1,
@@ -58,6 +59,27 @@ export default {
           }
       ]
     };
+  },
+  methods:{
+    // 获取轮播图
+    getSlideShow(){
+      this.$http.SlideShow()
+    .then(res=>{
+      console.log(res); 
+      if (res.code === 0) {
+              this.SlideShow=res.data;  
+              console.log(this.SlideShow) ;
+        }
+       
+    }).catch(err=>{
+      console.log(err);
+    })
+    }
+  },
+  created(){
+    console.log(this.$http);
+    this.getSlideShow();
+    
   },
 };
 </script>

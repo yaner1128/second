@@ -60,7 +60,7 @@
   <div class="container">
     <div class="secAni">
       <ul>
-        <li v-for="subItem in functionList" class="secAniLi">
+        <li v-for="subItem in cases" class="secAniLi" @click='detailHandler(subItem.id)'>
            <my-SecondAnimation :subItem='subItem'/>
         </li>
       </ul>
@@ -124,6 +124,7 @@ export default {
     
   data() {
     return {
+      cases:{},
     	ishome:'',
       isActive:false,
       fristImgs:[
@@ -136,39 +137,39 @@ export default {
       titletwo:'我们的成功案例',texttwo:'专业的团队，为您提供专业的服务',
       titlethree:'我们的服务品质',textthree:'不同的媒介，拥有同样的精彩',
       titlefour:'新闻中心',textfour:'每天都发生着不同的事，我们将为未来更加的努力！',
-      functionList: 
-        [
-          {
-            desc: "数学竞赛网",
-            flag: 1,
-            imageUrl: require("../../assets/index (6).png")
-          },
-          {
-            desc: "生物工程",
-            flag: 2,
-            imageUrl: require("../../assets/index (7).png")
-          },
-          {
-            desc: "上海超辉",
-            flag: 3,
-            imageUrl: require("../../assets/index (8).png")
-          },
-          {
-            desc: "军民追溯网",
-            flag: 4,
-            imageUrl: require("../../assets/index (9).png")
-          },
-          {
-            desc: "北京赛德美",
-            flag: 5,
-            imageUrl: require("../../assets/index (10).png")
-          },
-          {
-            desc: "听心悦",
-            flag: 6,
-            imageUrl: require("../../assets/index (11).png")
-          }
-        ],
+      // functionList: 
+      //   [
+      //     {
+      //       desc: "数学竞赛网",
+      //       flag: 1,
+      //       imageUrl: require("../../assets/index (6).png")
+      //     },
+      //     {
+      //       desc: "生物工程",
+      //       flag: 2,
+      //       imageUrl: require("../../assets/index (7).png")
+      //     },
+      //     {
+      //       desc: "上海超辉",
+      //       flag: 3,
+      //       imageUrl: require("../../assets/index (8).png")
+      //     },
+      //     {
+      //       desc: "军民追溯网",
+      //       flag: 4,
+      //       imageUrl: require("../../assets/index (9).png")
+      //     },
+      //     {
+      //       desc: "北京赛德美",
+      //       flag: 5,
+      //       imageUrl: require("../../assets/index (10).png")
+      //     },
+      //     {
+      //       desc: "听心悦",
+      //       flag: 6,
+      //       imageUrl: require("../../assets/index (11).png")
+      //     }
+      //   ],
         thirdAnimat:[
         {id:1,icon1:'&#xe697;',icon2:'&#xe600;',icon3:'&#xe603;',p1:'触及视觉灵魂的设计趋势',p2:'精心布局的用户体验',p3:'毫无顾忌地通过任何终端',p4:'呈现在客户的眼前'},
         {id:2,icon1:'&#xe604;',icon2:'&#xe6b7;',icon3:'&#xe72e;',p1:'Html5 + CSS3 响应式布局',p2:'卓越的浏览器兼容性',p3:'因为高端，所以出众',p4:''},
@@ -219,8 +220,33 @@ export default {
     },
     leaveHandler(){
       this.isActive = ! this.isActive;
+    },
+    detailHandler(id){
+      this.$router.push({
+        name:"DemoDetail",
+       params:{
+          casesId:id
+        }
+    })
+    },
+	// 获取案例
+    getAllCase(){
+      this.$http.AllCase()
+    .then(res=>{
+      console.log(res); 
+      if (res.code === 0) {
+              this.cases=res.data.results;  
+              console.log(this.cases);
+        }
+       
+    }).catch(err=>{
+      console.log(err);
+    })
     }
-	
+  },
+  created(){
+    this.getAllCase();
+    
   },
   computed:{
 

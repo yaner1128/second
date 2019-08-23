@@ -4,7 +4,7 @@
       <div class="header" :class='{bgs:nobgc}'>
         <!--导航栏logo -->
         <div class="nav-left">
-          <img src="../../../src/assets/logo.png" height="44" width="189" alt="">
+          <img src="../../../src/assets/logo-final.png" height="44" width="189" alt="">
         </div>
         <div v-if="isindex">
               <!-- 是首页 -->
@@ -79,9 +79,7 @@ export default {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       this.scroll = scrollTop - this.i;
         this.i = scrollTop;
-        console.log(this.isindex);//为true是首页
         if(this.isindex==true){
-            console.log("是首页");
             if(this.scroll>=0){
                 this.isshow=true;
                 this.nobgc=false
@@ -93,7 +91,6 @@ export default {
                 this.nobgc=false;
               }
         }else{
-          console.log("不是");
           this.nobgc=false;
         }     
 
@@ -142,7 +139,6 @@ export default {
       }
        for(let i=0;i<5;i++){
         if(this.Headerlist[i].name==this.$store.state.isname){
-            console.log(this.$store.state.isname);
             if(this.$store.state.isname=="Home"){
               this.nobgc=true;
               this.isshow=false;

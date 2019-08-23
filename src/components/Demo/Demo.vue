@@ -5,7 +5,7 @@
 	<!-- 按钮组件 -->
 	<div class="container oneBtn">
 		<ul>
-			<li v-for="(firstBtns,index) in firstBtn" class="oneBtnLi"  @click='addBgc(index)'>
+			<li v-for="(firstBtns,index) in firstBtn" class="oneBtnLi"  @click='addBgc(index,firstBtns.id)' >
 				<my-FristButton :firstBtns='firstBtns' :class="{active:index==current}"/>
 			</li>
 		</ul>
@@ -15,7 +15,7 @@
 	<div class="containers">
 		<div class="secAni">
 	      <ul>
-	        <li v-for="subItem in functionList" class="secAniLi" @click='detailHandler'>
+	        <li v-for="subItem in cases"  class="secAniLi" @click='detailHandler(subItem.id)'>
 	           <my-lastAnimation :subItem='subItem' />
 	        </li>
 	      </ul>
@@ -23,10 +23,34 @@
 	</div>	
 
 	<!-- 分页组件 -->
-	<div class="container paging">
-		<my-Paging />
-	</div>
+	<!-- <div class="container paging" >
+		<my-Paging :Pages='Pages'/>
+	</div> -->
+  <div class="container paging">
+ <el-pagination
+            hide-on-single-page
+            background
+            @prev-click="prevPage(pageId)"
+            @next-click="nextPage(pageId)"
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page="pageId"
+            :page-sizes="[6]"
+            :page-size="pageSize"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="pages.count">
+    </el-pagination>
 
+    <!-- <el-button :plain="true"  @click="prevPage(pageId)">上一页</el-button>
+      <ul>
+        <li v-for="pageItems in pageItem" @click='currentPage()'>
+          {{pageItems}}
+        </li>
+      </ul>
+    <el-button :plain="true" @click="nextPage(pageId)">下一页</el-button>
+    <div class="altnum">总页数：{{countpages}}</div> -->
+  </div>
+  
 	<!-- 脚部组件 -->
 	<Footer />
 </div>
@@ -41,65 +65,127 @@ export default {
 
   data() {
     return {
+      currentPage:3,// 当前页码
+       pageSize:6,// 每页大小
+       total:1000,
+      Pages:1,
+      pageId:1,
+      categoryList:[],
+      categoryId:'',
+      cases:{},
+      pages:{},
       current:0,
     	firstBtn:[
-    	{id:1,text:'全部'},
-    	{id:2,text:'网站建设'},
-    	{id:3,text:'移动APP'},
-    	{id:4,text:'软件界面'},
-    	{id:5,text:'互联网产品'},
-    	{id:6,text:'电子商务'},
-    	{id:7,text:'品牌&平面'}
-
+        {id:0,text:'全部'},
+      	{id:1,text:'网站建设'},
+      	{id:2,text:'移动APP'},
+      	{id:3,text:'小程序'},
+      	{id:4,text:'互联网产品'}
     	],
-    	 functionList: 
-        [
-          {
-            desc: "数学竞赛网",
-            flag: 1,
-            imageUrl: require("../../assets/index (6).png")
-          },
-          {
-            desc: "生物工程",
-            flag: 2,
-            imageUrl: require("../../assets/index (7).png")
-          },
-          {
-            desc: "上海超辉",
-            flag: 3,
-            imageUrl: require("../../assets/index (8).png")
-          },
-          {
-            desc: "军民追溯网",
-            flag: 4,
-            imageUrl: require("../../assets/index (9).png")
-          },
-          {
-            desc: "北京赛德美",
-            flag: 5,
-            imageUrl: require("../../assets/index (10).png")
-          },
-          {
-            desc: "听心悦",
-            flag: 6,
-            imageUrl: require("../../assets/index (11).png")
-          }
-        ]
+      pageItem:[],
+    	
     };
   },
+  computed:{
+    countpages(){
+      this.Pages=Math.ceil(this.pages.count/6);
+      console.log('页数',this.Pages);
+      
+
+      for(let i=1;i<=this.Pages;i++){
+          this.pageItem.push(i);
+      }  
+    console.log(this.pageItem);
+    return this.Pages
+    }
+  },
   methods:{
-    detailHandler(){
+    //? 长度改变----改变每页显示的条数的时候  自动触发
+       handleSizeChange(val){
+          
+       },
+       // 当前改变----当前页码改变之后，触发这个函数
+       handleCurrentChange(val,pageId){
+
+       if(this.pages.next==null){
+        
+        }else{
+          this.pageId=val;
+          this.getCase(pageId);
+        }      
+       },
+
+       detailHandler(id){
       this.$router.push({
-        name:"DemoDetail"
-       
+        name:"DemoDetail",
+        params:{
+          casesId:id
+        }
     })
     },
-    addBgc(index){
+    // 按钮分类
+    addBgc(index,id){
       this.current=index;
-      console.log(index);
-      console.log(this);
+      if(id==0){
+        this.categoryId='';
+      }else{
+        this.categoryId=id;  
+
+        
+      }
+      this.pageId=1;
+      this.getCase();     
+      console.log('categoryId',this.categoryId);
+
       
-    }
+    },
+    // 下一页
+    nextPage(pageId){
+      if(this.pages.next==null){
+        this.$message({
+          message: '这已经是最后一页了哦',
+          type: 'warning'
+        });
+      }else{
+        this.pageId++;
+        this.getCase(pageId);
+      }      
+    },
+    //上一页
+    prevPage(pageId){
+      if(this.pages.previous==null){
+         this.$message({
+          message: '这已经是第一页了哦',
+          type: 'warning'
+        });
+      }else{
+        this.pageId--;
+        this.getCase(pageId);
+      }      
+    },
+    // 获取案例
+    getCase(){
+      this.$http.Case(this.categoryId,this.pageId)
+    .then(res=>{
+      console.log(res); 
+      if (res.code === 0){
+              this.pages=res.data;
+              this.cases=res.data.results;  
+              console.log('````',this.pages);
+        }
+       
+    }).catch(err=>{
+      console.log(err);
+    })
+    },
+    
+  },
+  created(){
+    this.getCase();
+    
+  },
+  mounted(){
+
   }
 };
 </script>
@@ -107,7 +193,6 @@ export default {
 <style lang="css" scoped>
 .oneBtn{
 	margin-top: 4%;
-
 }
 .oneBtnLi{
 	height: 70px;
@@ -122,8 +207,26 @@ export default {
    display: inline-block;
 }
 .paging{
+  text-align: center;
 	margin-top: 4%;
 	margin-bottom: 8%;
+}
+.paging ul,.paging li{
+  display:inline-block;
+}
+.paging li{
+  width:30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 16px;
+  border:1px solid rgb(60,111,160);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.paging li:hover{
+  background-color: rgb(60,111,160);
+  color: #fff;
 }
 .containers{
   width: 100%;

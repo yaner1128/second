@@ -27,11 +27,10 @@ import '../static/global/animate.css'
 import store from '../src/store/index.js'
 
 
-// // vue-awesome-swiper导入
-// import VueAwesomeSwiper from 'vue-awesome-swiper'
-// // require styles
-// import 'swiper/dist/css/swiper.css'
-// Vue.use(VueAwesomeSwiper, /* { default global options } */)
+// 导入axios
+import * as api from'./restful/api'
+console.log(api);
+Vue.prototype.$http=api;
 
 import Footer from '@/components/Common/Footer.vue'
 Vue.component('Footer',Footer);
@@ -116,6 +115,7 @@ router.beforeEach((to, from, next) => {
 new Vue({
   el: '#app',
   router,
+  store,
   components:{ 
   	App
   },
