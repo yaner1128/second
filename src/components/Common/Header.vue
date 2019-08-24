@@ -21,7 +21,7 @@
             <span class="iconfont" @click='open' >&#xe63b;</span>
           </div>
                     <!-- 小图标展开的 -->
-          <div class="bigPage" v-if='isopen'>
+          <div class="bigPage" v-if='isopen' @touchmove.prevent>
             <span class="iconfont tuichu" @click='close()' v-show='issmall'>&#xe616;</span>
             <ul>
               <li v-for='(list,index) in Headerlist' @click='close(index)' >
@@ -110,6 +110,10 @@ export default {
       this.issmall=true;
 
       event.stopPropagation();
+      var mo=function(e){e.preventDefault();};
+        document.body.style.overflow='hidden';
+        document.addEventListener("touchmove",mo,false);//禁止页面滑动
+
     },
     close(val){
       console.log(val);
@@ -125,6 +129,9 @@ export default {
         this.isnone=true;
         this.issmall=false;
         event.stopPropagation();
+         var mo=function(e){e.preventDefault();};
+        document.body.style.overflow='';//出现滚动条
+        document.removeEventListener("touchmove",mo,false);
     }
   },
   computed:{
