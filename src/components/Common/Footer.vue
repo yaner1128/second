@@ -1,5 +1,5 @@
 <template>
-	<div class="foots">
+	<div class="foots" >
 		<!-- 上部分 -->
 		<div class="footTop">
 			<div class="topContainer">
@@ -20,24 +20,24 @@
 			<ul>
 				<li v-for="lis in Footerlist">{{lis.title}}</li>
 			</ul>
-			<div class="xinxi">
+			<div class="xinxi"  v-for='aboutus in aboutList'>
 				<!-- 左边信息 -->
 				<div>
-					<p>株洲简码网络科技有限公司</p>
-					<p>电话：13048837699</p>
-					<p>地址：湖南省株洲市石峰区南方军民融合大厦</p>
-					<p>邮编：421005</p>
+					<p>{{aboutus.name}}</p>
+					<p>电话：{{aboutus.tel}}</p>
+					<p>地址：{{aboutus.address}}</p>
+					<p>邮编：{{aboutus.post_code}}</p>
 				</div>
 				<!-- 右边信息 -->
 				<div>
-					<p>E-mail：273101660@qq.com</p>
-					<p>网址：http://www.ecodenet.com</p>
-					<p>版权：株洲简码网络科技有限公司</p>
+					<p>E-mail：{{aboutus.email}}</p>
+					<p>网址：{{aboutus.url}}</p>
+					<p>版权：{{aboutus.name}}</p>
 					<p>备案：京ICP备11111111</p>
 				</div>
 				<!-- 右边二维码 -->
 				<div class="codeImg">
-					<img src="../../assets/contact_05.png">
+					<img :src="aboutus.QR_code">
 				</div>
 			</div>
 			<!-- 最低端 -->
@@ -66,7 +66,30 @@ export default {
 	        {id:'10',title:'|'},
 	        {id:'11',name:'Contact',title:'联系我们'}
       	],
+      	aboutList:[],//关于我们的信息
+
     };
+  },
+
+  created(){
+    // console.log(this.$http);
+    this.getaboutList();
+  },
+  methods:{
+  	// 获取关于我们的数据
+    getaboutList(){
+      this.$http.aboutList()
+      .then(res=>{
+        // console.log(res);
+        if(res.code==0){
+          this.aboutList=res.data;
+          // console.log(this.aboutList);
+        }
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+  	},
   },
 };
 </script>

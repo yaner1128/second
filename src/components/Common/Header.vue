@@ -79,9 +79,9 @@ export default {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       this.scroll = scrollTop - this.i;
         this.i = scrollTop;
-        console.log(this.isindex);//为true是首页
+        // console.log(this.isindex);//为true是首页
         if(this.isindex==true){
-            console.log("是首页");
+            // console.log("是首页");
             if(this.scroll>=0){
                 this.isshow=true;
                 this.nobgc=false
@@ -93,7 +93,7 @@ export default {
                 this.nobgc=false;
               }
         }else{
-          console.log("不是");
+          // console.log("不是");
           this.nobgc=false;
         }     
 
@@ -101,7 +101,7 @@ export default {
    },
     bgcAdd(index){
       this.current=index;
-      event.stopPropagation();
+      // event.stopPropagation();
     },
     enter(){
       this.isshow=true;
@@ -134,22 +134,38 @@ export default {
     isindex(){
       // console.log(this.$store.state.isindex);
       this.ishome=this.$store.state.isindex;
+      console.log(this.$store.state.isindex);//为true代表是首页
       if (this.ishome && this.scroll==0) {
           this.nobgc=true;
       }
       else{
         this.nobgc=false;
       }
-       for(let i=0;i<5;i++){
+
+      for(let i=0;i<6;i++){
+        console.log(this.$store.state.isname);
+        // if(this.$store.state.isname==newsdetail)
         if(this.Headerlist[i].name==this.$store.state.isname){
-            console.log(this.$store.state.isname);
+            // console.log(this.$store.state.isname);
             if(this.$store.state.isname=="Home"){
               this.nobgc=true;
               this.isshow=false;
+              console.log('是首页');
+            }else{
+              console.log(this.$store.state.isname);
             }
             this.current=this.Headerlist[i].id-1;
+            // console.log(this.current);
+        }else{
+          if(this.$store.state.isname=='newsdetail'){
+              this.current=4;
+          }
+          if(this.$store.state.isname=='DemoDetail'){
+              this.current=3;
+          }
         }
       }
+      console.log(this.current);
       return this.$store.state.isindex
     }
   }

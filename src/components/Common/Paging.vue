@@ -24,11 +24,12 @@
 <script>
 export default {
   name: 'Paging',
+  props:['pageList'],
   data() {
     return {
     	isshow:false,
     	isequl:true,
-    	allnum:14
+    	allnum:2
     };
   },
   methods:{
@@ -70,14 +71,21 @@ export default {
   			// return true;
   		}
   	},
+
   	nextpage(){
-  		var pages=document.getElementsByClassName('nn');
-  		// console.log(pages);
-  		for(let i=0;i<5;i++){
-  			// console.log(pages[i].innerHTML);
-			pages[i].innerHTML=parseInt(pages[i].innerHTML)+1;
-  			// console.log(pages[i].innerHTML);
-  		}
+        this.$router.push({
+          path:this.pageList.next,
+          // this.getNewsDetail();
+        })
+        console.log(this.pageList);
+  		// var pages=document.getElementsByClassName('nn');
+  		// // console.log(pages);
+  		// for(let i=0;i<5;i++){
+  		// 	// console.log(pages[i].innerHTML);
+			 // pages[i].innerHTML=parseInt(pages[i].innerHTML)+1;
+  		// 	// console.log(pages[i].innerHTML);
+    //   }
+        
   	},
   	prevpage(){
   		var pages=document.getElementsByClassName('nn');

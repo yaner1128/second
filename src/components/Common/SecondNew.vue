@@ -1,17 +1,17 @@
 <template>
-	<div class="container">
+	<div class="containers">
 		<ul class="outerNew">
 			<li class="secondli">
 				<div class="newimg clearfix">
-					<img :src="item.imgSrc">
+					<img :src="item.thumb" />
 				</div>
 				<div class="newcontent">
-					<h2>{{item.txt1}}</h2>
-					<p>{{item.txt2}}</p>
-				</div>
-				<div class="newsmore">
-					<span class="iconfont detail" @click='viewDetails'>查看详情&#xe684;</span>
-					<span class="iconfont browse">&#xe64a;{{item.date}}&nbsp;&nbsp;&nbsp;&#xe666;{{item.num}}</span>
+					<h2>{{item.title}}</h2>
+					<p class="maincont" v-html='item.content'></p>
+					<p class="newsmore">
+						<span class="iconfont detail">查看详情&#xe684;</span>
+						<span class="iconfont browse">&#xe64a;{{moment(item.date).format('YYYY-MM-DD HH:mm:ss')}}&nbsp;&nbsp;&nbsp;&#xe666;{{item.clicks}}</span>
+					</p>
 				</div>
 			</li>
 		</ul>
@@ -29,13 +29,12 @@ export default {
     };
   },
   methods:{
-  	viewDetails(){
-  		this.$router.push({
-          name:'detail',
-        })
-  	}
+  	
   },
   props:['item'],
+  // created(){
+  // 	console.log(this.item);
+  // },
 };
 </script>
 
@@ -45,60 +44,88 @@ export default {
 	clear: both;
 	display: block;
 }
+.containers{
+	width: 100%;
+	height: 200px;
+	/*background-color: green;*/
+	margin: 20px 0;
+}
 .outerNew{
 	width: 100%;
+	margin: 0 auto;
+	height: 100%;
 }
 .secondli{
 	display: inline-block;
 	width: 100%;
+	height: 170px;
 	cursor: pointer;
-	margin-bottom: 3%;
+	padding: 15px 0;
+/*	background-color: red;*/
 }
 .secondli:hover{
-
- box-shadow:3px 3px 10px  10px rgba(180,180,180,0.5);
+ 	box-shadow:3px 3px 10px  10px rgba(180,180,180,0.5);
 }
 .secondli:hover h2{
 	color: rgb(227,91,91);
 }
+
+/*新闻图片*/
 .newimg{
 	float: left;
-	width: 21%;
+	width: 28%;
+	height: 100%;
 	vertical-align:middle;
-	padding: 1%;
+	overflow: hidden;
+	/*padding: 1%;*/
+	/*background-color: green;*/
 }
 .newimg img{
 	width: 90%;
+	margin: 0 5%;
 	
 }
+/*新闻内容*/
 .newcontent{
-	margin-left: 22%;
-	padding: 1%;
+	float: left;
+	width: 68%;
+	height:100%;
+	margin-left: 2%;
+	padding-right: 2%;
+/*	background-color: green;*/
+	/*padding: 1%;*/
 }
 .newcontent h2{
-	margin-bottom:1%;
 	color: #333;
     font-weight: bold;
     font-size: 18px;
+    /*background-color: red;*/
 }
-
-.newcontent p{
-	
-	text-overflow: ellipsis;
+.newcontent .maincont{
+/*	display:-webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp:2;
+	overflow: hidden;
+	text-overflow: ellipsis;*/
 	color: #a3a3a3;
 	font-size:16px;
+	/*background-color: green;*/
+	height: 25%;
+	margin: 2% 0 8% 0;
+
+	overflow: hidden;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 .newsmore{
-	margin-left: 22%;
-	padding: 1%;
 	color: #a3a3a3;
-	font-size:16px;
-	margin-top: -0.5%;
+	font-size:14px;
+	/*background-color: blue;*/
+	margin-top: 6%;
 }
-.newsmore .detail{
-
-}
-.newsmore .browse{
-	margin-left: 69%;
+.browse{
+	float: right;
 }
 </style>

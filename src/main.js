@@ -23,9 +23,14 @@ import '../static/global/global.css'
 import './fonts.css'
 import '../static/global/animate.css'
 
+import * as api from './restful/api.js'
+Vue.prototype.$http=api;
+
 
 import store from '../src/store/index.js'
 
+import moment from 'moment'       
+Vue.prototype.moment=moment; 
 
 // // vue-awesome-swiper导入
 // import VueAwesomeSwiper from 'vue-awesome-swiper'

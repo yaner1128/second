@@ -11,7 +11,7 @@ import DemoDetail from '@/components/Demo/DemoDetail.vue'
 import News from '@/components/News/News.vue'
 import Contact from '@/components/Contact/Contact.vue'
 
-import Detail from '@/components/Common/Detail.vue'
+import newsDetail from '@/components/News/newsDetail.vue'
 
 
 Vue.use(Router);
@@ -55,7 +55,7 @@ export default new Router({
          
       },
       {
-     	 	path: '/news',
+     	 	path: '/ecodenet/news',
       		name: 'News',
       		component: News
         
@@ -67,9 +67,9 @@ export default new Router({
       	},
         // 新闻详情
         {
-        path: '/news/detail',
-          name: 'detail',     
-          component: Detail
+        path: '/ecodenet/news/:newsId',
+          name: 'newsdetail',     
+          component: newsDetail
         },
 
   	],

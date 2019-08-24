@@ -11,18 +11,14 @@
     </div>
 
     <!-- 内容1 -->
-<div class="bgcs">
+<div class="bgcs" v-for='aboutus in aboutList'>
       <div class="ontextContainer">
       <!-- 左边图片 -->
       <div class="AboutImg">
         <img src="../../assets/about2.jpg">
       </div>
       <!-- 右边文字 -->
-      <div class="AboutText">
-        <p>株洲简码网络科技有限公司是一家专注于互联网开发的高新技术公司。公司拥有一支国内高端的开发技术团队。</p>
-        <p>以消费者需求为设计出发点，以客户利益至上为目的，一直致力于网站开发、微信开发、美工UI设计、云服务等应用。只做最赏心悦目的产品。</p>
-        <p>通过多年的努力和积累，已助力各行各业的客户成功进入互联网的大时代。依靠积极的价值观念、先进的技术实力、灵活的合作模式，周到的贴心服务获得了客户和企业的高度赞誉</p>
-      </div>
+      <div class="AboutText" v-html='aboutus.content'></div>
     </div>
 </div>
 
@@ -47,6 +43,7 @@ export default {
   name: 'About',
   data() {
     return {
+      aboutList:[],
       FristText:[
             {id:1,titles:'关于我们',texts:'我们为您提供更具有优势的企业网络服务平台'},
             // {id:2,text:'',text2:''},
@@ -57,6 +54,26 @@ export default {
         titletwo:'我们的态度',
         texttwo:'忠诚、奉献、责任、感恩',
     };
+  },
+  created(){
+    // console.log(this.$http);
+    this.getaboutList();
+  },
+  methods:{
+    getaboutList(){
+      this.$http.aboutList()
+      .then(res=>{
+        console.log(res);
+        if(res.code==0){
+          this.aboutList=res.data;
+          console.log(this.aboutList);
+        }
+      })
+      .catch(err=>{
+        console.log('00000');
+        console.log(err);
+      })
+    },
   },
 };
 </script>
@@ -82,6 +99,7 @@ export default {
   padding: 50px 0 0 50px;
   float: left;
   color: #e0e0e0;
+  background-color: none !important;
 }
 .ontextContainer .AboutText p{
   margin-bottom: 30px;

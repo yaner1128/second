@@ -2,14 +2,14 @@
 	<div class="FristNews">
 		<!-- 左边日期 -->
 		<div class="Fdata">
-			<p class="Fmoths">{{firstNews.month}}</p>
-			<p class="Fdays">{{firstNews.day}}</p>
+			<p class="Fmoths">{{month}}月</p>
+			<p class="Fdays">{{moment(firstNews.date).format('DD')}}</p>
 		</div>
 		<!-- 右边新闻 -->
 		<div class="Fnews">
-            <h4 class="Newstitle">{{firstNews.newtitle}}</h4>
+            <h4 class="Newstitle">{{firstNews.title}}</h4>
             <p class="Newstext">
-            	{{firstNews.newtext}}
+            	{{firstNews.content}}
             </p>
 		</div>
 	</div>
@@ -17,14 +17,20 @@
 
 <script>
 export default {
-
   name: 'FristNew',
   props:["firstNews"],
   data() {
     return {
-
+    	month:0,
+    	months:['一','二','三','四','五','六','七','八','九','十','十一','十二'],
     };
   },
+  created(){
+  	this.month=this.moment(this.firstNews.date).format("MM");
+  	this.month=this.month.replace( /\b(0+)/gi, ''); 
+  	this.month=this.months[this.month-1];
+  	console.log(this.month);
+  }
 };
 </script>
 
@@ -34,6 +40,11 @@ export default {
 	width: 550px;
 	height: 90px;
 	padding: 10px;
+}
+.Newstitle{
+	white-space:nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .FristNews:hover{
 	box-shadow: 3px 3px 10px  10px rgba(180,180,180,0.5);
@@ -71,7 +82,7 @@ export default {
 .Fnews .Newstitle{
 	font-size: 16px;
     font-weight: bold;
-   
+   margin-bottom: 10px;
     padding:10px 0;
 }
 .Fnews .Newstext{

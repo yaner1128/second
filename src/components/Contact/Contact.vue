@@ -5,29 +5,37 @@
 		<!-- 文字组件一 -->
 		<my-FristText  :title='titleone' :text='textone'/>
 		<!-- 联系方式 -->
-		<div class="container contactway">
+		<div class="container contactway"  v-for='aboutus in aboutList'>
 			<ul>
-				<li class="wayLi" v-for="(item,index) in contactItem" :key='item.id'>
-					<div class="iconfont icons" v-html='item.icon'></div>
-					<div class="textway">{{item.text}}</div>
+				<li class="wayLi">
+					<div class="iconfont icons">&#xe640;</div>
+					<div class="textway">{{aboutus.address}}</div>
+				</li>
+				<li class="wayLi">
+					<div class="iconfont icons">&#xe680;</div>
+					<div class="textway">{{aboutus.tel}}</div>
+				</li>
+				<li class="wayLi">
+					<div class="iconfont icons">&#xe614;</div>
+					<div class="textway">{{aboutus.email}}</div>
 				</li>
 			</ul>
 		</div>
 
 		<!-- 详细联系和地图 -->
-		<div class="container detailmap">
+		<div class="container detailmap"  v-for='aboutus in aboutList'>
 			<div class="detail">
-				<h3>株洲简码网络科技有限公司</h3>
-				<strong>全国服务热线：</strong><span>13048837699</span>
+				<h3>{{aboutus.name}}</h3>
+				<strong>全国服务热线：</strong><span>{{aboutus.tel}}</span>
 				<p class='ppone'>有一个品牌项目想和我们谈谈吗?让我们了解您的项目需求，这是一个良好的开始， 我们将会尽快与你取得联系。欢迎您给我们写信或是打电话，让我们听到你的声音!</p>
 				<ul>
 					<li><img src="../../../static/images/contact_05.png"><br><strong>公司手机站</strong></li>
-					<li><img src="../../../static/images/contact_08.png"><br><strong>公司公众号</strong></li>
+					<li><img :src="aboutus.QR_code"><br><strong>公司公众号</strong></li>
 				</ul>
 				<div class="add">
-					<p>地址：湖南省株洲市石峰区南方军民融合大厦</p>
-					<p>电话 ：13048837699</p>
-					<p>邮箱： 273101660@qq.com</p>
+					<p>地址：{{aboutus.address}}</p>
+					<p>电话：{{aboutus.tel}}</p>
+					<p>邮箱：{{aboutus.email}}</p>
 				</div>
 			</div>
 			<div class="mapouter">
@@ -59,12 +67,8 @@ export default {
 
   data() {
     return {
-      titleone:'联系我们',textone:'我们信仰并一直坚持，为客户打造真正有价值的互联网平台',
-      contactItem:[
-	      {id:1,icon:'&#xe640;',text:'湖南省株洲市石峰区南方军民融合大厦'},
-	      {id:2,icon:'&#xe680;',text:'13048837699'},
-	      {id:3,icon:'&#xe614;',text:'273101660@qq.com'}
-      ],
+    	aboutList:[],//存储关于我们的信息
+      	titleone:'联系我们',textone:'我们信仰并一直坚持，为客户打造真正有价值的互联网平台',
        showMapComponent: this.value,
         keyword: '',
         mapStyle: {
@@ -72,8 +76,7 @@ export default {
           height: this.mapHeight + 'px'
         },
         center: {lng:113.128155, lat: 27.913076},
-        zoom: 15
-      
+        zoom: 15,
     };
   },
    components: {
@@ -105,8 +108,27 @@ export default {
         this.center.lng = lng
         this.center.lat = lat
         this.zoom = e.target.getZoom()
-      }
-    }
+      },
+      // 获取关于我们的数据
+      getaboutList(){
+      this.$http.aboutList()
+      .then(res=>{
+        console.log(res);
+        if(res.code==0){
+          this.aboutList=res.data;
+          console.log(this.aboutList);
+        }
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+    },
+    },
+
+   created(){
+    // console.log(this.$http);
+    this.getaboutList();
+  },
 };
 </script>
 

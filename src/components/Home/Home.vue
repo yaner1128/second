@@ -104,7 +104,7 @@
   <!-- 新闻组件一 -->
   <div class="container firstNews">
     <ul>
-      <li v-for='firstNews in firstNew' class="firstNewLi">
+      <li v-for='firstNews in allNewsList' class="firstNewLi">
          <my-FristNew :firstNews='firstNews'/>
       </li>
     </ul>
@@ -124,6 +124,7 @@ export default {
     
   data() {
     return {
+      allNewsList:[],
     	ishome:'',
       isActive:false,
       fristImgs:[
@@ -174,23 +175,16 @@ export default {
         {id:2,icon1:'&#xe604;',icon2:'&#xe6b7;',icon3:'&#xe72e;',p1:'Html5 + CSS3 响应式布局',p2:'卓越的浏览器兼容性',p3:'因为高端，所以出众',p4:''},
         {id:3,icon1:'&#xe75e;',icon2:'&#xe64d;',icon3:'&#xe695;',p1:'基于 B/S 架构的网站建设',p2:'无障碍的跨平台应用',p3:'无须用户下载安装即可使用',p4:'云端管理，轻松维护'}
         ],
-        firstNew:[
-        {id:1,month:'二月',day:'23',newtitle:'想在北京网站开发是真实的吗？',newtext:'在进行北京网站开发过程当中不仅要使得整个网站以及界面的功能实现能力强，相关使用者操作起来也需要便利。除此之外，美化网页的视lalalalallalalllabal'},
-        {id:2,month:'二月',day:'28',newtitle:'想在北京网站开发是真实的吗？',newtext:'在进行北京网站开发过程当中不仅要使得整个网站以及界面的功能实现能力强，相关使用者操作起来也需要便利。除此之外，美化网页的视lalalalallalalllaballllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll'},
-        {id:3,month:'四月',day:'03',newtitle:'想在北京网站开发是真实的吗？',newtext:'在进行北京网站开发过程当中不仅要使得整个网站以及界面的功能实现能力强，相关使用者操作起来也需要便利。化网页的视lalalalallalalllabal'},
-        {id:4,month:'五月',day:'13',newtitle:'想在北京网站开发是真实的吗？',newtext:'在进行北京网站开发过程当中不仅要使得整个网站以及界面的功能实现能力强，相关使用者操作起来也需要便利。'},
-
-        ]
     };
   },
    mounted () {
     window.addEventListener('scroll', this.handleScroll, true);  // 监听（绑定）滚轮 滚动事件
   },
   methods:{
-  	 handleScroll(){
+  	handleScroll(){
       // 页面滚动距顶部距离
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-      this.scroll = scrollTop - this.i;
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+        this.scroll = scrollTop - this.i;
         this.i = scrollTop;
         var la=document.getElementsByClassName('left')[0];
         var ra=document.getElementsByClassName('right')[0];
@@ -198,35 +192,49 @@ export default {
         var bts=document.getElementsByClassName('btns')[0];
         this.ishome=this.$store.state.isname;
         if(this.ishome=='Home'){
-          if(scrollTop>=600&&scrollTop<=1250){
-                la.setAttribute('id','leftani');
-                ra.setAttribute('id','rightani');
-         }else{
-          la.removeAttribute('id','leftani');
-          ra.removeAttribute('id','rightani');
-         }
-          if(scrollTop>=2200&&scrollTop<=2900){
-                so.setAttribute('id','down');
-                bts.setAttribute('id','upward');
-         }else{
-          so.removeAttribute('id','down');
-          bts.removeAttribute('id','upward');
-         }
+            if(scrollTop>=600&&scrollTop<=1250){
+                  la.setAttribute('id','leftani');
+                  ra.setAttribute('id','rightani');
+           }else{
+            la.removeAttribute('id','leftani');
+            ra.removeAttribute('id','rightani');
+           }
+            if(scrollTop>=2200&&scrollTop<=2900){
+                  so.setAttribute('id','down');
+                  bts.setAttribute('id','upward');
+           }else{
+            so.removeAttribute('id','down');
+            bts.removeAttribute('id','upward');
+           }
         }  
    },
-	enterHandler(){
+	   enterHandler(){
       this.isActive = ! this.isActive;
     },
     leaveHandler(){
       this.isActive = ! this.isActive;
-    }
-	
+    },
+    
+
+    getallNewsList(){
+        this.$http.allNewsList()
+          .then(res=>{
+            console.log(res);
+            if(res.code==0){
+                this.allNewsList=res.data.results;
+                console.log(this.allNewsList);
+            }
+          })
+          .catch(err=>{
+            console.log(err);
+          })
+      },
+
   },
-  computed:{
+  created(){
+    this.getallNewsList();
+  },
 
-        
-
-  }
 };
 </script>
 
