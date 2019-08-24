@@ -120,8 +120,8 @@ export default {
 
 /*响应式*/
 /*屏幕宽度在980px---1200px之间*/
-@media screen and(min-width:980px) and(max-width:1200px){
+/*@media screen and(min-width:980px) and(max-width:1200px){
 
-}
+}*/
 
 </style>
