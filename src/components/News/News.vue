@@ -13,7 +13,7 @@
 		<!-- 新闻组件二 -->
 		<div class='newscont'>
 			<ul>
-				<li v-for='(item,id) in newsList' @click='viewDetails(item.id)'>
+				<li v-for='(item,id) in newsList' @click='viewDetails(item.id,item.date)'>
 					<my-SecondNew  :item='item' />
 				</li>
 			</ul>
@@ -153,11 +153,12 @@ export default {
 	        	console.log(err);
 	      	})
 	  	},
-	  	viewDetails(id){
+	  	viewDetails(id,dates){
 	  		this.$router.push({
 		        name:'newsdetail',
 		        params:{
-	          		newsId:id
+	          		newsId:id,
+	          		dates:dates
 	          	}
         	})
   		}

@@ -178,11 +178,12 @@ export default {
 
 <style lang="css" scoped>
 .active{
-  /*background-color: orangered;*/
-
+  background-color: #89B3FC;
  border-bottom: 2px solid #89B3FC;
-
   /*color: #fff;*/
+}
+.active>a{
+  color: #fff !important;
 }
 .el-header{
   width: 100%;

@@ -22,7 +22,7 @@
 					通过多年的努力和积累，已助力各行各业的客户成功进入互联网的大时代。依靠积极的价值观念、先进的技术实力、灵活的合作模式，周到的贴心服务获得了客户和企业的高度赞誉
 				</p>
 			</div>
-			<button>了解更多</button>
+			<button @click='moreabout'>了解更多</button>
 		</div>
 		<div class="right">
 			<div class="aboutimg">
@@ -149,6 +149,11 @@ export default {
     window.addEventListener('scroll', this.handleScroll, true);  // 监听（绑定）滚轮 滚动事件
   },
   methods:{
+    moreabout(){
+      this.$router.push({
+        name:'About'
+      })
+    },
   	handleScroll(){
       // 页面滚动距顶部距离
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop

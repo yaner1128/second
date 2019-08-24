@@ -14,6 +14,7 @@ let store = new Vuex.Store({
 		// isshow:true,
 		// flag:true,
 		isname:'',
+		// allnews:{},
 	},
 	//修改状态的唯一方法是提交mutations
 	mutations:{

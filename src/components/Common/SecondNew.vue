@@ -7,7 +7,7 @@
 				</div>
 				<div class="newcontent">
 					<h2>{{item.title}}</h2>
-					<p class="maincont" v-html='item.content'></p>
+					<p class="maincont">{{item.content}}</p>
 					<p class="newsmore">
 						<span class="iconfont detail">查看详情&#xe684;</span>
 						<span class="iconfont browse">&#xe64a;{{moment(item.date).format('YYYY-MM-DD HH:mm:ss')}}&nbsp;&nbsp;&nbsp;&#xe666;{{item.clicks}}</span>

@@ -20,7 +20,7 @@ export const allNewsList=()=>{
     return Axios.get(`ecodenet/news/`).then(res=>res.data);
 }
 //获取新闻详情ecodenet/news/x
-export const newsdetails=(newsId)=>{
+export const newsdetails=(newsId,dates)=>{
     return Axios.get(`ecodenet/news/${newsId}`).then(res=>res.data);
 }
 
@@ -38,7 +38,7 @@ export const Case=(categoryId,pageId)=>{
 }
 // 案例详细信息
 export const CaseDetail=(casesId)=>{
-    console.log('44444',casesId)
+    // console.log('44444',casesId)
     return Axios.get(`ecodenet/case/${casesId}`).then(res=>res.data);
 }
 

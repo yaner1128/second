@@ -11,16 +11,16 @@
     </div>
 
     <!-- 内容1 -->
-<div class="bgcs" v-for='aboutus in aboutList'>
-      <div class="ontextContainer">
-      <!-- 左边图片 -->
-      <div class="AboutImg">
-        <img src="../../assets/about2.jpg">
+  <div class="bgcs" v-for='aboutus in aboutList'>
+        <div class="ontextContainer">
+        <!-- 左边图片 -->
+        <div class="AboutImg">
+          <img src="../../assets/about2.jpg">
+        </div>
+        <!-- 右边文字 -->
+        <div class="AboutText" v-html='aboutus.content'></div>
       </div>
-      <!-- 右边文字 -->
-      <div class="AboutText" v-html='aboutus.content'></div>
-    </div>
-</div>
+  </div>
 
     <!-- 文字组件一 -->
     <div class="onetext">
@@ -94,6 +94,9 @@ export default {
   width: 510px;
   float: left;
 }
+.ontextContainer .AboutImg img{
+  margin-top: 12px;
+}
 .ontextContainer .AboutText{
   width: 620px;
   padding: 50px 0 0 50px;
@@ -113,6 +116,12 @@ export default {
   height:300px;
   background: url(../../assets/about.png) no-repeat;
   background-size: 100%;
+}
+
+/*响应式*/
+/*屏幕宽度在980px---1200px之间*/
+@media screen and(min-width:980px) and(max-width:1200px){
+
 }
 
 </style>

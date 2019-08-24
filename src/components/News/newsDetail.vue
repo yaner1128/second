@@ -7,7 +7,7 @@
 			<div class="title">
 				<h2>{{newsdetails.title}}</h2>
 				<p class="iconfont browse">
-					<!-- <span>&#xe64a;</span>时间&nbsp;&nbsp;&nbsp; -->
+					<span>&#xe64a;</span>{{moment(dates).format('YYYY-MM-DD')}}&nbsp;&nbsp;&nbsp;
 					<span>&#xe666;</span>{{newsdetails.clicks}}
 				</p>
 			</div>
@@ -34,6 +34,7 @@ export default {
   name: 'newsDetail',
   data() {
     return {
+    	dates:'',
     	nextshow:false,
     	preshow:false,
     	newsdetails:[],
@@ -60,6 +61,8 @@ export default {
   	// 获取新闻详情
   	getNewsDetail(){
   		// console.log(this.$route.params.newsId);
+  		this.dates=this.$route.params.dates;
+  		console.log(this.dates);
   		this.$http.newsdetails(this.$route.params.newsId)
       	.then(res=>{
         	console.log(res);
