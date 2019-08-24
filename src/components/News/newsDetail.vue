@@ -7,7 +7,7 @@
 			<div class="title">
 				<h2>{{newsdetails.title}}</h2>
 				<p class="iconfont browse">
-					<span>&#xe64a;</span>时间&nbsp;&nbsp;&nbsp;
+					<!-- <span>&#xe64a;</span>时间&nbsp;&nbsp;&nbsp; -->
 					<span>&#xe666;</span>{{newsdetails.clicks}}
 				</p>
 			</div>

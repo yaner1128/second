@@ -43,15 +43,16 @@ export default new Router({
       		component: Server
     	},
 		  {
-     	 	path: '/demo',
+     	 	path: '/ecodenet/case',
       		name: 'Demo',
       		component: Demo
           
       },
       {
-          path: '/demo/demodetail',
+          path: '/ecodenet/case/:casesId',
           name: 'DemoDetail',
           component: DemoDetail
+
          
       },
       {

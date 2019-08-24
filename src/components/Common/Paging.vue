@@ -24,13 +24,19 @@
 <script>
 export default {
   name: 'Paging',
-  props:['pageList'],
+  props:['paging','pageList'],
+
   data() {
     return {
     	isshow:false,
     	isequl:true,
     	allnum:2
     };
+  },
+  computed:{
+    countpage(){
+      return 
+    }
   },
   methods:{
   	openPage(){
@@ -49,51 +55,48 @@ export default {
   	isOne(){
   		var onepage =document.getElementById('onepage').innerHTML;
   		var lastpage =document.getElementById('lastpage').innerHTML;
-  		// var allpage =document.getElementById('allpage').innerHTML;
   		console.log(onepage);
   		if(onepage==1){
   			this.isshow=false;
-  			// console.log("11111");
-  			// return false;
   		}else{
   			this.isshow=true;
-  			// console.log("02222");
-  			// return true;
   		}
 			console.log(lastpage);
-  			// console.log(allpage);
   		if(lastpage==this.allnum){
   			
   			this.isequl=false;
-  			// return false;
   		}else{
   			this.isequl=true;
-  			// return true;
   		}
   	},
 
   	nextpage(){
-        this.$router.push({
-          path:this.pageList.next,
-          // this.getNewsDetail();
-        })
-        console.log(this.pageList);
-  		// var pages=document.getElementsByClassName('nn');
-  		// // console.log(pages);
-  		// for(let i=0;i<5;i++){
-  		// 	// console.log(pages[i].innerHTML);
-			 // pages[i].innerHTML=parseInt(pages[i].innerHTML)+1;
-  		// 	// console.log(pages[i].innerHTML);
-    //   }
+
+   //      this.$router.push({
+   //        path:this.pageList.next,
+   //        // this.getNewsDetail();
+   //      })
+   //      console.log(this.pageList);
+  	// 	// var pages=document.getElementsByClassName('nn');
+  	// 	// // console.log(pages);
+  	// 	// for(let i=0;i<5;i++){
+  	// 	// 	// console.log(pages[i].innerHTML);
+			//  // pages[i].innerHTML=parseInt(pages[i].innerHTML)+1;
+  	// 	// 	// console.log(pages[i].innerHTML);
+   //  //   }
         
+
+  	// 	var pages=document.getElementsByClassName('nn');
+  	// 	for(let i=0;i<5;i++){
+			// pages[i].innerHTML=parseInt(pages[i].innerHTML)+1;
+
+  	// 	}
+
   	},
   	prevpage(){
   		var pages=document.getElementsByClassName('nn');
-  		// console.log(pages);
   		for(let i=0;i<5;i++){
-  			// console.log(pages[i].innerHTML);
 			pages[i].innerHTML=parseInt(pages[i].innerHTML)-1;
-  			// console.log(pages[i].innerHTML);
   		}
   	}
   }

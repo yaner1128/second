@@ -23,6 +23,7 @@ import '../static/global/global.css'
 import './fonts.css'
 import '../static/global/animate.css'
 
+// 导入axios
 import * as api from './restful/api.js'
 Vue.prototype.$http=api;
 
@@ -31,12 +32,6 @@ import store from '../src/store/index.js'
 
 import moment from 'moment'       
 Vue.prototype.moment=moment; 
-
-// // vue-awesome-swiper导入
-// import VueAwesomeSwiper from 'vue-awesome-swiper'
-// // require styles
-// import 'swiper/dist/css/swiper.css'
-// Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 import Footer from '@/components/Common/Footer.vue'
 Vue.component('Footer',Footer);
@@ -121,6 +116,7 @@ router.beforeEach((to, from, next) => {
 new Vue({
   el: '#app',
   router,
+  store,
   components:{ 
   	App
   },

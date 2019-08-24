@@ -4,7 +4,7 @@
       <div class="header" :class='{bgs:nobgc}'>
         <!--导航栏logo -->
         <div class="nav-left">
-          <img src="../../../src/assets/logo.png" height="44" width="189" alt="">
+          <img src="../../../src/assets/logo-final.png" height="44" width="189" alt="">
         </div>
         <div v-if="isindex">
               <!-- 是首页 -->
@@ -21,11 +21,11 @@
             <span class="iconfont" @click='open' >&#xe63b;</span>
           </div>
                     <!-- 小图标展开的 -->
-          <div class="bigPage" v-if='isopen'>
+          <div class="bigPage" v-if='isopen' @touchmove.prevent>
             <span class="iconfont tuichu" @click='close()' v-show='issmall'>&#xe616;</span>
             <ul>
-              <li v-for='(list,index) in Headerlist' @click='close(index)' >
-                <router-link :to='{name:list.name}' class='lis' >{{list.title}}</router-link>
+              <li v-for='(list,index) in Headerlist'  >
+                <router-link :to='{name:list.name}' class='lis' @click.native='close(list.flag)'>{{list.title}}</router-link>
               </li>
             </ul>
           </div>
@@ -60,12 +60,12 @@ export default {
       isclose:false,
       current:0,
       Headerlist:[
-        {id:1,name:'Home',title:'首页'},
-        {id:2,name:'About',title:'关于我们'},
-        {id:3,name:'Server',title:'服务项目'},
-        {id:4,name:'Demo',title:'案例展示'},
-        {id:5,name:'News',title:'新闻动态'},
-        {id:6,name:'Contact',title:'联系我们'}
+        {flag:0,id:1,name:'Home',title:'首页'},
+        {flag:1,id:2,name:'About',title:'关于我们'},
+        {flag:2,id:3,name:'Server',title:'服务项目'},
+        {flag:3,id:4,name:'Demo',title:'案例展示'},
+        {flag:4,id:5,name:'News',title:'新闻动态'},
+        {flag:5,id:6,name:'Contact',title:'联系我们'}
       ],
     };
   },
@@ -79,9 +79,8 @@ export default {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       this.scroll = scrollTop - this.i;
         this.i = scrollTop;
-        // console.log(this.isindex);//为true是首页
+
         if(this.isindex==true){
-            // console.log("是首页");
             if(this.scroll>=0){
                 this.isshow=true;
                 this.nobgc=false
@@ -93,7 +92,6 @@ export default {
                 this.nobgc=false;
               }
         }else{
-          // console.log("不是");
           this.nobgc=false;
         }     
 
@@ -113,6 +111,10 @@ export default {
       this.issmall=true;
 
       event.stopPropagation();
+      var mo=function(e){e.preventDefault();};
+        document.body.style.overflow='hidden';
+        document.addEventListener("touchmove",mo,false);//禁止页面滑动
+
     },
     close(val){
       console.log(val);
@@ -128,6 +130,9 @@ export default {
         this.isnone=true;
         this.issmall=false;
         event.stopPropagation();
+         var mo=function(e){e.preventDefault();};
+        document.body.style.overflow='';//出现滚动条
+        document.removeEventListener("touchmove",mo,false);
     }
   },
   computed:{
@@ -146,7 +151,6 @@ export default {
         console.log(this.$store.state.isname);
         // if(this.$store.state.isname==newsdetail)
         if(this.Headerlist[i].name==this.$store.state.isname){
-            // console.log(this.$store.state.isname);
             if(this.$store.state.isname=="Home"){
               this.nobgc=true;
               this.isshow=false;
