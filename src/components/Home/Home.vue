@@ -159,6 +159,7 @@ export default {
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
         this.scroll = scrollTop - this.i;
         this.i = scrollTop;
+        // console.log(scrollTop);
         var la=document.getElementsByClassName('left')[0];
         var ra=document.getElementsByClassName('right')[0];
         var so=document.getElementsByClassName('spanone')[0];
