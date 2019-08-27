@@ -241,6 +241,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+ 
 .clearfix::after{
 	content: '';
 	clear: both;
