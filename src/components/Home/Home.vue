@@ -15,7 +15,6 @@
 			 关于我们
 			</div>
       <div class="toolone"></div>
-      <div class="tooltwo"></div>
 			<div class="aboutdetail">
 				<p>株洲简码网络科技有限公司是一家专注于互联网开发的高新技术公司。公司拥有一支国内高端的开发技术团队。
 					以消费者需求为设计出发点，以客户利益至上为目的，一直致力于网站开发、微信开发、美工UI设计、云服务等应用。只做最赏心悦目的产品。
@@ -241,25 +240,27 @@ export default {
 </script>
 
 <style lang="css" scoped>
- 
+/* @media screen and (max-width: 767px)  { 
+  
+ } 
+@media screen and (min-width: 768px)  { 
+
+} 
+@media screen and (min-width: 992px)  { 
+
+} */  
+@media screen and (min-width: 1200px) and (max-width:1902px){
+  .left .title{
+    background-color: red;
+  }
+} 
+/*@media screen and (min-width: 1903px) {
+  
+}*/
 .clearfix::after{
 	content: '';
 	clear: both;
 	display: block;
-}
-.aboutour{
-  margin-top:100px;
-}
-.left{
-  position: relative;
-}
-.toolone,.tooltwo{
-  width:40px;
-  height: 40px;
-  display: inline-block;
-  
-  position: absolute;
-  border-style: solid;
 }
 .toolone{
   top:0%;
@@ -268,15 +269,6 @@ export default {
   border-left:3px solid  rgb(60,111,160);
   border-right-style: none;
   border-bottom-style: none;
-
-}
-.tooltwo{
-  top:30%;
-  left:90%;
-  border-bottom:3px solid rgb(60,111,160);
-  border-right:3px solid  rgb(60,111,160);
-  border-left-style: none;
-  border-top-style: none;
 
 }
 .left .title{
