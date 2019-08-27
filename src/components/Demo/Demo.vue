@@ -26,7 +26,7 @@
 	<!-- <div class="container paging" >
 		<my-Paging :Pages='Pages'/>
 	</div> -->
-  <div class="container paging">
+<div class="container paging">
  <el-pagination
             hide-on-single-page
             background
@@ -40,15 +40,6 @@
             layout="total, sizes, prev, pager, next, jumper"
             :total="pages.count">
     </el-pagination>
-
-    <!-- <el-button :plain="true"  @click="prevPage(pageId)">上一页</el-button>
-      <ul>
-        <li v-for="pageItems in pageItem" @click='currentPage()'>
-          {{pageItems}}
-        </li>
-      </ul>
-    <el-button :plain="true" @click="nextPage(pageId)">下一页</el-button>
-    <div class="altnum">总页数：{{countpages}}</div> -->
   </div>
   
 	<!-- 脚部组件 -->
@@ -192,7 +183,10 @@ export default {
 
 <style lang="css" scoped>
 .oneBtn{
-	margin-top: 4%;
+	
+   width:60%;
+  margin:0 auto;
+  margin-top: 3%;
 }
 .oneBtnLi{
 	height: 70px;
@@ -211,6 +205,7 @@ export default {
 	margin-top: 4%;
 	margin-bottom: 8%;
 }
+
 .paging ul,.paging li{
   display:inline-block;
 }
@@ -235,7 +230,14 @@ export default {
   width: 88%;
   margin: 0 auto;
 }
+.secAni ul{
+  width:88%;
+  margin :0 auto;
+}
 .secAni ul li{
-  padding: 0 27px;
+    padding: 0 0.2%;
+    width: 32%;
+    margin:0 auto;
+    text-align: center;
 }
 </style>

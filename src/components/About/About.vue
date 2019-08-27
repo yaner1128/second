@@ -91,15 +91,22 @@ export default {
   margin: 0 auto;
 }
 .ontextContainer .AboutImg{
-  width: 510px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+/*  width: 30%;*/
+  height: 100%;
   float: left;
 }
 .ontextContainer .AboutImg img{
-  margin-top: 12px;
+  height: 100%;
+  width: 100%;
+  /*margin-top: 3%;*/
 }
 .ontextContainer .AboutText{
-  width: 620px;
-  padding: 50px 0 0 50px;
+  width: 50%;
+  margin:0 3.5%;
+  padding-top: 50px;
   float: left;
   color: #e0e0e0;
   background-color: none !important;

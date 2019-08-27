@@ -2,7 +2,7 @@
 	<!-- <div class="ban">
       <my-Banner />
     </div> -->
-<div>
+<div class="mainbody">
     <!-- 轮播图 -->
   	<my-Slideshow />
   	
@@ -199,10 +199,10 @@ export default {
     getAllCase(){
       this.$http.AllCase()
       .then(res=>{
-        console.log(res); 
+        // console.log(res); 
         if (res.code === 0) {
                 this.cases=res.data.results;  
-                console.log(this.cases);
+                // console.log(this.cases);
           }
          
       }).catch(err=>{
@@ -212,10 +212,10 @@ export default {
     getallNewsList(){
         this.$http.allNewsList()
           .then(res=>{
-            console.log(res);
+            // console.log(res);
             if(res.code==0){
                 this.allNewsList=res.data.results;
-                console.log(this.allNewsList);
+                // console.log(this.allNewsList);
             }
           })
           .catch(err=>{
@@ -245,6 +245,9 @@ export default {
 	clear: both;
 	display: block;
 }
+.aboutour{
+  margin-top:100px;
+}
 .left{
   position: relative;
 }
@@ -257,7 +260,7 @@ export default {
   border-style: solid;
 }
 .toolone{
-  top:20%;
+  top:0%;
   left:0;
   border-top:3px solid  rgb(60,111,160);
   border-left:3px solid  rgb(60,111,160);
@@ -266,8 +269,8 @@ export default {
 
 }
 .tooltwo{
-  top:40%;
-  left:80%;
+  top:30%;
+  left:90%;
   border-bottom:3px solid rgb(60,111,160);
   border-right:3px solid  rgb(60,111,160);
   border-left-style: none;
@@ -277,9 +280,10 @@ export default {
 .left .title{
   font-size: 34px;
   font-weight: 550;
-  margin-top: 24%;
+  margin-top: 0%;
   padding:4%;
-  margin-left: 20%;
+  text-align: center;
+  margin:0 10%;
 }
 .left .title span{
   font-size: 54px;
@@ -287,11 +291,12 @@ export default {
   color: rgb(60,111,160);
 }
 .left .aboutdetail{
-  padding: 27px 0;
+  padding: 8% 0;
   color: #2B2929;
+  margin-top:8%;
 }
 .left button{
-  width: 300px;
+  width: 60%;
   height: 80px;
   border-radius: 14px;
   border: none;
@@ -301,8 +306,8 @@ export default {
   color: #FFF;
   font-weight: 500;
   font-size: 15px;
-  margin-left: 12.5%;
-  margin-top: 1%;
+  margin-left: 12.7%;
+  margin-top:14%;
 }
 .left button:hover{
   background-color:rgb(50,100,150);
@@ -310,15 +315,14 @@ export default {
 } 
 .left{
   float: left;
-
-  width:400px;
-  height:500px;
+  width:30%;
+  height:100%;
 }
 #leftani{
 	float: left;
 
-  width:400px;
-  height:500px;
+  width:34%;
+  height:100%;
 	animation: bounceInLeft 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
 }
 @keyframes bounceInLeft {
@@ -406,34 +410,20 @@ export default {
 	position: absolute;
 	bottom:0%;
 	right: 0%;
-	width: 72%;
+	width: 62%;
 	animation: bounceInRight 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
 
 }
-.textbgs{
-  /*width: 100%;
-    height: auto;
-    margin-top: 50px;
-    background:url(../../assets/bg01.jpg) no-repeat;
-    background-size: 100%;
-    filter:(2px);*/
-}
 
-/*第一个背景*/
-/*.oneAni{
-    width: 100%;
-    height: auto;
-    margin-top: 50px;
-    background:url(../../assets/bg02.jpg) no-repeat;
-    background-size: 100%;
-    filter:(2px);
-}*/
 .fristAniouter{
   margin-top: 2%;
 }
 .firstAniLi{
    display: inline-block;
-    margin:0  3.23%;
+ /*  width: 25%;*/
+      width: 17%;
+    margin: 0px 1%;
+    padding: 0 2.9%;
 }
 .secAniLi{
    display: inline-block;
@@ -523,12 +513,15 @@ export default {
 .thirdAniLi{
   display: inline-block;
   /*width:80%;*/
-  width:inherit;
-  margin:0 4%;
+  width: 24%;
+    margin: 0px 0.6%;
+    padding: 0 4%;
 }
 .firstNewLi{
   display: inline-block;
-  margin: 1% 0.5%;
+  margin: 1% auto;
+  width:50%;
+  padding:0 0%;
 }
 .firstNews{
   margin-bottom: 7%;
