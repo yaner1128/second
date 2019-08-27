@@ -1,24 +1,23 @@
 <template>
-	 <div class="slideshow">
-	<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
-	<el-carousel indicator-position="none">
-		
-    <el-carousel-item  v-for="(Item,index) in SlideShow" :key="Item.id">
-    <div class="carousel-explain">
-      <img :src="Item.img" alt="">
-		<div class="">
-			<div class="italictext">
-            	<p class="textp2"><span class="myAnimate bounceInDown delay0s">{{Item.title}}</span></p>
-            	<p class="textp"><!--  v-html="item.txt2" --></p>
-            	<img src="../../../static/images/mouse.png" style="width:41px;position:absolute;left:48%;top:55%">
+<div class="slideshow"  :style="style">
+  	<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+  	<el-carousel indicator-position="none" style="height:100%">
+  		
+      <el-carousel-item  v-for="(Item,index) in SlideShow" :key="Item.id">
+      <div class="carousel-explain">
+        <img :src="Item.img" alt="" >
+  		<div class="">
+  			<div class="italictext">
+              	<p class="textp2"><span class="myAnimate bounceInDown delay0s">{{Item.title}}</span></p>
+              	<p class="textp"><!--  v-html="item.txt2" --></p>
+              	<img src="../../../static/images/mouse.png" style="width:41px;position:absolute;left:48%;top:55%">
+        </div>
+  		</div>
       </div>
-		</div>
-		
-    </div>
 
-    </el-carousel-item>
-	
-  </el-carousel>
+      </el-carousel-item>
+  	
+    </el-carousel>
   
   </div>
 </template>
@@ -30,12 +29,16 @@ export default {
 
   data() {
     return {
+      style:{
+        height:'0px'
+      },
+      imgHeight:'',
       SlideShow:{},
     	lunboImgs:[
         {
           id:1,
-          imgSrc:'../../../static/images/cover-one.jpg',
-          txt: '质监部门',
+          img:'../../../static/images/cover-one.jpg',
+          title: '质监部门',
           txt2:
             '降低专业门槛，清晰掌握电梯运行数据'
             
@@ -43,16 +46,16 @@ export default {
         },
          {
           id:2,
-          imgSrc:'../../../static/images/cover-two.jpg',
+          img:'../../../static/images/cover-two.jpg',
           src: '/images/company/v2/解决方案01-1_06.jpg',
-          txt: '物业部门',
+          title: '物业部门',
           txt2:
             '降低专业门槛，清晰掌握电梯运行数据'
          },
            {
             id:3,
-            imgSrc:'../../../static/images/cover-three.jpg',
-            txt: '生产厂家',
+            img:'../../../static/images/cover-three.jpg',
+            title: '生产厂家',
          	txt2:
             '降低专业门槛，清晰掌握电梯运行数据'
            
@@ -61,15 +64,23 @@ export default {
     };
   },
   methods:{
+    imgLoad() {
+      this.$nextTick(function() {
+        // 获取窗口宽度*图片的比例，定义页面初始的轮播图高度
+        this.style.height = document.documentElement.clientHeight+'px';
+      });
+    },
     // 获取轮播图
     getSlideShow(){
       this.$http.SlideShow()
     .then(res=>{
-      console.log(res); 
+      // console.log(res); 
       if (res.code === 0) {
               this.SlideShow=res.data;  
-              console.log(this.SlideShow) ;
+              // console.log(this.SlideShow) ;
         }
+      // 获取到图片后，调用this.imgLoad()方法定义图片初始高度
+      this.imgLoad();
        
     }).catch(err=>{
       console.log(err);
@@ -79,26 +90,37 @@ export default {
   created(){
     console.log(this.$http);
     this.getSlideShow();
+
+    // 监听窗口变化，使得轮播图高度自适应图片高度
+    window.addEventListener("resize", () => {
+      this.imgHeight = this.SlideShow.img.height;
+    });
     
   },
 };
 </script>
 
 <style lang="css" scoped>
+.el-carousel__container{
+    position: relative;
+    height: 100%;
+}
+.clearfix::after{
+  content: '';
+  clear: both;
+  display: block;
+}
 .slideshow{
+  background-color: pink;
 	position: relative;
-
 	z-index: 0;
-	/*background-image: url(../../../static/images/banner.jpg);*/
-	
-    /*background-position: center;*/
-    
-	height: 700px;
+  height: 100%;
+  /*height:imgHeight;*/
 }
 .el-carousel{
 	position: absolute;
 	width: 100%;
-	height: 700px;
+/*	height: 700px;*/
 	 background-position: center;
 }
 .el-carousel__container {
@@ -120,6 +142,9 @@ export default {
     /*height: 980px;*/
 }
 
+.carousel-explain>img{
+  width: 100%;
+}
 .italictext{
 	position: absolute;
 	z-index: 33;
@@ -136,9 +161,11 @@ export default {
     text-align: center;
 }
 .italictext .textp2{
-	position: absolute;
+	/*position: absolute;
 	top:38%;
-	left:44%;
+	left:45.3%;*/
+  width:100%;
+  margin-top:20%;
   float: left;
     text-align: center;
     font-weight: 700;
@@ -181,7 +208,9 @@ export default {
   }
 }
 .italictext img{
-  float: left;
+
+  margin-left: 0.9%;
+  /*float: left;*/
   animation: bounceIn 2s 1  cubic-bezier(0.215, 0.355, 0.610, 1.000);
 }
 @keyframes bounceIn {

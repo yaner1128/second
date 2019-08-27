@@ -31,14 +31,16 @@ export default {
 }
 .Fcontainer {
     position: relative;
-    width: 100%;
+   /* width: 220px;*/
+   width: 100%;
     height: 320px;
     /*text-align: center;*/
 }
 
 .Fcontainer img{
-    width: 220px;
-    height: 280px;
+    /*width: 220px;*/
+     width: 100%;
+    height:auto;
 }
 .Fcontainer>.front {
     position: absolute;

@@ -182,7 +182,7 @@ export default {
 /*	background-color: green;*/
 }
 .newsBtn .active{
-	background-color: rgb(227,91,91);
+	background-color: rgb(60,111,160);
 	color: #fff;
 }
 .newsBtn{

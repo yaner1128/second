@@ -92,6 +92,7 @@ export default {
 	height:100%;
 	margin-left: 2%;
 	padding-right: 2%;
+	position: relative;
 /*	background-color: green;*/
 	/*padding: 1%;*/
 }
@@ -120,12 +121,19 @@ export default {
     -webkit-box-orient: vertical;
 }
 .newsmore{
+	position: absolute;
+	bottom: 0;
+	left: 0;
 	color: #a3a3a3;
 	font-size:14px;
 	/*background-color: blue;*/
 	margin-top: 6%;
+	width: 100%;
 }
-.browse{
+.newsmore .browse{
 	float: right;
+	/*width: 10%;
+	margin-left: 50%;*/
+	padding-right: 3.5%;
 }
 </style>

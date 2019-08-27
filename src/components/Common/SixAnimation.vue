@@ -91,24 +91,28 @@ export default {
 }
 .bgimage{
 	width: 100%;
-		height: 580px;
+		height:500px;
 		background: url(../../../static/images/bgi_1.jpg) no-repeat fixed;
 		filter: blur(2.5px);
 		background-size:100% 100%;
 }
 	.outer-six{
+		/*background-color: green;*/
 		width: 88%;
-		margin-left:6%;
+		    height: auto;
+		    margin: 0 6%;
 		position: absolute;
 		top:0;
+		padding: 3% 0;
 	}
 	.sixli{
 		width: 27%;
-
+		/*background-color: pink;*/
 		border-radius: 15px;
 	  	display: inline-block;
-		margin: 5% 3%;
-		z-index: 2;
+		margin: 2.2% 3%;
+	    z-index: 2;
+	    /*padding: 2% 0;*/
 	}
 	/*.siximg{
 	 overflow: hidden;
@@ -137,10 +141,10 @@ export default {
 		background-color: rgba(240,240,240,.3);
 		border-radius: 10px;
 		color: #fff;
-		padding: 15px;
-		width: 90.5%;
-		height:100%; 
-		font-size: 17px;
+		padding: 4%;
+    width: 92%;
+    height: 100%;
+    font-size: 17px;
 	}
 	.text .iconfont{
 		width:100%;

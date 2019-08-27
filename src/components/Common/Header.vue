@@ -117,7 +117,7 @@ export default {
 
     },
     close(val){
-      console.log(val);
+      // console.log(val);
       if (val==0){
           this.nobgc=true;
           this.isshow=false;
@@ -139,7 +139,7 @@ export default {
     isindex(){
       // console.log(this.$store.state.isindex);
       this.ishome=this.$store.state.isindex;
-      console.log(this.$store.state.isindex);//为true代表是首页
+      // console.log(this.$store.state.isindex);//为true代表是首页
       if (this.ishome && this.scroll==0) {
           this.nobgc=true;
       }
@@ -148,15 +148,15 @@ export default {
       }
 
       for(let i=0;i<6;i++){
-        console.log(this.$store.state.isname);
+        // console.log(this.$store.state.isname);
         // if(this.$store.state.isname==newsdetail)
         if(this.Headerlist[i].name==this.$store.state.isname){
             if(this.$store.state.isname=="Home"){
               this.nobgc=true;
               this.isshow=false;
-              console.log('是首页');
+              // console.log('是首页');
             }else{
-              console.log(this.$store.state.isname);
+              // console.log(this.$store.state.isname);
             }
             this.current=this.Headerlist[i].id-1;
             // console.log(this.current);
@@ -169,7 +169,7 @@ export default {
           }
         }
       }
-      console.log(this.current);
+      // console.log(this.current);
       return this.$store.state.isindex
     }
   }
@@ -185,7 +185,12 @@ export default {
 .active>a{
   color: #fff !important;
 }
+.el-container{
+  width: 100%;
+
+}
 .el-header{
+  padding: 0;
   width: 100%;
 /* border-bottom: 1px solid orangered;*/
  position: fixed;
@@ -222,23 +227,27 @@ export default {
 /*右边标题*/
 .nav-right{
  float: right;
- width: 60%;
+ width: 65%;
  height: 100%;
+/* background-color: green;*/
 }
 .nav-right ul{
    /*overflow: hidden;*/
    width: 100%;
    height:58px;
+   /*background-color: red;*/
 }
 .nav-right  ul li{
+ /* background-color: blue;*/
  float: left;
- width: 12%;
+ width: 15%;
 /* margin: 0 5px;*/
  /*padding: 0 5px;*/
  height:100%;
  text-align: center;
 }
 .nav-right ul li a{
+ /* background-color: pink;*/
 color: rgba(218,218,218,.92);
  width: 100%;
  height:100%;

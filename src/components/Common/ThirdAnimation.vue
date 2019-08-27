@@ -54,11 +54,16 @@ export default {
 .thirdcontainer {
     position: relative;    
 /*    //给container一个相对定位,其中两个子div绝对定位，使之重叠*/
-    width: 300px;
+       width: 100%;
+    margin: 0 12%;
     height: 340px;
+    display: inline-block;
+    vertical-align: middle;
+
 }
 img {
-    width: 300px;
+    width: 100%;
+    height: auto;
 }
 .thirdcontainer>div {
     position: absolute;

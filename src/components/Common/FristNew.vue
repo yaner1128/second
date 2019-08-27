@@ -37,7 +37,7 @@ export default {
 <style lang="css" scoped>
 .FristNews{
 	cursor: pointer;
-	width: 550px;
+	width: 97%;
 	height: 90px;
 	padding: 10px;
 }
@@ -75,7 +75,7 @@ export default {
 
 .FristNews .Fnews{
 	float: left;
-	width: 440px;
+	width: 75%;
 	height: 90px;
 	color: #333;
 }

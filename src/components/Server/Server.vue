@@ -93,14 +93,15 @@ export default {
 	padding: 30px 0;
 }
 .FiveAni ul{
-	width: 88%;
+	width: 77%;
 	margin: 0 auto;
 	height:300px;
 }
 .FiveAni li{
-	float: left;
-	width: 200px;
-	margin: 0 48px;
+	    float: left;
+    width: 18%;
+    margin: 0 1.50%;
+    padding: 0 2%;
 }
 .ThreeAni{
 	width: 100%;
@@ -116,6 +117,8 @@ export default {
 }
 .ThreeAni ul li{
 	float: left;
-	margin: 0 47px;
+	width: 24%;
+	margin: 0 0.6%;
+	padding:0 4%;
 }
 </style>
