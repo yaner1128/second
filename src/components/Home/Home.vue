@@ -64,11 +64,8 @@
            <my-SecondAnimation :subItem='subItem'/>
         </li>
       </ul>
-     
     </div>
   </div>
- 
-  
 
   <!-- 背景图固定，文字滑动 -->
   <div class="imgfixed">
@@ -82,8 +79,6 @@
           <button class="btnOne">了解更多</button>
           <button class="btnTwo">资询我们</button>
         </div>
-      
-
     </div>
   </div>
 <!-- 文字组件一 -->
@@ -116,12 +111,8 @@
 </template>
 
 <script>
-
 export default {
-
   name: 'Home',
-  
-    
   data() {
     return {
       allNewsList:[],
@@ -240,6 +231,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
+/*@media screen and (min-width: 1200px){
+  .aboutour .left .title{
+    background-color: red;
+  }
+}*/
 .clearfix::after{
 	content: '';
 	clear: both;

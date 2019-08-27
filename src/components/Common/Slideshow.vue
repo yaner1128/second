@@ -41,8 +41,6 @@ export default {
           title: '质监部门',
           txt2:
             '降低专业门槛，清晰掌握电梯运行数据'
-            
-
         },
          {
           id:2,
@@ -56,9 +54,8 @@ export default {
             id:3,
             img:'../../../static/images/cover-three.jpg',
             title: '生产厂家',
-         	txt2:
-            '降低专业门槛，清晰掌握电梯运行数据'
-           
+           	txt2:
+              '降低专业门槛，清晰掌握电梯运行数据'
           }
       ]
     };
@@ -88,13 +85,13 @@ export default {
     }
   },
   created(){
-    console.log(this.$http);
+    // console.log(this.$http);
     this.getSlideShow();
 
     // 监听窗口变化，使得轮播图高度自适应图片高度
-    window.addEventListener("resize", () => {
-      this.imgHeight = this.SlideShow.img.height;
-    });
+    // window.addEventListener("resize", () => {
+    //   this.imgHeight = this.SlideShow.img.height;
+    // });
     
   },
 };
