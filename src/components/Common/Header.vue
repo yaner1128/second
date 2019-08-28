@@ -14,6 +14,9 @@
                 <router-link :to='{name:list.name}'>{{list.title}}</router-link>
               </li>
             </ul>
+            <div class="small" v-show='isnone'>
+                <span class="iconfont" @click='open' >&#xe63b;</span>
+            </div>
           </div>
              <!-- 小图标 -->
 
@@ -21,7 +24,7 @@
             <span class="iconfont" @click='open' >&#xe63b;</span>
           </div>
                     <!-- 小图标展开的 -->
-          <div class="bigPage" v-if='isopen' @touchmove.prevent>
+          <div class="bigPage" v-if='isopen' @touchmove.prevent :style='style'>
             <span class="iconfont tuichu" @click='close()' v-show='issmall'>&#xe616;</span>
             <ul>
               <li v-for='(list,index) in Headerlist'  >
@@ -50,6 +53,9 @@ export default {
   name: 'Header',
   data() {
     return {
+      style:{
+        height:'',
+      },
       isnone:true,
       issmall:false,
       isshow:false,
@@ -72,6 +78,11 @@ export default {
 
   mounted () {
     window.addEventListener('scroll', this.handleScroll, true);  // 监听（绑定）滚轮 滚动事件
+
+    this.$nextTick(function() {
+        // 获取窗口宽度*图片的比例，定义页面初始的轮播图高度
+        this.style.height = document.documentElement.clientHeight+'px';
+    });
   },
   methods:{
     handleScroll(){
@@ -216,9 +227,9 @@ export default {
 .nav-left{
  float:left;
  height: 100%;
- /*width: 0%;*/
+ width:20%;
   z-index: 100;
-  padding-left: 81px;
+  padding:0 5%;
 }
 .nav-left img{
  height:100%;
@@ -226,15 +237,16 @@ export default {
 
 /*右边标题*/
 .nav-right{
- float: right;
- width: 65%;
+ float: left;
+ width: 70%;
  height: 100%;
 /* background-color: green;*/
 }
 .nav-right ul{
-   /*overflow: hidden;*/
-   width: 100%;
+  float: left;
+   width: 80%;
    height:58px;
+   padding: 0 4%;
    /*background-color: red;*/
 }
 .nav-right  ul li{
@@ -260,16 +272,14 @@ color: rgba(218,218,218,.92);
    color: #fff;
 }*/
 .small{
-      width: 45px;
+      width: 10%;
     height: 60px;
     float: right;
-    right: 65px;
-    top: 0;
 }
 .small span{
   font-size: 40px;
-  float: right;
-  padding-right: 75px;
+/*  float: right;*/
+  margin-right: 100%;
   color:rgb(80,131,180);
   cursor: pointer;
 }

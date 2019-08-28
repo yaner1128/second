@@ -1,40 +1,41 @@
 <template>
-	<!-- <div class="ban">
+  <!-- <div class="ban">
       <my-Banner />
     </div> -->
 <div class="mainbody">
     <!-- 轮播图 -->
-  	<my-Slideshow />
-  	
+    <my-Slideshow />
+    
     
   <!-- 关于我们 -->
-	<div class="aboutour clearfix container">
-		<div class="left clearfix"  @mouseenter='enterHandler' @mouseleave='leaveHandler' :class='{fadeIn:isActive}'>
-			<div class="title">
-				<span >ABOUT</span><br>
-			 关于我们
-			</div>
+  <div class="aboutour clearfix container">
+    <div class="left clearfix"  @mouseenter='enterHandler' @mouseleave='leaveHandler' :class='{fadeIn:isActive}'>
+      <div class="title">
+        <span >ABOUT</span><br>
+       关于我们
+      </div>
       <div class="toolone"></div>
-			<div class="aboutdetail">
-				<p>株洲简码网络科技有限公司是一家专注于互联网开发的高新技术公司。公司拥有一支国内高端的开发技术团队。
-					以消费者需求为设计出发点，以客户利益至上为目的，一直致力于网站开发、微信开发、美工UI设计、云服务等应用。只做最赏心悦目的产品。
-					通过多年的努力和积累，已助力各行各业的客户成功进入互联网的大时代。依靠积极的价值观念、先进的技术实力、灵活的合作模式，周到的贴心服务获得了客户和企业的高度赞誉
-				</p>
-			</div>
-			<button @click='moreabout'>了解更多</button>
-		</div>
-		<div class="right">
-			<div class="aboutimg">
-				
-				<img class="cimg" src="../../../static/images/home-3-689x469.png">
-				<img class="bimg" src="../../../static/images/home-2-508x341.png">
-				<img class="aimg" src="../../../static/images/home-1-243x199.png">
+      <div class="tooltwo"></div>
+      <div class="aboutdetail">
+        <p>株洲简码网络科技有限公司是一家专注于互联网开发的高新技术公司。公司拥有一支国内高端的开发技术团队。
+          以消费者需求为设计出发点，以客户利益至上为目的，一直致力于网站开发、微信开发、美工UI设计、云服务等应用。只做最赏心悦目的产品。
+          通过多年的努力和积累，已助力各行各业的客户成功进入互联网的大时代。依靠积极的价值观念、先进的技术实力、灵活的合作模式，周到的贴心服务获得了客户和企业的高度赞誉
+        </p>
+      </div>
+      <button @click='moreabout'>了解更多</button>
+    </div>
+    <div class="right">
+      <div class="aboutimg">
+        
+        <img class="cimg" src="../../../static/images/home-3-689x469.png">
+        <img class="bimg" src="../../../static/images/home-2-508x341.png">
+        <img class="aimg" src="../../../static/images/home-1-243x199.png">
 
-			</div>
-			
+      </div>
+      
 
-		</div>
-	</div>
+    </div>
+  </div>
   
 <div class="oneAni">
     <!-- 文字组件一 -->
@@ -56,17 +57,17 @@
   <my-FristText :title='titletwo' :text='texttwo'/>
   
   <!-- 动画组件二 -->
-  <div class="container">
+  <div class="secani">
+    <div class="container">
     <div class="secAni">
       <ul>
         <li v-for="subItem in cases" class="secAniLi" @click='detailHandler(subItem.id)'>
            <my-SecondAnimation :subItem='subItem'/>
         </li>
       </ul>
-     
     </div>
   </div>
- 
+  </div>
   
 
   <!-- 背景图固定，文字滑动 -->
@@ -81,8 +82,6 @@
           <button class="btnOne">了解更多</button>
           <button class="btnTwo">资询我们</button>
         </div>
-      
-
     </div>
   </div>
 <!-- 文字组件一 -->
@@ -115,24 +114,20 @@
 </template>
 
 <script>
-
 export default {
-
   name: 'Home',
-  
-    
   data() {
     return {
       allNewsList:[],
       cases:{},
-    	ishome:'',
+      ishome:'',
       isActive:false,
       fristImgs:[
-    		{id:1,imgSrc:require('../../assets/turn1.png'),text:'网站/商城系统定制开发',textcolor:'#95ADBE'},
-    		{id:2,imgSrc:require('../../assets/turn2.png'),text:'交互H5设计开发',textcolor:'rgb(227,91,227)'},
-    		{id:3,imgSrc:require('../../assets/turn3.png'),text:'小程序/公众号/Wap设计开发',textcolor:'rgb(74,177,254)'},
-    		{id:4,imgSrc:require('../../assets/turn4.png'),text:'APP项目定制开发',textcolor:'rgb(249,158,33)'},
-    	],
+        {id:1,imgSrc:require('../../assets/turn1.png'),text:'网站/商城系统定制开发',textcolor:'#95ADBE'},
+        {id:2,imgSrc:require('../../assets/turn3.png'),text:'小程序/公众号/Wap设计开发',textcolor:'rgb(74,177,254)'},
+        {id:3,imgSrc:require('../../assets/turn2.png'),text:'交互H5设计开发',textcolor:'rgb(227,91,227)'},
+        {id:4,imgSrc:require('../../assets/turn4.png'),text:'APP项目定制开发',textcolor:'rgb(249,158,33)'},
+      ],
       titleone:'我们可以做得更好',textone:'我们为您提供更具有优势的企业网络服务平台',
       titletwo:'我们的成功案例',texttwo:'专业的团队，为您提供专业的服务',
       titlethree:'我们的服务品质',textthree:'不同的媒介，拥有同样的精彩',
@@ -153,12 +148,11 @@ export default {
         name:'About'
       })
     },
-  	handleScroll(){
+    handleScroll(){
       // 页面滚动距顶部距离
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
         this.scroll = scrollTop - this.i;
         this.i = scrollTop;
-        // console.log(scrollTop);
         var la=document.getElementsByClassName('left')[0];
         var ra=document.getElementsByClassName('right')[0];
         var so=document.getElementsByClassName('spanone')[0];
@@ -181,7 +175,7 @@ export default {
            }
         }  
    },
-	   enterHandler(){
+     enterHandler(){
       this.isActive = ! this.isActive;
     },
     leaveHandler(){
@@ -195,7 +189,7 @@ export default {
         }
     })
     },
-	// 获取案例
+  // 获取案例
     getAllCase(){
       this.$http.AllCase()
       .then(res=>{
@@ -240,27 +234,22 @@ export default {
 </script>
 
 <style lang="css" scoped>
-/* @media screen and (max-width: 767px)  { 
-  
- } 
-@media screen and (min-width: 768px)  { 
 
-} 
-@media screen and (min-width: 992px)  { 
-
-} */  
-@media screen and (min-width: 1200px) and (max-width:1902px){
-  .left .title{
-    background-color: red;
-  }
-} 
-/*@media screen and (min-width: 1903px) {
+/*手机*/
+@media screen and (max-width: 767px){ 
+  .aboutour{
+  margin-top:100px;
+}
+.left{
+  position: relative;
+}
+.toolone,.tooltwo{
+  width:40px;
+  height: 40px;
+  display: inline-block;
   
-}*/
-.clearfix::after{
-	content: '';
-	clear: both;
-	display: block;
+  position: absolute;
+  border-style: solid;
 }
 .toolone{
   top:0%;
@@ -269,6 +258,432 @@ export default {
   border-left:3px solid  rgb(60,111,160);
   border-right-style: none;
   border-bottom-style: none;
+
+}
+.tooltwo{
+  top:25%;
+  left:90%;
+  border-bottom:3px solid rgb(60,111,160);
+  border-right:3px solid  rgb(60,111,160);
+  border-left-style: none;
+  border-top-style: none;
+
+}
+.left .title{
+  font-size: 34px;
+  font-weight: 550;
+  margin-top: 0%;
+  padding:4%;
+  text-align: center;
+  margin:0 10%;
+}
+.left .title span{
+  font-size: 54px;
+  font-weight: 750;
+  color: rgb(60,111,160);
+}
+.left .aboutdetail{
+  padding: 8% 0;
+  color: #2B2929;
+  margin-top:8%;
+}
+.left button{
+  width: 71%;
+  height: 80px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color:rgb(60,111,160);
+  color: #FFF;
+  font-weight: 500;
+  font-size: 15px;
+  margin-left: 12.7%;
+  margin-top:4%;
+}
+.left button:hover{
+  background-color:rgb(50,100,150);
+  color: #FFF ;
+} 
+.left{
+  float: left;
+  width:100%;
+  height:100%;
+}
+#leftani{
+  float: left;
+
+  width:100%;
+  height:100%;
+  animation: bounceInLeft 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+}
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0);
+  }
+  75% {
+    transform: translate3d(10px, 0, 0);
+  }
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+.right{
+  display: none;
+}
+.fristAniouter{
+  margin-top: 2%;
+}
+.firstAniLi{
+   display: inline-block;
+ /*  width: 25%;*/
+      width: 32.2%;
+    margin: 0px 7%;
+    padding: 0 0.9%;
+}
+.secAniLi{
+   display: inline-block;
+}
+.imgfixed{
+  width: 100%;
+  height: 300px;
+  margin-top: 4%;
+  background:url("../../../static/images/5b46b68b4b320.jpg") no-repeat fixed ;
+  background-size:100% 100%;
+  /*z-index:-1;*/
+}
+.imgcode{
+  width:100%;
+  height: 300px;
+  background-color: rgba(44,44,44,.3);
+  text-align: center;
+}
+.imgcode span{
+  display:inline-block;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.imgcode button{
+     width: 140px;
+    height: 50px;
+    border-radius: 14px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(60,111,160);
+    color: #FFF;
+    font-size: 17px;
+    margin: 5% 3%;
+}
+
+.imgcode button:hover{
+  background-color:#FFF;
+  color: rgb(60,111,160) ;
+}
+.thirdAniLi{
+  display: inline-block;
+    width: 60%;
+    margin: 0px 0.6%;
+    padding: 0 4%;
+}
+.firstNewLi{
+  display: inline-block;
+  margin: 1% auto;
+  width:100%;
+  padding:0 0%;
+}
+.firstNews{
+  margin-bottom: 7%;
+}
+}  
+ /*ipad*/
+@media screen and (min-width: 768px) and (max-width: 1365px){ 
+  .aboutour{
+  margin-top:100px;
+}
+.left{
+  position: relative;
+}
+.toolone,.tooltwo{
+  width:40px;
+  height: 40px;
+  display: inline-block;
+  
+  position: absolute;
+  border-style: solid;
+}
+.toolone{
+  top:0%;
+  left:0;
+  border-top:3px solid  rgb(60,111,160);
+  border-left:3px solid  rgb(60,111,160);
+  border-right-style: none;
+  border-bottom-style: none;
+
+}
+.tooltwo{
+  top:20%;
+  left:90%;
+  border-bottom:3px solid rgb(60,111,160);
+  border-right:3px solid  rgb(60,111,160);
+  border-left-style: none;
+  border-top-style: none;
+
+}
+.left .title{
+  font-size: 34px;
+  font-weight: 550;
+  margin-top: 0%;
+  padding:4%;
+  text-align: center;
+  margin:0 10%;
+}
+.left .title span{
+  font-size: 54px;
+  font-weight: 750;
+  color: rgb(60,111,160);
+}
+.left .aboutdetail{
+  padding: 8% 0;
+  color: #2B2929;
+  margin-top:8%;
+}
+.left button{
+  width: 60%;
+  height: 80px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color:rgb(60,111,160);
+  color: #FFF;
+  font-weight: 500;
+  font-size: 15px;
+  margin-left: 12.7%;
+  margin-top:14%;
+}
+.left button:hover{
+  background-color:rgb(50,100,150);
+  color: #FFF ;
+} 
+.left{
+  float: left;
+  width:34%;
+  height:100%;
+}
+#leftani{
+  float: left;
+
+  width:34%;
+  height:100%;
+  animation: bounceInLeft 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+}
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0);
+  }
+  75% {
+    transform: translate3d(10px, 0, 0);
+  }
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+.right{
+  height: inherit;
+  width: 66%;
+  float: right;
+  /*animation: bounceInRight 2s 2 cubic-bezier(0.215, 0.355, 0.610, 1.000);*/
+}
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(1500px, 0, 0);
+  }
+  75% {
+    transform: translate3d(800px, 0, 0);
+  }
+  90% {
+    transform: translate3d(500px, 0, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+.aboutimg{
+  position: relative;
+  height: 500px;
+}
+.aimg{
+  position: absolute;
+  bottom:0%;
+  right: 66%;
+  width: 26%;
+}
+.bimg{
+  position: absolute;
+  bottom:0%;
+  right: 36%;
+  width: 58%;
+}
+ .cimg{
+  position: absolute;
+  bottom:0%;
+  right: 0%;
+  width: 72%;
+}
+#rightani .aimg{
+  position: absolute;
+  bottom:0%;
+  right: 66%;
+  width: 26%;
+  animation: bounceInRight 0.8s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+}
+#rightani .bimg{
+  position: absolute;
+  bottom:0%;
+  right: 36%;
+  width: 58%;
+  animation: bounceInRight 1.8s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+
+}
+#rightani .cimg{
+  position: absolute;
+  bottom:0%;
+  right: 0%;
+  width: 62%;
+  animation: bounceInRight 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+
+}
+
+.fristAniouter{
+  margin-top: 2%;
+}
+.firstAniLi{
+   display: inline-block;
+ width: 40%;
+    margin: 0px 5%;
+    padding: 0 0.0%;
+}
+.secAni>ul{
+  
+}
+.secAniLi{
+   display: inline-block;
+
+}
+.imgfixed{
+  width: 100%;
+  height: 400px;
+  margin-top: 4%;
+  background:url("../../../static/images/5b46b68b4b320.jpg") no-repeat fixed ;
+  background-size:100% 100%;
+  /*z-index:-1;*/
+}
+.imgcode{
+  width:100%;
+  height: 400px;
+  background-color: rgba(44,44,44,.3);
+  text-align: center;
+}
+.imgcode span{
+  display:inline-block;
+  text-align: center;
+  /*height: 200px;*/
+  line-height: 100px;
+  color: #fff;
+  font-size: 32px;
+}
+
+.imgcode button{
+  width: 220px;
+  height: 70px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color:rgb(60,111,160);
+  color: #FFF;
+  font-size:24px;
+  margin:5% 3%; 
+}
+
+.imgcode button:hover{
+  background-color:#FFF;
+  color: rgb(60,111,160) ;
+}
+.thirdAniLi{
+  display: inline-block;
+    width: 29%;
+    margin: 0px 1%;
+    padding: 0px 0%;
+}
+.firstNewLi{
+  display: inline-block;
+  margin: 1% auto;
+  width:50%;
+  padding:0 0%;
+}
+.firstNews{
+  margin-bottom: 7%;
+}
+}
+ /*普通pc*/
+@media screen and (min-width: 1366px) and (max-width: 1902px){
+
+  .aboutour{
+  margin-top:100px;
+}
+.left{
+  position: relative;
+}
+.toolone,.tooltwo{
+  width:40px;
+  height: 40px;
+  display: inline-block;
+  
+  position: absolute;
+  border-style: solid;
+}
+.toolone{
+  top:0%;
+  left:0;
+  border-top:3px solid  rgb(60,111,160);
+  border-left:3px solid  rgb(60,111,160);
+  border-right-style: none;
+  border-bottom-style: none;
+
+}
+.tooltwo{
+  top:25%;
+  left:90%;
+  border-bottom:3px solid rgb(60,111,160);
+  border-right:3px solid  rgb(60,111,160);
+  border-left-style: none;
+  border-top-style: none;
 
 }
 .left .title{
@@ -313,11 +728,11 @@ export default {
   height:100%;
 }
 #leftani{
-	float: left;
+  float: left;
 
   width:34%;
   height:100%;
-	animation: bounceInLeft 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+  animation: bounceInLeft 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
 }
 @keyframes bounceInLeft {
   0% {
@@ -339,10 +754,10 @@ export default {
   }
 }
 .right{
-	height: inherit;
+  height: inherit;
   width: 66%;
   float: right;
-	/*animation: bounceInRight 2s 2 cubic-bezier(0.215, 0.355, 0.610, 1.000);*/
+  /*animation: bounceInRight 2s 2 cubic-bezier(0.215, 0.355, 0.610, 1.000);*/
 }
 @keyframes bounceInRight {
   0% {
@@ -364,8 +779,8 @@ export default {
   }
 }
 .aboutimg{
-	position: relative;
-	height: 500px;
+  position: relative;
+  height: 500px;
 }
 .aimg{
   position: absolute;
@@ -386,26 +801,26 @@ export default {
   width: 72%;
 }
 #rightani .aimg{
-	position: absolute;
-	bottom:0%;
-	right: 66%;
-	width: 26%;
-	animation: bounceInRight 0.8s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+  position: absolute;
+  bottom:0%;
+  right: 66%;
+  width: 26%;
+  animation: bounceInRight 0.8s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
 }
 #rightani .bimg{
-	position: absolute;
-	bottom:0%;
-	right: 36%;
-	width: 58%;
-	animation: bounceInRight 1.8s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+  position: absolute;
+  bottom:0%;
+  right: 36%;
+  width: 58%;
+  animation: bounceInRight 1.8s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
 
 }
 #rightani .cimg{
-	position: absolute;
-	bottom:0%;
-	right: 0%;
-	width: 62%;
-	animation: bounceInRight 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+  position: absolute;
+  bottom:0%;
+  right: 0%;
+  width: 62%;
+  animation: bounceInRight 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
 
 }
 
@@ -520,5 +935,302 @@ export default {
 .firstNews{
   margin-bottom: 7%;
 }
+} 
+/*超大pc*/
+@media screen and (min-width: 1903px) {
+  .container{
+  width:67%;
+}
+  .secani .container{
+    width:62%;
+  }
+  .aboutour{
+  margin-top:140px;
+}
+.left{
+  position: relative;
+}
+.toolone,.tooltwo{
+  width:40px;
+  height: 40px;
+  display: inline-block;
+  
+  position: absolute;
+  border-style: solid;
+}
+.toolone{
+  top:0%;
+  left:0;
+  border-top:3px solid  rgb(60,111,160);
+  border-left:3px solid  rgb(60,111,160);
+  border-right-style: none;
+  border-bottom-style: none;
+
+}
+.tooltwo{
+  top:25%;
+  left:90%;
+  border-bottom:3px solid rgb(60,111,160);
+  border-right:3px solid  rgb(60,111,160);
+  border-left-style: none;
+  border-top-style: none;
+
+}
+.left .title{
+  font-size: 34px;
+  font-weight: 550;
+  margin-top: 0%;
+  padding:4%;
+  text-align: center;
+  margin:0 10%;
+}
+.left .title span{
+  font-size: 54px;
+  font-weight: 750;
+  color: rgb(60,111,160);
+}
+.left .aboutdetail{
+  padding: 8% 0;
+  color: #2B2929;
+  margin-top:8%;
+}
+.left button{
+  width: 60%;
+  height: 80px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color:rgb(60,111,160);
+  color: #FFF;
+  font-weight: 500;
+  font-size: 15px;
+  margin-left: 12.7%;
+  margin-top:14%;
+}
+.left button:hover{
+  background-color:rgb(50,100,150);
+  color: #FFF ;
+} 
+.left{
+  float: left;
+  width:30%;
+  height:100%;
+}
+#leftani{
+  float: left;
+
+  width:34%;
+  height:100%;
+  animation: bounceInLeft 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+}
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0);
+  }
+  75% {
+    transform: translate3d(10px, 0, 0);
+  }
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+.right{
+  height: inherit;
+  width: 66%;
+  float: right;
+  /*animation: bounceInRight 2s 2 cubic-bezier(0.215, 0.355, 0.610, 1.000);*/
+}
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(1500px, 0, 0);
+  }
+  75% {
+    transform: translate3d(800px, 0, 0);
+  }
+  90% {
+    transform: translate3d(500px, 0, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+.aboutimg{
+  position: relative;
+  height: 500px;
+}
+.aimg{
+  position: absolute;
+  bottom:0%;
+  right: 66%;
+  width: 26%;
+}
+.bimg{
+  position: absolute;
+  bottom:0%;
+  right: 36%;
+  width: 58%;
+}
+ .cimg{
+  position: absolute;
+  bottom:0%;
+  right: 0%;
+  width: 72%;
+}
+#rightani .aimg{
+  position: absolute;
+  bottom:0%;
+  right: 66%;
+  width: 26%;
+  animation: bounceInRight 0.8s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+}
+#rightani .bimg{
+  position: absolute;
+  bottom:0%;
+  right: 36%;
+  width: 58%;
+  animation: bounceInRight 1.8s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+
+}
+#rightani .cimg{
+  position: absolute;
+  bottom:0%;
+  right: 0%;
+  width: 62%;
+  animation: bounceInRight 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+
+}
+
+.fristAniouter{
+  margin-top: 2%;
+}
+.firstAniLi{
+   display: inline-block;
+ /*  width: 25%;*/
+      width: 17%;
+    margin: 0px 1%;
+    padding: 0 2.9%;
+}
+.secAniLi{
+   display: inline-block;
+}
+.imgfixed{
+  width: 100%;
+  height: 400px;
+  margin-top: 4%;
+  background:url("../../../static/images/5b46b68b4b320.jpg") no-repeat fixed ;
+  background-size:100% 100%;
+  /*z-index:-1;*/
+}
+.imgcode{
+  width:100%;
+  height: 400px;
+  background-color: rgba(44,44,44,.3);
+  text-align: center;
+}
+.imgcode span{
+  display:inline-block;
+  text-align: center;
+  /*height: 200px;*/
+  line-height: 100px;
+  color: #fff;
+  font-size: 32px;
+}
+.imgcode #down{
+  animation: bounceInBelow 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+}
+@keyframes bounceInBelow {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0,25px , 0);
+  }
+  75% {
+    transform: translate3d(0,10px , 0);
+  }
+  90% {
+    transform: translate3d(0,5px , 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+.imgcode button{
+  width: 220px;
+  height: 70px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color:rgb(60,111,160);
+  color: #FFF;
+  font-size:24px;
+  margin:5% 3%; 
+}
+.imgcode #upward{
+  animation: bounceInUp 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+}
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0,1000px , 0);
+  }
+  75% {
+    transform: translate3d(0,700px , 0);
+  }
+  90% {
+    transform: translate3d(0,500px , 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+.imgcode button:hover{
+  background-color:#FFF;
+  color: rgb(60,111,160) ;
+}
+.thirdAniLi{
+    display: inline-block;
+    width: 26%;
+    margin: 0px 0.6%;
+    padding: 0 0%;
+    padding: 0 3%;
+}
+.firstNewLi{
+  display: inline-block;
+  margin: 1% auto;
+  width:50%;
+  padding:0 0%;
+}
+.firstNews{
+  margin-bottom: 7%;
+}
+}
+.clearfix::after{
+  content: '';
+  clear: both;
+  display: block;
+}
+
 </style>
 

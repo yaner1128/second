@@ -17,27 +17,29 @@
 		</div>
 		<!-- 下部分 -->
 		<div class="footBottom">
-			<ul>
-				<li v-for="lis in Footerlist">{{lis.title}}</li>
-			</ul>
-			<div class="xinxi"  v-for='aboutus in aboutList'>
-				<!-- 左边信息 -->
-				<div>
-					<p>{{aboutus.name}}</p>
-					<p>电话：{{aboutus.tel}}</p>
-					<p>地址：{{aboutus.address}}</p>
-					<p>邮编：{{aboutus.post_code}}</p>
-				</div>
-				<!-- 右边信息 -->
-				<div>
-					<p>E-mail：{{aboutus.email}}</p>
-					<p>网址：{{aboutus.url}}</p>
-					<p>版权：{{aboutus.name}}</p>
-					<p>备案：京ICP备11111111</p>
-				</div>
-				<!-- 右边二维码 -->
-				<div class="codeImg">
-					<img :src="aboutus.QR_code">
+			<div class="footcontainer">
+				<ul>
+					<li v-for="lis in Footerlist">{{lis.title}}</li>
+				</ul>
+				<div class="xinxi"  v-for='aboutus in aboutList'>
+					<!-- 左边信息 -->
+					<div>
+						<p>{{aboutus.name}}</p>
+						<p>电话：{{aboutus.tel}}</p>
+						<p>地址：{{aboutus.address}}</p>
+						<p>邮编：{{aboutus.post_code}}</p>
+					</div>
+					<!-- 右边信息 -->
+					<div>
+						<p>E-mail：{{aboutus.email}}</p>
+						<p>网址：{{aboutus.url}}</p>
+						<p>版权：{{aboutus.name}}</p>
+						<p>备案：京ICP备11111111</p>
+					</div>
+					<!-- 右边二维码 -->
+					<div class="codeImg">
+						<img :src="aboutus.QR_code">
+					</div>
 				</div>
 			</div>
 			<!-- 最低端 -->
@@ -95,20 +97,21 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
 .foots{
 	width: 100%;
-	height: 500px;
+	height: 615px;
 }
 .footTop{
 	width: 100%;
 	background: url(../../assets/95e6d590-4d56-4e29-ae22-4114ad323b9d.jpg) no-repeat;
-	background-size:100%;
-	height: 250px;
-	padding: 50px 0;
+	background-size:100% 100%;
+	height: 270px;
+	padding: 30px 0;
 	text-align: center;
 }
 .footTop .topContainer{
-	width: 380px;
+	width: 370px;
 	margin:0 auto;
 	padding-top: 10px;
 	position: relative;
@@ -167,9 +170,14 @@ export default {
 	height: 250px;
 	border-top: 2px solid #e61d13;
 }
+.footcontainer{
+	width: 88%;
+	margin: 0 auto;
+	height: 100%;
+}
 .footBottom ul{
 /*	background-color: red;*/
-	width: 990px;
+	width: 88%;
 	margin:0 auto;
 	padding:30px 0;
 	height: 30px;
@@ -177,7 +185,8 @@ export default {
 }
 .footBottom li{
 	float: left;
-	margin: 0 30px;
+	width: 9%;
+	text-align: center;
 }
 
 
@@ -188,12 +197,10 @@ export default {
 	color:#fff;
 }
 .footBottom .xinxi>div{
-	width: 480px;
+	width: 17%;
 	height: 160px;
-	margin-right: 10px;
-/*	padding-left: 50px;*/
-/*	background-color: green;*/
 	float: left;
+	padding: 0 9%;
 }
 .footBottom .xinxi>div>p{
 	margin-top: 15px;

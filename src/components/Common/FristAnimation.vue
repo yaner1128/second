@@ -26,19 +26,18 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.clearfix {
-    clear: both;
-}
-.Fcontainer {
+/*手机*/
+@media screen and (max-width: 767px){ 
+  .mainbody{
+    background-color: pink;
+  }
+  .Fcontainer {
     position: relative;
-   /* width: 220px;*/
    width: 100%;
-    height: 320px;
-    /*text-align: center;*/
+    height: 190px;
 }
 
 .Fcontainer img{
-    /*width: 220px;*/
      width: 100%;
     height:auto;
 }
@@ -60,11 +59,131 @@ export default {
     transition: all 2s;
 }
 .Fcontainer .text{
-	width: 100%;
-	height: 30px;
+  width: 113%;
+  height: 30px;
     text-align: center;
-	/*position: absolute;*/
-	/*bottom:0px;
-	left: 0;*/
+  margin-left:-3%;
 }
+ }  
+ /*ipad*/
+@media screen and (min-width: 768px) and (max-width: 1365px){ 
+  .mainbody{
+    background-color: red;
+  }
+  .Fcontainer {
+    position: relative;
+   width: 80%;
+    height: 320px;
+}
+.Fcontainer img{
+     width: 100%;
+    height:auto;
+}
+.Fcontainer>.front {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+/*设置滑过翻转，从0-180deg*/
+.front {
+    transform: rotateY(0deg);
+}
+.Fcontainer .oneself:hover .front {
+    transform: rotateY(180deg);
+}
+.Fcontainer .front {
+    transition: all 2s;
+}
+.Fcontainer .text{
+  width: 100%;
+  height: 30px;
+    text-align: center;
+
+}
+}
+ /*普通pc*/
+@media screen and (min-width: 1366px) and (max-width: 1902px){
+  .mainbody{
+    background-color: blue;
+  }
+  .Fcontainer {
+    position: relative;
+
+   width: 100%;
+    height: 320px;
+}
+.Fcontainer img{
+    /*width: 220px;*/
+     width: 100%;
+    height:auto;
+}
+.Fcontainer>.front {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+/*设置滑过翻转，从0-180deg*/
+.front {
+    transform: rotateY(0deg);
+}
+.Fcontainer .oneself:hover .front {
+    transform: rotateY(180deg);
+}
+.Fcontainer .front {
+    transition: all 2s;
+}
+.Fcontainer .text{
+  width: 100%;
+  height: 30px;
+    text-align: center;
+  /*position: absolute;*/
+  /*bottom:0px;
+  left: 0;*/
+}
+} 
+/*超大pc*/
+@media screen and (min-width: 1903px) {
+  .mainbody{
+    background-color: green;
+  }
+  .Fcontainer {
+    position: relative;
+   /* width: 220px;*/
+   width: 100%;
+    height: 320px;
+    /*text-align: center;*/
+}
+.Fcontainer img{
+    /*width: 220px;*/
+     width: 100%;
+    height:auto;
+}
+.Fcontainer>.front {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+/*设置滑过翻转，从0-180deg*/
+.front {
+    transform: rotateY(0deg);
+}
+.Fcontainer .oneself:hover .front {
+    transform: rotateY(180deg);
+}
+.Fcontainer .front {
+    transition: all 2s;
+}
+.Fcontainer .text{
+  width: 100%;
+  height: 30px;
+    text-align: center;
+  /*position: absolute;*/
+  /*bottom:0px;
+  left: 0;*/
+}
+}
+.clearfix {
+    clear: both;
+}
+
 </style>
