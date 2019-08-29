@@ -182,62 +182,187 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.oneBtn{
-	
-   width:60%;
-  margin:0 auto;
-  margin-top: 3%;
-}
-.oneBtnLi{
-	height: 70px;
-	margin:0 1.5%;
-	display: inline-block;
-}
-.oneBtnLi .active{
-  background-color: rgb(60,111,160);
-  color: #fff;
-}
-.secAniLi{
-   display: inline-block;
-}
-.paging{
-  text-align: center;
-	margin-top: 4%;
-	margin-bottom: 8%;
-}
+ /*ipad*/
+@media screen and (min-width: 768px) and (max-width: 1365px){ 
+  .oneBtn{
+    width:88%;
+    margin:0 auto;
+    margin-top: 5%;
+  }
+  .oneBtn>ul{
+    padding-left: 2%;
+  }
+  .oneBtnLi{
+    width: 15%;
+    height: 70px;
+    margin:0 1.5%;
+    display: inline-block;
+  }
+  .oneBtnLi .active{
+    background-color: rgb(60,111,160);
+    color: #fff;
+  }
+  .secAniLi{
+     display: inline-block;
+  }
+  .paging{
+    text-align: center;
+    margin-top: 4%;
+    margin-bottom: 8%;
+  }
 
-.paging ul,.paging li{
-  display:inline-block;
+  .paging ul,.paging li{
+    display:inline-block;
+  }
+  .paging li{
+    width:30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    border:1px solid rgb(60,111,160);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .paging li:hover{
+    background-color: rgb(60,111,160);
+    color: #fff;
+  }
+  .containers{
+    width: 100%;
+  }
+  .secAni{
+    width: 88%;
+    margin: 0 auto;
+  }
+  .secAni ul{
+    width:100%;
+    margin :0 auto;
+  }
+  .secAni ul li{
+      padding: 0 2.2%;
+      width: 28%;
+      margin:0 auto;
+      text-align: center;
+  }
 }
-.paging li{
-  width:30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  font-size: 16px;
-  border:1px solid rgb(60,111,160);
-  border-radius: 5px;
-  cursor: pointer;
-}
-.paging li:hover{
-  background-color: rgb(60,111,160);
-  color: #fff;
-}
-.containers{
-  width: 100%;
-}
-.secAni{
-  width: 88%;
-  margin: 0 auto;
-}
-.secAni ul{
-  width:88%;
-  margin :0 auto;
-}
-.secAni ul li{
-    padding: 0 0.2%;
-    width: 32%;
+ /*普通pc*/
+@media screen and (min-width: 1366px) and (max-width: 1902px){
+  .oneBtn{
+    width:60%;
+    margin:0 auto;
+    margin-top: 3%;
+  }
+  .oneBtnLi{
+    height: 70px;
+    margin:0 1.5%;
+    display: inline-block;
+  }
+  .oneBtnLi .active{
+    background-color: rgb(60,111,160);
+    color: #fff;
+  }
+  .secAniLi{
+     display: inline-block;
+  }
+  .paging{
+    text-align: center;
+    margin-top: 4%;
+    margin-bottom: 8%;
+  }
+
+  .paging ul,.paging li{
+    display:inline-block;
+  }
+  .paging li{
+    width:30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    border:1px solid rgb(60,111,160);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .paging li:hover{
+    background-color: rgb(60,111,160);
+    color: #fff;
+  }
+  .containers{
+    width: 100%;
+  }
+  .secAni{
+    width: 88%;
+    margin: 0 auto;
+  }
+  .secAni ul{
+    width:88%;
+    margin :0 auto;
+  }
+  .secAni ul li{
+      padding: 0 0.2%;
+      width: 32%;
+      margin:0 auto;
+      text-align: center;
+  }
+} 
+/*超大pc*/
+@media screen and (min-width: 1903px){
+  .oneBtn{
+    width:65%;
+    margin:0 auto;
+    margin-top: 3%;
+  }
+  .oneBtnLi{
+    height: 70px;
+    margin:0 1.5%;
+    display: inline-block;
+  }
+  .oneBtnLi .active{
+    background-color: rgb(60,111,160);
+    color: #fff;
+  }
+  .secAniLi{
+    display: inline-block;
+  }
+  .paging{
+    text-align: center;
+    margin-top: 4%;
+    margin-bottom: 8%;
+  }
+  .paging ul,.paging li{
+    display:inline-block;
+  }
+  .paging li{
+    width:30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    border:1px solid rgb(60,111,160);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .paging li:hover{
+    background-color: rgb(60,111,160);
+    color: #fff;
+  }
+  .containers{
+    width: 100%;
+  }
+  .secAni{
+    width: 70%;
+    margin: 0 auto;
+  }
+  .secAni ul{
+    width:100%;
+    margin :0 auto;
+  }
+  .secAni ul li{
+    padding: 0 4.1%;
+    width: 25%;
     margin:0 auto;
     text-align: center;
+  }
 }
 </style>

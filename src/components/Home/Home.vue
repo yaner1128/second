@@ -231,11 +231,22 @@ export default {
 </script>
 
 <style lang="css" scoped>
-/*@media screen and (min-width: 1200px){
-  .aboutour .left .title{
-    background-color: red;
-  }
-}*/
+/*手机*/
+@media screen and (max-width: 767px){ 
+
+ }  
+ /*ipad*/
+@media screen and (min-width: 768px) and (max-width: 1365px){ 
+
+}
+ /*普通pc*/
+@media screen and (min-width: 1366px) and (max-width: 1902px){
+
+} 
+/*超大pc*/
+@media screen and (min-width: 1903px){
+
+}
 .clearfix::after{
 	content: '';
 	clear: both;

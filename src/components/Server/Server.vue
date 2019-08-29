@@ -86,39 +86,114 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
-.FiveAni{
-	width: 100%;
-	height: 300px;
-	padding: 30px 0;
+ /*ipad*/
+@media screen and (min-width: 768px) and (max-width: 1365px){ 
+ 	.FiveAni{
+		width: 100%;
+		height: 280px;
+		padding: 30px 0 0;
+	}
+	.FiveAni ul{
+		width: 98%;
+		margin: 0 auto;
+		height:100%;
+	}
+	.FiveAni li{
+		float: left;
+	    width: 25%;
+	    /*margin: 0 1.50%;
+	    padding: 0 2%;*/
+	}
+	.ThreeAni{
+		width: 100%;
+		height: 400px;
+		/*background-color: red;*/
+	}
+	.ThreeAni ul{
+		width: 88%;
+		height:400px;
+		margin: 0 auto;
+		padding:30px 0;
+	/*	background-color: green;*/
+	}
+	.ThreeAni ul li{
+		float: left;
+		width: 29%;
+		margin: 0 1.6%;
+	}
 }
-.FiveAni ul{
-	width: 77%;
-	margin: 0 auto;
-	height:300px;
-}
-.FiveAni li{
-	    float: left;
-    width: 18%;
-    margin: 0 1.50%;
-    padding: 0 2%;
-}
-.ThreeAni{
-	width: 100%;
-	height: 400px;
-	/*background-color: red;*/
-}
-.ThreeAni ul{
-	width: 88%;
-	height:400px;
-	margin: 0 auto;
-	padding:30px 0;
-/*	background-color: green;*/
-}
-.ThreeAni ul li{
-	float: left;
-	width: 24%;
-	margin: 0 0.6%;
-	padding:0 4%;
+ /*普通pc*/
+@media screen and (min-width: 1366px) and (max-width: 1902px){
+	.FiveAni{
+		width: 100%;
+		height: 300px;
+		padding: 30px 0;
+	}
+	.FiveAni ul{
+		width: 77%;
+		margin: 0 auto;
+		height:300px;
+	}
+	.FiveAni li{
+		    float: left;
+	    width: 18%;
+	    margin: 0 1.50%;
+	    padding: 0 2%;
+	}
+	.ThreeAni{
+		width: 100%;
+		height: 400px;
+		/*background-color: red;*/
+	}
+	.ThreeAni ul{
+		width: 88%;
+		height:400px;
+		margin: 0 auto;
+		padding:30px 0;
+	/*	background-color: green;*/
+	}
+	.ThreeAni ul li{
+		float: left;
+		width: 24%;
+		margin: 0 0.6%;
+		padding:0 4%;
+	}
+} 
+/*超大pc*/
+@media screen and (min-width: 1903px){
+  	.FiveAni{
+		width: 100%;
+		height: 300px;
+		padding: 30px 0;
+	}
+	.FiveAni ul{
+		width: 70%;
+		margin: 0 auto;
+		height:300px;
+	}
+	.FiveAni li{
+		float: left;
+	    width: 22%;
+	    margin: 0 0.5%;
+	    padding: 0 1%;
+	}
+	.ThreeAni{
+		width: 100%;
+		height: 465px;
+		/*background-color: red;*/
+	}
+	.ThreeAni ul{
+		width: 70%;
+		height:400px;
+		margin: 0 auto;
+		padding:30px 0;
+	/*	background-color: green;*/
+	}
+	.ThreeAni ul li{
+		float: left;
+		width: 24%;
+		margin: 0 0.6%;
+		padding:0 4%;
+	}
 }
 </style>

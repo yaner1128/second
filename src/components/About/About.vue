@@ -63,14 +63,14 @@ export default {
     getaboutList(){
       this.$http.aboutList()
       .then(res=>{
-        console.log(res);
+        // console.log(res);
         if(res.code==0){
           this.aboutList=res.data;
           console.log(this.aboutList);
         }
       })
       .catch(err=>{
-        console.log('00000');
+        // console.log('00000');
         console.log(err);
       })
     },
@@ -79,56 +79,150 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.about{
-  width: 100%;
+ /*ipad*/
+@media screen and (min-width: 768px) and (max-width: 1365px){ 
+  .about{
+    width: 100%;
+  }
+  .about .onetext{
+    margin:50px 0 20px 0;
+  }
+  .ontextContainer{
+    width: 92%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .ontextContainer .AboutImg{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 40%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+  }
+  .ontextContainer .AboutImg img{
+    height: 100%;
+    /*width: 100%;*/
+    /*margin-top: 3%;*/
+  }
+  .ontextContainer .AboutText{
+    width: 55%;
+    margin:2.5%;
+    /*padding-top: 50px;*/
+    float: left;
+    color: #e0e0e0;
+    /*background-color: none !important;*/
+  }
+  .ontextContainer .AboutText p{
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+  .AboutFourAni{
+    padding-bottom: 50px;
+  }
+  .bgcs{
+    width: 100%;
+    height:280px;
+    background: url(../../assets/about.png) no-repeat;
+    background-size: 100%;
+  }
 }
-.about .onetext{
-  margin:50px 0 20px 0;
+ /*普通pc*/
+@media screen and (min-width: 1366px) and (max-width: 1902px){
+  .about{
+    width: 100%;
+  }
+  .about .onetext{
+    margin:50px 0 20px 0;
+  }
+  .ontextContainer{
+    width: 78%;
+    height: 300px;
+    margin: 0 auto;
+  }
+  .ontextContainer .AboutImg{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  /*  width: 30%;*/
+    height: 100%;
+    float: left;
+  }
+  .ontextContainer .AboutImg img{
+    height: 100%;
+    width: 100%;
+    /*margin-top: 3%;*/
+  }
+  .ontextContainer .AboutText{
+    width: 45%;
+    margin:0 3.5%;
+    padding-top: 50px;
+    float: left;
+    color: #e0e0e0;
+    background-color: none !important;
+  }
+  .ontextContainer .AboutText p{
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+  .AboutFourAni{
+    padding-bottom: 50px;
+  }
+  .bgcs{
+    width: 100%;
+    height:300px;
+    background: url(../../assets/about.png) no-repeat;
+    background-size: 100%;
+  }
+} 
+/*超大pc*/
+@media screen and (min-width: 1903px){
+  .about{
+    width: 100%;
+  }
+  .about .onetext{
+    margin:50px 0 20px 0;
+  }
+  .ontextContainer{
+    width: 70%;
+    height: 300px;
+    margin: 0 auto;
+  }
+  .ontextContainer .AboutImg{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  /*  width: 30%;*/
+    height: 100%;
+    float: left;
+  }
+  .ontextContainer .AboutImg img{
+    height: 100%;
+    width: 100%;
+    /*margin-top: 3%;*/
+  }
+  .ontextContainer .AboutText{
+    width: 55%;
+    margin-left: 7%;
+    padding-top: 50px;
+    float: left;
+    color: #e0e0e0;
+    background-color: none !important;
+  }
+  .ontextContainer .AboutText p{
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+  .AboutFourAni{
+    padding-bottom: 50px;
+  }
+  .bgcs{
+    width: 100%;
+    height:300px;
+    background: url(../../assets/about.png) no-repeat;
+    background-size: 100%;
+  }
 }
-.ontextContainer{
-  width: 88%;
-  height: 300px;
-  margin: 0 auto;
-}
-.ontextContainer .AboutImg{
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-/*  width: 30%;*/
-  height: 100%;
-  float: left;
-}
-.ontextContainer .AboutImg img{
-  height: 100%;
-  width: 100%;
-  /*margin-top: 3%;*/
-}
-.ontextContainer .AboutText{
-  width: 50%;
-  margin:0 3.5%;
-  padding-top: 50px;
-  float: left;
-  color: #e0e0e0;
-  background-color: none !important;
-}
-.ontextContainer .AboutText p{
-  margin-bottom: 30px;
-  font-size: 14px;
-}
-.AboutFourAni{
-  padding-bottom: 50px;
-}
-.bgcs{
-  width: 100%;
-  height:300px;
-  background: url(../../assets/about.png) no-repeat;
-  background-size: 100%;
-}
-
-/*响应式*/
-/*屏幕宽度在980px---1200px之间*/
-/*@media screen and(min-width:980px) and(max-width:1200px){
-
-}*/
 
 </style>

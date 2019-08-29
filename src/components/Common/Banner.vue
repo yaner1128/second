@@ -40,72 +40,266 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.clearfix::after{
-	content: '';
-	clear: both;
-	display: block;
+ /*ipad*/
+@media screen and (min-width: 768px) and (max-width: 1023px){ 
+  .clearfix::after{
+		content: '';
+		clear: both;
+		display: block;
+	}
+	.outbanner{
+		position: relative;
+	}
+	.allimg{
+		position: relative;
+		z-index:-0.5;
+		background-image: url(../../../static/images/about.jpg);
+		background-repeat:no-repeat; 
+		background-size:100%;
+		-moz-background-size:100% 100%;	
+	    /*background-position: center;*/
+		width: 100%;
+		height: 300px;
+	}
+	.bannerimg{
+		background-repeat:no-repeat; 
+		background-size:100% 100%;
+		-moz-background-size:100% 100%;	
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 100%;
+	}
+	.bannerbottom{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top:0;	
+	}
+	.bannercode{
+		position: absolute;
+		z-index: 0;
+		width: 60%;
+		margin:0 auto;
+		bottom:20%;
+		left:20%;
+		color:#fff;
+	    font-size:30px;
+	    text-align: center;
+	}
+	.fade-enter-active {
+	  animation: fade-in .5s;
+	}
+	.fade-leave-active {
+	  animation: fade-in .5s reverse;
+	}
+	@keyframes fade-in {
+	  0% {
+	    transform: scale(0);
+	  }
+	  50% {
+	    transform: scale(1.5);
+	  }
+	  100% {
+	    transform: scale(1);
+	  }
+	}
 }
-.outbanner{
-	position: relative;
+ /*ipad*/
+@media screen and (min-width: 1024px) and (max-width: 1365px){ 
+  .clearfix::after{
+		content: '';
+		clear: both;
+		display: block;
+	}
+	.outbanner{
+		position: relative;
+	}
+	.allimg{
+		position: relative;
+		z-index:-0.5;
+		background-image: url(../../../static/images/about.jpg);
+		background-repeat:no-repeat; 
+		background-size:100%;
+		-moz-background-size:100% 100%;	
+	    /*background-position: center;*/
+		width: 100%;
+		height: 380px;
+	}
+	.bannerimg{
+		background-repeat:no-repeat; 
+		background-size:100% 100%;
+		-moz-background-size:100% 100%;	
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 100%;
+	}
+	.bannerbottom{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top:0;	
+	}
+	.bannercode{
+		position: absolute;
+		z-index: 0;
+		width: 60%;
+		margin:0 auto;
+		bottom:20%;
+		left:20%;
+		color:#fff;
+	    font-size:30px;
+	    text-align: center;
+	}
+	.fade-enter-active {
+	  animation: fade-in .5s;
+	}
+	.fade-leave-active {
+	  animation: fade-in .5s reverse;
+	}
+	@keyframes fade-in {
+	  0% {
+	    transform: scale(0);
+	  }
+	  50% {
+	    transform: scale(1.5);
+	  }
+	  100% {
+	    transform: scale(1);
+	  }
+	}
 }
-.allimg{
-	position: relative;
+/*普通pc*/
+@media screen and (min-width: 1366px) and (max-width: 1902px){
+	.clearfix::after{
+		content: '';
+		clear: both;
+		display: block;
+	}
+	.outbanner{
+		position: relative;
+	}
+	.allimg{
+		position: relative;
+		z-index:-0.5;
+		background-image: url(../../../static/images/about.jpg);
+		background-repeat:no-repeat; 
+		background-size:100%;
+		-moz-background-size:100% 100%;	
+	    /*background-position: center;*/
+		width: 100%;
+		height: 500px;
+	}
+	.bannerimg{
+		background-repeat:no-repeat; 
+		background-size:100% 100%;
+		-moz-background-size:100% 100%;	
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 100%;
 
-	z-index:-0.5;
-	background-image: url(../../../static/images/about.jpg);
-	background-repeat:no-repeat; 
-	background-size:100% 100%;
-	-moz-background-size:100% 100%;	
-    /*background-position: center;*/
-	width: 100%;
-    
-	height: 400px;
+	}
+	.bannerbottom{
+		position: absolute;
+		height: 90%;
+		width: 100%;
+		top:0;
+	}
+	.bannercode{
+		position: absolute;
+		text-align: center;
+		z-index: 0;
+		width: 50%;
+		margin:0 auto;
+		bottom:10%;
+		left:24%;
+		color:#fff;
+	    font-size:30px;
+	}
+	.fade-enter-active {
+	  animation: fade-in .5s;
+	}
+	.fade-leave-active {
+	  animation: fade-in .5s reverse;
+	}
+	@keyframes fade-in {
+	  0% {
+	    transform: scale(0);
+	  }
+	  50% {
+	    transform: scale(1.5);
+	  }
+	  100% {
+	    transform: scale(1);
+	  }
+	}
+} 
+/*超大pc*/
+@media screen and (min-width: 1903px){
+	.clearfix::after{
+		content: '';
+		clear: both;
+		display: block;
+	}
+	.outbanner{
+		position: relative;
+	}
+	.allimg{
+		position: relative;
+		z-index:-0.5;
+		background-image: url(../../../static/images/about.jpg);
+		background-repeat:no-repeat; 
+		background-size:100% 100%;
+		-moz-background-size:100% 100%;	
+	    /*background-position: center;*/
+		width: 100%;
+		height: 560px;
+	}
+	.bannerimg{
+		background-repeat:no-repeat; 
+		background-size:100% 100%;
+		-moz-background-size:100% 100%;	
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 100%;
+	}
+	.bannerbottom{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top:0;
+	}
+	.bannercode{
+		position: absolute;
+	    z-index: 0;
+	    width: 50%;
+	    margin: 0 auto;
+	    bottom: 16%;
+	    left: 24%;
+	    color: #fff;
+	    font-size: 38px;
+	    text-align: center;
+	}
+	.fade-enter-active {
+	  animation: fade-in .5s;
+	}
+	.fade-leave-active {
+	  animation: fade-in .5s reverse;
+	}
+	@keyframes fade-in {
+	  0% {
+	    transform: scale(0);
+	  }
+	  50% {
+	    transform: scale(1.5);
+	  }
+	  100% {
+	    transform: scale(1);
+	  }
+	}
 }
-.bannerimg{
-	background-repeat:no-repeat; 
-	background-size:100% 100%;
-	-moz-background-size:100% 100%;	
-	position: absolute;
-	top:0;
-	left: 0;
-	width: 100%;
-
-}
-.bannerbottom{
-	position: absolute;
-	height: 90%;
-	width: 100%;
-	top:0;
-	
-}
-.bannercode{
-	position: absolute;
-	z-index: 0;
-	width: 50%;
-	margin:0 auto;
-	bottom:20%;
-	left:35%;
-
-	color:#fff;
-    font-size:30px;
-}
-.fade-enter-active {
-  animation: fade-in .5s;
-}
-.fade-leave-active {
-  animation: fade-in .5s reverse;
-}
-@keyframes fade-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 
 </style>

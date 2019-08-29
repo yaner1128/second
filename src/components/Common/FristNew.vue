@@ -29,7 +29,7 @@ export default {
   	this.month=this.moment(this.firstNews.date).format("MM");
   	this.month=this.month.replace( /\b(0+)/gi, ''); 
   	this.month=this.months[this.month-1];
-  	console.log(this.month);
+  	// console.log(this.month);
   }
 };
 </script>

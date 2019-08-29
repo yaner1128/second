@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div id="mainContact">
 		<!-- 图片组件 -->
 		<my-Banner />
 		<!-- 文字组件一 -->
@@ -7,7 +7,7 @@
 		<!-- 联系方式 -->
 		<div class="container contactway"  v-for='aboutus in aboutList'>
 			<ul>
-				<li class="wayLi">
+				<li class="wayLi theone">
 					<div class="iconfont icons">&#xe640;</div>
 					<div class="textway">{{aboutus.address}}</div>
 				</li>
@@ -60,16 +60,16 @@
 </template>
 
 <script>
- import {BaiduMap, BmControl, BmView, BmAutoComplete, BmLocalSearch, BmMarker} from 'vue-baidu-map'
+import {BaiduMap, BmControl, BmView, BmAutoComplete, BmLocalSearch, BmMarker} from 'vue-baidu-map'
 export default {
 
   name: 'About',
 
-  data() {
+ data() {
     return {
     	aboutList:[],//存储关于我们的信息
       	titleone:'联系我们',textone:'我们信仰并一直坚持，为客户打造真正有价值的互联网平台',
-       showMapComponent: this.value,
+       	showMapComponent: this.value,
         keyword: '',
         mapStyle: {
           width: '90%',
@@ -113,10 +113,10 @@ export default {
       getaboutList(){
       this.$http.aboutList()
       .then(res=>{
-        console.log(res);
+        // console.log(res);
         if(res.code==0){
           this.aboutList=res.data;
-          console.log(this.aboutList);
+          // console.log(this.aboutList);
         }
       })
       .catch(err=>{
@@ -133,102 +133,419 @@ export default {
 </script>
 
 <style lang="css" scoped>
- .serachinput {
-        width: 300px;
-        box-sizing: border-box;
-        padding: 9px;
-        border: 1px solid #dddee1;
-        line-height: 20px;
-        font-size: 16px;
-        height: 38px;
-        color: #333;
-        position: relative;
-        border-radius: 4px;
-        -webkit-box-shadow: #666 0px 0px 10px;
-        -moz-box-shadow: #666 0px 0px 10px;
-        box-shadow: #666 0px 0px 10px;
-    }
-.contactway{
-	height: 260px;
-}
-.wayLi{
-	display: inline-block;
-	margin:3%  4%;
-	width:25%;
-}
-.icons{
-	border:3px solid rgb(31,49,93);
-	border-radius: 13px;
-	/*width:100px;*/
-	height: 100px;
-	font-size: 40px;
-	text-align: center;
-	line-height: 100px;
-	color: rgb(31,49,93);
-	margin:10% 32%;
-}
-.icons:hover{
-	color:  #fff;
-	background-color:rgb(31,49,93);
-}
-.textway{
-	font-weight: 550;
-	font-size:15px;
-	width:100%;
-	text-align:center;
-	color:rgb(60,111,160);
-}
-.detail{
-	width:47%;
-}
-.detail h3{
-	font-size: 27px;
-	font-weight: 500;
-	margin:3% 0;
-	font-weight: bold;
-}
-.detail strong{
-	font-size: 16px;
-	
-}
-.detail span{
-	font-size: 16px;
-	font-weight: 550;
-	color: rgb(227,91,91);
-	
+/*手机*/
+@media screen and (max-width: 767px){ 
+	.serachinput {
+	    width: 300px;
+	    box-sizing: border-box;
+	    padding: 9px;
+	    border: 1px solid #dddee1;
+	    line-height: 20px;
+	    font-size: 16px;
+	    height: 38px;
+	    color: #333;
+	    position: relative;
+	    border-radius: 4px;
+	    -webkit-box-shadow: #666 0px 0px 10px;
+	    -moz-box-shadow: #666 0px 0px 10px;
+	    box-shadow: #666 0px 0px 10px;
+	    }
+	.contactway{
+		height: 260px;
+	}
+	.wayLi{
+		display: inline-block;
+		margin:3%  4%;
+		width:25%;
+	}
+	.icons{
+		border:3px solid rgb(31,49,93);
+		border-radius: 13px;
+		/*width:100px;*/
+		height: 100px;
+		font-size: 40px;
+		text-align: center;
+		line-height: 100px;
+		color: rgb(31,49,93);
+		margin:10% 32%;
+	}
+	.icons:hover{
+		color:  #fff;
+		background-color:rgb(31,49,93);
+	}
+	.textway{
+		font-weight: 550;
+		font-size:15px;
+		width:100%;
+		text-align:center;
+		color:rgb(60,111,160);
+	}
+	.detail{
+		width:47%;
+	}
+	.detail h3{
+		font-size: 27px;
+		font-weight: 500;
+		margin:3% 0;
+		font-weight: bold;
+	}
+	.detail strong{
+		font-size: 16px;
+		
+	}
+	.detail span{
+		font-size: 16px;
+		font-weight: 550;
+		color: rgb(227,91,91);
+		
 
+	}
+	.detail>.ppone{
+		margin:3% 0;
+		color: #969292;
+	}
+	.detail ul>li{
+		display:inline-block;
+		margin:2% 3%;
+	}
+	.detail .add{
+		font-size:14px;
+		color: rgb(74,74,74);
+		margin-top:5%;
+	}
+	.detail .add>p{
+		/*display: inline-block;*/
+		margin-bottom: 10px;
+	}
+	.detailmap{
+		position: relative;
+		margin-top: 5%;
+		margin-bottom: 7%;
+	}
+	.bm-view{
+		position: absolute;
+		float: right;
+		top:0;
+		right: 0;
+	}
+
+	.mapouter{
+		/*display: inline-block;*/
+		
+	}
+} 
+ /*ipad*/
+@media screen and (min-width: 768px) and (max-width: 1365px){ 
+	#mainContact .container{
+		width: 90%;
+	}
+  .serachinput{
+	    width: 300px;
+	    box-sizing: border-box;
+	    padding: 9px;
+	    border: 1px solid #dddee1;
+	    line-height: 20px;
+	    font-size: 16px;
+	    height: 38px;
+	    color: #333;
+	    position: relative;
+	    border-radius: 4px;
+	    -webkit-box-shadow: #666 0px 0px 10px;
+	    -moz-box-shadow: #666 0px 0px 10px;
+	    box-shadow: #666 0px 0px 10px;
+	    }
+	.contactway{
+		height: 260px;
+	}
+	.wayLi{
+		display: inline-block;
+		width:30%;
+	}
+	.contactway .theone{
+		width: 37%;
+	}
+	.icons{
+		border:3px solid rgb(31,49,93);
+		border-radius: 13px;
+		/*width:100px;*/
+		height: 100px;
+		font-size: 40px;
+		text-align: center;
+		line-height: 100px;
+		color: rgb(31,49,93);
+		margin:10% 32%;
+	}
+	.icons:hover{
+		color:  #fff;
+		background-color:rgb(31,49,93);
+	}
+	.textway{
+		font-weight: 550;
+		font-size:15px;
+		width:100%;
+		text-align:center;
+		color:rgb(60,111,160);
+	}
+	.detail{
+		width:47%;
+	}
+	.detail h3{
+		font-size: 27px;
+		font-weight: 500;
+		margin:3% 0;
+		font-weight: bold;
+	}
+	.detail strong{
+		font-size: 16px;
+		
+	}
+	.detail span{
+		font-size: 16px;
+		font-weight: 550;
+		color: rgb(227,91,91);
+		
+
+	}
+	.detail>.ppone{
+		margin:3% 0;
+		color: #969292;
+	}
+	.detail ul>li{
+		display:inline-block;
+		margin:2% 3%;
+	}
+	.detail .add{
+		font-size:14px;
+		color: rgb(74,74,74);
+		margin-top:5%;
+	}
+	.detail .add>p{
+		/*display: inline-block;*/
+		margin-bottom: 10px;
+	}
+	.detailmap{
+		position: relative;
+		margin-bottom: 7%;
+	}
+	.bm-view{
+		position: absolute;
+		float: right;
+		top:0;
+		right: 0;
+	}
+
+	.mapouter{
+		/*display: inline-block;*/
+		
+	}
 }
-.detail>.ppone{
-	margin:3% 0;
-	color: #969292;
-}
-.detail ul>li{
-	display:inline-block;
-	margin:2% 3%;
-}
-.detail .add{
-	font-size:14px;
-	color: rgb(74,74,74);
-	margin-top:5%;
-}
-.detail .add>p{
-	/*display: inline-block;*/
-	margin-bottom: 10px;
-}
-.detailmap{
-	position: relative;
-	margin-top: 5%;
-	margin-bottom: 7%;
-}
-.bm-view{
-	position: absolute;
-	float: right;
-	top:0;
-	right: 0;
+ /*普通pc*/
+@media screen and (min-width: 1366px) and (max-width: 1902px){
+	#mainContact .container{
+		width: 78%;
+		/*background-color: pink;*/
+	}
+  .serachinput {
+	    width: 300px;
+	    box-sizing: border-box;
+	    padding: 9px;
+	    border: 1px solid #dddee1;
+	    line-height: 20px;
+	    font-size: 16px;
+	    height: 38px;
+	    color: #333;
+	    position: relative;
+	    border-radius: 4px;
+	    -webkit-box-shadow: #666 0px 0px 10px;
+	    -moz-box-shadow: #666 0px 0px 10px;
+	    box-shadow: #666 0px 0px 10px;
+	    }
+	.contactway{
+		height: 260px;
+	}
+	.wayLi{
+		display: inline-block;
+		margin:3%  4%;
+		width:25%;
+	}
+	.icons{
+		border:3px solid rgb(31,49,93);
+		border-radius: 13px;
+		/*width:100px;*/
+		height: 100px;
+		font-size: 40px;
+		text-align: center;
+		line-height: 100px;
+		color: rgb(31,49,93);
+		margin:10% 32%;
+	}
+	.icons:hover{
+		color:  #fff;
+		background-color:rgb(31,49,93);
+	}
+	.textway{
+		font-weight: 550;
+		font-size:15px;
+		width:100%;
+		text-align:center;
+		color:rgb(60,111,160);
+	}
+	.detail{
+		width:47%;
+	}
+	.detail h3{
+		font-size: 27px;
+		font-weight: 500;
+		margin:3% 0;
+		font-weight: bold;
+	}
+	.detail strong{
+		font-size: 16px;
+		
+	}
+	.detail span{
+		font-size: 16px;
+		font-weight: 550;
+		color: rgb(227,91,91);
+		
+
+	}
+	.detail>.ppone{
+		margin:3% 0;
+		color: #969292;
+	}
+	.detail ul>li{
+		display:inline-block;
+		margin:2% 3%;
+	}
+	.detail .add{
+		font-size:14px;
+		color: rgb(74,74,74);
+		margin-top:5%;
+	}
+	.detail .add>p{
+		/*display: inline-block;*/
+		margin-bottom: 10px;
+	}
+	.detailmap{
+		position: relative;
+		margin-top: 5%;
+		margin-bottom: 7%;
+	}
+	.bm-view{
+		position: absolute;
+		float: right;
+		top:0;
+		right: 0;
+	}
+
+	.mapouter{
+		/*display: inline-block;*/
+		
+	}
+} 
+/*超大pc*/
+@media screen and (min-width: 1903px){
+	#mainContact .container{
+		width: 70%;
+		/*background-color: pink;*/
+	}
+	.serachinput {
+	    width: 300px;
+	    box-sizing: border-box;
+	    padding: 9px;
+	    border: 1px solid #dddee1;
+	    line-height: 20px;
+	    font-size: 16px;
+	    height: 38px;
+	    color: #333;
+	    position: relative;
+	    border-radius: 4px;
+	    -webkit-box-shadow: #666 0px 0px 10px;
+	    -moz-box-shadow: #666 0px 0px 10px;
+	    box-shadow: #666 0px 0px 10px;
+	    }
+	.contactway{
+		height: 260px;
+	}
+	.wayLi{
+		display: inline-block;
+		margin:3%  4%;
+		width:25%;
+	}
+	.icons{
+		border:3px solid rgb(31,49,93);
+		border-radius: 13px;
+		/*width:100px;*/
+		height: 100px;
+		font-size: 40px;
+		text-align: center;
+		line-height: 100px;
+		color: rgb(31,49,93);
+		margin:10% 32%;
+	}
+	.icons:hover{
+		color:  #fff;
+		background-color:rgb(31,49,93);
+	}
+	.textway{
+		font-weight: 550;
+		font-size:15px;
+		width:100%;
+		text-align:center;
+		color:rgb(60,111,160);
+	}
+	.detail{
+		width:47%;
+	}
+	.detail h3{
+		font-size: 27px;
+		font-weight: 500;
+		margin:3% 0;
+		font-weight: bold;
+	}
+	.detail strong{
+		font-size: 16px;
+		
+	}
+	.detail span{
+		font-size: 16px;
+		font-weight: 550;
+		color: rgb(227,91,91);
+	}
+	.detail>.ppone{
+		margin:3% 0;
+		color: #969292;
+	}
+	.detail ul>li{
+		display:inline-block;
+		margin:2% 3%;
+	}
+	.detail .add{
+		font-size:14px;
+		color: rgb(74,74,74);
+		margin-top:5%;
+	}
+	.detail .add>p{
+		/*display: inline-block;*/
+		margin-bottom: 10px;
+	}
+	.detailmap{
+		position: relative;
+		margin-top: 5%;
+		margin-bottom: 7%;
+	}
+	.bm-view{
+		position: absolute;
+		float: right;
+		top:0;
+		right: 0;
+	}
+
+	.mapouter{
+		/*display: inline-block;*/
+		
+	}
 }
 
-.mapouter{
-	/*display: inline-block;*/
-	
-}
 </style>

@@ -6,35 +6,37 @@
         <div class="nav-left">
           <img src="../../../src/assets/logo-final.png" height="44" width="189" alt="">
         </div>
+
         <div v-if="isindex">
-              <!-- 是首页 -->
+              <!-- 是首页样式 -->
           <div class="nav-right" v-if='isshow'>
-            <ul>
+            <ul class="nav-smalls">
               <li v-for='(list,index) in Headerlist' :key='list.id' @click='bgcAdd(index)' :class="{ active:index==current}" >
                 <router-link :to='{name:list.name}'>{{list.title}}</router-link>
               </li>
             </ul>
-            <div class="small" v-show='isnone'>
+   <!--          <div class="small twosmall" v-show='isnone'>
                 <span class="iconfont" @click='open' >&#xe63b;</span>
+            </div> -->
+          </div>
+             
+            <!-- 全屏显示小图标 -->
+            <div v-else class="small">
+              <span class="iconfont" @click='open' >&#xe63b;</span>
             </div>
-          </div>
-             <!-- 小图标 -->
-
-          <div v-else class="small" v-show='isnone'>
-            <span class="iconfont" @click='open' >&#xe63b;</span>
-          </div>
-                    <!-- 小图标展开的 -->
-          <div class="bigPage" v-if='isopen' @touchmove.prevent :style='style'>
-            <span class="iconfont tuichu" @click='close()' v-show='issmall'>&#xe616;</span>
-            <ul>
-              <li v-for='(list,index) in Headerlist'  >
-                <router-link :to='{name:list.name}' class='lis' @click.native='close(list.flag)'>{{list.title}}</router-link>
-              </li>
-            </ul>
-          </div>
+            <!-- 小图标展开的 -->
+            <div class="bigPage" v-if='isopen' @touchmove.prevent :style='style'>
+              <span class="iconfont tuichu" @click='close()' v-show='issmall'>&#xe616;</span>
+              <ul>
+                <li v-for='(list,index) in Headerlist'  >
+                  <router-link :to='{name:list.name}' class='lis' @click.native='close(list.flag)'>{{list.title}}</router-link>
+                </li>
+              </ul>
+            </div>
         </div>
-
-        <div v-else>
+        
+        <!-- 非首页样式 -->
+        <div v-else class="nophone">
           <div class="nav-right">
             <ul>
               <li v-for='(list,index) in Headerlist' :key='list.id' @click='bgcAdd(index)' :class="{ active:index==current}" >
@@ -188,131 +190,461 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.active{
-  background-color: #89B3FC;
- border-bottom: 2px solid #89B3FC;
-  /*color: #fff;*/
-}
-.active>a{
-  color: #fff !important;
-}
-.el-container{
-  width: 100%;
-
-}
-.el-header{
-  padding: 0;
-  width: 100%;
-/* border-bottom: 1px solid orangered;*/
- position: fixed;
- z-index: 1;
-}
-.header{
-  float: left;
-  z-index: 100;
-  background-color: rgba(60,60,60,.35);
-
- font-size: 14px;
- font-weight: bold;
- width: 100%;
- height: 60px;
- line-height: 60px;
- margin: 0 auto;
- /*padding-left:  20px ;*/
-}
-.bgs{
-  background-color: rgba(49,49,49,0);
-}
-/*左边logo*/
-.nav-left{
- float:left;
- height: 100%;
- width:20%;
-  z-index: 100;
-  padding:0 5%;
-}
-.nav-left img{
- height:100%;
-}
-
-/*右边标题*/
-.nav-right{
- float: left;
- width: 70%;
- height: 100%;
-/* background-color: green;*/
-}
-.nav-right ul{
-  float: left;
-   width: 80%;
-   height:58px;
-   padding: 0 4%;
-   /*background-color: red;*/
-}
-.nav-right  ul li{
- /* background-color: blue;*/
- float: left;
- width: 15%;
-/* margin: 0 5px;*/
- /*padding: 0 5px;*/
- height:100%;
- text-align: center;
-}
-.nav-right ul li a{
- /* background-color: pink;*/
-color: rgba(218,218,218,.92);
- width: 100%;
- height:100%;
- display: inline-block;
-  float: left;
-  z-index: 100;
-}
-/*.nav-right ul li a:hover{
-   background-color: orangered;
-   color: #fff;
-}*/
-.small{
-      width: 10%;
+/*平板*/
+@media screen and (max-width: 767px){ 
+  .active{
+    background-color: #89B3FC;
+    border-bottom: 2px solid #89B3FC;
+    /*color: #fff;*/
+  }
+  .active>a{
+    color: #fff !important;
+  }
+  .el-container{
+    width: 100%;
+  }
+  .el-header{
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .header{
+    float: left;
+    z-index: 100;
+    background-color: rgba(60,60,60,.35);
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+  }
+  .bgs{
+    background-color: rgba(49,49,49,0);
+  }
+  /*左边logo*/
+  .nav-left{
+    float:left;
+    height: 100%;
+    width:20%;
+    z-index: 100;
+    padding:0 5%;
+  }
+  .nav-left img{
+    height:100%;
+  }
+  
+ .nophone{
+    display: none;
+  }
+  /*右边标题*/
+  .nav-right{
+    /*display: none;*/
+    float: left;
+    width: 70%;
+    height: 100%;
+  }
+  .nav-right ul{
+    float: left;
+    width: 80%;
+    height:58px;
+    padding-left: 13%;
+    display: none;
+  }
+  .nav-right  ul li{
+    float: left;
+    width: 16%;
+    height:100%;
+    text-align: center;
+  }
+  .twosmall{
+    display: none;
+  }
+  .nav-right ul li a{
+   /* background-color: pink;*/
+    color: rgba(218,218,218,.92);
+    width: 100%;
+    height:100%;
+    display: inline-block;
+    float: left;
+    z-index: 100;
+  }
+  .small{
+    width: 10%;
     height: 60px;
     float: right;
-}
-.small span{
-  font-size: 40px;
-/*  float: right;*/
-  margin-right: 100%;
-  color:rgb(80,131,180);
-  cursor: pointer;
-}
-.bigPage{
-  width: 100%;
-  height:auto;
-  padding:100px 0;
-  background-color: rgba(0,0,0,0.91);
-  z-index:1000;
-  text-align: center;
-}
-.bigPage ul li{
-  height:60px;
-  font-size: 24px;
-  margin: 25px 0;
-}
-.bigPage ul li .lis{
-  width: 100%;
-  color: rgb(80,131,180);
-}
-.tuichu{
+  }
+  .small span{
+    font-size: 40px;
+    margin-right: 100%;
+    color:rgb(80,131,180);
+    cursor: pointer;
+  }
+  .bigPage{
+    width: 100%;
+    height:auto;
+    padding:100px 0;
+    background-color: rgba(0,0,0,0.91);
+    z-index:1000;
+    text-align: center;
+  }
+  .bigPage ul li{
+    height:60px;
+    font-size: 24px;
+    margin: 25px 0;
+  }
+  .bigPage ul li .lis{
+    width: 100%;
+    color: rgb(80,131,180);
+  }
+  .tuichu{
     position: absolute;
     font-size: 50px;
     color: rgb(80,131,180);
     top: 0;
     right: 75px;
     cursor: pointer;
+  }
 }
+/*平板*/
+@media screen and (min-width: 768px) and (max-width: 1365px){ 
+  .active{
+    background-color: #89B3FC;
+    border-bottom: 2px solid #89B3FC;
+    /*color: #fff;*/
+  }
+  .active>a{
+    color: #fff !important;
+  }
+  .el-container{
+    width: 100%;
+  }
+  .el-header{
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+  }
+  .header{
+    float: left;
+    z-index: 100;
+    background-color: rgba(60,60,60,.35);
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+  }
+  .bgs{
+    background-color: rgba(49,49,49,0);
+  }
+  /*左边logo*/
+  .nav-left{
+    float:left;
+    height: 100%;
+    width:20%;
+    z-index: 100;
+    padding:0 5%;
+  }
+  .nav-left img{
+    height:100%;
+  }
 
-/*@media screen and (max-width: 300px) {
-    .nav-right{
-        display: none;
-    }
-}*/
+  /*右边标题*/
+  .nav-right{
+    /*display: none;*/
+    float: left;
+    width: 70%;
+    height: 100%;
+  }
+  .nav-right ul{
+    float: left;
+    width: 80%;
+    height:58px;
+    padding-left: 13%;
+    /*display: none;*/
+  }
+  .nav-right  ul li{
+    float: left;
+    width: 16%;
+    height:100%;
+    text-align: center;
+  }
+  .twosmall{
+    display: none;
+  }
+  .nav-right ul li a{
+   /* background-color: pink;*/
+    color: rgba(218,218,218,.92);
+    width: 100%;
+    height:100%;
+    display: inline-block;
+    float: left;
+    z-index: 100;
+  }
+  .small{
+    width: 10%;
+    height: 60px;
+    float: right;
+  }
+  .small span{
+    font-size: 40px;
+    margin-right: 100%;
+    color:rgb(80,131,180);
+    cursor: pointer;
+  }
+  .bigPage{
+    width: 100%;
+    height:auto;
+    padding:100px 0;
+    background-color: rgba(0,0,0,0.91);
+    z-index:1000;
+    text-align: center;
+  }
+  .bigPage ul li{
+    height:60px;
+    font-size: 24px;
+    margin: 25px 0;
+  }
+  .bigPage ul li .lis{
+    width: 100%;
+    color: rgb(80,131,180);
+  }
+  .tuichu{
+    position: absolute;
+    font-size: 50px;
+    color: rgb(80,131,180);
+    top: 0;
+    right: 75px;
+    cursor: pointer;
+  }
+}
+ /*普通pc*/
+@media screen and (min-width: 1366px) and (max-width: 1902px){
+  .active{
+    background-color: #89B3FC;
+    border-bottom: 2px solid #89B3FC;
+    /*color: #fff;*/
+  }
+  .active>a{
+    color: #fff !important;
+  }
+  .el-container{
+    width: 100%;
+  }
+  .el-header{
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+  }
+  .header{
+    float: left;
+    z-index: 100;
+    background-color: rgba(60,60,60,.35);
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+  }
+  .bgs{
+    background-color: rgba(49,49,49,0);
+  }
+  /*左边logo*/
+  .nav-left{
+    float:left;
+    height: 100%;
+    width:20%;
+    z-index: 100;
+    padding:0 5%;
+  }
+  .nav-left img{
+    height:100%;
+  }
 
+  /*右边标题*/
+  .nav-right{
+    float: left;
+    width: 70%;
+    height: 100%;
+  }
+  .nav-right ul{
+    float: left;
+    width: 80%;
+    height:58px;
+    padding-left: 20%;
+  }
+  .nav-right  ul li{
+    float: left;
+    width: 15%;
+    height:100%;
+    text-align: center;
+  }
+  .twosmall{
+    display: none;
+  }
+  .nav-right ul li a{
+   /* background-color: pink;*/
+    color: rgba(218,218,218,.92);
+    width: 100%;
+    height:100%;
+    display: inline-block;
+    float: left;
+    z-index: 100;
+  }
+  .small{
+    width: 10%;
+    height: 60px;
+    float: right;
+  }
+  .small span{
+    font-size: 40px;
+    margin-right: 100%;
+    color:rgb(80,131,180);
+    cursor: pointer;
+  }
+  .bigPage{
+    width: 100%;
+    height:auto;
+    padding:100px 0;
+    background-color: rgba(0,0,0,0.91);
+    z-index:1000;
+    text-align: center;
+  }
+  .bigPage ul li{
+    height:60px;
+    font-size: 24px;
+    margin: 25px 0;
+  }
+  .bigPage ul li .lis{
+    width: 100%;
+    color: rgb(80,131,180);
+  }
+  .tuichu{
+    position: absolute;
+    font-size: 50px;
+    color: rgb(80,131,180);
+    top: 0;
+    right: 75px;
+    cursor: pointer;
+  }
+} 
+  /*超大pc*/
+@media screen and (min-width: 1903px){
+  .active{
+    background-color: #89B3FC;
+    border-bottom: 2px solid #89B3FC;
+    /*color: #fff;*/
+  }
+  .active>a{
+    color: #fff !important;
+  }
+  .el-container{
+    width: 100%;
+  }
+  .el-header{
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+  }
+  .header{
+    float: left;
+    z-index: 100;
+    background-color: rgba(60,60,60,.35);
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+  }
+  .bgs{
+    background-color: rgba(49,49,49,0);
+  }
+  /*左边logo*/
+  .nav-left{
+    float:left;
+    height: 100%;
+    width:20%;
+    z-index: 100;
+    padding:0 5%;
+  }
+  .nav-left img{
+    height:100%;
+  }
+
+  /*右边标题*/
+  .nav-right{
+    float: left;
+    width: 70%;
+    height: 100%;
+  }
+  .nav-right ul{
+    float: left;
+    width: 80%;
+    height:58px;
+    padding-left: 20%;
+  }
+  .nav-right  ul li{
+    float: left;
+    width: 15%;
+    height:100%;
+    text-align: center;
+  }
+  .twosmall{
+    display: none;
+  }
+  .nav-right ul li a{
+   /* background-color: pink;*/
+    color: rgba(218,218,218,.92);
+    width: 100%;
+    height:100%;
+    display: inline-block;
+    float: left;
+    z-index: 100;
+  }
+  .small{
+    width: 10%;
+    height: 60px;
+    float: right;
+  }
+  .small span{
+    font-size: 40px;
+    margin-right: 100%;
+    color:rgb(80,131,180);
+    cursor: pointer;
+  }
+  .bigPage{
+    width: 100%;
+    height:auto;
+    padding:100px 0;
+    background-color: rgba(0,0,0,0.91);
+    z-index:1000;
+    text-align: center;
+  }
+  .bigPage ul li{
+    height:60px;
+    font-size: 24px;
+    margin: 25px 0;
+  }
+  .bigPage ul li .lis{
+    width: 100%;
+    color: rgb(80,131,180);
+  }
+  .tuichu{
+    position: absolute;
+    font-size: 50px;
+    color: rgb(80,131,180);
+    top: 0;
+    right: 75px;
+    cursor: pointer;
+  }
+}
 </style>
