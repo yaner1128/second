@@ -1,6 +1,6 @@
 <template>
   <el-container @mousewheel='enter'>
-    <el-header height = '0px' >
+    <el-header style="height: 0px" >
       <div class="header" :class='{bgs:nobgc}'>
         <!--导航栏logo -->
         <div class="nav-left">
@@ -14,9 +14,9 @@
                 <router-link :to='{name:list.name}'>{{list.title}}</router-link>
               </li>
             </ul>
-            <div class="small" v-show='isnone'>
+           <!--  <div class="small" v-show='isnone'>
                 <span class="iconfont" @click='open' >&#xe63b;</span>
-            </div>
+            </div> -->
           </div>
              <!-- 小图标 -->
 
@@ -32,6 +32,21 @@
               </li>
             </ul>
           </div>
+          <div class="phone">
+              <div  class="small" >
+                <span class="iconfont" @click='open' >&#xe63b;</span>
+              </div>
+                      <!-- 小图标展开的 -->
+              <div class="bigPage" v-if='isopen' @touchmove.prevent :style='style'>
+                <span class="iconfont tuichu" @click='close()' v-show='issmall'>&#xe616;</span>
+                <ul>
+                  <li v-for='(list,index) in Headerlist'  >
+                    <router-link :to='{name:list.name}' class='lis' @click.native='close(list.flag)'>{{list.title}}</router-link>
+                  </li>
+                </ul>
+              </div>
+          </div>
+          
         </div>
 
         <div v-else>
@@ -56,6 +71,7 @@ export default {
       style:{
         height:'',
       },
+      screenWidth: document.body.clientWidth, 
       isnone:true,
       issmall:false,
       isshow:false,
@@ -86,6 +102,7 @@ export default {
   },
   methods:{
     handleScroll(){
+      // console.log(this.screenWidth);
       // 页面滚动距顶部距离
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       this.scroll = scrollTop - this.i;
@@ -159,18 +176,13 @@ export default {
       }
 
       for(let i=0;i<6;i++){
-        // console.log(this.$store.state.isname);
-        // if(this.$store.state.isname==newsdetail)
         if(this.Headerlist[i].name==this.$store.state.isname){
             if(this.$store.state.isname=="Home"){
               this.nobgc=true;
               this.isshow=false;
-              // console.log('是首页');
             }else{
-              // console.log(this.$store.state.isname);
             }
             this.current=this.Headerlist[i].id-1;
-            // console.log(this.current);
         }else{
           if(this.$store.state.isname=='newsdetail'){
               this.current=4;
@@ -180,7 +192,6 @@ export default {
           }
         }
       }
-      // console.log(this.current);
       return this.$store.state.isindex
     }
   }
@@ -188,131 +199,125 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.active{
-  background-color: #89B3FC;
- border-bottom: 2px solid #89B3FC;
-  /*color: #fff;*/
-}
-.active>a{
-  color: #fff !important;
-}
-.el-container{
-  width: 100%;
+/*手机*/
+@media screen and (max-width: 767px){ 
+ .active{
+    background-color: #89B3FC;
+    border-bottom: 2px solid #89B3FC;
+    /*color: #fff;*/
+  }
+  .active>a{
+    color: #fff !important;
+  }
+  .el-container{
+    width: 100%;
+  }
+  .el-header{
+    padding: 0;
+    width:97.915%;
+    position: fixed;
+    z-index: 1;
+  }
+  .header{
+    float: left;
+    z-index: 100;
+    background-color: rgba(60,60,60,.35);
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+  }
+  .bgs{
+    background-color: rgba(49,49,49,0);
+  }
+  /*左边logo*/
+  .nav-left{
+    float:left;
+    height: 100%;
+    width:20%;
+    z-index: 100;
+    padding:0 5%;
+  }
+  .nav-left img{
+    height:100%;
+  }
 
-}
-.el-header{
-  padding: 0;
-  width: 100%;
-/* border-bottom: 1px solid orangered;*/
- position: fixed;
- z-index: 1;
-}
-.header{
-  float: left;
-  z-index: 100;
-  background-color: rgba(60,60,60,.35);
-
- font-size: 14px;
- font-weight: bold;
- width: 100%;
- height: 60px;
- line-height: 60px;
- margin: 0 auto;
- /*padding-left:  20px ;*/
-}
-.bgs{
-  background-color: rgba(49,49,49,0);
-}
-/*左边logo*/
-.nav-left{
- float:left;
- height: 100%;
- width:20%;
-  z-index: 100;
-  padding:0 5%;
-}
-.nav-left img{
- height:100%;
-}
-
-/*右边标题*/
-.nav-right{
- float: left;
- width: 70%;
- height: 100%;
-/* background-color: green;*/
-}
-.nav-right ul{
-  float: left;
-   width: 80%;
-   height:58px;
-   padding: 0 4%;
-   /*background-color: red;*/
-}
-.nav-right  ul li{
- /* background-color: blue;*/
- float: left;
- width: 15%;
-/* margin: 0 5px;*/
- /*padding: 0 5px;*/
- height:100%;
- text-align: center;
-}
-.nav-right ul li a{
- /* background-color: pink;*/
-color: rgba(218,218,218,.92);
- width: 100%;
- height:100%;
- display: inline-block;
-  float: left;
-  z-index: 100;
-}
-/*.nav-right ul li a:hover{
-   background-color: orangered;
-   color: #fff;
-}*/
-.small{
-      width: 10%;
+  /*右边标题*/
+  .nav-right{
+    display: none;
+    float: left;
+    width: 70%;
+    height: 100%;
+  }
+  .nav-right ul{
+    display:none;
+    float: left;
+    width: 80%;
+    height:58px;
+    padding-left: 13%;
+    /*display: none;*/
+  }
+  .nav-right  ul li{
+    float: left;
+    width: 16%;
+    height:100%;
+    text-align: center;
+  }
+  .twosmall{
+    display: none;
+  }
+  .nav-right ul li a{
+   /* background-color: pink;*/
+    color: rgba(218,218,218,.92);
+    width: 100%;
+    height:100%;
+    display: inline-block;
+    float: left;
+    z-index: 100;
+    
+  }
+  .small,.bigPage{
+    display: none;
+  }
+  .phone .small{
+    width: 10%;
     height: 60px;
     float: right;
-}
-.small span{
-  font-size: 40px;
-/*  float: right;*/
-  margin-right: 100%;
-  color:rgb(80,131,180);
-  cursor: pointer;
-}
-.bigPage{
-  width: 100%;
-  height:auto;
-  padding:100px 0;
-  background-color: rgba(0,0,0,0.91);
-  z-index:1000;
-  text-align: center;
-}
-.bigPage ul li{
-  height:60px;
-  font-size: 24px;
-  margin: 25px 0;
-}
-.bigPage ul li .lis{
-  width: 100%;
-  color: rgb(80,131,180);
-}
-.tuichu{
+    margin-right: 6%;
+  }
+  .phone .small span{
+    font-size: 40px;
+    margin-right: 100%;
+    color:rgb(80,131,180);
+    cursor: pointer;
+  }
+  .phone .bigPage{
+    width: 100%;
+    height:auto;
+    padding:100px 0;
+    background-color: rgba(0,0,0,0.91);
+    z-index:1000;
+    text-align: center;
+  }
+  .phone .bigPage ul li{
+    height:60px;
+    font-size: 24px;
+    margin: 25px 0;
+  }
+  .phone .bigPage ul li .lis{
+    width: 100%;
+    color: rgb(80,131,180);
+  }
+  .phone .tuichu{
     position: absolute;
     font-size: 50px;
     color: rgb(80,131,180);
     top: 0;
     right: 75px;
     cursor: pointer;
+  }
+
 }
-
-/*@media screen and (max-width: 300px) {
-    .nav-right{
-        display: none;
-    }
-}*/
-
 </style>

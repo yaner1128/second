@@ -305,7 +305,7 @@ export default {
 }
   }  
  /*ipad*/
-@media screen and (min-width: 768px) and (max-width: 1365px){ 
+@media screen and (min-width: 768px) and (max-width: 1023px){ 
 	.container{
 	margin-bottom: 5%;
 }
@@ -459,7 +459,165 @@ export default {
 	font-size: 20px;
 }
  }
- /*普通pc*/
+ /*真的普通pc*/
+@media screen and (min-width: 1024px) and (max-width: 1365px){ 
+	.container{
+	margin-bottom: 5%;
+}
+
+.detailleft{
+	display:inline-block;
+	width:68%;
+}
+.title h1{
+	display: inline-block;
+	font-size: 35px;
+}
+
+
+.demos span{
+	float: right;
+	font-size: 28px;
+	width:38px;
+	height: 38px;
+	border: 1px solid #A3A3A3;
+	border-radius: 19px;
+	border-bottom-right-radius: 3px;
+	color: #A3A3A3;
+	text-align: center;
+	line-height: 35px;
+	margin-top: 5px;
+	margin-left: 10px;
+	padding-top:3px;
+}
+
+
+.demos .nextdemo:hover{
+
+	color: rgb(60,111,160);
+	border-color: rgb(60,111,160);
+	cursor: pointer;
+}
+.demos .alldemo:hover{
+	color: rgb(60,111,160);
+	border-color: rgb(60,111,160);
+	cursor: pointer;
+
+}
+.interactive i{
+	color: #A3A3A3;
+}
+.democontent{
+	width:100%;
+	margin:5% 0;
+}
+.detailcontent{
+	margin-bottom: 4%;
+}
+.detailcontent .subtitle{
+	width:100%;
+	text-align: center;
+	font-weight: 550;
+	font-size:22px;
+	color: rgb(60,111,160);
+	margin-bottom: 3%;
+}
+.detailcontent .sparagraph{
+	line-height: 26px;
+	margin-bottom: 3%;
+}
+.detailcontent .contentimg{
+	width:100%;
+	text-align: center;
+}
+.learnmore{
+	width:28%;
+	height: 400px;
+	float: right;
+
+}
+.learnmore .moredetail{
+	margin-top: 150px;
+	border: 1.5px solidrgb(60,111,160);
+	border-radius: 10px;
+}
+.learnmore .moredetail .moretitle{
+	padding: 15px;
+
+}
+.learnmore .moredetail .moretitle span{
+	font-size: 20px;
+}
+.learnmore .moredetail .moretitle button{
+  width: 121px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color:rgb(60,111,160);
+  color: #FFF;
+  font-weight: 500;
+  font-size: 15px;
+  margin-top: 10%;
+  margin-left:2% ;
+  margin-right: 2%;
+}
+.moretitle button:hover{
+  background-color:rgb(50,99,145);
+  color: #FFF ;
+}
+.learnmore .moredetail .moretitle .surfing{
+	width:92%;
+	font-weight: 550;
+	background-color: #FFF;
+  	color: rgb(60,111,160);
+  	border: 2px solid rgb(60,111,160);
+}
+.consult .consulting{
+	text-align: center;
+}
+.consult .consulting li {
+	display: inline-block;
+	padding:3px;
+}
+.consult .consulting li span{
+	font-size: 16px;
+	margin-left: 3px;
+}
+.consult .consulting li .iconfont{
+	/*border:1px solid #6C8EAC;*/
+	width:70px;
+	height: 70px;
+	line-height: 70px;
+	background-color: #6C8EAC;
+	border-radius: 35px;
+	color:#fff;
+	font-size: 38px;
+	text-align: center;
+	cursor: pointer;
+	border:2px solid #fff;
+}
+.consult .consulting li .iconfont:hover{
+	border:2px solid #DECDCD ;
+}
+.consult .consulting li .icontwo{
+	background-color:#CBCF7C ;
+	
+}
+.consult .consulting li .iconthree{
+	background-color: #67CE9B;
+	
+}
+.share{
+	padding:15px;
+	font-size: 17px;
+}
+.share .iconfont{
+	font-size: 20px;
+}
+ }
+ /*普通偏大pc*/
 @media screen and (min-width: 1366px) and (max-width: 1902px){
 	.container{
 	margin-bottom: 5%;

@@ -72,9 +72,9 @@ export default {
     	texttwo:'根据一定要求，完成视觉传达的目的',
 
     	thirdAnimat:[
-	        {id:1,icon1:'&#xe697;',icon2:'&#xe600;',icon3:'&#xe603;',p1:'触及视觉灵魂的设计趋势',p2:'精心布局的用户体验',p3:'毫无顾忌地通过任何终端',p4:'呈现在客户的眼前'},
-	        {id:2,icon1:'&#xe604;',icon2:'&#xe6b7;',icon3:'&#xe72e;',p1:'Html5 + CSS3 响应式布局',p2:'卓越的浏览器兼容性',p3:'因为高端，所以出众',p4:''},
-	        {id:3,icon1:'&#xe75e;',icon2:'&#xe64d;',icon3:'&#xe695;',p1:'基于 B/S 架构的网站建设',p2:'无障碍的跨平台应用',p3:'无须用户下载安装即可使用',p4:'云端管理，轻松维护'}
+        {id:1,icon1:'&#xe697;',icon2:'&#xe600;',icon3:'&#xe603;',p1:'触及视觉灵魂的设计趋势',p2:'精心布局的用户体验',p3:'毫无顾忌地通过任何终端',p4:'呈现在客户的眼前',prev:require('../../assets/prev1.png'),next:require('../../assets/next1.png')},
+        {id:2,icon1:'&#xe604;',icon2:'&#xe6b7;',icon3:'&#xe72e;',p1:'Html5 + CSS3 响应式布局',p2:'卓越的浏览器兼容性',p3:'因为高端，所以出众',p4:'',prev:require('../../assets/prev2.png'),next:require('../../assets/next2.png')},
+        {id:3,icon1:'&#xe75e;',icon2:'&#xe64d;',icon3:'&#xe695;',p1:'基于 B/S 架构的网站建设',p2:'无障碍的跨平台应用',p3:'无须用户下载安装即可使用',p4:'云端管理，轻松维护',prev:require('../../assets/prev3.png'),next:require('../../assets/next3.png')}
         ],
 
     	titlethree:'我们的服务品质',
@@ -124,7 +124,7 @@ export default {
 }
   }  
  /*ipad*/
-@media screen and (min-width: 768px) and (max-width: 1365px){ 
+@media screen and (min-width: 768px) and (max-width: 1023px){ 
 	.FiveAni{
 	width: 100%;
 	height: 300px;
@@ -157,10 +157,47 @@ export default {
 	float: left;
 	width: 24%;
 	margin: 0 0.6%;
-	padding:0 4%;
+	padding:0 3%;
 }
  }
- /*普通pc*/
+ /*真的普通pc*/
+ @media screen and (min-width: 1024px) and (max-width: 1365px){
+	.FiveAni{
+	width: 100%;
+	height: 300px;
+	padding: 30px 0;
+}
+.FiveAni ul{
+	width: 88%;
+	margin: 0 auto;
+	height:300px;
+}
+.FiveAni li{
+	float: left;
+   	width: 25%;
+    margin: 0 0%;
+    padding: 0 0%;
+}
+.ThreeAni{
+	width: 100%;
+	height: 400px;
+	/*background-color: red;*/
+}
+.ThreeAni ul{
+	width: 88%;
+	height:400px;
+	margin: 0 auto;
+	padding:30px 0;
+/*	background-color: green;*/
+}
+.ThreeAni ul li{
+	float: left;
+	width: 24%;
+	margin: 0 0.6%;
+	padding:0 3%;
+}
+ }
+ /*普通偏大pc*/
 @media screen and (min-width: 1366px) and (max-width: 1902px){
 	.FiveAni{
 	width: 100%;

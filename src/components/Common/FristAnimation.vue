@@ -66,10 +66,7 @@ export default {
 }
  }  
  /*ipad*/
-@media screen and (min-width: 768px) and (max-width: 1365px){ 
-  .mainbody{
-    background-color: red;
-  }
+@media screen and (min-width: 768px) and (max-width: 1023px){ 
   .Fcontainer {
     position: relative;
    width: 80%;
@@ -101,7 +98,41 @@ export default {
 
 }
 }
- /*普通pc*/
+/*真正的普通pc*/
+@media screen and (min-width: 1024px) and (max-width: 1365px){
+    .Fcontainer {
+    position: relative;
+   width: 100%;
+    height: 320px;
+
+}
+.Fcontainer img{
+     width: 100%;
+    height:auto;
+}
+.Fcontainer>.front {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+/*设置滑过翻转，从0-180deg*/
+.front {
+    transform: rotateY(0deg);
+}
+.Fcontainer .oneself:hover .front {
+    transform: rotateY(180deg);
+}
+.Fcontainer .front {
+    transition: all 2s;
+}
+.Fcontainer .text{
+  width: 100%;
+  height: 30px;
+    text-align: center;
+
+}
+}
+ /*普通偏大pc*/
 @media screen and (min-width: 1366px) and (max-width: 1902px){
   .mainbody{
     background-color: blue;

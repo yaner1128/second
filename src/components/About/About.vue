@@ -129,7 +129,7 @@ export default {
 }
  }  
  /*ipad*/
-@media screen and (min-width: 768px) and (max-width: 1365px){ 
+@media screen and (min-width: 768px) and (max-width: 1023px){ 
 
   .about{
   width: 100%;
@@ -178,7 +178,57 @@ export default {
   background-size: 100%;
 }
 }
- /*普通pc*/
+/*真的普通pc*/
+@media screen and (min-width: 1024px) and (max-width: 1365px){
+  
+  .about{
+  width: 100%;
+}
+.about .onetext{
+  margin:50px 0 20px 0;
+}
+.ontextContainer{
+  width: 88%;
+  height: 300px;
+  margin: 0 auto;
+}
+.ontextContainer .AboutImg{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width:40%;
+  height: 100%;
+    float: left;
+}
+.ontextContainer .AboutImg img{
+  margin-top:19%;
+  height: 60%;
+  line-height: 60%;
+  width: 100%;
+}
+.ontextContainer .AboutText{
+  width: 50%;
+  margin: 5% 3.5%;
+  padding-top: 0px;
+  float: left;
+  color: #e0e0e0;
+  background-color: none !important;
+}
+.ontextContainer .AboutText p{
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+.AboutFourAni{
+  padding-bottom: 0px;
+}
+.bgcs{
+  width: 100%;
+  height:320px;
+  background: url(../../assets/about.png) no-repeat;
+  background-size: 100%;
+}
+}
+ /*普通偏大pc*/
 @media screen and (min-width: 1366px) and (max-width: 1902px){
 
   .about{
