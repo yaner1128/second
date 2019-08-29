@@ -3,7 +3,7 @@
 		<my-Banner />
 
 		<!-- 按钮组件 -->
-		<div class="newsBtn">
+		<div class="newsBtn container">
 			<ul>
 				<li v-for='(btns,index) in btnList' :key='btns.id' @click='addBgc(index,btns.id)'>
 					<my-FristButton :firstBtns='btns' :class="{active:index==current}"  />

@@ -1,6 +1,6 @@
 <template>
   <el-container @mousewheel='enter'>
-    <el-header height = '0px' >
+    <el-header style="height: 0px" >
       <div class="header" :class='{bgs:nobgc}'>
         <!--导航栏logo -->
         <div class="nav-left">
@@ -33,7 +33,7 @@
                 </li>
               </ul>
             </div>
-        </div>
+          </div>
         
         <!-- 非首页样式 -->
         <div v-else class="nophone">
@@ -58,6 +58,7 @@ export default {
       style:{
         height:'',
       },
+      screenWidth: document.body.clientWidth, 
       isnone:true,
       issmall:false,
       isshow:false,
@@ -88,6 +89,7 @@ export default {
   },
   methods:{
     handleScroll(){
+      // console.log(this.screenWidth);
       // 页面滚动距顶部距离
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       this.scroll = scrollTop - this.i;
@@ -161,18 +163,13 @@ export default {
       }
 
       for(let i=0;i<6;i++){
-        // console.log(this.$store.state.isname);
-        // if(this.$store.state.isname==newsdetail)
         if(this.Headerlist[i].name==this.$store.state.isname){
             if(this.$store.state.isname=="Home"){
               this.nobgc=true;
               this.isshow=false;
-              // console.log('是首页');
             }else{
-              // console.log(this.$store.state.isname);
             }
             this.current=this.Headerlist[i].id-1;
-            // console.log(this.current);
         }else{
           if(this.$store.state.isname=='newsdetail'){
               this.current=4;
@@ -182,7 +179,6 @@ export default {
           }
         }
       }
-      // console.log(this.current);
       return this.$store.state.isindex
     }
   }
@@ -190,6 +186,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
 /*平板*/
 @media screen and (min-width: 768px) and (max-width: 1365px){ 
   .active{
@@ -528,4 +525,5 @@ export default {
     cursor: pointer;
   }
 }
+
 </style>

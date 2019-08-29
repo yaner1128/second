@@ -347,5 +347,11 @@ export default {
 	  }
 	}
 }
+.clearfix::after{
+	content: '';
+	clear: both;
+	display: block;
+}
+
 
 </style>

@@ -327,5 +327,4 @@ export default {
 		padding-right: 3.5%;
 	}
 }
-
 </style>
