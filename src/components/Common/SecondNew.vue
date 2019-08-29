@@ -39,6 +39,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+/*iPad*/
 @media screen and (min-width: 768px) and (max-width: 1365px){ 
 	.clearfix::after{
 		content: '';
@@ -131,6 +132,7 @@ export default {
 		padding-right: 3.5%;
 	}
 }
+/*超大*/
 @media screen and (min-width: 1366px){ 
 	.clearfix::after{
 		content: '';

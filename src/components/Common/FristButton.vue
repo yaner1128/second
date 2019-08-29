@@ -20,7 +20,7 @@ export default {
 
 <style lang="css" scoped>
  /*ipad*/
-@media screen and (min-width: 768px) and (max-width: 1365px){
+@media screen and (min-width: 768px) and (max-width: 1023px){
   .Fristbutton{
     height: 42px;
     width: 100%;
@@ -37,7 +37,7 @@ export default {
     float: left;
   }
 }
- /*普通pc*/
+/*我的电脑*/
 @media screen and (min-width: 1366px) and (max-width: 1902px){
   .Fristbutton{
      height: 42px;

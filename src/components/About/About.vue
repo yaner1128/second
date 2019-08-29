@@ -80,7 +80,7 @@ export default {
 
 <style lang="css" scoped>
  /*ipad*/
-@media screen and (min-width: 768px) and (max-width: 1365px){ 
+@media screen and (min-width: 768px) and (max-width: 1023px){ 
   .about{
     width: 100%;
   }
@@ -128,7 +128,7 @@ export default {
     background-size: 100%;
   }
 }
- /*普通pc*/
+ /*我的电脑*/
 @media screen and (min-width: 1366px) and (max-width: 1902px){
   .about{
     width: 100%;
@@ -224,5 +224,4 @@ export default {
     background-size: 100%;
   }
 }
-
 </style>

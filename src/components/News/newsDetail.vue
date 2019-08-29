@@ -46,7 +46,6 @@ export default {
   	prve(){
   		this.$router.push({
   			path:this.newsdetails.pre_link,
-  			// this.getNewsDetail();
   		})
   		this.getNewsDetail();
   	},
@@ -62,13 +61,13 @@ export default {
   	getNewsDetail(){
   		// console.log(this.$route.params.newsId);
   		this.dates=this.$route.params.dates;
-  		console.log(this.dates);
+  		// console.log(this.dates);
   		this.$http.newsdetails(this.$route.params.newsId)
       	.then(res=>{
-        	console.log(res);
+        	// console.log(res);
 	        if(res.code==0){
 	          	this.newsdetails=res.data;
-	          	console.log(this.newsdetails);
+	          	// console.log(this.newsdetails);
 	          	if(this.newsdetails.next_title==null){
 	          		this.nextshow=false;
 	          	}else{
@@ -86,7 +85,6 @@ export default {
       	})
   	},
   },
-
   created(){
   	this.getNewsDetail();
   }

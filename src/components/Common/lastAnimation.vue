@@ -25,7 +25,7 @@ export default {
 
 <style lang="css" scoped>
  /*ipad*/
-@media screen and (min-width: 768px) and (max-width: 1365px){ 
+@media screen and (min-width: 768px) and (max-width: 1023px){ 
    .main{
       width: 100%;
      /* height: ;*/
@@ -224,7 +224,7 @@ export default {
       transition-delay: 0.3s;
    }
 }
- /*普通pc*/
+ /*我的电脑*/
 @media screen and (min-width: 1366px) and (max-width: 1902px){
    .view {
       width: 300px;
@@ -617,7 +617,5 @@ export default {
       -ms-transition-delay: 0.3s;
       transition-delay: 0.3s;
    }
-}
-
-				
+}				
 </style>

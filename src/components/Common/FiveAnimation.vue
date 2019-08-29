@@ -31,7 +31,6 @@ export default {
   props:['item'],
   methods:{
   	startRotate(){
-  		// console.log("hhhh");
   		this.isstart=true;
   	},
   	endRotate(){
@@ -43,9 +42,9 @@ export default {
 
 <style lang="css" scoped>
 /*手机*/
-/*@media screen and (max-width: 767px){ 
+@media screen and (max-width: 767px){ 
 
- } */ 
+ }  
  /*ipad*/
 @media screen and (min-width: 768px) and (max-width: 1365px){ 
   .FiveBody{
@@ -346,6 +345,5 @@ export default {
       }
   }
 }
-
 
 </style>

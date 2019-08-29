@@ -87,7 +87,7 @@ export default {
 
 <style lang="css" scoped>
  /*ipad*/
-@media screen and (min-width: 768px) and (max-width: 1365px){ 
+@media screen and (min-width: 768px) and (max-width: 1023px){ 
  	.FiveAni{
 		width: 100%;
 		height: 280px;

@@ -40,7 +40,6 @@ export default {
 	    		txt2:'建立异步沟通系统（帮助中心、留言板、问题解答…）方便客户与网站之间',
 	    		// imgSrc:require('../../../static/images/service_(2).png')
 	    		icon:'&#xe60a;'
-
 	    	},
 	    	{
 	    		id:3,
@@ -48,7 +47,6 @@ export default {
 	    		txt2:'整体网站策划流程符合客户心理，且在充分分析客户行业特征的基础上，建立网站内部功能',
 	    		// imgSrc:require('../../../static/images/service_(3).png')
 	    		icon:'&#xe921;'
-
 	    	},
 	    	{
 	    		id:4,
@@ -56,7 +54,6 @@ export default {
 	    		txt2:'整合用户体验式浏览以及营销推广功能，从客户访问到咨询产生形成高转化率',
 	    		// imgSrc:require('../../../static/images/service_(4).png')
 	    		icon:'&#xe7b5;'
-
 	    	},
 	    	{
 	    		id:5,
@@ -71,7 +68,6 @@ export default {
 	    		txt2:'心理学表明，适合的界面对于客户点击欲望的提升和印象指数的提升效果明显，网站界面是...',
 	    		// imgSrc:require('../../../static/images/service_(6).png')
 	    		icon:'&#xe619;'
-
 	    	}
 
     	]
@@ -81,7 +77,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
-@media screen and (min-width: 768px) and (max-width: 1365px){ 
+/*ipad*/
+@media screen and (min-width: 768px) and (max-width: 1023px){ 
 	.clearfix::after{
 		content: '';
 		clear: both;

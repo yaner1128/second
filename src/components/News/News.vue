@@ -87,7 +87,6 @@ export default {
   			this.page=val;
            	// console.log("当前改变："+val)
            	this.getnewsList(this.page);
-
        },
   		prve(page){
   			console.log(page);
@@ -105,7 +104,7 @@ export default {
   			n=Math.ceil(n);//3
   			
   			// console.log(n);//3
-  			console.log(page);//2
+  			// console.log(page);//2
   			if(page>=n-1){
   				this.nonext=false;
   				this.noprve=true;
@@ -115,7 +114,6 @@ export default {
   			}
   			this.page++;
   			this.getnewsList(page);
-
   		},
 	  	addBgc(index,id){
 	  		this.current=index;
@@ -129,7 +127,6 @@ export default {
 	  		this.getnewsList();
 	  		this.nonext=true;
 			this.noprve=false;	
-
 	  	},
 	  	//获取新闻
   		getnewsList(){
@@ -163,12 +160,8 @@ export default {
         	})
   		}
   	},
-
   	created(){
   		this.getnewsList();
-  		// console.log(this.pagenum);
-  		
-  		// this.getpagesList();
   	},
 };
 </script>

@@ -47,48 +47,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.outerlayer{
-	width: 100%;
-	height:160px;
-	text-align: center;
-    margin-top: 30px;
-}
-.outerlayer .textcontainer{
-	position: relative;
-	text-align: center;
-	width: 88%;
-	height: 100%;
-	margin: 0 auto;
 
-}
-.textcontainer h1,h6{
-    display: inline-block;
-}
-.textcontainer h1{
-    border-right: 3px solid  rgb(57,78,121);
-}
-.textcontainer h6{
-    font-weight: 500;
-}
-.textcontainer .title{
-
-	margin:50px 10px 40px 5px;
-    padding-right: 20px;
-}
-/*.textcontainer .title:before {
-    content: '';
-    position: absolute;
-    width: 70px;
-    height: 4px;
-    background: #e35b5b;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    bottom:70px;
-   }*/
- .textcontainer .linetitle{
-  	font-size: 18px;
-    color: #727272;
-    margin: 20px 0 20px 0;
-  } 
 </style>

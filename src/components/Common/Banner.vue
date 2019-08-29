@@ -105,7 +105,7 @@ export default {
 	  }
 	}
 }
- /*ipad*/
+/*普通pc*/
 @media screen and (min-width: 1024px) and (max-width: 1365px){ 
   .clearfix::after{
 		content: '';
@@ -170,7 +170,7 @@ export default {
 	  }
 	}
 }
-/*普通pc*/
+/*我的电脑*/
 @media screen and (min-width: 1366px) and (max-width: 1902px){
 	.clearfix::after{
 		content: '';
