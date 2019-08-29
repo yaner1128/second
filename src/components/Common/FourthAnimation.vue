@@ -78,6 +78,291 @@ export default {
 </script>
 
 <style lang="css" scoped>
+/*手机*/
+@media screen and (max-width: 767px){ 
+    .container{
+       perspective: 1000;
+       transform-style: preserve-3d;
+       height: 300px;
+       
+      }
+      .outer{
+       width:100%;
+       height: 100%;
+      }
+      .lii{
+       width: 35%;
+          height: 54%;
+          display: inline-block;
+          margin: 0px 7%;
+          padding: 0 0%;
+          border-radius: 20px;
+          overflow: hidden;
+      }
+      .four{
+       width: 100%;
+       height: 100%;
+       position: relative;
+      }
+      .four .fourimg .imgone{
+       -webkit-transition: all 0.4s ease-in-out 0.2s;
+         -moz-transition: all 0.4s ease-in-out 0.2s;
+         -o-transition: all 0.4s ease-in-out 0.2s;
+         -ms-transition: all 0.4s ease-in-out 0.2s;
+         transition: all 0.4s ease-in-out 0.2s;
+         -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+         filter: alpha(opacity=100);
+         opacity: 1;
+      }
+      .fourimg{
+       width: 100%;
+       height:100%;
+       
+      }
+      .fourimg .imgone{
+       width: 100%;
+       /*height: 100%;*/
+       border-radius: 20px;
+       overflow: hidden;
+      }
+      .fourimg .imgone{
+       backface-visibility: hidden;
+       position: absolute;
+       transition: all 1s;
+       transform-style: preserve-3d;
+      }
+      .four:hover .imgone{
+        -webkit-transform: scale(0);
+         -moz-transform: scale(0);
+         -o-transform: scale(0);
+         -ms-transform: scale(0);
+         transform: scale(0);
+         -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+         filter: alpha(opacity=0);
+         opacity: 0;
+         -webkit-transition-delay: 0s;
+         -moz-transition-delay: 0s;
+         -o-transition-delay: 0s;
+         -ms-transition-delay: 0s;
+         transition-delay: 0s;
+      }
+
+      .fourcode{
+       width: 100%;
+          height: 100%;
+       /*background-color: #DF715C;*/
+       color: #fff;
+       padding:0px;
+       position: absolute;
+       top: 0;
+       left: 0;
+      }
+      .fourcode .imgtwo{
+      width: 100%;
+       /*height: 100%;*/
+       border-radius: 20px;
+       overflow: hidden;
+      }
+      .four .fourcode{
+       /*background-color: #697C8F;*/
+         -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+         filter: alpha(opacity=0);
+         opacity: 0;
+         -webkit-transform: scale(0) rotate(-180deg);
+         -moz-transform: scale(0) rotate(-180deg);
+         -o-transform: scale(0) rotate(-180deg);
+         -ms-transform: scale(0) rotate(-180deg);
+         transform: scale(0) rotate(-180deg);
+         -webkit-transition: all 0.4s ease-in;
+         -moz-transition: all 0.4s ease-in;
+         -o-transition: all 0.4s ease-in;
+         -ms-transition: all 0.4s ease-in;
+         transition: all 0.4s ease-in;
+         -webkit-border-radius: 0px;
+         -moz-border-radius: 0px;
+         border-radius: 0px;
+      }
+      .four:hover .fourcode{
+       -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+         filter: alpha(opacity=100);
+         opacity: 1;
+         -webkit-transform: scale(1) rotate(0deg);
+         -moz-transform: scale(1) rotate(0deg);
+         -o-transform: scale(1) rotate(0deg);
+         -ms-transform: scale(1) rotate(0deg);
+         transform: scale(1) rotate(0deg);
+         -webkit-transition-delay: 0.2s;
+         -moz-transition-delay: 0.2s;
+         -o-transition-delay: 0.2s;
+         -ms-transition-delay: 0.2s;
+         transition-delay: 0.2s;
+      }
+      .four .fourcode .imgtwo{
+       -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+         filter: alpha(opacity=0);
+         opacity: 0;
+         /*background: transparent;*/
+      /*   margin: 20px 40px 0px 40px;*/
+         -webkit-transition: all 0.5s ease-in-out;
+         -moz-transition: all 0.5s ease-in-out;
+         -o-transition: all 0.5s ease-in-out;
+         -ms-transition: all 0.5s ease-in-out;
+         transition: all 0.5s ease-in-out;
+      }
+      .four:hover .imgtwo{
+       -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+         filter: alpha(opacity=100);
+         opacity: 1;
+         -webkit-transition-delay: 0.5s;
+         -moz-transition-delay: 0.5s;
+         -o-transition-delay: 0.5s;
+         -ms-transition-delay: 0.5s;
+         transition-delay: 0.5s;
+    }
+}     
+/*ipad*/
+@media screen and (min-width: 768px) and (max-width: 1365px){ 
+   .container{
+    perspective: 1000;
+    transform-style: preserve-3d;
+    height: 330px;
+    
+   }
+   .outer{
+    width:100%;
+    height: 100%;
+   }
+   .lii{
+    width: 19%;
+    height: 100%;
+    display: inline-block;
+    margin: 0 1%;
+    padding: 0 2%;
+    border-radius: 20px;
+    overflow: hidden;
+   }
+   .four{
+    width: 100%;
+    height: 100%;
+    position: relative;
+   }
+   .four .fourimg .imgone{
+    -webkit-transition: all 0.4s ease-in-out 0.2s;
+      -moz-transition: all 0.4s ease-in-out 0.2s;
+      -o-transition: all 0.4s ease-in-out 0.2s;
+      -ms-transition: all 0.4s ease-in-out 0.2s;
+      transition: all 0.4s ease-in-out 0.2s;
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+      opacity: 1;
+   }
+   .fourimg{
+    width: 100%;
+    height:100%;
+    
+   }
+   .fourimg .imgone{
+    width: 100%;
+    /*height: 100%;*/
+    border-radius: 20px;
+    overflow: hidden;
+   }
+   .fourimg .imgone{
+    backface-visibility: hidden;
+    position: absolute;
+    transition: all 1s;
+    transform-style: preserve-3d;
+   }
+   .four:hover .imgone{
+     -webkit-transform: scale(0);
+      -moz-transform: scale(0);
+      -o-transform: scale(0);
+      -ms-transform: scale(0);
+      transform: scale(0);
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      opacity: 0;
+      -webkit-transition-delay: 0s;
+      -moz-transition-delay: 0s;
+      -o-transition-delay: 0s;
+      -ms-transition-delay: 0s;
+      transition-delay: 0s;
+   }
+
+   .fourcode{
+    width: 100%;
+       height: 100%;
+    /*background-color: #DF715C;*/
+    color: #fff;
+    padding:0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+   }
+   .fourcode .imgtwo{
+	   width: 100%;
+	    /*height: 100%;*/
+	    border-radius: 20px;
+	    overflow: hidden;
+   }
+   .four .fourcode{
+    /*background-color: #697C8F;*/
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      opacity: 0;
+      -webkit-transform: scale(0) rotate(-180deg);
+      -moz-transform: scale(0) rotate(-180deg);
+      -o-transform: scale(0) rotate(-180deg);
+      -ms-transform: scale(0) rotate(-180deg);
+      transform: scale(0) rotate(-180deg);
+      -webkit-transition: all 0.4s ease-in;
+      -moz-transition: all 0.4s ease-in;
+      -o-transition: all 0.4s ease-in;
+      -ms-transition: all 0.4s ease-in;
+      transition: all 0.4s ease-in;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      border-radius: 0px;
+   }
+   .four:hover .fourcode{
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+      opacity: 1;
+      -webkit-transform: scale(1) rotate(0deg);
+      -moz-transform: scale(1) rotate(0deg);
+      -o-transform: scale(1) rotate(0deg);
+      -ms-transform: scale(1) rotate(0deg);
+      transform: scale(1) rotate(0deg);
+      -webkit-transition-delay: 0.2s;
+      -moz-transition-delay: 0.2s;
+      -o-transition-delay: 0.2s;
+      -ms-transition-delay: 0.2s;
+      transition-delay: 0.2s;
+   }
+   .four .fourcode .imgtwo{
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      opacity: 0;
+      /*background: transparent;*/
+   /*   margin: 20px 40px 0px 40px;*/
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+   }
+
+   .four:hover .imgtwo{
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+      opacity: 1;
+      -webkit-transition-delay: 0.5s;
+      -moz-transition-delay: 0.5s;
+      -o-transition-delay: 0.5s;
+      -ms-transition-delay: 0.5s;
+      transition-delay: 0.5s;
+     }
+}
  /*我的电脑*/
 @media screen and (min-width: 1366px) and (max-width: 1902px){
 	.container{

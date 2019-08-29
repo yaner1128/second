@@ -167,6 +167,54 @@ export default {
 </script>
 
 <style lang="css" scoped>
+/*手机*/
+@media screen and (max-width: 767px){ 
+ .pageing{
+  width:88%;
+  text-align: center;
+  height:30px;
+  margin:50px auto;
+ }
+ .newsBtn .active{
+  background-color: rgb(60,111,160);
+  color: #fff;
+ }
+ .newsBtn{
+  width: 88%;
+  height: 50px;
+  padding: 60px 0 40px 0;
+ }
+ .newsBtn>ul{
+  margin: 0 auto;
+  height: 50px;
+ }
+ .newsBtn>ul>li{
+  display: inline-block;
+  width: 95px;
+  height: 45px;
+  margin: 0 10%;
+ }
+ .newscont{
+  width: 100%;
+  height: auto;
+ }
+ .newscont>ul{
+  width: 88%;
+  height: auto;
+  margin: 0 auto;
+ }
+ .newscont>ul>li{
+  width: 100%;
+  margin: 0 auto;
+  height: 250px;
+  
+ }
+ .pagedivce{
+  width: 100%;
+  height: 50px;
+  margin: 30px 0 50px 0;
+ }
+}  
  /*ipad*/
 @media screen and (min-width: 768px) and (max-width: 1365px){ 
 	.pageing{
