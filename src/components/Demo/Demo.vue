@@ -185,307 +185,126 @@ export default {
 /*手机*/
 @media screen and (max-width: 767px){ 
   .oneBtn{
-   width:60%;
-  margin:0 auto;
-  margin-top: 3%;
-}
-.oneBtnLi{
-  height: 60px;
-  margin:0 2.5%;
-  display: inline-block;
-}
-.oneBtnLi .active{
-  background-color: rgb(60,111,160);
-  color: #fff;
-}
-.secAniLi{
-   display: inline-block;
-}
-.paging{
-  text-align: center;
-  margin-top: 4%;
-  margin-bottom: 8%;
-}
+     width:60%;
+    margin:0 auto;
+    margin-top: 3%;
+  }
+  .oneBtnLi{
+    height: 60px;
+    margin:0 2.5%;
+    display: inline-block;
+  }
+  .oneBtnLi .active{
+    background-color: rgb(60,111,160);
+    color: #fff;
+  }
+  .secAniLi{
+     display: inline-block;
+  }
+  .paging{
+    text-align: center;
+    margin-top: 4%;
+    margin-bottom: 8%;
+  }
 
-.paging ul,.paging li{
-  display:inline-block;
-}
-.paging li{
-  width:30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  font-size: 16px;
-  border:1px solid rgb(60,111,160);
-  border-radius: 5px;
-  cursor: pointer;
-}
-.paging li:hover{
-  background-color: rgb(60,111,160);
-  color: #fff;
-}
-.containers{
-  width: 100%;
-}
-.secAni{
-  width: 88%;
-  margin: 0 auto;
-}
-.secAni ul{
-  width:88%;
-  margin :0 auto;
-}
-.secAni ul li{
-    padding: 0 0.2%;
+  .paging ul,.paging li{
+    display:inline-block;
+  }
+  .paging li{
+    width:30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    border:1px solid rgb(60,111,160);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .paging li:hover{
+    background-color: rgb(60,111,160);
+    color: #fff;
+  }
+  .containers{
     width: 100%;
-    margin:0 auto;
-    text-align: center;
-}
-  }  
- /*ipad*/
-@media screen and (min-width: 768px) and (max-width: 1023px){ 
-  .oneBtn{
-   width:60%;
-  margin:0 auto;
-  margin-top: 3%;
-}
-.oneBtnLi{
-  height: 70px;
-  margin:0 1.5%;
-  display: inline-block;
-}
-.oneBtnLi .active{
-  background-color: rgb(60,111,160);
-  color: #fff;
-}
-.secAniLi{
-   display: inline-block;
-}
-.paging{
-  text-align: center;
-  margin-top: 4%;
-  margin-bottom: 8%;
-}
-
-.paging ul,.paging li{
-  display:inline-block;
-}
-.paging li{
-  width:30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  font-size: 16px;
-  border:1px solid rgb(60,111,160);
-  border-radius: 5px;
-  cursor: pointer;
-}
-.paging li:hover{
-  background-color: rgb(60,111,160);
-  color: #fff;
-}
-.containers{
-  width: 100%;
-}
-.secAni{
-  width: 88%;
-  margin: 0 auto;
-}
-.secAni ul{
-  width:88%;
-  margin :0 auto;
-}
-.secAni ul li{
-    padding: 0 0.2%;
-    width: 32%;
-    margin:0 auto;
-    text-align: center;
-}
- }
- /*真的普通pc*/
- @media screen and (min-width: 1024px) and (max-width: 1365px){
-  .oneBtn{
-   width:60%;
-  margin:0 auto;
-  margin-top: 3%;
-}
-  .oneBtn ul{
-    text-align: center;
   }
-.oneBtnLi{
-  height: 65px;
-  margin:0 1.5%;
-  display: inline-block;
-}
-.oneBtnLi .active{
-  background-color: rgb(60,111,160);
-  color: #fff;
-}
-.secAniLi{
-   display: inline-block;
-}
-.paging{
-  text-align: center;
-  margin-top: 4%;
-  margin-bottom: 8%;
-}
-
-.paging ul,.paging li{
-  display:inline-block;
-}
-.paging li{
-  width:30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  font-size: 16px;
-  border:1px solid rgb(60,111,160);
-  border-radius: 5px;
-  cursor: pointer;
-}
-.paging li:hover{
-  background-color: rgb(60,111,160);
-  color: #fff;
-}
-.containers{
-  width: 100%;
-}
-.secAni{
-  width: 88%;
-  margin: 0 auto;
-}
-.secAni ul{
-  width:100%;
-  margin :0 auto;
-}
-.secAni ul li{
-    margin: 1% 5%;
-    width: 23%;
-    text-align: center;
-}
-.secAni ul li .main{
-  width: 100%;
-}
- }
- /*普通偏大pc*/
-@media screen and (min-width: 1366px) and (max-width: 1902px){
+  .secAni{
+    width: 88%;
+    margin: 0 auto;
+  }
+  .secAni ul{
+    width:88%;
+    margin :0 auto;
+  }
+  .secAni ul li{
+      padding: 0 0.2%;
+      width: 100%;
+      margin:0 auto;
+      text-align: center;
+  }
+}  
+/*真的普通pc*/
+@media screen and (min-width: 1024px) and (max-width: 1365px){
   .oneBtn{
-   width:60%;
-  margin:0 auto;
-  margin-top: 3%;
-}
-.oneBtnLi{
-  height: 70px;
-  margin:0 1.5%;
-  display: inline-block;
-}
-.oneBtnLi .active{
-  background-color: rgb(60,111,160);
-  color: #fff;
-}
-.secAniLi{
-   display: inline-block;
-}
-.paging{
-  text-align: center;
-  margin-top: 4%;
-  margin-bottom: 8%;
-}
-
-.paging ul,.paging li{
-  display:inline-block;
-}
-.paging li{
-  width:30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  font-size: 16px;
-  border:1px solid rgb(60,111,160);
-  border-radius: 5px;
-  cursor: pointer;
-}
-.paging li:hover{
-  background-color: rgb(60,111,160);
-  color: #fff;
-}
-.containers{
-  width: 100%;
-}
-.secAni{
-  width: 88%;
-  margin: 0 auto;
-}
-.secAni ul{
-  width:88%;
-  margin :0 auto;
-}
-.secAni ul li{
-    padding: 0 0.2%;
-    width: 32%;
+     width:60%;
     margin:0 auto;
+    margin-top: 3%;
+  }
+    .oneBtn ul{
+      text-align: center;
+    }
+  .oneBtnLi{
+    height: 65px;
+    margin:0 1.5%;
+    display: inline-block;
+  }
+  .oneBtnLi .active{
+    background-color: rgb(60,111,160);
+    color: #fff;
+  }
+  .secAniLi{
+     display: inline-block;
+  }
+  .paging{
     text-align: center;
-}
- } 
-/*超大pc*/
-@media screen and (min-width: 1903px) {
-  .oneBtn{
-   width:60%;
-  margin:0 auto;
-  margin-top: 3%;
-}
-.oneBtnLi{
-  height: 70px;
-  margin:0 1.5%;
-  display: inline-block;
-}
-.oneBtnLi .active{
-  background-color: rgb(60,111,160);
-  color: #fff;
-}
-.secAniLi{
-   display: inline-block;
-}
-.paging{
-  text-align: center;
-  margin-top: 4%;
-  margin-bottom: 8%;
-}
-
-.paging ul,.paging li{
-  display:inline-block;
-}
-.paging li{
-  width:30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  font-size: 16px;
-  border:1px solid rgb(60,111,160);
-  border-radius: 5px;
-  cursor: pointer;
-}
-.paging li:hover{
-  background-color: rgb(60,111,160);
-  color: #fff;
-}
-.containers{
-  width: 100%;
-}
-.secAni{
-  width: 88%;
-  margin: 0 auto;
-}
-.secAni ul{
-  width:88%;
-  margin :0 auto;
-}
-.secAni ul li{
-    padding: 0 0.2%;
-    width: 32%;
-    margin:0 auto;
-    text-align: center;
-}
+    margin-top: 4%;
+    margin-bottom: 8%;
   }
 
+  .paging ul,.paging li{
+    display:inline-block;
+  }
+  .paging li{
+    width:30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    border:1px solid rgb(60,111,160);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .paging li:hover{
+    background-color: rgb(60,111,160);
+    color: #fff;
+  }
+  .containers{
+    width: 100%;
+  }
+  .secAni{
+    width: 88%;
+    margin: 0 auto;
+  }
+  .secAni ul{
+    width:100%;
+    margin :0 auto;
+  }
+  .secAni ul li{
+      margin: 1% 5%;
+      width: 23%;
+      text-align: center;
+  }
+  .secAni ul li .main{
+    width: 100%;
+  }
+}
 </style>

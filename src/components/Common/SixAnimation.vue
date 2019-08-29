@@ -88,141 +88,79 @@ export default {
 /*手机*/
 @media screen and (max-width: 767px){ 
 	.sixani{
-	position: relative;
-}
-.bgimage{
-	width: 100%;
-		height:500px;
-		background: url(../../../static/images/bgi_1.jpg) no-repeat fixed;
-		filter: blur(2.5px);
-		background-size:100% 100%;
-}
-	.outer-six{
-		width: 88%;
-		height: auto;
-		margin: 0 6%;
-		position: absolute;
-		top:0;
-		padding: 3% 0;
+		position: relative;
 	}
-	.sixli{
-		width: 44%;
-		border-radius: 15px;
-	  	display: inline-block;
-		margin: 5.2% 3%;
-	    z-index: 2;
-	}
-	.sixli:hover{
-	 box-shadow:3px 3px 10px  10px rgba(200,200,200,0.5);
-		margin-top: -10px;
-	}
-	.sixli .content{
-		
-	}
-	.content .text{
-		background-color: rgba(240,240,240,.3);
-		border-radius: 10px;
-		color: #fff;
-		padding: 4%;
-    width: 92%;
-    height: 100%;
-    font-size: 17px;
-	}
-	.text .iconfont{
-		width:100%;
-		text-align: center;
-		font-size: 43px;
-		color: #2F4558;
-	}
-	.text h4{
+	.bgimage{
 		width: 100%;
-		text-align:center;
+			height:500px;
+			background: url(../../../static/images/bgi_1.jpg) no-repeat fixed;
+			filter: blur(2.5px);
+			background-size:100% 100%;
+	}
+		.outer-six{
+			width: 88%;
+			height: auto;
+			margin: 0 6%;
+			position: absolute;
+			top:0;
+			padding: 3% 0;
+		}
+		.sixli{
+			width: 44%;
+			border-radius: 15px;
+		  	display: inline-block;
+			margin: 5.2% 3%;
+		    z-index: 2;
+		}
+		.sixli:hover{
+		 box-shadow:3px 3px 10px  10px rgba(200,200,200,0.5);
+			margin-top: -10px;
+		}
+		.sixli .content{
+			
+		}
+		.content .text{
+			background-color: rgba(240,240,240,.3);
+			border-radius: 10px;
+			color: #fff;
+			padding: 4%;
+	    width: 92%;
+	    height: 100%;
+	    font-size: 17px;
+		}
+		.text .iconfont{
+			width:100%;
+			text-align: center;
+			font-size: 43px;
+			color: #2F4558;
+		}
+		.text h4{
+			width: 100%;
+			text-align:center;
 
-	}
-	.text p{
-		width: 100%;
-		text-align:center;
-		display: -webkit-box;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-		overflow: hidden;
-	}
+		}
+		.text p{
+			width: 100%;
+			text-align:center;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+			overflow: hidden;
+		}
   }  
- /*ipad*/
-@media screen and (min-width: 768px) and (max-width: 1023px){ 
-	.sixani{
-	position: relative;
-}
-.bgimage{
-	width: 100%;
-		height:500px;
-		background: url(../../../static/images/bgi_1.jpg) no-repeat fixed;
-		filter: blur(2.5px);
-		background-size:100% 100%;
-}
-	.outer-six{
-		width: 88%;
-		    height: auto;
-		    margin: 0 6%;
-		position: absolute;
-		top:0;
-		padding: 3% 0;
-	}
-	.sixli{
-		width: 27%;
-		border-radius: 15px;
-	  	display: inline-block;
-		margin: 2.2% 3%;
-	    z-index: 2;
-	}
-	.sixli:hover{
-	 box-shadow:3px 3px 10px  10px rgba(200,200,200,0.5);
-		margin-top: -10px;
-	}
-	.sixli .content{
-		
-	}
-	.content .text{
-		background-color: rgba(240,240,240,.3);
-		border-radius: 10px;
-		color: #fff;
-		padding: 4%;
-    width: 92%;
-    height: 100%;
-    font-size: 17px;
-	}
-	.text .iconfont{
-		width:100%;
-		text-align: center;
-		font-size: 43px;
-		color: #2F4558;
-	}
-	.text h4{
-		width: 100%;
-		text-align:center;
 
-	}
-	.text p{
-		width: 100%;
-		text-align:center;
-		display: -webkit-box;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-		overflow: hidden;
-	}
- }
  /*真的普通pc*/
- @media screen and (min-width: 1024px) and (max-width: 1365px){
- 		.sixani{
-	position: relative;
-}
-.bgimage{
-	width: 100%;
-		height:500px;
-		background: url(../../../static/images/bgi_1.jpg) no-repeat fixed;
-		filter: blur(2.5px);
-		background-size:100% 100%;
-}
+@media screen and (min-width: 1024px) and (max-width: 1365px){
+	.sixani{
+		position: relative;
+	}
+	.bgimage{
+		width: 100%;
+			height:500px;
+			background: url(../../../static/images/bgi_1.jpg) no-repeat fixed;
+			filter: blur(2.5px);
+			background-size:100% 100%;
+	}
 	.outer-six{
 		width: 88%;
 		height: auto;
@@ -274,133 +212,6 @@ export default {
 		overflow: hidden;
 	}
  }
- /*普通偏大pc*/
-@media screen and (min-width: 1366px) and (max-width: 1902px){
-	.sixani{
-	position: relative;
-}
-.bgimage{
-	width: 100%;
-		height:500px;
-		background: url(../../../static/images/bgi_1.jpg) no-repeat fixed;
-		filter: blur(2.5px);
-		background-size:100% 100%;
-}
-	.outer-six{
-		width: 88%;
-		    height: auto;
-		    margin: 0 6%;
-		position: absolute;
-		top:0;
-		padding: 3% 0;
-	}
-	.sixli{
-		width: 27%;
-		border-radius: 15px;
-	  	display: inline-block;
-		margin: 2.2% 3%;
-	    z-index: 2;
-	}
-	.sixli:hover{
-	 box-shadow:3px 3px 10px  10px rgba(200,200,200,0.5);
-		margin-top: -10px;
-	}
 
-	.sixli .content{
-		
-	}
-	.content .text{
-		background-color: rgba(240,240,240,.3);
-		border-radius: 10px;
-		color: #fff;
-		padding: 4%;
-    width: 92%;
-    height: 100%;
-    font-size: 17px;
-	}
-	.text .iconfont{
-		width:100%;
-		text-align: center;
-		font-size: 43px;
-		color: #2F4558;
-	}
-	.text h4{
-		width: 100%;
-		text-align:center;
-
-	}
-	.text p{
-		width: 100%;
-		text-align:center;
-		display: -webkit-box;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-		overflow: hidden;
-	}
- } 
-/*超大pc*/
-@media screen and (min-width: 1903px) {
-	.sixani{
-	position: relative;
-}
-.bgimage{
-	width: 100%;
-		height:500px;
-		background: url(../../../static/images/bgi_1.jpg) no-repeat fixed;
-		filter: blur(2.5px);
-		background-size:100% 100%;
-}
-	.outer-six{
-		width: 88%;
-		    height: auto;
-		    margin: 0 6%;
-		position: absolute;
-		top:0;
-		padding: 3% 0;
-	}
-	.sixli{
-		width: 27%;
-		border-radius: 15px;
-	  	display: inline-block;
-		margin: 2.2% 3%;
-	    z-index: 2;
-	}
-
-	.sixli:hover{
-	 box-shadow:3px 3px 10px  10px rgba(200,200,200,0.5);
-		margin-top: -10px;
-	}
-	.sixli .content{	
-	}
-
-	.content .text{
-	background-color: rgba(240,240,240,.3);
-	border-radius: 10px;
-	color: #fff;
-	padding: 4%;
-    width: 92%;
-    height: 100%;
-    font-size: 17px;
-	}
-	.text .iconfont{
-		width:100%;
-		text-align: center;
-		font-size: 43px;
-		color: #2F4558;
-	}
-	.text h4{
-		width: 100%;
-		text-align:center;
-
-	}
-	.text p{
-		width: 100%;
-		text-align:center;
-		display: -webkit-box;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-		overflow: hidden;
-	}
-  }
 
 </style>

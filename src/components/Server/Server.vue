@@ -89,187 +89,77 @@ export default {
 /*手机*/
 @media screen and (max-width: 767px){ 
 	.FiveAni{
-	width: 100%;
-	height: 380px;
-	padding: 30px 0;
-}
-.FiveAni ul{
-	width: 77%;
-	margin: 0 auto;
-	height:300px;
-}
-.FiveAni li{
-    float: left;
-    width: 40%;
-    margin: 0 1.50%;
-    padding: 0 2%;
-}
-.ThreeAni{
-	width: 100%;
-	height: 740px;
-	/*background-color: red;*/
-}
-.ThreeAni ul{
-	width: 88%;
-	height:740px;
-	margin: 0 auto;
-	padding:30px 0;
-/*	background-color: green;*/
-}
-.ThreeAni ul li{
-	float: left;
-	width: 60%;
-	margin: 0 0.6%;
-	padding:0 4%;
-}
-  }  
- /*ipad*/
-@media screen and (min-width: 768px) and (max-width: 1023px){ 
-	.FiveAni{
-	width: 100%;
-	height: 300px;
-	padding: 30px 0;
-}
-.FiveAni ul{
-	width: 77%;
-	margin: 0 auto;
-	height:300px;
-}
-.FiveAni li{
+		width: 100%;
+		height: 380px;
+		padding: 30px 0;
+	}
+	.FiveAni ul{
+		width: 77%;
+		margin: 0 auto;
+		height:300px;
+	}
+	.FiveAni li{
 	    float: left;
-    width: 18%;
-    margin: 0 1.50%;
-    padding: 0 2%;
-}
-.ThreeAni{
-	width: 100%;
-	height: 400px;
-	/*background-color: red;*/
-}
-.ThreeAni ul{
-	width: 88%;
-	height:400px;
-	margin: 0 auto;
-	padding:30px 0;
-/*	background-color: green;*/
-}
-.ThreeAni ul li{
-	float: left;
-	width: 24%;
-	margin: 0 0.6%;
-	padding:0 3%;
-}
- }
- /*真的普通pc*/
- @media screen and (min-width: 1024px) and (max-width: 1365px){
+	    width: 40%;
+	    margin: 0 1.50%;
+	    padding: 0 2%;
+	}
+	.ThreeAni{
+		width: 100%;
+		height: 740px;
+		/*background-color: red;*/
+	}
+	.ThreeAni ul{
+		width: 88%;
+		height:740px;
+		margin: 0 auto;
+		padding:30px 0;
+	/*	background-color: green;*/
+	}
+	.ThreeAni ul li{
+		float: left;
+		width: 60%;
+		margin: 0 0.6%;
+		padding:0 4%;
+	}
+}  
+/*真的普通pc*/
+@media screen and (min-width: 1024px) and (max-width: 1365px){
 	.FiveAni{
-	width: 100%;
-	height: 300px;
-	padding: 30px 0;
+		width: 100%;
+		height: 300px;
+		padding: 30px 0;
+	}
+	.FiveAni ul{
+		width: 88%;
+		margin: 0 auto;
+		height:300px;
+	}
+	.FiveAni li{
+		float: left;
+	   	width: 25%;
+	    margin: 0 0%;
+	    padding: 0 0%;
+	}
+	.ThreeAni{
+		width: 100%;
+		height: 400px;
+		/*background-color: red;*/
+	}
+	.ThreeAni ul{
+		width: 88%;
+		height:400px;
+		margin: 0 auto;
+		padding:30px 0;
+	/*	background-color: green;*/
+	}
+	.ThreeAni ul li{
+		float: left;
+		width: 24%;
+		margin: 0 0.6%;
+		padding:0 3%;
+	}
 }
-.FiveAni ul{
-	width: 88%;
-	margin: 0 auto;
-	height:300px;
-}
-.FiveAni li{
-	float: left;
-   	width: 25%;
-    margin: 0 0%;
-    padding: 0 0%;
-}
-.ThreeAni{
-	width: 100%;
-	height: 400px;
-	/*background-color: red;*/
-}
-.ThreeAni ul{
-	width: 88%;
-	height:400px;
-	margin: 0 auto;
-	padding:30px 0;
-/*	background-color: green;*/
-}
-.ThreeAni ul li{
-	float: left;
-	width: 24%;
-	margin: 0 0.6%;
-	padding:0 3%;
-}
- }
- /*普通偏大pc*/
-@media screen and (min-width: 1366px) and (max-width: 1902px){
-	.FiveAni{
-	width: 100%;
-	height: 300px;
-	padding: 30px 0;
-}
-.FiveAni ul{
-	width: 77%;
-	margin: 0 auto;
-	height:300px;
-}
-.FiveAni li{
-	    float: left;
-    width: 18%;
-    margin: 0 1.50%;
-    padding: 0 2%;
-}
-.ThreeAni{
-	width: 100%;
-	height: 400px;
-	/*background-color: red;*/
-}
-.ThreeAni ul{
-	width: 88%;
-	height:400px;
-	margin: 0 auto;
-	padding:30px 0;
-/*	background-color: green;*/
-}
-.ThreeAni ul li{
-	float: left;
-	width: 24%;
-	margin: 0 0.6%;
-	padding:0 3%;
-}
- } 
-/*超大pc*/
-@media screen and (min-width: 1903px) {
-	.FiveAni{
-	width: 100%;
-	height: 300px;
-	padding: 30px 0;
-}
-.FiveAni ul{
-	width: 77%;
-	margin: 0 auto;
-	height:300px;
-}
-.FiveAni li{
-	    float: left;
-    width: 18%;
-    margin: 0 1.50%;
-    padding: 0 2%;
-}
-.ThreeAni{
-	width: 100%;
-	height: 400px;
-	/*background-color: red;*/
-}
-.ThreeAni ul{
-	width: 88%;
-	height:400px;
-	margin: 0 auto;
-	padding:30px 0;
-/*	background-color: green;*/
-}
-.ThreeAni ul li{
-	float: left;
-	width: 24%;
-	margin: 0 0.6%;
-	padding:0 4%;
-}
-  }
+
 
 </style>
