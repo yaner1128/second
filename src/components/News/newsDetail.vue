@@ -94,51 +94,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-/*手机*/
-@media screen and (max-width: 767px){ 
-	.newsreport{
-		width: 88%;
-		margin: 0 auto;
-		padding-top: 50px;
-	/*	background-color: lightgray;*/
-	}
-	.newsreport .title{
-		width: 100%;
-		text-align: center;
-		padding: 50px 0;
-	}
-	.newsreport .title>h2{
-		padding-bottom: 10px;
-		font-size: 22px;
-		color:rgb(51, 51, 51);
-	}
-	.newsreport .title p{
-		color:rgb(153, 153, 153);;
-	}
-	.newsreport .mainNew{
-		width: 100%;
-		padding-bottom: 50px;
-		border-bottom: 1px solid rgb(204, 204, 204);
-	}
-	.newsreport .buttons{
-		width: 100%;
-		height:70px;
-		padding: 50px 0;
-		color:rgb(51, 51, 51);
-	}
-	.newsreport .buttons .prve{
-		color:rgb(51, 51, 51);
-		float: left;
-		margin: 3% 0;
-	}
-	.newsreport .buttons .next{
-		color:rgb(51, 51, 51);
-	}
-	.newsreport .buttons span:hover{
-		text-decoration: underline;
-		color: rgb(227,91,91);
-		font-size: 14px;
-	}
-}  
+
 
 </style>
