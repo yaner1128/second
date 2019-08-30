@@ -306,31 +306,7 @@ export default {
       width:100%;
       height:100%;
     }
-    #leftani{
-      float: left;
-      width:100%;
-      height:100%;
-      animation: bounceInLeft 3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
-    }
-    @keyframes bounceInLeft {
-      0% {
-        opacity: 0;
-        transform: translate3d(-3000px, 0, 0);
-      }
-      60% {
-        opacity: 1;
-        transform: translate3d(25px, 0, 0);
-      }
-      75% {
-        transform: translate3d(10px, 0, 0);
-      }
-      90% {
-        transform: translate3d(5px, 0, 0);
-      }
-      100% {
-        transform: none;
-      }
-    }
+    
     .right{
       display: none;
     }

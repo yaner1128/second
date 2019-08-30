@@ -156,7 +156,7 @@ export default {
       width:41px;
       position:absolute;
       left:43%;
-      top:55%;
+      top: 89%;
     }
     .italictext .textp2{
       

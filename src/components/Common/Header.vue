@@ -239,12 +239,13 @@ export default {
   .nav-left{
     float:left;
     height: 100%;
-    width:20%;
+    width: 35%;
     z-index: 100;
     padding:0 5%;
+    margin:2% 0;
   }
   .nav-left img{
-    height:100%;
+    width:100%;
   }
 
   /*右边标题*/
@@ -286,8 +287,8 @@ export default {
     float: right;
   }
   .small span{
-    font-size: 40px;
-    margin-right: 100%;
+    font-size: 36px;
+    margin-left: -20%;
     color:rgb(80,131,180);
     cursor: pointer;
   }
@@ -310,9 +311,9 @@ export default {
   }
   .tuichu{
     position: absolute;
-    font-size: 50px;
+    font-size: 46px;
     color: rgb(80,131,180);
-    top: 0;
+    top: -3px;
     right: 75px;
     cursor: pointer;
   }
