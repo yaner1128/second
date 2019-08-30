@@ -26,21 +26,26 @@
 	<!-- <div class="container paging" >
 		<my-Paging :Pages='Pages'/>
 	</div> -->
-<div class="container paging">
- <el-pagination
-            hide-on-single-page
-            background
-            @prev-click="prevPage(pageId)"
-            @next-click="nextPage(pageId)"
-            @size-change="handleSizeChange"
-            @current-change="handleCurrentChange"
-            :current-page="pageId"
-            :page-sizes="[6]"
-            :page-size="pageSize"
-            layout="total, sizes, prev, pager, next, jumper"
-            :total="pages.count">
-    </el-pagination>
-  </div>
+
+  <el-row :gutter="10" style="margin-left: 0px; margin-right: 0px;">
+      <el-col :xs=" {span: 1, offset: 0}">
+        <div class="paging">
+          <el-pagination
+                  hide-on-single-page
+                  @prev-click="prevPage(pageId)"
+                  @next-click="nextPage(pageId)"
+                  @size-change="handleSizeChange"
+                  @current-change="handleCurrentChange"
+                  :current-page="pageId"
+                  :page-sizes="[6]"
+                  :page-size="pageSize"
+                  layout="total, sizes, prev, pager, next, jumper"
+                  :total="pages.count">
+          </el-pagination>
+        </div>
+      </el-col>
+    </el-row>
+  
   
 	<!-- 脚部组件 -->
 	<Footer />
@@ -202,12 +207,13 @@ export default {
      display: inline-block;
   }
   .paging{
+    width:88%;
     text-align: center;
-    margin-top: 4%;
-    margin-bottom: 8%;
+    height:30px;
+    margin:50px auto;
   }
 
-  .paging ul,.paging li{
+  /*.paging ul,.paging li{
     display:inline-block;
   }
   .paging li{
@@ -223,7 +229,7 @@ export default {
   .paging li:hover{
     background-color: rgb(60,111,160);
     color: #fff;
-  }
+  }*/
   .containers{
     width: 100%;
   }

@@ -56,21 +56,19 @@ export default {
 		.thirdcontainer {
 		    position: relative;
 		    width: 100%;
-		    /*margin: 0 26%;*/
-		    height: 285px;
+		    height: 230px;
 		    display: inline-block;
 		    vertical-align: middle;
 
 		}
 		img {
-		    width: 100%;
+		    width: 200px;
+		   
 		    height: auto;
 		} 
 		/*  //当元素不面向屏幕时，不可见*/
 		.thirdcontainer>div {
-		    position: absolute;
-		    left: 0;
-		    top: 0;
+		   
 		    backface-visibility: hidden;
 		 
 		}
@@ -88,6 +86,8 @@ export default {
 		}
 		/*//两个图片都设置了滑过翻转，一个从0-180deg，一个从-180-0deg*/
 		.prve,.next {
+			margin:0 auto;
+			width:200px;
 		    transition: all 1s;
 		}
 		.thirdcontainer .icontext{

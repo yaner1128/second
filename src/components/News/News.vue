@@ -18,21 +18,23 @@
 				</li>
 			</ul>
 		</div>
-		
-		<div class="pageing">
-			<el-pagination
-				hide-on-single-page
-				@prev-click="prve(page)"
-				@next-click="next(page)"
-				@current-change="handleCurrentChange"
-			    :current-page="page"
-			    :page-sizes="[4]"
-			    :page-size="nummber"
-			    layout="total, sizes, prev, pager, next, jumper"
-			    :total="pagenum">
-    		</el-pagination>
-		</div>
-
+		<el-row :gutter="10" style="margin-left: 0px; margin-right: 0px;">
+			<el-col :xs=" {span: 1, offset: 0}">
+				<div class="pageing">
+					<el-pagination
+						hide-on-single-page
+						@prev-click="prve(page)"
+						@next-click="next(page)"
+						@current-change="handleCurrentChange"
+					    :current-page="page"
+					    :page-sizes="[4]"
+					    :page-size="nummber"
+					    layout="total, sizes, prev, pager, next, jumper"
+					    :total="pagenum">
+		    		</el-pagination>
+				</div>
+			</el-col>
+		</el-row>
 
 		<!-- 脚部组件 -->
 		<div>
