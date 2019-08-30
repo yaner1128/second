@@ -62,10 +62,10 @@ export default {
     	textone:'我们为您提供更具有优势的企业网络服务平台',
 
     	FiveList:[
-    		{id:1,icon:'&#xe67e;',title:'高端企业制造研发',pone:'企业高端定制网站设计',ptwo:'彰显品牌形象'},
-    		{id:2,icon:'&#xe652;',title:'APP项目定制开发',pone:'基于 iOS / Android 应用开发',ptwo:'掌控智能终端时代'},
-    		{id:3,icon:'&#xe654;',title:'交互H5设计开发',pone:'QUERY动态特效QUERY动态特效',ptwo:'兼容手机、IPAD等触屏设备'},
-    		{id:4,icon:'&#xe6f9;',title:'小程序/公众号/Wap设计开发',pone:'定制手机网站 / 微网站制作',ptwo:'布局移动互联网'},
+    		{id:1,icon:'&#xe67e;',title:'高端企业制造研发',pone:'企业高端定制网站设计',ptwo:'彰显品牌形象',img:require('../../../static/images/ani1.png')},
+    		{id:2,icon:'&#xe652;',title:'APP项目定制开发',pone:'基于 iOS / Android 应用开发',ptwo:'掌控智能终端时代',img:require('../../../static/images/ani2.png')},
+    		{id:3,icon:'&#xe654;',title:'交互H5设计开发',pone:'QUERY动态特效QUERY动态特效',ptwo:'兼容手机、IPAD等触屏设备',img:require('../../../static/images/ani3.png')},
+    		{id:4,icon:'&#xe6f9;',title:'小程序/公众号/Wap设计开发',pone:'定制手机网站 / 微网站制作',ptwo:'布局移动互联网',img:require('../../../static/images/ani4.png')},
     	],
 
     	titletwo:'创意与创新的桥梁',
@@ -90,7 +90,7 @@ export default {
 @media screen and (max-width: 767px){ 
  .FiveAni{
   width: 100%;
-  height: 380px;
+  height: 250px;
   padding: 30px 0;
  }
  .FiveAni ul{
@@ -101,8 +101,8 @@ export default {
  .FiveAni li{
      float: left;
      width: 40%;
-     margin: 0 1.50%;
-     padding: 0 2%;
+    margin: 0 3.6%;
+     padding: 0 0%;
  }
  .ThreeAni{
   width: 100%;
@@ -118,9 +118,9 @@ export default {
  }
  .ThreeAni ul li{
   float: left;
-  width: 60%;
-  margin: 0 0.6%;
-  padding:0 4%;
+  width: 100%;
+  margin: 0 0%;
+  padding:0 0%;
  }
 } 
  /*ipad*/

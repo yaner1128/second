@@ -87,20 +87,20 @@ export default {
   position: relative;
  }
  .bgimage{
-  width: 100%;
-   height:500px;
-   background: url(../../../static/images/bgi_1.jpg) no-repeat fixed;
-   filter: blur(2.5px);
-   background-size:100% 100%;
- }
-  .outer-six{
-   width: 88%;
-   height: auto;
-   margin: 0 6%;
-   position: absolute;
-   top:0;
-   padding: 3% 0;
-  }
+		width: 100%;
+		height:600px;
+	}
+	.outer-six{
+		width: 100%;
+		height: auto;
+		position: absolute;
+		top:0;
+		padding: 3% 0;
+		background: url(../../../static/images/bgi_3.jpg) no-repeat fixed;
+		object-fit: cover;
+		background-size:100% 100%;
+	}
+
   .sixli{
    width: 44%;
    border-radius: 15px;
@@ -165,7 +165,7 @@ export default {
 		position: absolute;
 		top:0;
 		padding: 3% 0;
-		background: url(../../../static/images/bgi_1.jpg) no-repeat fixed;
+		background: url(../../../static/images/bgi_3.jpg) no-repeat fixed;
 		/*filter: blur(0.5px);*/
 		background-size:100% 100%;
 	}

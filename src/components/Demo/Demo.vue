@@ -189,24 +189,6 @@ export default {
     height:30px;
     margin:50px auto;
   }
-
-  /*.paging ul,.paging li{
-    display:inline-block;
-  }
-  .paging li{
-    width:30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    font-size: 16px;
-    border:1px solid rgb(60,111,160);
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .paging li:hover{
-    background-color: rgb(60,111,160);
-    color: #fff;
-  }*/
   .containers{
     width: 100%;
   }

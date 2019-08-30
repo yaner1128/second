@@ -1,20 +1,25 @@
 <template>
 	<div class="FiveBody" :class='{FiveBgc:isstart}' @mouseenter='startRotate' @mouseleave='endRotate'>
-		<div class="circleProgress_wrapper">
-	        <div class="wrapper right" >
-	            <div class="circleProgress rightcircle" :class='{rstart:isstart}'></div>
-	        </div>
-	        <div class="wrapper left">
-	            <div class="circleProgress leftcircle" :class='{lstart:isstart}'></div>
-	        </div>
-	 	</div>
-    <span class="iconfont icons" v-html='item.icon'></span>
-	 	<div class="FiveTitle" :class="{Fivecolors:isstart}">{{item.title}}</div>
-	 	<br>
-	 	<div :class='{FiveText:isstart}' v-show='isstart'>
-	 		<p>{{item.pone}}</p>
-	 		<p>{{item.ptwo}}</p>
-	 	</div>
+    <div class="otherfive">
+      <div class="circleProgress_wrapper">
+          <div class="wrapper right" >
+              <div class="circleProgress rightcircle" :class='{rstart:isstart}'></div>
+          </div>
+          <div class="wrapper left">
+              <div class="circleProgress leftcircle" :class='{lstart:isstart}'></div>
+          </div>
+      </div>
+      <span class="iconfont icons" v-html='item.icon'></span>
+      <div class="FiveTitle" :class="{Fivecolors:isstart}">{{item.title}}</div>
+      <br>
+      <div :class='{FiveText:isstart}' v-show='isstart'>
+        <p>{{item.pone}}</p>
+        <p>{{item.ptwo}}</p>
+      </div>
+    </div>
+		<div class="phone">
+          <img :src="item.img">
+    </div>
 	</div>
 </template>
 
@@ -43,10 +48,30 @@ export default {
 <style lang="css" scoped>
 /*手机*/
 @media screen and (max-width: 767px){ 
+  .otherfive{
+    display:none;
 
+  }
+  .FiveBody{
+    padding-top: 10px;
+    width: 130px;
+    height: 127px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+  }
+  .phone{
+    width:130px;
+  }  
+  .phone img{
+    width:130px;
+  }
  }  
  /*ipad*/
 @media screen and (min-width: 768px) and (max-width: 1365px){ 
+  .phone{
+    display: none;
+  }
   .FiveBody{
     padding-top: 10px;
     width: 160px;
@@ -147,6 +172,9 @@ export default {
 }
  /*普通pc*/
 @media screen and (min-width: 1366px) and (max-width: 1902px){
+  .phone{
+    display: none;
+  }
   .FiveBody{
     padding-top: 10px;
     width: 220px;
@@ -247,6 +275,9 @@ export default {
 } 
 /*超大pc*/
 @media screen and (min-width: 1903px){
+  .phone{
+    display: none;
+  }
   .FiveBody{
     padding-top: 10px;
     width: 220px;

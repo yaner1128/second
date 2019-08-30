@@ -34,7 +34,7 @@
 						<p>E-mail：{{aboutus.email}}</p>
 						<p>网址：{{aboutus.url}}</p>
 						<p>版权：{{aboutus.name}}</p>
-						<p>备案：京ICP备11111111</p>
+						<p>备案：湘ICP备19015120号-1</p>
 					</div>
 					<!-- 右边二维码 -->
 					<div class="codeImg">
@@ -120,8 +120,8 @@ export default {
 	.footContact{
 		width: 360px;
 		height: 120px;
-		padding: 10px 0px;
-    	margin: 0 10px;
+		padding: 10px 0;
+		margin:0 10px;
 	}
 	.footContact>.icon1{
 		    position: absolute;
@@ -214,7 +214,7 @@ export default {
 	    height: 40px;
 	    background-color: #16171a;
 	    color: #FFF;
-	    font-size: 1px;
+	    font-size: 12px;
 	}
 	.Footdown>div{
 		width: 100%;
@@ -591,7 +591,6 @@ export default {
 		padding-top: 40px;
 		height: 110px;
 	}
-
 	.Footdown{
 		width: 100%;
 		height: 40px;
@@ -697,8 +696,6 @@ export default {
 		width: 9%;
 		text-align: center;
 	}
-
-
 	.footBottom .xinxi{
 		width: 88%;
 		margin: 0 auto;
@@ -736,5 +733,4 @@ export default {
 		text-align: center;
 	}
 }
-
 </style>

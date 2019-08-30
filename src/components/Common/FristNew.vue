@@ -8,9 +8,7 @@
 		<!-- 右边新闻 -->
 		<div class="Fnews">
             <h4 class="Newstitle">{{firstNews.title}}</h4>
-            <p class="Newstext">
-            	{{firstNews.content}}
-            </p>
+            <p class="Newstext" v-html='firstNews.content'></p>
 		</div>
 	</div>
 </template>
@@ -92,12 +90,20 @@ export default {
 		}
 		.Fnews .Newstext{
 			font-size: 14px;
-			
+			height: 35px;
 			text-overflow: ellipsis;
 			display: -webkit-box;
 			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 2;
+			-webkit-line-clamp:2;
 			overflow: hidden;
+		}
+		.Fnews .Newstext p{
+			height: 35px;
+    		overflow: hidden;
+    		text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp:2;
 		}
  }  
  /*ipad*/
@@ -156,7 +162,7 @@ export default {
 	}
 	.Fnews .Newstext{
 		font-size: 14px;
-		/*height: 45px;*/
+		height: 38px;
 	    /*line-height: 22px;*/
 		/*不允许换行*/
 		/*white-space: nowrap;*/
@@ -223,7 +229,7 @@ export default {
 		}
 		.Fnews .Newstext{
 			font-size: 14px;
-			/*height: 45px;*/
+			height: 38px;
 		    /*line-height: 22px;*/
 			/*不允许换行*/
 			/*white-space: nowrap;*/
@@ -289,7 +295,7 @@ export default {
 		}
 		.Fnews .Newstext{
 			font-size: 14px;
-			/*height: 45px;*/
+			height: 38px;
 		    /*line-height: 22px;*/
 			/*不允许换行*/
 			/*white-space: nowrap;*/
@@ -355,7 +361,7 @@ export default {
 	}
 	.Fnews .Newstext{
 		font-size: 14px;
-		/*height: 45px;*/
+		height: 38px;
 	    /*line-height: 22px;*/
 		/*不允许换行*/
 		/*white-space: nowrap;*/

@@ -429,7 +429,7 @@ export default {
     position: absolute;
     font-size: 50px;
     color: rgb(80,131,180);
-    top: 0;
+    top:-3px;
     right: 75px;
     cursor: pointer;
   }
@@ -544,8 +544,8 @@ export default {
     position: absolute;
     font-size: 50px;
     color: rgb(80,131,180);
-    top: 0;
-    right: 75px;
+    top: -3px;
+    right: 140px;
     cursor: pointer;
   }
 } 
@@ -659,8 +659,8 @@ export default {
     position: absolute;
     font-size: 50px;
     color: rgb(80,131,180);
-    top: 0;
-    right: 75px;
+    top: -3px;
+    right: 200px;
     cursor: pointer;
   }
 }

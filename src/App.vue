@@ -26,6 +26,13 @@ export default {
 </script>
 
 <style scoped>
+/*手机*/
+@media screen and (max-width: 360px)and(max-width: 767px){ 
+  .app{
+   overflow-x: hidden;
+  }
+  
+}
 
 
 </style>

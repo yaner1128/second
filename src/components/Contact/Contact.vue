@@ -151,11 +151,11 @@ export default {
          box-shadow: #666 0px 0px 10px;
      }
  .contactway{
-  height: 260px;
+  height: 280px;
  }
  .wayLi{
      display: inline-block;
-     margin: 2% 3%;
+     margin: 2% 0;
      width: 100%;
      height: 100%;
  }
