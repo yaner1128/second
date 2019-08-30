@@ -215,24 +215,24 @@ export default {
  }
  .bgimage{
   width: 100%;
-   height:500px;
+   height:440px;
    background: url(../../../static/images/bgi_1.jpg) no-repeat fixed;
    filter: blur(2.5px);
    background-size:100% 100%;
  }
  .outer-six{
   width: 88%;
-  height: auto;
-  margin: 4% 6%;
+  height: 420px;
+  margin: 0 6%;
   position: absolute;
   top:0;
-  padding: 3% 0;
+  padding: 20px 0;
  }
  .sixli{
   width: 27%;
   border-radius: 15px;
     display: inline-block;
-  margin: 2.2% 3%;
+  margin: 30px 3%;
      z-index: 2;
  }
  .sixli:hover{
@@ -283,7 +283,7 @@ export default {
 	}
 	.bgimage{
 		width: 100%;
-		height:500px;
+		height:485px;
 		background: url(../../../static/images/bgi_1.jpg) no-repeat fixed;
 		filter: blur(2.5px);
 		background-size:100% 100%;
@@ -294,13 +294,13 @@ export default {
 		margin: 0 6%;
 		position: absolute;
 		top:0;
-		padding: 3% 0;
+		padding: 30px 0;
 	}
 	.sixli{
 		width: 27%;
 		border-radius: 15px;
 	  	display: inline-block;
-		margin: 2.2% 3%;
+		margin: 35px 3%;
 	    z-index: 2;
 	}
 	.sixli:hover{

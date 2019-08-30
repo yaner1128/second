@@ -13,7 +13,7 @@
                 <span class="iconfont" @click='open' >&#xe63b;</span>
               </div>
               <!-- 小图标展开的 -->
-              <div class="bigPage" v-if='isopen' @touchmove.prevent :style='style'>
+              <div class="bigPage" v-if='isopen' @touchmove.prevent>
                 <span class="iconfont tuichu" @click='close()' v-show='issmall'>&#xe616;</span>
                 <ul>
                   <li v-for='(list,index) in Headerlist'  >
@@ -32,22 +32,7 @@
                 </li>
               </ul>
             </div>
-             
-            <!-- 全屏显示小图标 -->
-            <div v-else class="small othersmall">
-              <span class="iconfont" @click='open' >&#xe63b;</span>
-            </div>
-            <!-- 小图标展开的 -->
-            <div class="bigPage" v-if='isopen' @touchmove.prevent :style='style'>
-              <span class="iconfont tuichu" @click='close()' v-show='issmall'>&#xe616;</span>
-              <ul>
-                <li v-for='(list,index) in Headerlist'  >
-                  <router-link :to='{name:list.name}' class='lis' @click.native='close(list.flag)'>{{list.title}}</router-link>
-                </li>
-              </ul>
-            </div>
         </div>
-        
         <!-- 非首页样式 -->
         <div v-else>
           <div class="nav-right">
@@ -293,16 +278,16 @@ export default {
   }
   .bigPage{
     width: 100%;
-    height:auto;
+    /*height:auto;*/
     padding:100px 0;
     background-color: rgba(0,0,0,0.91);
     z-index:1000;
     text-align: center;
   }
   .bigPage ul li{
-    height:60px;
-    font-size: 24px;
-    margin: 25px 0;
+    height:30px;
+    font-size: 14px;
+    margin: 5px 0;
   }
   .bigPage ul li .lis{
     width: 100%;

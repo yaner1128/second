@@ -201,7 +201,7 @@ export default {
 	.FiveAni{
 		width: 100%;
 		height: 300px;
-		padding: 30px 0;
+		padding: 30px 0 0;
 	}
 	.FiveAni ul{
 		width: 77%;
