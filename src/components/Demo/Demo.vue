@@ -9,7 +9,6 @@
 				<my-FristButton :firstBtns='firstBtns' :class="{active:index==current}"/>
 			</li>
 		</ul>
-		
 	</div>
 	<!-- 动画组件二 -->
 	<div class="containers">
@@ -22,14 +21,11 @@
 		</div>
 	</div>	
 
-	<!-- 分页组件 -->
-	<!-- <div class="container paging" >
-		<my-Paging :Pages='Pages'/>
-	</div> -->
-<div class="container paging">
- <el-pagination
+    <el-row :gutter="10" style="margin-left: 0px; margin-right: 0px;">
+       <el-col :xs=" {span: 1, offset: 0}">
+        <div class="paging">
+         <el-pagination 
             hide-on-single-page
-            background
             @prev-click="prevPage(pageId)"
             @next-click="nextPage(pageId)"
             @size-change="handleSizeChange"
@@ -39,8 +35,10 @@
             :page-size="pageSize"
             layout="total, sizes, prev, pager, next, jumper"
             :total="pages.count">
-    </el-pagination>
-  </div>
+          </el-pagination>
+        </div>
+      </el-col>
+    </el-row>
   
 	<!-- 脚部组件 -->
 	<Footer />
@@ -80,13 +78,9 @@ export default {
   computed:{
     countpages(){
       this.Pages=Math.ceil(this.pages.count/6);
-      console.log('页数',this.Pages);
-      
-
       for(let i=1;i<=this.Pages;i++){
           this.pageItem.push(i);
       }  
-    console.log(this.pageItem);
     return this.Pages
     }
   },
@@ -97,22 +91,21 @@ export default {
        },
        // 当前改变----当前页码改变之后，触发这个函数
        handleCurrentChange(val,pageId){
-
-       if(this.pages.next==null){
-        
-        }else{
-          this.pageId=val;
-          this.getCase(pageId);
-        }      
+         if(this.pages.next==null){
+          
+          }else{
+            this.pageId=val;
+            this.getCase(pageId);
+          }      
        },
 
        detailHandler(id){
-      this.$router.push({
-        name:"DemoDetail",
-        params:{
-          casesId:id
-        }
-    })
+          this.$router.push({
+            name:"DemoDetail",
+            params:{
+              casesId:id
+            }
+        })
     },
     // 按钮分类
     addBgc(index,id){
@@ -121,14 +114,9 @@ export default {
         this.categoryId='';
       }else{
         this.categoryId=id;  
-
-        
       }
       this.pageId=1;
       this.getCase();     
-      console.log('categoryId',this.categoryId);
-
-      
     },
     // 下一页
     nextPage(pageId){
@@ -157,27 +145,20 @@ export default {
     // 获取案例
     getCase(){
       this.$http.Case(this.categoryId,this.pageId)
-    .then(res=>{
-      console.log(res); 
-      if (res.code === 0){
-              this.pages=res.data;
-              this.cases=res.data.results;  
-              console.log('````',this.pages);
-        }
-       
-    }).catch(err=>{
-      console.log(err);
-    })
+      .then(res=>{
+        // console.log(res); 
+        if (res.code === 0){
+                this.pages=res.data;
+                this.cases=res.data.results;  
+          }
+      }).catch(err=>{
+        console.log(err);
+      })
     },
-    
   },
   created(){
     this.getCase();
-    
   },
-  mounted(){
-
-  }
 };
 </script>
 
@@ -185,13 +166,14 @@ export default {
 /*手机*/
 @media screen and (max-width: 767px){ 
   .oneBtn{
-     width:60%;
+     width:92%;
     margin:0 auto;
     margin-top: 3%;
   }
   .oneBtnLi{
+    width: 19%;
     height: 60px;
-    margin:0 2.5%;
+    margin:0 0.5%;
     display: inline-block;
   }
   .oneBtnLi .active{
@@ -202,12 +184,13 @@ export default {
      display: inline-block;
   }
   .paging{
+    width:88%;
     text-align: center;
-    margin-top: 4%;
-    margin-bottom: 8%;
+    height:30px;
+    margin:50px auto;
   }
 
-  .paging ul,.paging li{
+  /*.paging ul,.paging li{
     display:inline-block;
   }
   .paging li{
@@ -223,16 +206,16 @@ export default {
   .paging li:hover{
     background-color: rgb(60,111,160);
     color: #fff;
-  }
+  }*/
   .containers{
     width: 100%;
   }
   .secAni{
-    width: 88%;
+    /*width: 88%;*/
     margin: 0 auto;
   }
   .secAni ul{
-    width:88%;
+    width:290px;
     margin :0 auto;
   }
   .secAni ul li{
@@ -363,8 +346,8 @@ export default {
     margin :0 auto;
   }
   .secAni ul li{
-      margin: 1% 5%;
-      width: 23%;
+      margin: 1% 2%;
+      width: 29%;
       text-align: center;
   }
   .secAni ul li .main{
@@ -421,12 +404,12 @@ export default {
     margin: 0 auto;
   }
   .secAni ul{
-    width:88%;
+    width:1086px;
     margin :0 auto;
   }
   .secAni ul li{
-      padding: 0 0.2%;
-      width: 32%;
+      padding: 0 11px;
+      width: 340px;
       margin:0 auto;
       text-align: center;
   }

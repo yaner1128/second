@@ -19,19 +19,23 @@
 			</ul>
 		</div>
 		
-		<div class="pageing">
-			<el-pagination
-				hide-on-single-page
-				@prev-click="prve(page)"
-				@next-click="next(page)"
-				@current-change="handleCurrentChange"
-			    :current-page="page"
-			    :page-sizes="[4]"
-			    :page-size="nummber"
-			    layout="total, sizes, prev, pager, next, jumper"
-			    :total="pagenum">
-    		</el-pagination>
-		</div>
+		<el-row :gutter="10" style="margin-left: 0px; margin-right: 0px;">
+		   <el-col :xs=" {span: 1, offset: 0}">
+		    <div class="pageing">
+		     <el-pagination
+		      hide-on-single-page
+		      @prev-click="prve(page)"
+		      @next-click="next(page)"
+		      @current-change="handleCurrentChange"
+		         :current-page="page"
+		         :page-sizes="[4]"
+		         :page-size="nummber"
+		         layout="total, sizes, prev, pager, next, jumper"
+		         :total="pagenum">
+		        </el-pagination>
+		    </div>
+		   </el-col>
+		  </el-row>
 
 
 		<!-- 脚部组件 -->
@@ -141,9 +145,6 @@ export default {
 			  			this.nonext=false;
 			  			this.noprve=false;
   					}
-		          	// console.log(this.categoryId);
-		          	// console.log(this.newsList);
-		          	// console.log(this.pagenum);
 		        }
 	      	})
 	      	.catch(err=>{
@@ -182,7 +183,7 @@ export default {
  .newsBtn{
   width: 88%;
   height: 50px;
-  padding: 60px 0 40px 0;
+  padding: 60px 0 0 0;
  }
  .newsBtn>ul{
   margin: 0 auto;
@@ -190,9 +191,9 @@ export default {
  }
  .newsBtn>ul>li{
   display: inline-block;
-  width: 95px;
+  width: 66px;
   height: 45px;
-  margin: 0 10%;
+  margin: 0 8px;
  }
  .newscont{
   width: 100%;
@@ -209,11 +210,11 @@ export default {
   height: 250px;
   
  }
- .pagedivce{
+ /*.pagedivce{
   width: 100%;
   height: 50px;
   margin: 30px 0 50px 0;
- }
+ }*/
 }  
  /*ipad*/
 @media screen and (min-width: 768px) and (max-width: 1365px){ 
@@ -245,7 +246,7 @@ export default {
 	    width: 120px;
 	    height: 45px;
 	    margin: 0 1%;
-	    margin-right: 5%;
+	    margin-right: 20px;
 	}
 	.newscont{
 		width: 100%;
@@ -304,7 +305,7 @@ export default {
 		height: auto;
 	}
 	.newscont>ul{
-		width: 88%;
+		width: 70%;
 		height: auto;
 		margin: 0 auto;
 	}

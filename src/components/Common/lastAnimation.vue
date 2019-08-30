@@ -424,7 +424,7 @@ export default {
 /*真的普通pc*/
 @media screen and (min-width:1024px) and (max-width:1365px){ 
    .view {
-      width: 245px;
+      width: 88%;
       height: 190px;
       margin: 10px;
       float: left;

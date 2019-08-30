@@ -120,9 +120,8 @@ export default {
 	.footContact{
 		width: 360px;
 		height: 120px;
-		/*margin:20px 0;*/
-	/*	background-color: #e61d13;*/
-		padding: 10px 10px;
+		padding: 10px 0px;
+    	margin: 0 10px;
 	}
 	.footContact>.icon1{
 		    position: absolute;

@@ -198,7 +198,7 @@ export default {
 		color: #a3a3a3;
 		font-size:14px;
 		/*background-color: green;*/
-		height: 23%;
+		height: 40px;
 		margin: 2% 0 6% 0;
 
 		overflow: hidden;

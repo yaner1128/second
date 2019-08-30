@@ -56,21 +56,17 @@ export default {
     };
   },
   created(){
-    // console.log(this.$http);
     this.getaboutList();
   },
   methods:{
     getaboutList(){
       this.$http.aboutList()
       .then(res=>{
-        // console.log(res);
         if(res.code==0){
           this.aboutList=res.data;
-          console.log(this.aboutList);
         }
       })
       .catch(err=>{
-        // console.log('00000');
         console.log(err);
       })
     },

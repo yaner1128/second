@@ -70,29 +70,21 @@ export default {
     // 获取轮播图
     getSlideShow(){
       this.$http.SlideShow()
-    .then(res=>{
-      // console.log(res); 
-      if (res.code === 0) {
-              this.SlideShow=res.data;  
-              // console.log(this.SlideShow) ;
+      .then(res=>{
+        // console.log(res); 
+        if (res.code === 0) {
+            this.SlideShow=res.data;  
         }
       // 获取到图片后，调用this.imgLoad()方法定义图片初始高度
       this.imgLoad();
        
-    }).catch(err=>{
-      console.log(err);
-    })
+      }).catch(err=>{
+        console.log(err);
+      })
     }
   },
   created(){
-    // console.log(this.$http);
     this.getSlideShow();
-
-    // 监听窗口变化，使得轮播图高度自适应图片高度
-    // window.addEventListener("resize", () => {
-    //   this.imgHeight = this.SlideShow.img.height;
-    // });
-    
   },
 };
 </script>

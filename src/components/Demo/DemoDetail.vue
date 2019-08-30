@@ -3,7 +3,7 @@
 		<!-- 图片组件 -->
 	<div style="height:100px"></div>
 
-		<div class="container">
+		<div class="container clearfix">
 			<div class="detailleft">
 				<!-- 大标题 -->
 				<div class="title">
@@ -49,8 +49,8 @@
 					<div class="moretitle">
 						<span>网站类型：{{casedetail.website_type}}</span><br><br>
 						<span>所属行业： {{casedetail.industry}}</span><br>
-						<button>我要报价</button>
-						<button>了解产品</button><br>
+						<button class="btn">我要报价</button>
+						<button class="btn">了解产品</button><br>
 						<button class="surfing">直接浏览网站</button>
 					</div>
 					<div class="consult">
@@ -96,7 +96,7 @@ export default {
   methods:{
   
   	backAlldemoHandler(){
-  		console.log(this.nextUrl);
+  		// console.log(this.nextUrl);
   		this.$router.push({
         name:"Demo",
        })
@@ -119,11 +119,11 @@ export default {
   	getCaseDetail(){
   		this.$http.CaseDetail(this.$route.params.casesId)
   		.then(res=>{
-  			console.log('3333',this.$route.params.casesId);
+  			// console.log('3333',this.$route.params.casesId);
   			if(res.code === 0) {
   			this.casedetail = res.data;
   			this.nextUrl=res.data.next_link;
-  			console.log('======',res);
+  			// console.log('======',res);
   			}
   		})
   		.catch(err=>{
@@ -132,7 +132,7 @@ export default {
   	},
   },
   created(){
-  	console.log('1111',this.$route.params);
+  	// console.log('1111',this.$route.params);
     this.getCaseDetail();
     
   },
@@ -147,7 +147,8 @@ export default {
  }
  .detailleft{
   display:inline-block;
-  width:68%;
+  width:100%;
+  border-bottom: 1px solid rgb(60,111,160);
  }
  .title h1{
   display: inline-block;
@@ -156,11 +157,10 @@ export default {
  .learnmore .demos{
   width:100%;
  }
-
  .demos span{
   float: right;
   font-size: 28px;
-  width:44%;
+  width:15%;
   height: 38px;
   border: 1px solid #A3A3A3;
   border-radius: 19px;
@@ -216,28 +216,27 @@ export default {
   width:100%;
  }
  .learnmore{
-  width:28%;
-  height: 400px;
-  float: right;
-
+  width:100%;
+  height: 225px;
+  /*float: right;*/
  }
-
  .learnmore .moredetail{
-  margin-top: 150px;
+  /*margin-top: 150px;*/
   /*border: 1.5px solid rgb(60,111,160);*/
   border-radius: 10px;
  }
  .learnmore .moredetail .moretitle{
   padding: 0px;
-
+  padding-left: 12px;
+  margin-top: 30px;
  }
  .learnmore .moredetail .moretitle span{
   font-size: 14px;
   color: rgb(60,111,160);
  }
  .learnmore .moredetail .moretitle button{
-   width: 85px;
-   height: 30px;
+   width: 93px;
+   height: 33px;
    border-radius: 8px;
    border: none;
    outline: none;
@@ -246,29 +245,39 @@ export default {
    color: #FFF;
    font-weight: 500;
    font-size: 12px;
-   margin-top: 10%;
-   margin-left:2% ;
+   /*margin-top: 10%;*/
+   /*margin-left:2% ;*/
    margin-right: 2%;
+ }
+ .btn{
+ 	margin-top: 15px;
+ 	/*margin-left: 12px;*/
  }
  .moretitle button:hover{
    background-color:rgb(50,99,145);
    color: #FFF ;
  }
  .learnmore .moredetail .moretitle .surfing{
-  width:93%;
+  width:30%;
+  height: 73px;
   font-weight: 550;
   background-color: #FFF;
     color: rgb(60,111,160);
     border: 2px solid rgb(60,111,160);
+    float: right;
+ }
+ .consulting{
+ 	padding: 12px 0;
  }
  .consult .consulting li {
-  width:81%;
+  width:60px;
   display: inline-block;
-  padding:7px;
+  padding:0 7px;
+  text-align: center;
  }
  .consult .consulting li span{
   font-size: 12px;
-  margin-left: 19%;
+  /*margin-left: 19%;*/
  }
  .consult .consulting li .iconfont{
   /*border:1px solid #6C8EAC;*/
@@ -296,7 +305,7 @@ export default {
   
  }
  .share{
-  padding:1px;
+  padding:5px;
   font-size: 15px;
  }
  .share .iconfont{
@@ -415,18 +424,23 @@ export default {
 	  	color: rgb(60,111,160);
 	  	border: 2px solid rgb(60,111,160);
 	}
+	.consult .consulting{
+		padding-left: 10px;
+	}
 	.consult .consulting li {
 		display: inline-block;
-		padding:15px;
+		padding:15px 1px;
+		width: 60px;
 	}
 	.consult .consulting li span{
-		font-size: 16px;
-		margin-left: 3px;
+
+		font-size: 14px;
+		/*margin-left: 3px;*/
 	}
 	.consult .consulting li .iconfont{
 		/*width:70px;*/
-		height: 70px;
-		line-height: 70px;
+		height: 60px;
+		line-height: 60px;
 		background-color: #6C8EAC;
 		border-radius: 35px;
 		color:#fff;

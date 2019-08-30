@@ -12,37 +12,32 @@
 			</transition>
 		</div>
 	</div>
-	
-	
 </template>
 
 <script>
 export default {
 
-  name: 'Banner',
+  	name: 'Banner',
 
-  data() {
-    return {
-    	show:true
-    };
-  },
-  methods:{
-  	enterHandler(){
-      this.show = ! this.show;
-    },
-    leaveHandler(){
-      this.show = ! this.show;
-    }
-	
+	data() {
+	    return {
+	    	show:true
+	    };
+	},
+  	methods:{
+	  	enterHandler(){
+	      this.show = ! this.show;
+	    },
+	    leaveHandler(){
+	      this.show = ! this.show;
+	    }
 	}
- 
 };
 </script>
 
 <style lang="css" scoped>
 /*手机*/
 @media screen and (max-width: 767px){ 
-  
  .outbanner{
   position: relative;
  }
@@ -55,7 +50,6 @@ export default {
   -moz-background-size:100% 100%; 
      /*background-position: center;*/
   width: 100%;
-     
   height: 220px;
  }
  .bannerimg{
@@ -76,14 +70,15 @@ export default {
   
  }
  .bannercode{
-  position: absolute;
-  z-index: 0;
-  width: 50%;
-  margin:0 auto;
-  bottom: 17%;
-     left: 35%;
-     color: #fff;
-     font-size: 18px;
+  	position: absolute;
+    z-index: 0;
+    /* width: 50%; */
+    margin: 0 auto;
+    bottom: 17%;
+    left: 14%;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
  }
 }  
  /*ipad*/

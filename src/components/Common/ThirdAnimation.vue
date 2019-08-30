@@ -60,7 +60,6 @@ export default {
 		    height: 285px;
 		    display: inline-block;
 		    vertical-align: middle;
-
 		}
 		img {
 		    width: 100%;
@@ -72,7 +71,6 @@ export default {
 		    left: 0;
 		    top: 0;
 		    backface-visibility: hidden;
-		 
 		}
 		.prve {
 		    transform: rotateY(0deg);

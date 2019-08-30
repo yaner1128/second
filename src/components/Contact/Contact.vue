@@ -360,6 +360,7 @@ export default {
      }
  .contactway{
   height: 260px;
+  width: 88%;
  }
  .wayLi{
   display: inline-block;

@@ -22,12 +22,12 @@ export default {
 /*手机*/
 @media screen and (max-width: 767px){ 
   .Fristbutton{
-  height: 42px;
-    width: 90px;
-    line-height: 42px;
+    height: 35px;
+    width: 100%;
+    line-height: 35px;
     cursor: pointer;
     font-family: '微软雅黑';
-    font-size: 16px;
+    font-size: 12px;
     border-radius: 50px;
     text-align: center;
 
@@ -59,7 +59,7 @@ export default {
 @media screen and (min-width: 1024px) and (max-width: 1365px){ 
     .Fristbutton{
     height: 42px;
-      width: 102px;
+      width: 135px;
       line-height: 42px;
       cursor: pointer;
       font-family: '微软雅黑';

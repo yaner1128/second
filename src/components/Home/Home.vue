@@ -221,7 +221,7 @@ export default {
             name:'newsdetail',
             params:{
                 newsId:id
-              }
+            }
           })
       }
   },
