@@ -98,7 +98,8 @@ Vue.component('my-lastAnimation',lastAnimation);
 import Nav from '@/components/Common/Nav'
 Vue.component('my-Nav',Nav);
 
-
+import FinalAnimation from '@/components/Common/FinalAnimation.vue'
+Vue.component('my-FinalAnimation',FinalAnimation);
 
 
 Vue.config.productionTip = false

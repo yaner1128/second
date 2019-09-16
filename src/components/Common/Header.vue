@@ -13,14 +13,14 @@
                 <span class="iconfont" @click='open' v-if="menue">&#xe63b;</span>
               </div>
               <!-- 小图标展开的 -->
-              <div class="bigPage" v-if='isopen'>
+              <div class="bigPage" v-if='isopen' @touchmove.prevent>
                 <span class="iconfont tuichu" @click='close()' v-show='issmall'>&#xe616;</span>
                 <ul>
                   <li v-for='(list,index) in Headerlist'  >
                     <router-link :to='{name:list.name}' class='lis' @click.native='close(list.flag)'>{{list.title}}</router-link>
                   </li>
                 </ul>
-              </div>
+            </div>
         </div>
 
         <div v-if="isindex">
@@ -124,6 +124,10 @@ export default {
       this.isnone=false;
       this.issmall=true;
       this.menue=false;
+
+      var mo=function(e){e.preventDefault();};
+      document.body.style.overflow='hidden';
+      document.addEventListener("touchmove",mo,false);//禁止页面滑动
     },
     close(val){
       // console.log(val);
@@ -140,6 +144,9 @@ export default {
         this.issmall=false;
         this.menue=true;
         event.stopPropagation();
+        var mo=function(e){e.preventDefault();};
+        document.body.style.overflow='';//出现滚动条
+        document.removeEventListener("touchmove",mo,false);
     }
   },
   computed:{
@@ -178,7 +185,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
-/*平板*/
+/*手机*/
 @media screen and (max-width: 767px){ 
   .othersmall{
     display: none;
@@ -218,12 +225,13 @@ export default {
   .nav-left{
     float:left;
     height: 100%;
-    width:20%;
+    width: 35%;
     z-index: 100;
     padding:0 5%;
+    margin:2% 0;
   }
   .nav-left img{
-    height:100%;
+    width:100%;
   }
 
   /*右边标题*/
@@ -266,23 +274,23 @@ export default {
     margin-right: 18px;
   }
   .small span{
-    font-size: 40px;
-    margin-right: 100%;
+    font-size: 36px;
+    margin-left: -20%;
     color:rgb(80,131,180);
     cursor: pointer;
   }
   .bigPage{
     width: 100%;
-    /*height:auto;*/
+    height:auto;
     padding:60px 0;
-    background-color: rgba(0,0,0,1);
+    background-color: rgba(0,0,0,0.91);
     z-index:1000;
     text-align: center;
   }
   .bigPage ul li{
-    height:30px;
-    font-size: 14px;
-    margin: 5px 0;
+    height:60px;
+    font-size: 24px;
+    margin: 25px 0;
   }
   .bigPage ul li .lis{
     width: 100%;
@@ -290,10 +298,10 @@ export default {
   }
   .tuichu{
     position: absolute;
-    font-size: 50px;
+    font-size: 46px;
     color: rgb(80,131,180);
     top: -3px;
-    right: 10px;
+    right: 18px;
     cursor: pointer;
   }
 }

@@ -267,15 +267,15 @@ export default {
 		width: 37%;
 	}
 	.icons{
-		border:3px solid rgb(31,49,93);
-		border-radius: 13px;
-		/*width:100px;*/
-		height: 100px;
-		font-size: 40px;
-		text-align: center;
-		line-height: 100px;
-		color: rgb(31,49,93);
-		margin:10% 32%;
+		border: 3px solid rgb(31,49,93);
+	    border-radius: 13px;
+	    width: 100px;
+	    height: 100px;
+	    font-size: 40px;
+	    text-align: center;
+	    line-height: 100px;
+	    color: rgb(31,49,93);
+	    margin: 10% 26%;
 	}
 	.icons:hover{
 		color:  #fff;

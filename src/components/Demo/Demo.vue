@@ -10,7 +10,7 @@
 			</li>
 		</ul>
 	</div>
-	<!-- 动画组件二 -->
+	<!-- 动画组件二last -->
 	<div class="containers">
 		<div class="secAni">
 	      <ul>
@@ -146,7 +146,7 @@ export default {
     getCase(){
       this.$http.Case(this.categoryId,this.pageId)
       .then(res=>{
-        // console.log(res); 
+        console.log(res); 
         if (res.code === 0){
                 this.pages=res.data;
                 this.cases=res.data.results;  
@@ -274,7 +274,7 @@ export default {
 /*真的普通pc*/
 @media screen and (min-width: 1024px) and (max-width: 1365px){
   .oneBtn{
-     width:64%;
+    width: 70%;
     margin:0 auto;
     margin-top: 3%;
   }
@@ -402,6 +402,9 @@ export default {
     width:65%;
     margin:0 auto;
     margin-top: 3%;
+  }
+  .oneBtn ul{
+    text-align: center;
   }
   .oneBtnLi{
     height: 70px;

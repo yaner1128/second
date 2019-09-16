@@ -85,12 +85,13 @@ export default {
 		.Fnews .Newstitle{
 			font-size: 16px;
 		    font-weight: bold;
-		   margin-bottom: 10px;
+		   margin-bottom: 6px;
 		    padding:1px 0;
 		}
 		.Fnews .Newstext{
 			font-size: 14px;
 			height: 35px;
+			padding-top: 5px;
 			text-overflow: ellipsis;
 			display: -webkit-box;
 			-webkit-box-orient: vertical;

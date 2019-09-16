@@ -5,33 +5,37 @@
 		</div>
 		<div class="bannerbottom">
 			<transition name="fade">
-				<div class="bannercode" v-show='show' @mouseenter='enterHandler' @mouseleave='leaveHandler'>
+				<div class="bannercode"  @mouseenter='enterHandler' @mouseleave='leaveHandler'>
 					<span>诚信为本，客户至上</span>
 				<p>Integrity-based, Customer first</p>
 				</div>	
 			</transition>
 		</div>
 	</div>
+	
+	
 </template>
 
 <script>
 export default {
 
-  	name: 'Banner',
+  name: 'Banner',
 
-	data() {
-	    return {
-	    	show:true
-	    };
-	},
-  	methods:{
-	  	enterHandler(){
-	      this.show = ! this.show;
-	    },
-	    leaveHandler(){
-	      this.show = ! this.show;
-	    }
+  data() {
+    return {
+    	show:true
+    };
+  },
+  methods:{
+  	enterHandler(){
+      this.show = ! this.show;
+    },
+    leaveHandler(){
+      this.show = ! this.show;
+    }
+	
 	}
+ 
 };
 </script>
 
@@ -50,6 +54,7 @@ export default {
   -moz-background-size:100% 100%; 
      /*background-position: center;*/
   width: 100%;
+     
   height: 220px;
  }
  .bannerimg{
@@ -70,16 +75,37 @@ export default {
   
  }
  .bannercode{
-  	position: absolute;
-    z-index: 0;
-    /* width: 50%; */
-    margin: 0 auto;
-    bottom: 17%;
-    left: 14%;
-    color: #fff;
-    font-size: 18px;
-    text-align: center;
+  position: absolute;
+  z-index: 0;
+  width: 50%;
+  margin:0 auto;
+  bottom: 17%;
+     left: 35%;
+     color: #fff;
+     font-size: 18px;
  }
+ .bannercode{
+      animation: bounceInBelow 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+    }
+    @keyframes bounceInBelow {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, -3000px, 0);
+      }
+      60% {
+        opacity: 1;
+        transform: translate3d(0,30px , 0);
+      }
+      75% {
+        transform: translate3d(0,45px , 0);
+      }
+      90% {
+        transform: translate3d(0,5px , 0);
+      }
+      100% {
+        transform: none;
+      }
+    }
 }  
  /*ipad*/
 @media screen and (min-width: 768px) and (max-width: 1023px){ 
@@ -128,23 +154,28 @@ export default {
 	    font-size:30px;
 	    text-align: center;
 	}
-	.fade-enter-active {
-	  animation: fade-in .5s;
-	}
-	.fade-leave-active {
-	  animation: fade-in .5s reverse;
-	}
-	@keyframes fade-in {
-	  0% {
-	    transform: scale(0);
-	  }
-	  50% {
-	    transform: scale(1.5);
-	  }
-	  100% {
-	    transform: scale(1);
-	  }
-	}
+	.bannercode{
+      animation: bounceInBelow 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+    }
+    @keyframes bounceInBelow {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, -3000px, 0);
+      }
+      60% {
+        opacity: 1;
+        transform: translate3d(0,30px , 0);
+      }
+      75% {
+        transform: translate3d(0,45px , 0);
+      }
+      90% {
+        transform: translate3d(0,5px , 0);
+      }
+      100% {
+        transform: none;
+      }
+    }
 }
 /*普通pc*/
 @media screen and (min-width: 1024px) and (max-width: 1365px){ 
@@ -193,23 +224,28 @@ export default {
 	    font-size:30px;
 	    text-align: center;
 	}
-	.fade-enter-active {
-	  animation: fade-in .5s;
-	}
-	.fade-leave-active {
-	  animation: fade-in .5s reverse;
-	}
-	@keyframes fade-in {
-	  0% {
-	    transform: scale(0);
-	  }
-	  50% {
-	    transform: scale(1.5);
-	  }
-	  100% {
-	    transform: scale(1);
-	  }
-	}
+	.bannercode{
+      animation: bounceInBelow 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+    }
+    @keyframes bounceInBelow {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, -3000px, 0);
+      }
+      60% {
+        opacity: 1;
+        transform: translate3d(0,30px , 0);
+      }
+      75% {
+        transform: translate3d(0,45px , 0);
+      }
+      90% {
+        transform: translate3d(0,5px , 0);
+      }
+      100% {
+        transform: none;
+      }
+    }
 }
 /*我的电脑*/
 @media screen and (min-width: 1366px) and (max-width: 1902px){
@@ -259,23 +295,28 @@ export default {
 		color:#fff;
 	    font-size:30px;
 	}
-	.fade-enter-active {
-	  animation: fade-in .5s;
-	}
-	.fade-leave-active {
-	  animation: fade-in .5s reverse;
-	}
-	@keyframes fade-in {
-	  0% {
-	    transform: scale(0);
-	  }
-	  50% {
-	    transform: scale(1.5);
-	  }
-	  100% {
-	    transform: scale(1);
-	  }
-	}
+	.bannercode{
+      animation: bounceInBelow 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+    }
+    @keyframes bounceInBelow {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, -3000px, 0);
+      }
+      60% {
+        opacity: 1;
+        transform: translate3d(0,30px , 0);
+      }
+      75% {
+        transform: translate3d(0,45px , 0);
+      }
+      90% {
+        transform: translate3d(0,5px , 0);
+      }
+      100% {
+        transform: none;
+      }
+    }
 } 
 /*超大pc*/
 @media screen and (min-width: 1903px){
@@ -324,23 +365,28 @@ export default {
 	    font-size: 38px;
 	    text-align: center;
 	}
-	.fade-enter-active {
-	  animation: fade-in .5s;
-	}
-	.fade-leave-active {
-	  animation: fade-in .5s reverse;
-	}
-	@keyframes fade-in {
-	  0% {
-	    transform: scale(0);
-	  }
-	  50% {
-	    transform: scale(1.5);
-	  }
-	  100% {
-	    transform: scale(1);
-	  }
-	}
+	.bannercode{
+      animation: bounceInBelow 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+    }
+    @keyframes bounceInBelow {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, -3000px, 0);
+      }
+      60% {
+        opacity: 1;
+        transform: translate3d(0,30px , 0);
+      }
+      75% {
+        transform: translate3d(0,45px , 0);
+      }
+      90% {
+        transform: translate3d(0,5px , 0);
+      }
+      100% {
+        transform: none;
+      }
+    }
 }
 .clearfix::after{
 	content: '';

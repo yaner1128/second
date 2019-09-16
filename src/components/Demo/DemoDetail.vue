@@ -42,7 +42,7 @@
 			<!-- 了解更多，预约 -->
 			<div class="learnmore">
 				<div class="demos">
-					 <span class="iconfont nextdemo" @click='nextDemoHandler'>&#xe641;</span>
+					 <span class="iconfont nextdemo" @click='nextDemoHandler'>&#xe657;</span>
 					<span class="iconfont alldemo" @click='backAlldemoHandler'>&#xe77d;</span>
 				</div>
 				<div class="moredetail">
@@ -69,11 +69,32 @@
 							</li>
 						</ul>
 					</div>
-					<div class="share">
-						分享到 :<i class="iconfont">&#xe669;&#xe668;&#xe615;&#xe601;</i>
-					</div>
+					
 				</div>
-				
+				<div class="relativeCase">
+					<div class="relaTitle">
+						相关案例 <span> ▎</span>
+					</div>
+					<ul class="relatCaseDetail">
+						<li class="caseli" style="background-color: pink;height:150px;">
+							
+						</li>
+						<li class="caseli" style="background-color: gold;height:150px;">
+							
+						</li>
+						<li class="caseli" style="background-color: pink;height:150px;">
+							
+						</li>
+					</ul>
+					<!-- 动画组件二final -->			
+						<!-- <div class="secAni">
+					      <ul>
+					        <li v-for="subItem in cases"  class="secAniLi" @click='detailHandler(subItem.id)'>
+					           <my-lastAnimation :subItem='subItem' />
+					        </li>
+					      </ul>
+						</div> -->
+				</div>
 			</div>
 		</div>
 		 <!-- 脚部 -->
@@ -123,7 +144,7 @@ export default {
   			if(res.code === 0) {
   			this.casedetail = res.data;
   			this.nextUrl=res.data.next_link;
-  			// console.log('======',res);
+  			console.log('======',res);
   			}
   		})
   		.catch(err=>{
@@ -184,7 +205,6 @@ export default {
   color: rgb(60,111,160);
   border-color: rgb(60,111,160);
   cursor: pointer;
-
  }
  .interactive i{
   color: #A3A3A3;
@@ -217,7 +237,7 @@ export default {
  }
  .learnmore{
   width:100%;
-  height: 225px;
+  height: 840px;
   /*float: right;*/
  }
  .learnmore .moredetail{
@@ -304,13 +324,27 @@ export default {
   background-color: #67CE9B;
   
  }
- .share{
-  padding:5px;
-  font-size: 15px;
- }
- .share .iconfont{
-  font-size: 20px;
- }
+ .relativeCase{
+		border-top:1px solid #CDCDCD;
+		margin-top: 5%;
+		height: 600px;
+
+	}
+	.relativeCase .relaTitle{
+		padding: 15px;
+		font-size: 20px;
+	}
+	.relativeCase .relaTitle span{
+		margin:0 3%;
+		color:rgb(60,111,160);
+	}
+	.relativeCase .relatCaseDetail{
+		padding:15px;
+	}
+	.relativeCase .relatCaseDetail .caseli{
+		margin: 2% auto;
+    	width: 270px;
+	}
 }  
  /*ipad*/
 @media screen and (min-width: 768px) and (max-width: 1023px){ 
@@ -458,12 +492,23 @@ export default {
 	.consult .consulting li .iconthree{
 		background-color: #67CE9B;
 	}
-	.share{
-		padding:15px;
-		font-size: 17px;
+	.relativeCase{
+		border-top:1px solid #CDCDCD;
+		margin-top: 5%;
 	}
-	.share .iconfont{
+	.relativeCase .relaTitle{
+		padding: 15px;
 		font-size: 20px;
+	}
+	.relativeCase .relaTitle span{
+		margin:0 3%;
+		color:rgb(60,111,160);
+	}
+	.relativeCase .relatCaseDetail{
+		padding:15px;
+	}
+	.relativeCase .relatCaseDetail .caseli{
+		margin:2% 0;
 	}
 }
 /*真的普通pc*/
@@ -606,13 +651,24 @@ export default {
  .consult .consulting li .iconthree{
   background-color: #67CE9B;
  }
- .share{
-  padding:15px;
-  font-size: 17px;
- }
- .share .iconfont{
-  font-size: 20px;
- }
+ .relativeCase{
+		border-top:1px solid #CDCDCD;
+		margin-top: 5%;
+	}
+	.relativeCase .relaTitle{
+		padding: 15px;
+		font-size: 20px;
+	}
+	.relativeCase .relaTitle span{
+		margin:0 3%;
+		color:rgb(60,111,160);
+	}
+	.relativeCase .relatCaseDetail{
+		padding:15px;
+	}
+	.relativeCase .relatCaseDetail .caseli{
+		margin:2% 0;
+	}
 }
  /*普通pc*/
 @media screen and (min-width: 1366px) and (max-width: 1902px){
@@ -761,12 +817,24 @@ export default {
 		background-color: #67CE9B;
 		
 	}
-	.share{
-		padding:15px;
-		font-size: 17px;
+	
+	.relativeCase{
+		border-top:1px solid #CDCDCD;
+		margin-top: 5%;
 	}
-	.share .iconfont{
+	.relativeCase .relaTitle{
+		padding: 15px;
 		font-size: 20px;
+	}
+	.relativeCase .relaTitle span{
+		margin:0 3%;
+		color:rgb(60,111,160);
+	}
+	.relativeCase .relatCaseDetail{
+		padding:15px;
+	}
+	.relativeCase .relatCaseDetail .caseli{
+		margin:2% 0;
 	}
 } 
 /*超大pc*/
@@ -848,9 +916,7 @@ export default {
 	.moredetail>div{
 		padding-left: 50px;
 	}
-	/*.learnmore .moredetail .moretitle{
-		padding: 15px;
-	}*/
+	
 	.learnmore .moredetail .moretitle span{
 		font-size: 18px;
 	}
@@ -910,12 +976,26 @@ export default {
 	.consult .consulting li .iconthree{
 		background-color: #67CE9B;
 	}
-	.share{
-		padding:15px;
-		font-size: 17px;
+	.relativeCase{
+		border-top:1px solid #CDCDCD;
+		margin-top: 5%;
+		padding-left: 50px;
+
 	}
-	.share .iconfont{
+	.relativeCase .relaTitle{
+		padding: 15px 0;
 		font-size: 20px;
+	}
+	.relativeCase .relaTitle span{
+		margin:0 3%;
+		color:rgb(60,111,160);
+	}
+	.relativeCase .relatCaseDetail{
+		/*padding:15px;*/
+	}
+	.relativeCase .relatCaseDetail .caseli{
+		margin: 2% auto;
+    	width: 270px;
 	}
 }
 </style>
