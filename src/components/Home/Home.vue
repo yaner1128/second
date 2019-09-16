@@ -26,14 +26,10 @@
     </div>
     <div class="right">
       <div class="aboutimg">
-        
         <img class="cimg" src="../../../static/images/home-3-689x469.png">
         <img class="bimg" src="../../../static/images/home-2-508x341.png">
         <img class="aimg" src="../../../static/images/home-1-243x199.png">
-
       </div>
-      
-
     </div>
   </div>
   
@@ -59,14 +55,14 @@
   <!-- 动画组件二 -->
   <div class="secani">
     <div class="container">
-    <div class="secAni">
-      <ul>
-        <li v-for="subItem in cases" class="secAniLi" @click='detailHandler(subItem.id)'>
-           <my-SecondAnimation :subItem='subItem'/>
-        </li>
-      </ul>
+      <div class="secAni">
+        <ul>
+          <li v-for="subItem in cases" class="secAniLi" @click='detailHandler(subItem.id)'>
+             <my-SecondAnimation :subItem='subItem'/>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
   </div>
   
 
@@ -902,7 +898,7 @@ export default {
 /*普通偏大pc*/
 @media screen and (min-width: 1366px) and (max-width: 1902px){
   .secani>.container{
-    width: 77%;
+    /*width: 77%;*/
   }
   .secani .secAni>ul{
     margin: 0 auto;

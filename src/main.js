@@ -70,7 +70,6 @@ import SecondNew from '@/components/Common/SecondNew.vue'
 Vue.component('my-SecondNew',SecondNew);
 
 
-
 //按钮组件FristButton
 import FristButton from '@/components/Common/FristButton.vue' 
 Vue.component('my-FristButton',FristButton);
@@ -94,6 +93,11 @@ Vue.component('my-Slideshow',Slideshow);
 
 import lastAnimation from '@/components/Common/lastAnimation.vue'
 Vue.component('my-lastAnimation',lastAnimation);
+
+//侧边导航栏
+import Nav from '@/components/Common/Nav'
+Vue.component('my-Nav',Nav);
+
 
 
 

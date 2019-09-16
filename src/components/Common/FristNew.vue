@@ -8,7 +8,7 @@
 		<!-- 右边新闻 -->
 		<div class="Fnews">
             <h4 class="Newstitle">{{firstNews.title}}</h4>
-            <p class="Newstext" v-html='firstNews.content'></p>
+            <p class="Newstext" v-html="firstNews.content"></p>
 		</div>
 	</div>
 </template>

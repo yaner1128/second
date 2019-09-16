@@ -180,13 +180,14 @@ export default {
   color: #fff;
  }
  .newsBtn{
-  width: 88%;
+  width: 100%;
   height: 50px;
   padding: 60px 0 0 0;
  }
  .newsBtn>ul{
   margin: 0 auto;
   height: 50px;
+  width: 328px;
  }
  .newsBtn>ul>li{
   display: inline-block;
@@ -235,7 +236,7 @@ export default {
 		/*background-color: red;*/
 	}
 	.newsBtn>ul{
-		width: 88%;
+		width: 77%;
 		margin: 0 auto;
 		height: 50px;
 	/*	background-color: green;*/

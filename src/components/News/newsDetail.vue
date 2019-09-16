@@ -12,9 +12,7 @@
 				</p>
 			</div>
 			<!-- 新闻主体内容 -->
-			<div class="mainNew">
-				{{newsdetails.content}}
-			</div>
+			<div class="mainNew" v-html="newsdetails.content"></div>
 			<!-- 新闻结束按键 -->
 			<div class="buttons">
 				<!-- <span class="prve"> -->
@@ -97,13 +95,12 @@ export default {
  .newsreport{
   width: 88%;
   margin: 0 auto;
-  padding-top: 50px;
- /* background-color: lightgray;*/
+  padding-top: 40px;
  }
  .newsreport .title{
   width: 100%;
   text-align: center;
-  padding: 50px 0;
+  padding: 10px 0 30px 0;
  }
  .newsreport .title>h2{
   padding-bottom: 10px;
@@ -118,6 +115,9 @@ export default {
   padding-bottom: 50px;
   border-bottom: 1px solid rgb(204, 204, 204);
  }
+  .newsreport .mainNew p{
+	margin-right: 10px 0;
+  }
  .newsreport .buttons{
   width: 100%;
   height:70px;

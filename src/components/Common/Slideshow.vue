@@ -102,7 +102,7 @@ export default {
       display: block;
     }
     .slideshow{
-      background-color: rgb(60,111,160);
+      /*background-color: rgb(60,111,160);*/
       position: relative;
       z-index: 0;
       height: 100%;

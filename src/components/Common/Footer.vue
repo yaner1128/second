@@ -19,7 +19,9 @@
 		<div class="footBottom">
 			<div class="footcontainer">
 				<ul>
-					<li v-for="lis in Footerlist">{{lis.title}}</li>
+					<li v-for="(lis,index) in Footerlist">
+						<router-link :to='{name:lis.name}'>{{lis.title}}</router-link>
+					</li>
 				</ul>
 				<div class="xinxi"  v-for='aboutus in aboutList'>
 					<!-- 左边信息 -->
@@ -80,17 +82,15 @@ export default {
   methods:{
   	// 获取关于我们的数据
     getaboutList(){
-      this.$http.aboutList()
-      .then(res=>{
-        // console.log(res);
-        if(res.code==0){
-          this.aboutList=res.data;
-          // console.log(this.aboutList);
-        }
-      })
-      .catch(err=>{
-        console.log(err);
-      })
+	    this.$http.aboutList()
+	    .then(res=>{
+	        if(res.code==0){
+          		this.aboutList=res.data;
+        	}
+     	})
+      	.catch(err=>{
+        	console.log(err);
+      	})
   	},
   },
 };
@@ -300,6 +300,12 @@ export default {
 		margin: 0 auto;
 		height: 100%;
 	}
+	.footcontainer>ul>li{
+		cursor: pointer;
+	}
+	.footcontainer>ul>li a{
+		color: #d2d2d2;
+	}
 	.footBottom ul{
 		width: 100%;
 		margin:0 auto;
@@ -428,10 +434,16 @@ export default {
 		margin: 0 auto;
 		height: 100%;
 	}
+	.footcontainer>ul>li{
+		cursor: pointer;
+	}
+	.footcontainer>ul>li a{
+		color: #d2d2d2;
+	}
 	.footBottom ul{
 		width: 100%;
 		margin:0 auto;
-		padding:30px 0;
+		padding:30px 0 20px 0;
 		height: 30px;
 		color: #d2d2d2;
 	}
@@ -556,6 +568,12 @@ export default {
 		width: 88%;
 		margin: 0 auto;
 		height: 100%;
+	}
+	.footcontainer>ul>li{
+		cursor: pointer;
+	}
+	.footcontainer>ul>li a{
+		color: #d2d2d2;
 	}
 	.footBottom ul{
 	/*	background-color: red;*/
@@ -683,6 +701,12 @@ export default {
 		margin: 0 auto;
 		height: 100%;
 	}
+	.footcontainer>ul>li{
+		cursor: pointer;
+	}
+	.footcontainer>ul>li a{
+		color: #d2d2d2;
+	}
 	.footBottom ul{
 	/*	background-color: red;*/
 		width: 70%;
@@ -717,7 +741,6 @@ export default {
 		padding-top: 40px;
 		height: 110px;
 	}
-
 	.Footdown{
 		width: 100%;
 		height: 40px;

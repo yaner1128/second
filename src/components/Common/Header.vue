@@ -10,10 +10,10 @@
         <div class="nophone">
               <!-- 全屏显示小图标 -->
               <div class="small">
-                <span class="iconfont" @click='open' >&#xe63b;</span>
+                <span class="iconfont" @click='open' v-if="menue">&#xe63b;</span>
               </div>
               <!-- 小图标展开的 -->
-              <div class="bigPage" v-if='isopen' @touchmove.prevent>
+              <div class="bigPage" v-if='isopen'>
                 <span class="iconfont tuichu" @click='close()' v-show='issmall'>&#xe616;</span>
                 <ul>
                   <li v-for='(list,index) in Headerlist'  >
@@ -57,6 +57,7 @@ export default {
         height:'',
       },
       screenWidth: document.body.clientWidth, 
+      menue:true,
       isnone:true,
       issmall:false,
       isshow:false,
@@ -91,7 +92,7 @@ export default {
       // 页面滚动距顶部距离
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       this.scroll = scrollTop - this.i;
-        this.i = scrollTop;
+      this.i = scrollTop;
 
         if(this.isindex==true){
             if(this.scroll>=0){
@@ -122,12 +123,7 @@ export default {
       this.isopen=true;
       this.isnone=false;
       this.issmall=true;
-
-      event.stopPropagation();
-      var mo=function(e){e.preventDefault();};
-        document.body.style.overflow='hidden';
-        document.addEventListener("touchmove",mo,false);//禁止页面滑动
-
+      this.menue=false;
     },
     close(val){
       // console.log(val);
@@ -142,10 +138,8 @@ export default {
         this.isopen=false;
         this.isnone=true;
         this.issmall=false;
+        this.menue=true;
         event.stopPropagation();
-         var mo=function(e){e.preventDefault();};
-        document.body.style.overflow='';//出现滚动条
-        document.removeEventListener("touchmove",mo,false);
     }
   },
   computed:{
@@ -269,6 +263,7 @@ export default {
     width: 10%;
     height: 60px;
     float: right;
+    margin-right: 18px;
   }
   .small span{
     font-size: 40px;
@@ -279,8 +274,8 @@ export default {
   .bigPage{
     width: 100%;
     /*height:auto;*/
-    padding:100px 0;
-    background-color: rgba(0,0,0,0.91);
+    padding:60px 0;
+    background-color: rgba(0,0,0,1);
     z-index:1000;
     text-align: center;
   }
@@ -297,8 +292,8 @@ export default {
     position: absolute;
     font-size: 50px;
     color: rgb(80,131,180);
-    top: 0;
-    right: 75px;
+    top: -3px;
+    right: 10px;
     cursor: pointer;
   }
 }

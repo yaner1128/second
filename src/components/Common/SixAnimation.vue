@@ -358,13 +358,13 @@ export default {
 		margin: 0 15%;
 		position: absolute;
 		top:0;
-		padding: 3% 0;
+		padding: 30px 0;
 	}
 	.sixli{
 		width: 27%;
 		border-radius: 15px;
 	  	display: inline-block;
-		margin: 2.2% 3%;
+		margin:35px 3%;
 	    z-index: 2;
 	}
 	.sixli:hover{

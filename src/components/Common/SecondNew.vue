@@ -7,7 +7,7 @@
 				</div>
 				<div class="newcontent">
 					<h2>{{item.title}}</h2>
-					<p class="maincont">{{item.content}}</p>
+					<p class="maincont" v-html="item.content"></p>
 					<p class="newsmore">
 						<span class="iconfont detail">查看详情&#xe684;</span>
 						<span class="iconfont browse">&#xe64a;{{moment(item.date).format('YYYY-MM-DD HH:mm:ss')}}&nbsp;&nbsp;&nbsp;&#xe666;{{item.clicks}}</span>
@@ -68,7 +68,7 @@ export default {
     box-shadow:3px 3px 10px  10px rgba(180,180,180,0.5);
   }
   .secondli:hover h2{
-   color: rgb(227,91,91);
+   color: rgb(60,111,160);
   }
 
   /*新闻图片*/
@@ -117,11 +117,11 @@ export default {
       -webkit-box-orient: vertical;
   }
   .newsmore{
-   position: absolute;
-   bottom: 0;
-   left: 0;
-   color: #a3a3a3;
-   width: 100%;
+   	position: absolute;
+    bottom: -7px;
+    left: 0;
+    color: #666;
+    width: 100%;
   }
   .newsmore .detail{
    font-size: 15px;
@@ -129,11 +129,11 @@ export default {
 
   }
   .newsmore .browse{
-   font-size: 15px;
-   float: right;
-   padding-right: 6.5%;
+   	font-size: 15px;
+   	float: right;
+    padding-right: 3.5%;
   }
-  } 
+ } 
 /*iPad*/
 @media screen and (min-width: 768px) and (max-width: 1365px){ 
 	.clearfix::after{
@@ -164,7 +164,7 @@ export default {
 	 	box-shadow:3px 3px 10px  10px rgba(180,180,180,0.5);
 	}
 	.secondli:hover h2{
-		color: rgb(227,91,91);
+		color: rgb(60,111,160);
 	}
 
 	/*新闻图片*/
@@ -257,7 +257,7 @@ export default {
 	 	box-shadow:3px 3px 10px  10px rgba(180,180,180,0.5);
 	}
 	.secondli:hover h2{
-		color: rgb(227,91,91);
+		color: rgb(60,111,160);
 	}
 
 	/*新闻图片*/

@@ -4,9 +4,8 @@
     <div class="head">
       <Header />
     </div>
-    
     <router-view/>
-    
+      <Nav />
   </div>
 
 </template>
@@ -14,6 +13,7 @@
 <script>
 
 import Header from '@/components/Common/Header.vue'
+import Nav from '@/components/Common/Nav.vue'
 
 import store from '../src/store/index.js'
 export default {
@@ -21,6 +21,7 @@ export default {
   store,
   components:{
     Header,
+    Nav,
   }
 };
 </script>

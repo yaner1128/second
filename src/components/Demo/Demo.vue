@@ -274,7 +274,7 @@ export default {
 /*真的普通pc*/
 @media screen and (min-width: 1024px) and (max-width: 1365px){
   .oneBtn{
-     width:60%;
+     width:64%;
     margin:0 auto;
     margin-top: 3%;
   }
