@@ -1360,7 +1360,7 @@ export default {
   }
   .imgfixed{
     width: 100%;
-    height: 400px;
+    height: 430px;
     margin-top: 4%;
     background:url("../../../static/images/5b46b68b4b320.jpg") no-repeat fixed ;
     background-size:100% 100%;
@@ -1368,7 +1368,7 @@ export default {
   }
   .imgcode{
     width:100%;
-    height: 400px;
+    height: 430px;
     background-color: rgba(44,44,44,.3);
     text-align: center;
   }

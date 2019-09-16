@@ -95,6 +95,9 @@ Vue.component('my-Slideshow',Slideshow);
 import lastAnimation from '@/components/Common/lastAnimation.vue'
 Vue.component('my-lastAnimation',lastAnimation);
 
+import FinalAnimation from '@/components/Common/FinalAnimation.vue'
+Vue.component('my-FinalAnimation',FinalAnimation);
+
 
 
 Vue.config.productionTip = false

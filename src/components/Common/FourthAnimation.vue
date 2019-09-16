@@ -655,7 +655,7 @@ export default {
   	.container{
 		perspective: 1000;
 		transform-style: preserve-3d;
-		height: 385px;
+		height: 430px;
 		width: 70%;
 	}
 	.outer{

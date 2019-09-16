@@ -297,7 +297,7 @@ export default {
       width:41px;
       position:absolute;
       left:46.5%;
-      top:55%;
+      top:89%;
     }
     .italictext .textp2{
       position: absolute;
@@ -442,7 +442,7 @@ export default {
     width:41px;
     position:absolute;
     left:46.5%;
-    top:55%;
+    top:89%;
   }
   .italictext .textp2{
     position: absolute;
@@ -587,7 +587,7 @@ export default {
     width:41px;
     position:absolute;
     left:48%;
-    top:55%;
+    top:89%;
   }
   .italictext .textp2{
      position: absolute;
@@ -680,7 +680,7 @@ export default {
     display: block;
   }
   .slideshow{
-    background-color: pink;
+   
     position: relative;
     z-index: 0;
     height: 100%;
@@ -732,7 +732,7 @@ export default {
     width:41px;
     position:absolute;
     left:48%;
-    top:55%;
+    top:89%;
   }
   .italictext .textp2{
      position: absolute;
