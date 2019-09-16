@@ -1,5 +1,5 @@
 <template>
-  <div id="app">   
+  <div id="app">  
     <!-- 导航区域 -->
     <div class="head">
       <Header />
@@ -11,7 +11,6 @@
 </template>
 
 <script>
-
 import Header from '@/components/Common/Header.vue'
 import Nav from '@/components/Common/Nav.vue'
 
@@ -24,6 +23,8 @@ export default {
     Nav,
   }
 };
+  
+     
 </script>
 
 <style scoped>

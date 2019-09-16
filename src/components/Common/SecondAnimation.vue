@@ -409,6 +409,7 @@ export default {
       filter: blur(3px);
     }
     .functionSubNav-image .mask,.functionSubNav-image-opacity .mask {
+      cursor: pointer;
       display: block;
       width: 350px;
       position: absolute;
@@ -527,6 +528,7 @@ export default {
       filter: blur(3px);
     }
     .functionSubNav-image .mask,.functionSubNav-image-opacity .mask {
+      cursor: pointer;
       display: block;
       width: 350px;
       position: absolute;

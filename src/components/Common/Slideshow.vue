@@ -245,7 +245,6 @@ export default {
       display: block;
     }
     .slideshow{
-      background-color: pink;
       position: relative;
       z-index: 0;
       height: 100%;
@@ -390,7 +389,6 @@ export default {
     display: block;
   }
   .slideshow{
-    background-color: pink;
     position: relative;
     z-index: 0;
     height: 100%;
@@ -535,7 +533,6 @@ export default {
     display: block;
   }
   .slideshow{
-    background-color: pink;
     position: relative;
     z-index: 0;
     height: 100%;

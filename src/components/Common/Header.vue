@@ -282,7 +282,7 @@ export default {
   .bigPage{
     width: 100%;
     height:auto;
-    padding:60px 0;
+    padding:80px 0;
     background-color: rgba(0,0,0,0.91);
     z-index:1000;
     text-align: center;
