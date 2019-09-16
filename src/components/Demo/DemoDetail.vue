@@ -834,7 +834,8 @@ export default {
 		padding:15px;
 	}
 	.relativeCase .relatCaseDetail .caseli{
-		margin:2% 0;
+		margin:2% auto;
+		width:270px;
 	}
 } 
 /*超大pc*/

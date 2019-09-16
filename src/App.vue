@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="target"></div>   
+    <div id="target"></div>  
     <!-- 导航区域 -->
     <div class="head">
       <Header />
@@ -12,7 +12,6 @@
 </template>
 
 <script>
-
 import Header from '@/components/Common/Header.vue'
 import Nav from '@/components/Common/Nav.vue'
 
@@ -33,8 +32,5 @@ export default {
   .app{
    overflow-x: hidden;
   }
-  
 }
-
-
 </style>
