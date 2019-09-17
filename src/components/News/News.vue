@@ -198,17 +198,17 @@ export default {
  .newscont{
   width: 100%;
   height: auto;
+      margin-top: 30px;
  }
  .newscont>ul{
-  width: 88%;
+  width: 100%;
   height: auto;
   margin: 0 auto;
  }
  .newscont>ul>li{
   width: 100%;
   margin: 0 auto;
-  height: 250px;
-  
+  height: 150px;
  }
  /*.pagedivce{
   width: 100%;
