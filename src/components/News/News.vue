@@ -199,6 +199,7 @@ export default {
   width: 100%;
   height: auto;
       margin-top: 30px;
+      background-color: #f0f0f0;
  }
  .newscont>ul{
   width: 100%;
@@ -208,7 +209,7 @@ export default {
  .newscont>ul>li{
   width: 100%;
   margin: 0 auto;
-  height: 150px;
+  height: 140px;
  }
  /*.pagedivce{
   width: 100%;
