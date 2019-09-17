@@ -75,17 +75,17 @@ export default {
   
  }
  .bannercode{
-  position: absolute;
-  z-index: 0;
-  width: 50%;
-  margin:0 auto;
-  bottom: 17%;
-     left: 35%;
-     color: #fff;
-     font-size: 18px;
+  	position: absolute;
+    z-index: 0;
+    width: 100%;
+    margin: 0 auto;
+    bottom: 17%;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
  }
  .bannercode{
-      animation: bounceInBelow 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+      animation: bounceInBelow 1.3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
     }
     @keyframes bounceInBelow {
       0% {

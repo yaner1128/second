@@ -170,51 +170,55 @@ export default {
 /*手机*/
 @media screen and (max-width: 767px){ 
  .pageing{
-  width:88%;
-  text-align: center;
-  height:30px;
-  margin:50px auto;
- }
- .newsBtn .active{
-  background-color: rgb(60,111,160);
-  color: #fff;
- }
- .newsBtn{
-  width: 100%;
-  height: 50px;
-  padding: 60px 0 0 0;
- }
- .newsBtn>ul{
-  margin: 0 auto;
-  height: 50px;
-  width: 328px;
- }
- .newsBtn>ul>li{
-  display: inline-block;
-  width: 66px;
-  height: 45px;
-  margin: 0 8px;
- }
- .newscont{
-  width: 100%;
-  height: auto;
- }
- .newscont>ul{
-  width: 88%;
-  height: auto;
-  margin: 0 auto;
- }
- .newscont>ul>li{
-  width: 100%;
-  margin: 0 auto;
-  height: 250px;
-  
- }
- /*.pagedivce{
-  width: 100%;
-  height: 50px;
-  margin: 30px 0 50px 0;
- }*/
+		width: 100%;
+		text-align: center;
+		height:30px;
+		margin:50px 0;
+	/*	background-color: green;*/
+	}
+	.newsBtn .active{
+		background-color: rgb(60,111,160);
+		color: #fff;
+	}
+	.newsBtn{
+		width: 100%;
+		height: 50px;
+		padding: 30px 0 30px 0;
+		/*background-color: red;*/
+	}
+	.newsBtn>ul{
+		width: 77%;
+		margin: 0 auto;
+		height: 50px;
+	/*	background-color: green;*/
+	}
+	.newsBtn>ul>li{
+		float: left;
+	    width: 120px;
+	    height: 45px;
+	    margin: 0 1%;
+	    margin-right: 20px;
+	}
+	.newscont{
+		width: 100%;
+		height: auto;
+	}
+	.newscont>ul{
+		width: 88%;
+		height: auto;
+		margin: 0 auto;
+	}
+	.newscont>ul>li{
+		width: 100%;
+		margin: 0 auto;
+		height: 180px;
+		/*background-color: red;*/
+	}
+	.pagedivce{
+		width: 100%;
+		height: 50px;
+		margin: 30px 0 50px 0;
+	}
 }  
  /*ipad*/
 @media screen and (min-width: 768px) and (max-width: 1365px){ 

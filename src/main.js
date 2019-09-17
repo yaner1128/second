@@ -128,5 +128,3 @@ new Vue({
   },
   template: '<App/>'
 })
-
-

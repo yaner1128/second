@@ -1,5 +1,6 @@
 <template>
-  <div id="app">  
+  <div id="app">
+    <div id="target"></div>   
     <!-- 导航区域 -->
     <div class="head">
       <Header />

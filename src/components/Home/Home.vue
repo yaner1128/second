@@ -1087,7 +1087,7 @@ export default {
     font-size: 32px;
   }
   .imgcode #down{
-    animation: bounceInBelow 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+    animation: bounceInBelow 1.1s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
   }
   @keyframes bounceInBelow {
     0% {
@@ -1121,7 +1121,7 @@ export default {
     margin:5% 3%; 
   }
   .imgcode #upward{
-    animation: bounceInUp 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+    animation: bounceInUp 1s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
   }
   @keyframes bounceInUp {
     0% {
@@ -1377,7 +1377,7 @@ export default {
     font-size: 32px;
   }
   .imgcode #down{
-    animation: bounceInBelow 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+    animation: bounceInBelow 1.1s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
   }
   @keyframes bounceInBelow {
     0% {
@@ -1411,7 +1411,7 @@ export default {
     margin:5% 3%; 
   }
   .imgcode #upward{
-    animation: bounceInUp 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+    animation: bounceInUp 1s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
   }
   @keyframes bounceInUp {
     0% {

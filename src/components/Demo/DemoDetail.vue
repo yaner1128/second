@@ -144,7 +144,7 @@ export default {
   			if(res.code === 0) {
   			this.casedetail = res.data;
   			this.nextUrl=res.data.next_link;
-  			console.log('======',res);
+  			// console.log('======',res);
   			}
   		})
   		.catch(err=>{
