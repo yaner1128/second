@@ -497,6 +497,7 @@ export default {
       transition: all 0.4s ease-in-out 0.5s;
    }
    .view-sixth .mask {
+      width: 100%;
       background-color: rgba(146,96,91,0.5);
       -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
       filter: alpha(opacity=0);

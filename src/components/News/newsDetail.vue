@@ -125,9 +125,9 @@ export default {
   color:rgb(51, 51, 51);
  }
  .newsreport .buttons .prve{
-  color:rgb(51, 51, 51);
-  float: left;
-  margin: 3% 0;
+	color:rgb(51, 51, 51);
+	margin: 3% 0;
+	display: block;
  }
  .newsreport .buttons .next{
   color:rgb(51, 51, 51);
@@ -161,7 +161,7 @@ export default {
 	}
 	.newsreport .mainNew{
 		width: 100%;
-		height: 400px;
+		/*height: 400px;*/
 	/*	background-color: pink;*/
 		padding-bottom: 50px;
 		border-bottom: 1px solid rgb(204, 204, 204);
@@ -210,7 +210,7 @@ export default {
 	}
 	.newsreport .mainNew{
 		width: 100%;
-		height: 400px;
+		/*height: 400px;*/
 	/*	background-color: pink;*/
 		padding-bottom: 50px;
 		border-bottom: 1px solid rgb(204, 204, 204);
@@ -259,7 +259,7 @@ export default {
 	}
 	.newsreport .mainNew{
 		width: 100%;
-		height: 400px;
+		/*height: 400px;*/
 	/*	background-color: pink;*/
 		padding-bottom: 50px;
 		border-bottom: 1px solid rgb(204, 204, 204);
@@ -307,7 +307,7 @@ export default {
 	}
 	.newsreport .mainNew{
 		width: 100%;
-		height: 400px;
+		/*height: 400px;*/
 	/*	background-color: pink;*/
 		padding-bottom: 50px;
 		border-bottom: 1px solid rgb(204, 204, 204);

@@ -196,9 +196,10 @@ export default {
   margin: 0 8px;
  }
  .newscont{
-  width: 100%;
-  height: auto;
-      margin-top: 30px;
+  	width: 100%;
+  	height: auto;
+    margin-top: 30px;
+    background-color: #f0f0f0;
  }
  .newscont>ul{
   width: 100%;
@@ -208,7 +209,7 @@ export default {
  .newscont>ul>li{
   width: 100%;
   margin: 0 auto;
-  height: 150px;
+  height: 140px;
  }
  /*.pagedivce{
   width: 100%;
@@ -236,17 +237,16 @@ export default {
 		/*background-color: red;*/
 	}
 	.newsBtn>ul{
-		width: 77%;
+		width: 640px;
 		margin: 0 auto;
 		height: 50px;
 	/*	background-color: green;*/
 	}
 	.newsBtn>ul>li{
 		float: left;
-	    width: 120px;
+	    width: 140px;
 	    height: 45px;
-	    margin: 0 1%;
-	    margin-right: 20px;
+	    margin: 0 10px;
 	}
 	.newscont{
 		width: 100%;

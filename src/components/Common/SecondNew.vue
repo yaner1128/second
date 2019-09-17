@@ -65,7 +65,7 @@ export default {
 	.containers{
 	   	width: 100%;
 	   	height: 130px;
-	   	background-color: #e0e0e0;
+	   	background-color: #fff;
 	}
 	.outerNew{
 	   	display: none;

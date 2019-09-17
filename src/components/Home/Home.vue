@@ -38,7 +38,7 @@
       <my-FristText  :title='titleone' :text='textone'/>
     
     <!-- 动画组件一 -->
-    <div class="container">
+  <div class="container">
     <div class="fristAniouter">
       <ul>
         <li  v-for='fristImg in fristImgs' class="firstAniLi">
@@ -798,9 +798,9 @@ export default {
   }
   .firstAniLi{
      display: inline-block;
-   width: 24%;
-      margin: 2% 12%;
-      padding: 0 0.0%;
+      width: 24%;
+      margin: 2% auto;
+      padding: 0 4px;
   }
   .secani>.container{
     width: 82%;

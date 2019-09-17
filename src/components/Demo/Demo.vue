@@ -275,16 +275,16 @@ export default {
 /*真的普通pc*/
 @media screen and (min-width: 1024px) and (max-width: 1365px){
   .oneBtn{
-    width: 70%;
+    width: 77%;
     margin:0 auto;
     margin-top: 3%;
   }
-    .oneBtn ul{
-      text-align: center;
-    }
+  .oneBtn ul{
+    text-align: center;
+  }
   .oneBtnLi{
     height: 65px;
-    margin:0 1.5%;
+    margin:0 10px;
     display: inline-block;
   }
   .oneBtnLi .active{

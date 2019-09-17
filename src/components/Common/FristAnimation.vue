@@ -100,13 +100,17 @@ export default {
 }
 /*真正的普通pc*/
 @media screen and (min-width: 1024px) and (max-width: 1365px){
-    .Fcontainer {
+  .mainbody{
+        background-color: blue;
+      }
+      .Fcontainer {
         position: relative;
+
        width: 100%;
         height: 320px;
-
     }
     .Fcontainer img{
+        /*width: 220px;*/
          width: 100%;
         height:auto;
     }
@@ -129,7 +133,9 @@ export default {
       width: 100%;
       height: 30px;
         text-align: center;
-
+      /*position: absolute;*/
+      /*bottom:0px;
+      left: 0;*/
     }
 }
  /*普通偏大pc*/
