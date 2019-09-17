@@ -202,7 +202,7 @@ export default {
     margin-top: 24px;
   }
   .functionSubNav li{
-    margin:10px  8px;
+    margin:10px  22px;
   }
   .functionSubNav-image-opacity,.functionSubNav-image {
     float: left;

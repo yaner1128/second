@@ -217,7 +217,7 @@ export default {
   margin: 30px 0 50px 0;
  }*/
 }  
- /*ipad*/
+/*ipad*/
 @media screen and (min-width: 768px) and (max-width: 1365px){ 
 	.pageing{
 		width: 100%;

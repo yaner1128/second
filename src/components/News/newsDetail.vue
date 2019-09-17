@@ -161,8 +161,6 @@ export default {
 	}
 	.newsreport .mainNew{
 		width: 100%;
-		/*height: 400px;*/
-	/*	background-color: pink;*/
 		padding-bottom: 50px;
 		border-bottom: 1px solid rgb(204, 204, 204);
 	}
