@@ -141,7 +141,6 @@ export default {
 	.newsDate>.detail{
 		font-size: 13px;
 	}
-
 }
 /*iPad*/
 @media screen and (min-width: 768px) and (max-width: 1365px){ 

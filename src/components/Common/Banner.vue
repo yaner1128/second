@@ -85,7 +85,7 @@ export default {
     text-align: center;
  }
  .bannercode{
-      animation: bounceInBelow 1.6s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
+      animation: bounceInBelow 1.3s 1 cubic-bezier(0.215, 0.355, 0.610, 1.000);
     }
     @keyframes bounceInBelow {
       0% {
