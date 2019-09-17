@@ -798,22 +798,18 @@ export default {
   }
   .firstAniLi{
      display: inline-block;
-   width: 24%;
-      margin: 2% 12%;
-      padding: 0 0.0%;
+   /*  width: 25%;*/
+        width: 17%;
+      margin: 0px 1%;
+      padding: 0 2.9%;
   }
-  .secani>.container{
-    width: 82%;
+  .secAniLi{
+     display: inline-block;
   }
   .secAni>ul{
     margin: 0 auto;
     /* background-color: pink; */
-    width: 840px;
-  }
-  .secAniLi{
-     display: inline-block;
-    width: 320px;
-    margin: 2% 50px;
+    width: 730px;
   }
   .imgfixed{
     width: 100%;

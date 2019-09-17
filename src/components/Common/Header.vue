@@ -13,7 +13,7 @@
                 <span class="iconfont" @click='open' v-if="menue">&#xe63b;</span>
               </div>
               <!-- 小图标展开的 -->
-              <div class="bigPage" v-if='isopen' @touchmove.prevent>
+              <div class="bigPage" v-if='isopen' @touchmove.prevent :style='style'>
                 <span class="iconfont tuichu" @click='close()' v-show='issmall'>&#xe616;</span>
                 <ul>
                   <li v-for='(list,index) in Headerlist'  >

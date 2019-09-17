@@ -217,58 +217,57 @@ export default {
   margin: 30px 0 50px 0;
  }*/
 }  
- /*ipad*/
+/*ipad*/
 @media screen and (min-width: 768px) and (max-width: 1365px){ 
-	.pageing{
-		width: 100%;
-		text-align: center;
-		height:30px;
-		margin:50px 0;
-	/*	background-color: green;*/
-	}
-	.newsBtn .active{
-		background-color: rgb(60,111,160);
-		color: #fff;
-	}
-	.newsBtn{
-		width: 100%;
-		height: 50px;
-		padding: 30px 0 30px 0;
-		/*background-color: red;*/
-	}
-	.newsBtn>ul{
-		width: 77%;
-		margin: 0 auto;
-		height: 50px;
-	/*	background-color: green;*/
-	}
-	.newsBtn>ul>li{
-		float: left;
-	    width: 120px;
-	    height: 45px;
-	    margin: 0 1%;
-	    margin-right: 20px;
-	}
-	.newscont{
-		width: 100%;
-		height: auto;
-	}
-	.newscont>ul{
-		width: 88%;
-		height: auto;
-		margin: 0 auto;
-	}
-	.newscont>ul>li{
-		width: 100%;
-		margin: 0 auto;
-		height: 180px;
-		/*background-color: red;*/
-	}
-	.pagedivce{
-		width: 100%;
-		height: 50px;
-		margin: 30px 0 50px 0;
-	}
+ .pageing{
+  width: 100%;
+  text-align: center;
+  height:30px;
+  margin:50px 0;
+ /* background-color: green;*/
+ }
+ .newsBtn .active{
+  background-color: rgb(60,111,160);
+  color: #fff;
+ }
+ .newsBtn{
+  width: 100%;
+  height: 50px;
+  padding: 30px 0 30px 0;
+  /*background-color: red;*/
+ }
+ .newsBtn>ul{
+  width: 640px;
+  margin: 0 auto;
+  height: 50px;
+ /* background-color: green;*/
+ }
+ .newsBtn>ul>li{
+  float: left;
+     width: 140px;
+     height: 45px;
+     margin: 0 10px;
+ }
+ .newscont{
+  width: 100%;
+  height: auto;
+ }
+ .newscont>ul{
+  width: 88%;
+  height: auto;
+  margin: 0 auto;
+ }
+ .newscont>ul>li{
+  width: 100%;
+  margin: 0 auto;
+  height: 180px;
+  /*background-color: red;*/
+ }
+ .pagedivce{
+  width: 100%;
+  height: 50px;
+  margin: 30px 0 50px 0;
+ }
 }
  /*普通pc*/
 @media screen and (min-width: 1366px) and (max-width: 1902px){
